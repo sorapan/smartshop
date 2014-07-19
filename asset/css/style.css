@@ -1,0 +1,111 @@
+header{
+    background-color: #086FA1;
+    color:white;
+    height: 60px;
+    line-height: 60px;
+    font-size: 30px;
+}
+
+
+nav{
+    background-color: #086FA1;
+    color:white;
+}
+
+#sidebar li > a{
+    /*text-indent: 20px;*/
+    background-color: #63ADD0;
+    color:white;
+}
+
+#sidebar li > a:hover{
+    /*text-indent: 20px;*/
+    background-color: #abd7ff;
+    color:white;
+}
+
+
+#sidebar>.active>a{
+    background-color:white;
+    color:cornflowerblue;
+}
+
+#menubrand{
+    text-align: center;
+    font-size: 20px;
+}
+
+#recom{
+    background-color: white;
+}
+
+#sinkamai{
+    height: 30px;
+    line-height: 30px;
+    color:white;
+    background-color: #034769;
+    font-size: 20px;
+    border-width: 0 20px 0 20px;
+    border-color:white;
+    border-style:solid;
+
+}
+
+article{
+    margin-left: 5px;
+    background-color: transparent;
+    height:auto;
+}
+
+#blog,#recom{
+    height:200px;
+    background-color: white;
+}
+
+#blog{
+    height:300px;
+    /*border: 1px #808080 solid;*/
+    position: relative;
+}
+
+#blog>img{
+    height: 150px;
+    margin:10px auto;
+
+}
+
+#blog>#row>#detail{
+    height: 120px;
+    line-height: 26px;
+    /*background-color: #1c1c20;*/
+    color:black;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#blog>#row>#detail>#yib{
+    height: 30px;
+    background-color: #FF8900;
+    color:white;
+    border: 0;
+}
+
+#blog>#row>#detail>#yib:hover{
+    height: 30px;
+    background-color: #fdd30a;
+    color:white;
+    border: 0;
+}
+
+#doo{
+    height: 60px;
+    margin-bottom: 60px;
+    font-size: 28px;
+    background-color: #63ADD0;
+    color:white;
+}
+
+footer{
+    background-color: #235D79;
+    height: 100px;
+}

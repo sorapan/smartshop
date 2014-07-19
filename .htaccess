@@ -1,0 +1,13 @@
+
+<IfModule mod_rewrite.c>
+
+    php_value post_max_size 300M
+    php_value upload_max_filesize 300M
+
+    RewriteEngine On
+#    RewriteBase /webdy2/
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$  index.php/$1 [L]
+
+</IfModule>
