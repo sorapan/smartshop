@@ -40,6 +40,8 @@
 
 $route['default_controller'] = "index";
 $route['product'] = "product";
+$route['regisform'] = "register";
+$route['regis'] = "register/regis";
 $route['welcome'] = "welcome";
 $route['404_override'] = '';
 

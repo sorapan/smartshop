@@ -16,8 +16,8 @@
     Smartshop 2
 </header>
 
-<nav class="col-md-12">
-    <ul class="nav nav-justified" id="sidebar">
+<nav id="menu" class="col-md-12">
+    <ul class="nav nav-justified" id="menubar">
         <!--<li class="sidebar-brand" id="menubrand">Menu</li>-->
         <li class="active "><a href="<?=base_url()?>">หน้าแรก</a></li>
         <li><a href="<?=base_url()?>product">สินค้า</a></li>
@@ -26,8 +26,33 @@
         <li><a href="#">วิธีสั่งซื้อ</a></li>
         <li><a href="#">เกี่ยวกับเรา</a></li>
         <li><a href="#">ดาวน์โหลด</a></li>
-        <li><a style="color:yellow" href="#">แอดมิน</a></li>
     </ul>
 </nav>
 
-<div class="container ">
+<nav id="sidebar" class="col-md-2">
+    <ul class="nav row">
+        <li class="sidebar-brand" id="menubrand">เข้าสู่ระบบ</li>
+        <li>
+            <div id="login_form">
+
+                <label for="userlogin">Username :</label>
+                <input id="userlogin" type="text">
+
+                <label for="passlogin">Password :</label>
+                <input id="passlogin" type="password">
+
+                <br><input style="background-color:#086fa0;border:0;color:white" type="submit" value="Login" >
+                <p style="font-size: 16px">ถ้ายังไม่สมัครสมาชิก <a style="color:red" href="<?=base_url()?>regisform">คลิก</a> ที่นี่</p>
+            </div>
+        </li>
+    </ul>
+    <ul id="menuside" class="nav row">
+        <li class="sidebar-brand" id="menubrand">หมวดหมู่สินค้า</li>
+        <li class="opt"><a href="#">สินค้า</a></li>
+        <li class="opt"><a href="#">สินค้า</a></li>
+        <li class="opt"><a href="#">สินค้า</a></li>
+        <li class="opt"><a href="#">สินค้า</a></li>
+    </ul>
+</nav>
+
+<div class="col-md-10 container">

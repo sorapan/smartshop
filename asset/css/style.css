@@ -6,26 +6,29 @@ header{
     font-size: 30px;
 }
 
+#menu{
+    background-color: #086FA1;
+}
 
-nav{
+#menubar{
     background-color: #086FA1;
     color:white;
 }
 
-#sidebar li > a{
+#menubar li > a{
     /*text-indent: 20px;*/
     background-color: #63ADD0;
     color:white;
 }
 
-#sidebar li > a:hover{
+#menubar li > a:hover{
     /*text-indent: 20px;*/
     background-color: #abd7ff;
     color:white;
 }
 
 
-#sidebar>.active>a{
+#menubar>.active>a{
     background-color:white;
     color:cornflowerblue;
 }
@@ -33,6 +36,31 @@ nav{
 #menubrand{
     text-align: center;
     font-size: 20px;
+    border-bottom: 5px solid #032a41;
+}
+
+#sidebar{
+    background-color: #63ADD0;
+    margin-top: 20px;
+}
+
+#sidebar #menubrand{
+    background-color: #034769;
+    color:white;
+}
+
+#sidebar #login_form{
+    padding: 10px 0 10px 10px;
+}
+
+#sidebar #login_form>input[type='submit']{
+    margin: 10px 0 10px 0;
+    width: 90px;
+    background-color: #034769;
+}
+
+#sidebar>#menuside>.opt>a{
+    color:white;
 }
 
 #recom{
@@ -44,11 +72,16 @@ nav{
     line-height: 30px;
     color:white;
     background-color: #034769;
-    font-size: 20px;
-    border-width: 0 20px 0 20px;
-    border-color:white;
-    border-style:solid;
+    font-size: 18px;
+    /*border-width: 0 20px 0 20px;*/
+    /*border-color:white;*/
+    /*border-style:solid;*/
+    border-bottom: 5px solid #032c43;
 
+}
+
+#content{
+    min-height: 800px;
 }
 
 article{
@@ -88,6 +121,7 @@ article{
     background-color: #FF8900;
     color:white;
     border: 0;
+    border-bottom: 5px solid #ca6501;
 }
 
 #blog>#row>#detail>#yib:hover{
@@ -95,6 +129,7 @@ article{
     background-color: #fdd30a;
     color:white;
     border: 0;
+    border-bottom: 5px solid #cfaa0a;
 }
 
 #doo{
@@ -103,6 +138,8 @@ article{
     font-size: 28px;
     background-color: #63ADD0;
     color:white;
+    border:0;
+    border-bottom: 8px solid #446d87;
 }
 
 footer{
