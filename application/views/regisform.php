@@ -1,9 +1,13 @@
+<?php
 
+header("Content-Type: text/html;charset=UTF-8");
+
+?>
 <div class="col-md-offset-3" style="padding:20px 0 20px 0">
     <h3>สมัครสมาชิก</h3>
 </div>
 
-<form accept-charset="UTF-8" method="POST" action="<?=base_url()?>regis" class="form-horizontal col-md-6" role="form" style="margin: 0 0 30px 30px">
+<form  method="POST" action="<?=base_url()?>regis" class="form-horizontal col-md-6"  accept-charset="UTF-8"  style="margin: 0 0 30px 30px">
 
     <div class="form-group">
         <label for="username" class="col-md-3 control-label">ชื่อผู้ใช้ :</label>

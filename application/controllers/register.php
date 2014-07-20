@@ -37,12 +37,14 @@ class Register extends CI_Controller{
                 'email' => $_POST['email'],
                 'address' => $_POST['address'],
                 'tel' => $_POST['tel'],
-                'province' => utf8_encode($_POST['province']),
+                'province' => $_POST['province'],
                 'zipcode' => $_POST['zipcode'],
             );
 
-            $this->RegisterModel->insertUser($datatransfer);
-            @header("location:".base_url());
+            print_r($datatransfer);
+
+//            $this->RegisterModel->insertUser($datatransfer);
+//            @header("location:".base_url());
 
         }else{
             @header("location:".base_url()."regisform");
