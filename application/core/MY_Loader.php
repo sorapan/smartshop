@@ -21,16 +21,10 @@ class MY_Loader extends CI_Loader{
         $data = array(
             'include' => $include
         );
-
         foreach($vars as $varskey => $varsval){
-
             $data[$varskey] = $varsval;
-
         }
-
         $this->view('layout1/layout1',$data);
-
-
     }
 
 }

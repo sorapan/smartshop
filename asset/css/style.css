@@ -81,7 +81,7 @@ header{
 }
 
 #content{
-    min-height: 800px;
+    min-height: 650px;
 }
 
 article{
@@ -92,7 +92,7 @@ article{
 
 #blog,#recom{
     height:200px;
-    background-color: white;
+    background-color: transparent;
 }
 
 #blog{
@@ -136,10 +136,10 @@ article{
     height: 60px;
     margin-bottom: 60px;
     font-size: 28px;
-    background-color: #63ADD0;
+    background-color: #235d79;
     color:white;
     border:0;
-    border-bottom: 8px solid #446d87;
+    border-bottom: 8px solid #193c51;
 }
 
 footer{

@@ -19,8 +19,8 @@
 <nav id="menu" class="col-md-12">
     <ul class="nav nav-justified" id="menubar">
         <!--<li class="sidebar-brand" id="menubrand">Menu</li>-->
-        <li class="active "><a href="<?=base_url()?>">หน้าแรก</a></li>
-        <li><a href="<?=base_url()?>product">สินค้า</a></li>
+        <li class="active"><a href="http://te.st/petetui/">หน้าแรก</a></li>
+        <li><a href="http://te.st/petetui/2.html">สินค้า</a></li>
         <li><a href="#">โปรโมชั่น</a></li>
         <li><a href="#">สินค้าเคลม</a></li>
         <li><a href="#">วิธีสั่งซื้อ</a></li>
@@ -35,14 +35,22 @@
         <li>
             <div id="login_form">
 
-                <label for="userlogin">Username :</label>
-                <input id="userlogin" type="text">
+                <div class="form-group">
+                    <label for="userlogin">Username :</label>
+                    <div class="col-md-12" style="padding: 0">
+                        <input id="userlogin" type="text">
+                    </div>
+                </div>
 
-                <label for="passlogin">Password :</label>
-                <input id="passlogin" type="password">
+                <div class="form-group">
+                    <label class="control-label" for="passlogin">Password :</label>
+                    <div class="col-md-12" style="padding: 0">
+                        <input id="passlogin" type="password">
+                    </div>
+                </div>
 
                 <br><input style="background-color:#086fa0;border:0;color:white" type="submit" value="Login" >
-                <p style="font-size: 16px">ถ้ายังไม่สมัครสมาชิก <a style="color:red" href="<?=base_url()?>regisform">คลิก</a> ที่นี่</p>
+                <p style="font-size: 16px">ถ้ายังไม่สมัครสมาชิก <a style="color:red" href="">คลิก</a> ที่นี่</p>
             </div>
         </li>
     </ul>
@@ -54,11 +62,11 @@
         <li class="opt"><a href="#">สินค้า</a></li>
     </ul>
 </nav>
-<div class="col-md-10 container">
 
-<?php $this->load->view($include);?>
-
+<div class="col-md-10 container" style="margin-bottom: 30px">
+    <?php $this->load->view($include);?>
 </div>
+
 <footer class="col-md-12">
 </footer>
 

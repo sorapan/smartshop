@@ -1,12 +1,12 @@
+<article>
+    <div class="col-md-12" id="recom">
+        <h2>สวัสดีครับ</h2>
+        <p>กหดสาห่ืสา าื ่สืหก่ดื า่ื สาหกืด่ ืกดสหาหกดกหดสดสหกสดหกมวดสสกดมส หกดดกหดหกดสมหกสด</p>
+    </div>
 
-    <article>
-        <div class="col-md-12" id="recom">
-            <h2><?=$aa?>สวัสดีครับ</h2>
-            <p>กหดสาห่ืสา าื ่สืหก่ดื า่ื สาหกืด่ ืกดสหาหกดกหดสดสหกสดหกมวดสสกดมส หกดดกหดหกดสมหกสด</p>
-        </div>
+    <div id="sinkamai" class="col-md-12">สินค้าใหม่</div>
 
-        <div id="sinkamai" class="col-md-12">สินค้าใหม่</div>
-
+    <div class="col-md-12" style="background-color:#63accf">
         <div class="col-md-4" id="blog">
             <img class="img-responsive" src="<?=base_url()?>asset/img/qq.jpg">
             <div id="row" class="row">
@@ -18,8 +18,8 @@
                     </button>
                 </div>
             </div>
-        </div>    <div class="col-md-4" id="blog">
-            <img class="img-responsive" src="<?=base_url()?>asset/img/qq.jpg">
+        </div><div class="col-md-4" id="blog">
+            <img class="img-responsive" src="<?=base_url()?>asset/img/soong.png">
             <div id="row" class="row">
                 <div id="detail" class="col-md-12">
                     สินค้า : MJ<br>
@@ -62,7 +62,7 @@
                     </button>
                 </div>
             </div>
-        </div>    <div class="col-md-4" id="blog">
+        </div><div class="col-md-4" id="blog">
             <img class="img-responsive" src="<?=base_url()?>asset/img/qq.jpg">
             <div id="row" class="row">
                 <div id="detail" class="col-md-12">
@@ -74,6 +74,8 @@
                 </div>
             </div>
         </div>
-    </article>
 
-    <button id="doo" class="col-md-6 col-md-offset-3">ดูสินค้าเพิ่มเติม</button>
+        <button id="doo" class="col-md-6 col-md-offset-3 col-xs-12">ดูสินค้าเพิ่มเติม</button>
+
+    </div>
+</article>
