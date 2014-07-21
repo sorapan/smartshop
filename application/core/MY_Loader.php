@@ -2,17 +2,35 @@
 
 class MY_Loader extends CI_Loader{
 
-    public function template1($template_name, $vars = array(), $return = FALSE){
+//    public function template1($template_name, $vars = array(), $return = FALSE){
+//
+//        $content  = $this->view('template1/header', $vars, $return);
+//        $content .= $this->view($template_name, $vars, $return);
+//        $content .= $this->view('template1/footer', $vars, $return);
+//
+//        if($return){
+//
+//            return $content;
+//
+//        }
+//
+//    }
 
-        $content  = $this->view('template1/header', $vars, $return);
-        $content .= $this->view($template_name, $vars, $return);
-        $content .= $this->view('template1/footer', $vars, $return);
+    public function layout1($include, $vars = array(), $return = FALSE){
 
-        if($return){
+        $data = array(
+            'include' => $include
+        );
 
-            return $content;
+        foreach($vars as $varskey => $varsval){
+
+            $data[$varskey] = $varsval;
 
         }
 
+        $this->view('layout1/layout1',$data);
+
+
     }
+
 }

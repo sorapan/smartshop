@@ -11,7 +11,7 @@ class Register extends CI_Controller{
 
     function index(){
 
-        $this->load->template1('regisform');
+        $this->load->layout1('layout1/regisform');
 
     }
 
@@ -49,6 +49,5 @@ class Register extends CI_Controller{
         }else{
             @header("location:".base_url()."regisform");
         }
-
     }
 } 

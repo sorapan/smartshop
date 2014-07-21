@@ -14,7 +14,7 @@ class product extends CI_Controller {
 
     function index(){
 
-        $this->load->template1('product');
+        $this->load->layout1('layout1/product');
 
     }
 

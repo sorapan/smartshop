@@ -8,7 +8,9 @@ class Index extends CI_Controller {
 
     function index(){
 
-        $this->load->template1('home');
+
+        $data = array('aa'=>'peter');
+        $this->load->layout1('layout1/home',$data);
 
     }
 
