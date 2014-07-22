@@ -10,7 +10,7 @@ class Index extends CI_Controller {
 
 
         $data = array('aa'=>'peter');
-        $this->load->layout1('layout1/home',$data);
+        $this->load->layout1('home',$data);
 
     }
 

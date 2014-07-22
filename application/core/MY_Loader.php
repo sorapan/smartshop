@@ -18,9 +18,7 @@ class MY_Loader extends CI_Loader{
 
     public function layout1($include, $vars = array(), $return = FALSE){
 
-        $data = array(
-            'include' => $include
-        );
+        $data['include'] = 'layout1/'.$include;
         foreach($vars as $varskey => $varsval){
             $data[$varskey] = $varsval;
         }

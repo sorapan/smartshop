@@ -11,7 +11,7 @@ class Register extends CI_Controller{
 
     function index(){
 
-        $this->load->layout1('layout1/regisform');
+        $this->load->layout1('regisform');
 
     }
 
