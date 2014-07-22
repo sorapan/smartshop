@@ -1,7 +1,7 @@
 <?php
 
 
-class RegisterModel extends CI_Model{
+class UsersModel extends CI_Model{
 
     function __construct(){
         parent::__construct();
@@ -24,5 +24,16 @@ class RegisterModel extends CI_Model{
         $this->db->insert('user', $data);
 
     }
+
+    function loginUser($username,$password){
+
+        $this->db->select('username,password');
+        $this->db->where('username',$username)->where('password',$password);
+        $query = $this->db->get('user');
+        return $query->result();
+
+    }
+
+
 
 } 

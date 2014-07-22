@@ -5,7 +5,7 @@ class Register extends CI_Controller{
     function __construct(){
 
         parent::__construct();
-        $this->load->model('RegisterModel');
+        $this->load->model('UsersModel');
 
     }
 
@@ -28,7 +28,6 @@ class Register extends CI_Controller{
             $_POST['zipcode'] != "" &&
             $_POST['tel'] != ""
         ){
-
             $datatransfer = array(
                 'username' => $_POST['username'],
                 'password' => $_POST['password'],
@@ -40,14 +39,34 @@ class Register extends CI_Controller{
                 'province' => $_POST['province'],
                 'zipcode' => $_POST['zipcode'],
             );
-
-            print_r($datatransfer);
-
-//            $this->RegisterModel->insertUser($datatransfer);
-//            @header("location:".base_url());
+            $this->UsersModel->insertUser($datatransfer);
+            redirect("/");
 
         }else{
-            @header("location:".base_url()."regisform");
+            redirect("regisform");
         }
     }
+
+    function login(){
+
+        $loginresult = $this->UsersModel->loginUser($_POST['userlogin'],$_POST['passlogin']);
+        if(!empty($loginresult)){
+            foreach($loginresult as $logink=>$loginv){
+                $this->session->set_userdata('login',true);
+                $this->session->set_userdata('username',$loginv->username);
+            }
+            redirect("/");
+        }else{
+            $this->session->set_flashdata('loginmessage','** ล็อกอินผิดพลาด **');
+            redirect("/");
+        }
+    }
+
+    function destroysession(){
+
+        $this->session->sess_destroy();
+        redirect("/");
+
+    }
+
 } 

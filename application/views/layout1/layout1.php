@@ -13,8 +13,9 @@
     if(isset($css))
         if(!is_array($css))
             echo '<link rel="stylesheet" href="'.$css.'">';
-        else
-            foreach($this->load->view($css) as $cssvalue)echo '<link rel="stylesheet" href="'.$cssvalue.'">';
+        else{
+            foreach($css as $cssvalue)echo '<link rel="stylesheet" href="'.$cssvalue.'">';
+        }
     ?>
 </head>
 <body>
@@ -38,28 +39,51 @@
 
 <nav id="sidebar" class="col-md-2">
     <ul class="nav row">
+
+<?php
+/////////////////////// login true
+if(!$this->session->userdata('login')){
+?>
+
         <li class="sidebar-brand" id="menubrand">เข้าสู่ระบบ</li>
         <li>
             <div id="login_form">
-
-                <div class="form-group">
-                    <label for="userlogin">Username :</label>
-                    <div class="col-md-12" style="padding: 0">
-                        <input id="userlogin" type="text">
+                <form method="POST" action="<?=base_url()?>login">
+                    <div class="form-group">
+                        <label for="userlogin">Username :</label>
+                        <div class="col-md-12" style="padding: 0">
+                            <input id="userlogin" name="userlogin" type="text">
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group">
-                    <label class="control-label" for="passlogin">Password :</label>
-                    <div class="col-md-12" style="padding: 0">
-                        <input id="passlogin" type="password">
+                    <div class="form-group">
+                        <label class="control-label" for="passlogin">Password :</label>
+                        <div class="col-md-12" style="padding: 0">
+                            <input id="passlogin" name="passlogin" type="password">
+                        </div>
                     </div>
-                </div>
 
-                <br><input style="background-color:#086fa0;border:0;color:white" type="submit" value="Login" >
+                    <br><input style="background-color:#086fa0;border:0;color:white" type="submit" value="Login" >
+                </form>
+                <br>
+                <p style="font-size: 22px;color:red"><?=$this->session->flashdata('loginmessage')?></p>
                 <p style="font-size: 16px">ถ้ายังไม่สมัครสมาชิก <a style="color:red" href="<?=base_url()?>regisform">คลิก</a> ที่นี่</p>
             </div>
         </li>
+<?php
+/////////////////////// login false
+}else{
+?>
+
+    <li class="sidebar-brand" id="menubrand">เข้าสู่ระบบ</li>
+    <li style="padding-left:10px">
+        <h3>ยินดีต้อนรับ ,<?=$this->session->userdata('username')?></h3>
+        <h3><a href="<?=base_url()?>destroy">ออกจากระบบ</a></h3>
+    </li>
+
+<?php
+}
+?>
     </ul>
     <ul id="menuside" class="nav row">
         <li class="sidebar-brand" id="menubrand">หมวดหมู่สินค้า</li>
@@ -85,7 +109,7 @@ if(isset($js))
     if(!is_array($js))
         echo '<script src="'.$js.'"></script>';
     else
-        foreach($this->load->view($js) as $jsvalue)echo '<script src="'.$jsvalue.'"></script>';
+        foreach($js as $jsvalue)echo '<script src="'.$jsvalue.'"></script>';
 ?>
 </body>
 </html>

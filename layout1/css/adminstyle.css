@@ -1,0 +1,9 @@
+#adminmenu>li>a{
+    background-color: #63accf;
+    color:white;
+}
+
+#adminmenu>li>a:hover{
+    background-color: white;
+    color:#63accf;
+}

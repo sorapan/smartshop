@@ -39,9 +39,12 @@
 */
 
 $route['default_controller'] = "index";
+$route['admin'] = "admin";
 $route['product'] = "product";
 $route['regisform'] = "register";
 $route['regis'] = "register/regis";
+$route['login'] = "register/login";
+$route['destroy'] = "register/destroysession";
 $route['welcome'] = "welcome";
 $route['404_override'] = '';
 
