@@ -8,7 +8,6 @@ class Index extends CI_Controller {
 
     function index(){
 
-
         $data = array('aa'=>'peter');
         $this->load->layout1('home',$data);
 

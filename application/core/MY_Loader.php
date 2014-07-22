@@ -16,6 +16,16 @@ class MY_Loader extends CI_Loader{
 //
 //    }
 
+    public function emptylayout($include, $vars = array(), $return = FALSE){
+
+        $data['include'] = 'emptylayout/'.$include;
+        foreach($vars as $varskey => $varsval){
+            $data[$varskey] = $varsval;
+        }
+        $this->view('emptylayout/emptylayout',$data);
+
+    }
+
     public function layout1($include, $vars = array(), $return = FALSE){
 
         $data['include'] = 'layout1/'.$include;
@@ -23,6 +33,7 @@ class MY_Loader extends CI_Loader{
             $data[$varskey] = $varsval;
         }
         $this->view('layout1/layout1',$data);
+
     }
 
 }

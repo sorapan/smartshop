@@ -17,9 +17,22 @@ class admin extends CI_Controller {
         $data = array(
           'css' => array(
               base_url().'layout1/css/adminstyle.css'
+          ),
+          'js' => array(
+              base_url().'layout1/js/adminMenuControl.js'
           )
         );
-
         $this->load->layout1('admin',$data);
+    }
+
+    function addproduct(){
+
+        $data = array(
+            'css' => array(
+                base_url().'layout1/css/uploadproduct.css'
+            )
+        );
+        $this->load->emptylayout('addproduct',$data);
+
     }
 } 
