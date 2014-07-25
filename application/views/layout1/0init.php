@@ -1,3 +1,34 @@
+
+
+<?php
+function titleMessage($title = "Smartshop | Welcome"){
+    return $title;
+}
+
+function css($css = null){
+    if(isset($css)){
+        if(!is_array($css))return '<link rel="stylesheet" href="'.$css.'">';
+        else{
+            $ec = "";
+            foreach($css as $cssvalue)$ec .= '<link rel="stylesheet" href="'.$cssvalue.'">';
+            return $ec;
+        }
+    }else return null;
+}
+
+function js($js){
+    if(isset($js))
+        if(!is_array($js))return '<script src="'.$js.'"></script>';
+        else{
+            $ec = "";
+            foreach($js as $jsvalue)$ec .= '<script src="'.$jsvalue.'"></script>';
+            return $ec;
+        }
+    else return null;
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,13 +39,12 @@
     <!--Complementary Color:-->
     <!--FF8900	BF7D30	A65900	FFA640	FFBE73-->
     <link rel="stylesheet" href="<?=base_url()?>asset/css/bootstrap.css">
-    <link rel="stylesheet" href="<?=base_url()?>asset/css/style.css">
+    <link rel="stylesheet" href="<?=base_url()?>asset/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="<?=base_url()?>asset/css/Layout1.css">
     <?php
-    if(isset($css))
-        if(!is_array($css))
-            echo '<link rel="stylesheet" href="'.$css.'">';
-        else{
-            foreach($css as $cssvalue)echo '<link rel="stylesheet" href="'.$cssvalue.'">';
+        if(isset($css)){
+            if(!is_array($css))echo '<link rel="stylesheet" href="'.$css.'">';
+            else foreach($css as $cssvalue)echo '<link rel="stylesheet" href="'.$cssvalue.'">';
         }
     ?>
 </head>
@@ -105,19 +135,11 @@ if(!$this->session->userdata('login')){
 <script src="<?=base_url()?>asset/js/bootstrap.min.js"></script>
 <script src="<?=base_url()?>asset/js/MenuControl.js"></script>
 <?php
-if(isset($js))
-    if(!is_array($js))
-        echo '<script src="'.$js.'"></script>';
-    else
-        foreach($js as $jsvalue)echo '<script src="'.$jsvalue.'"></script>';
+if(isset($js)){
+    if(!is_array($js))echo '<script src="'.$js.'"></script>';
+    else foreach($js as $jsvalue)echo '<script src="'.$jsvalue.'"></script>';
+}
 ?>
 </body>
 </html>
 
-<?php
-
-function titleMessage($msg = "Smartshop | Welcome"){
-    if(isset($msg))return $msg;
-}
-
-?>

@@ -5,6 +5,7 @@ class UsersModel extends CI_Model{
 
     function __construct(){
         parent::__construct();
+
     }
 
     function insertUser($dt){
@@ -33,6 +34,8 @@ class UsersModel extends CI_Model{
         return $query->result();
 
     }
+
+
 
 
 

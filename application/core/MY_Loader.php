@@ -22,7 +22,7 @@ class MY_Loader extends CI_Loader{
         foreach($vars as $varskey => $varsval){
             $data[$varskey] = $varsval;
         }
-        $this->view('emptylayout/emptylayout',$data);
+        $this->view('emptylayout/0init',$data);
 
     }
 
@@ -32,7 +32,7 @@ class MY_Loader extends CI_Loader{
         foreach($vars as $varskey => $varsval){
             $data[$varskey] = $varsval;
         }
-        $this->view('layout1/layout1',$data);
+        $this->view('layout1/0init',$data);
 
     }
 

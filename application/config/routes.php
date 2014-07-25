@@ -41,6 +41,8 @@
 $route['default_controller'] = "index";
 $route['admin'] = "admin";
 $route['admin/addproduct'] = "admin/addproduct";
+$route['admin/uploadProuctImg'] = "admin/uploadProuctImg";
+$route['admin/addproductsubmit'] = "admin/addproductsubmit";
 $route['product'] = "product";
 $route['regisform'] = "register";
 $route['regis'] = "register/regis";

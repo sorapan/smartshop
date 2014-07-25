@@ -16,9 +16,11 @@ header{
     color:white;
 }
 
+
 #menubar li > a{
     /*text-indent: 20px;*/
     background-color: #63ADD0;
+    font-size: 14px;
     color:white;
 }
 
@@ -48,6 +50,7 @@ header{
 #sidebar #menubrand{
     background-color: #034769;
     color:white;
+    font-size: 15px;
 }
 
 #sidebar #login_form{
