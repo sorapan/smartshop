@@ -5,7 +5,6 @@ class UsersModel extends CI_Model{
 
     function __construct(){
         parent::__construct();
-
     }
 
     function insertUser($dt){
@@ -21,14 +20,13 @@ class UsersModel extends CI_Model{
           'province' => $dt['province'],
           'zipcode' => $dt['zipcode'],
         );
-
         $this->db->insert('user', $data);
 
     }
 
     function loginUser($username,$password){
 
-        $this->db->select('username,password');
+        $this->db->select('username,password,class');
         $this->db->where('username',$username)->where('password',$password);
         $query = $this->db->get('user');
         return $query->result();

@@ -25,11 +25,18 @@ class ProductModel extends CI_Model{
             "unit" => $dt['unit'],
             "unitnot" => $dt['unitnot'],
             "detail" => $dt['detail'],
-            "author" => "dsfsdf",
+            "author" => $this->session->userdata('username'),
             "date" => $dt['date'],
 
         );
         $this->db->insert("product",$data);
+
+    }
+
+    function fetchproductdata(){
+
+        $this->db->select("*");
+        $this->db->from('product');
 
     }
 

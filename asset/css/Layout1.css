@@ -43,7 +43,7 @@ header{
 }
 
 #sidebar{
-    background-color: #63ADD0;
+    background-color: #cce5ff;
     margin-top: 20px;
 }
 
@@ -64,7 +64,7 @@ header{
 }
 
 #sidebar>#menuside>.opt>a{
-    color:white;
+    color:#034769;
 }
 
 #recom{
@@ -81,7 +81,6 @@ header{
     /*border-color:white;*/
     /*border-style:solid;*/
     border-bottom: 5px solid #032c43;
-
 }
 
 #content{

@@ -40,9 +40,9 @@
 
 $route['default_controller'] = "index";
 $route['admin'] = "admin";
-$route['admin/addproduct'] = "admin/addproduct";
-$route['admin/uploadProuctImg'] = "admin/uploadProuctImg";
-$route['admin/addproductsubmit'] = "admin/addproductsubmit";
+$route['admin/addproduct'] = "admin_product/addproduct";
+$route['admin/uploadProuctImg'] = "admin_product/uploadProuctImg";
+$route['admin/addproductsubmit'] = "admin_product/addproductsubmit";
 $route['product'] = "product";
 $route['regisform'] = "register";
 $route['regis'] = "register/regis";

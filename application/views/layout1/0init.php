@@ -106,9 +106,17 @@ if(!$this->session->userdata('login')){
 ?>
 
     <li class="sidebar-brand" id="menubrand">เข้าสู่ระบบ</li>
-    <li style="padding-left:10px">
-        <h3>ยินดีต้อนรับ ,<?=$this->session->userdata('username')?></h3>
-        <h3><a href="<?=base_url()?>destroy">ออกจากระบบ</a></h3>
+    <li style="padding: 10px 0 0 10px;">
+        <p>ยินดีต้อนรับ ,<b><?=$this->session->userdata('username')?></b></p>
+        <p>ระดับ ,<b><?=$this->session->userdata('class')?></b></p>
+        <?php
+        if($this->session->userdata('class') == "admin"){
+        ?>
+            <p><a href="<?=base_url()?>admin">หน้าแอดมิน</a></p>
+        <?php
+        }
+        ?>
+        <p><a style="color:#ff5b00" href="<?=base_url()?>destroy">ออกจากระบบ</a></p>
     </li>
 
 <?php
