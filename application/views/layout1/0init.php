@@ -56,7 +56,6 @@ function js($js){
 
 <nav id="menu" class="col-md-12">
     <ul class="nav nav-justified" id="menubar">
-        <!--<li class="sidebar-brand" id="menubrand">Menu</li>-->
         <li><a href="<?=base_url()?>">หน้าแรก</a></li>
         <li><a href="<?=base_url()?>product">สินค้า</a></li>
         <li><a href="#">โปรโมชั่น</a></li>
@@ -67,6 +66,7 @@ function js($js){
     </ul>
 </nav>
 
+<div class="col-md-12">
 <nav id="sidebar" class="col-md-2">
 
     <ul class="nav">
@@ -107,9 +107,8 @@ function js($js){
         }else{
             ?>
 
-            <li class="sidebar-brand" id="menubrand">ยินดีต้อนรับ</li>
+            <li class="sidebar-brand" id="menubrand">คุณ <b><?=$this->session->userdata('username')?></b></li>
             <li style="padding: 10px 0 0 10px;">
-                <p>ยินดีต้อนรับ ,<b><?=$this->session->userdata('username')?></b></p>
                 <p>ระดับ ,<b><?=$this->session->userdata('class')?></b></p>
                 <ul style="list-style-type: disc">
                     <?php
@@ -129,10 +128,10 @@ function js($js){
     </ul>
 </nav>
 
-<div id="content" class="col-md-10 container" style="margin-bottom: 30px">
+<div id="content" class="col-md-10" style="margin-bottom: 30px">
     <?php $this->load->view($include);?>
 </div>
-
+</div>
 <footer class="col-md-12">
 </footer>
 

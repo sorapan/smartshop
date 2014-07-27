@@ -53,7 +53,7 @@ function js($js){
     Smartshop 2
 </header>
 
-
+<div class="col-md-12">
 <nav id="sidebar" class="col-md-2">
 
     <ul class="nav">
@@ -94,9 +94,8 @@ function js($js){
         }else{
             ?>
 
-            <li class="sidebar-brand" id="menubrand">ยินดีต้อนรับ</li>
+            <li class="sidebar-brand" id="menubrand">คุณ <b><?=$this->session->userdata('username')?></b></li>
             <li style="padding: 10px 0 0 10px;">
-                <p>ยินดีต้อนรับ ,<b><?=$this->session->userdata('username')?></b></p>
                 <p>ระดับ ,<b><?=$this->session->userdata('class')?></b></p>
                 <ul style="list-style-type: disc">
                 <?php
@@ -117,7 +116,7 @@ function js($js){
     </ul>
 </nav>
 
-<div id="content" class="col-md-10 container" style="margin-bottom: 30px">
+<div id="content" class="col-md-9 container" style="margin-bottom: 30px">
         <div id="adminPageLoad" class="col-md-9" style="min-height: 600px">
             <?php $this->load->view($include);?>
         </div>
@@ -136,7 +135,7 @@ function js($js){
             </ul>
         </div>
 </div>
-
+</div>
 
 
 <footer class="col-md-12">

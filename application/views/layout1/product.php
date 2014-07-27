@@ -1,6 +1,6 @@
 <article>
 
-    <div class="col-md-12" style="font-size: 30px;height: 60px;line-height: 60px;border-bottom: 1px solid black;margin-bottom: 20px">
+    <div class="col-md-12" style="font-size: 30px;height: 60px;line-height: 60px;margin-bottom: 20px">
         รายการสินค้า
     </div>
     <div class="col-md-12 row">
