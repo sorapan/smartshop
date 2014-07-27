@@ -2,7 +2,7 @@
 
     <h2>จัดการประเภทสินค้า</h2><br>
 
-    <h4>เพิ่มการประเภทหลัก</h4>
+    <h4>เพิ่มประเภทหลัก</h4>
     <div class="form-horizontal">
         <div class="form-group">
             <label for="maintype" class="control-label col-md-2">ชื่อประเภท</label>
@@ -25,7 +25,7 @@
         </ul>
     </div>
 
-    <h4>เพิ่มการประเภทย่อย</h4>
+    <h4>เพิ่มประเภทย่อย</h4>
     <div class="form-horizontal">
         <div class="form-group">
             <label for="subtype" class="control-label col-md-2">ชื่อประเภท</label>

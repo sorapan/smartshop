@@ -48,4 +48,10 @@ class admin_type extends CI_Controller{
 
     }
 
+    function deletemaintype(){
+
+        $this->TypeModel->deleteMainType($_POST['typename']);
+
+    }
+
 } 

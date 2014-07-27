@@ -46,6 +46,7 @@ $route['admin/addproductsubmit'] = "admin_product/addproductsubmit";
 $route['admin/typeproduct'] = "admin_type/typeproduct";
 $route['admin/fetchmaintype'] = "admin_type/fetchmaintype";
 $route['admin/insertmaintype'] = "admin_type/insertmaintype";
+$route['admin/deletemaintype'] = "admin_type/deletemaintype";
 $route['product'] = "product";
 $route['regisform'] = "register";
 $route['regis'] = "register/regis";

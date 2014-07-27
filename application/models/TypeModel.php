@@ -23,6 +23,12 @@ class TypeModel extends CI_Model{
 
     }
 
+    function deleteMainType($typename){
+
+        $this->db->delete('type_product',array('name'=>$typename));
+
+    }
+
 
 
 } 

@@ -3,7 +3,7 @@ $(function(){
     $(" .AdminMenuButton").click(function(e){
 
         e.preventDefault();
-        $(" #adminPageLoad").load($(this).attr('href'));
+        $(" #adminPageLoad").load(""+$(this).attr('href'));
 
     });
 
