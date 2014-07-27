@@ -7,9 +7,9 @@
     <div class="col-md-3 sidebar-module">
         <h4>เมนูแอดมิน</h4>
         <ul id="adminmenu"  class="nav navbar">
-            <li><a class="AdminMenuButton" href="<?=base_url()?>admin/addproduct">จัดการสินค้า</a></li>
-            <li><a class="AdminMenuButton" href="<?=base_url()?>">จัดการสมาชิก</a></li>
-            <li><a class="AdminMenuButton" href="<?=base_url()?>">จัดการประเภทสินค้า</a></li>
+            <li><a class="AdminMenuButton" href="<?=base_url()?>admin/addproduct">เพิ่มข้อมูลสินค้า</a></li>
+<!--            <li><a class="AdminMenuButton" href="--><?//=base_url()?><!--">จัดการสมาชิก</a></li>-->
+            <li><a class="AdminMenuButton" href="<?=base_url()?>admin/typeproduct">จัดการประเภทสินค้า</a></li>
 <!--            <li><a class="AdminMenuButton" href="#">ข้อความ</a></li>-->
 <!--            <li><a class="AdminMenuButton" href="#">ประวัติการขาย</a></li>-->
 <!--            <li><a class="AdminMenuButton" href="#">โปรโมชั่น</a></li>-->

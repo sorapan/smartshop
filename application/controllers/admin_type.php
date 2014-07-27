@@ -8,9 +8,9 @@ class admin_type extends CI_Controller{
 
     }
 
-    function managetype(){
+    function typeproduct(){
 
-
+        $this->load->emptylayout('typeproduct');
 
     }
 

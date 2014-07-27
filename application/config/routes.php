@@ -43,6 +43,7 @@ $route['admin'] = "admin";
 $route['admin/addproduct'] = "admin_product/addproduct";
 $route['admin/uploadProuctImg'] = "admin_product/uploadProuctImg";
 $route['admin/addproductsubmit'] = "admin_product/addproductsubmit";
+$route['admin/typeproduct'] = "admin_type/typeproduct";
 $route['product'] = "product";
 $route['regisform'] = "register";
 $route['regis'] = "register/regis";

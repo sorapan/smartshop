@@ -36,21 +36,18 @@ header{
     color:cornflowerblue;
 }
 
-#menubrand{
-    text-align: center;
-    font-size: 20px;
-    border-bottom: 5px solid #032a41;
-}
-
 #sidebar{
     background-color: #cce5ff;
     margin-top: 20px;
 }
 
 #sidebar #menubrand{
-    background-color: #034769;
+    background-color: #086fa0;
     color:white;
     font-size: 15px;
+    text-align: left;
+    text-indent: 12px;
+    border-bottom: 5px solid #085c87;
 }
 
 #sidebar #login_form{
@@ -75,12 +72,12 @@ header{
     height: 30px;
     line-height: 30px;
     color:white;
-    background-color: #034769;
+    background-color: #086f9f;
     font-size: 18px;
     /*border-width: 0 20px 0 20px;*/
     /*border-color:white;*/
     /*border-style:solid;*/
-    border-bottom: 5px solid #032c43;
+    border-bottom: 5px solid #085c86;
 }
 
 #content{
