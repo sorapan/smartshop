@@ -4,9 +4,9 @@
         <p>กหดสาห่ืสา าื ่สืหก่ดื า่ื สาหกืด่ ืกดสหาหกดกหดสดสหกสดหกมวดสสกดมส หกดดกหดหกดสมหกสด</p>
     </div>
 
-    <div id="sinkamai" class="col-md-12">สินค้าใหม่</div>
 
-    <div class="col-md-12" style="background-color:#cbe4fd">
+    <div class="col-md-12" style="background-color:#fdfdfd">
+        <div id="sinkamai" class="col-md-12">สินค้าใหม่</div>
         <div class="col-md-4" id="blog">
             <img class="img-responsive" src="<?=base_url()?>asset/img/qq.jpg">
             <div id="row" class="row">

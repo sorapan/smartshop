@@ -1,4 +1,8 @@
 
+body{
+    background-color: #cbe4fd;
+}
+
 header{
     background-color: #086FA1;
     color:white;
@@ -6,6 +10,7 @@ header{
     line-height: 60px;
     font-size: 30px;
 }
+
 
 #menu{
     background-color: #086FA1;
@@ -32,22 +37,23 @@ header{
 
 
 #menubar>.active>a{
-    background-color:white;
-    color:cornflowerblue;
+    background-color:#cae3fc;
+    color:#000000;
 }
 
 #sidebar{
-    background-color: #cce5ff;
+    background-color: white;
     margin-top: 20px;
 }
 
 #sidebar #menubrand{
-    background-color: #086fa0;
-    color:white;
-    font-size: 15px;
+    /*background-color: #086fa0;*/
+    /*color:white;*/
+    font-size: 22px;
+    padding: 5px 0 5px;
     text-align: left;
     text-indent: 12px;
-    border-bottom: 5px solid #085c87;
+    border-bottom: 1px solid black;
 }
 
 #sidebar #login_form{
@@ -69,15 +75,10 @@ header{
 }
 
 #sinkamai{
-    height: 30px;
-    line-height: 30px;
-    color:white;
-    background-color: #086f9f;
-    font-size: 18px;
-    /*border-width: 0 20px 0 20px;*/
-    /*border-color:white;*/
-    /*border-style:solid;*/
-    border-bottom: 5px solid #085c86;
+    height: 40px;
+    line-height: 40px;
+    font-size: 22px;
+    border-bottom: 1px solid black;
 }
 
 #content{
@@ -121,7 +122,7 @@ article{
     background-color: #FF8900;
     color:white;
     border: 0;
-    border-bottom: 5px solid #ca6501;
+    /*border-bottom: 5px solid #ca6501;*/
 }
 
 #blog>#row>#detail>#yib:hover{
@@ -139,7 +140,6 @@ article{
     background-color: #235d79;
     color:white;
     border:0;
-    border-bottom: 8px solid #193c51;
 }
 
 footer{

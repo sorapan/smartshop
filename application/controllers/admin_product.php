@@ -23,7 +23,7 @@ class admin_product extends CI_Controller {
                 base_url().'asset/js/uploadimg.js'
             )
         );
-        $this->load->emptylayout('addproduct',$data);
+        $this->load->adminpage('addproduct',$data);
     }
 
     private $imgdir = "productImg/";

@@ -16,13 +16,13 @@ class MY_Loader extends CI_Loader{
 //
 //    }
 
-    public function emptylayout($include, $vars = array(), $return = FALSE){
+    public function adminpage($include, $vars = array(), $return = FALSE){
 
-        $data['include'] = 'emptylayout/'.$include;
+        $data['include'] = 'adminpage/'.$include;
         foreach($vars as $varskey => $varsval){
             $data[$varskey] = $varsval;
         }
-        $this->view('emptylayout/0init',$data);
+        $this->view('adminpage/0init',$data);
 
     }
 

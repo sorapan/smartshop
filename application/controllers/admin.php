@@ -20,11 +20,11 @@ class admin extends CI_Controller {
                 base_url().'asset/css/admin_style.css'
             ),
             'js' => array(
-                base_url().'asset/js/adminMenuControl.js'
+//                base_url().'asset/js/adminMenuControl.js'
             )
         );
 //        echo $this->productID();
-        $this->load->layout1('admin',$data);
+        $this->load->adminpage('admin',$data);
 
     }
 

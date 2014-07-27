@@ -1,5 +1,3 @@
-
-
 <?php
 function titleMessage($title = "Smartshop | Welcome"){
     return $title;
@@ -41,11 +39,12 @@ function js($js){
     <link rel="stylesheet" href="<?=base_url()?>asset/css/bootstrap.css">
     <link rel="stylesheet" href="<?=base_url()?>asset/css/bootstrap-theme.css">
     <link rel="stylesheet" href="<?=base_url()?>asset/css/Layout1.css">
+    <link rel="stylesheet" href="<?=base_url()?>asset/css/admin_style.css">
     <?php
-        if(isset($css)){
-            if(!is_array($css))echo '<link rel="stylesheet" href="'.$css.'">';
-            else foreach($css as $cssvalue)echo '<link rel="stylesheet" href="'.$cssvalue.'">';
-        }
+    if(isset($css)){
+        if(!is_array($css))echo '<link rel="stylesheet" href="'.$css.'">';
+        else foreach($css as $cssvalue)echo '<link rel="stylesheet" href="'.$cssvalue.'">';
+    }
     ?>
 </head>
 <body>
@@ -54,18 +53,6 @@ function js($js){
     Smartshop 2
 </header>
 
-<nav id="menu" class="col-md-12">
-    <ul class="nav nav-justified" id="menubar">
-        <!--<li class="sidebar-brand" id="menubrand">Menu</li>-->
-        <li><a href="<?=base_url()?>">หน้าแรก</a></li>
-        <li><a href="<?=base_url()?>product">สินค้า</a></li>
-        <li><a href="#">โปรโมชั่น</a></li>
-        <li><a href="#">สินค้าเคลม</a></li>
-        <li><a href="#">วิธีสั่งซื้อ</a></li>
-        <li><a href="#">เกี่ยวกับเรา</a></li>
-        <li><a href="#">ดาวน์โหลด</a></li>
-    </ul>
-</nav>
 
 <nav id="sidebar" class="col-md-2">
 
@@ -112,14 +99,15 @@ function js($js){
                 <p>ยินดีต้อนรับ ,<b><?=$this->session->userdata('username')?></b></p>
                 <p>ระดับ ,<b><?=$this->session->userdata('class')?></b></p>
                 <ul style="list-style-type: disc">
-                    <?php
-                    if($this->session->userdata('class') == "admin"){
-                        ?>
-                        <li><p><a href="<?=base_url()?>admin">หน้าแอดมิน</a></p></li>
-                    <?php
-                    }
+                <?php
+                if($this->session->userdata('class') == "admin"){
                     ?>
-                    <li><p><a href="<?=base_url()?>destroy">ออกจากระบบ</a></p></li>
+                    <li><p><a href="<?=base_url()?>">หน้าแรก</a></p></li>
+                    <li><p><a href="<?=base_url()?>admin">หน้าแอดมิน</a></p></li>
+                <?php
+                }
+                ?>
+                <li><p><a href="<?=base_url()?>destroy">ออกจากระบบ</a></p></li>
                 </ul>
             </li>
 
@@ -130,8 +118,26 @@ function js($js){
 </nav>
 
 <div id="content" class="col-md-10 container" style="margin-bottom: 30px">
-    <?php $this->load->view($include);?>
+        <div id="adminPageLoad" class="col-md-9" style="min-height: 600px">
+            <?php $this->load->view($include);?>
+        </div>
+        <div class="col-md-3 sidebar-module">
+            <h4>เมนูแอดมิน</h4>
+            <ul id="adminmenu"  class="nav navbar">
+                <li><a class="AdminMenuButton" href="<?=base_url()?>admin/addproduct">เพิ่มข้อมูลสินค้า</a></li>
+                <!--            <li><a class="AdminMenuButton" href="--><?//=base_url()?><!--">จัดการสมาชิก</a></li>-->
+                <li><a class="AdminMenuButton" href="<?=base_url()?>admin/typeproduct">จัดการประเภทสินค้า</a></li>
+                <!--            <li><a class="AdminMenuButton" href="#">ข้อความ</a></li>-->
+                <!--            <li><a class="AdminMenuButton" href="#">ประวัติการขาย</a></li>-->
+                <!--            <li><a class="AdminMenuButton" href="#">โปรโมชั่น</a></li>-->
+                <!--            <li><a class="AdminMenuButton" href="#">สินค้าเคลม</a></li>-->
+                <!--            <li><a class="AdminMenuButton" href="#">อัพโหลด</a></li>-->
+                <!--            <li><a class="AdminMenuButton" href="#">เกี่ยวกับร้านค้า</a></li>-->
+            </ul>
+        </div>
 </div>
+
+
 
 <footer class="col-md-12">
 </footer>

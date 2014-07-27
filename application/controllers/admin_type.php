@@ -16,7 +16,7 @@ class admin_type extends CI_Controller{
                 base_url().'asset/js/typeproduct.js'
             )
         );
-        $this->load->emptylayout('typeproduct',$data);
+        $this->load->adminpage('typeproduct',$data);
 
     }
 

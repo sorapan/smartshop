@@ -15,7 +15,7 @@ $(function(){
     function fetchMaintype(){
 
         $.ajax({
-            url:"admin/fetchmaintype",
+            url:"fetchmaintype",
             type:"POST",
             dataType:"json",
             success:function(data){
@@ -38,7 +38,7 @@ $(function(){
     function addMaintype(){
 
         $.ajax({
-            url:'admin/insertmaintype',
+            url:'insertmaintype',
             type:'POST',
             data:{
                 "name":$("#maintype").val()
@@ -65,7 +65,7 @@ $(function(){
     function deleteMaintype(input){
 
         $.ajax({
-            url:'admin/deletemaintype',
+            url:'deletemaintype',
             type:'POST',
             data:{
                 'typename':input
