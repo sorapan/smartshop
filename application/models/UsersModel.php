@@ -33,8 +33,4 @@ class UsersModel extends CI_Model{
 
     }
 
-
-
-
-
 } 

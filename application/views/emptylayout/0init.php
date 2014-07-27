@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="<?=base_url()?>asset/css/bootstrap.css">
-    <link rel="stylesheet" href="<?=base_url()?>asset/css/style.css">
     <?php
     if(isset($css))
         if(!is_array($css))
