@@ -43,6 +43,7 @@ $route['admin'] = "admin";
 $route['admin/addproduct'] = "admin_product/addproduct";
 $route['admin/uploadProuctImg'] = "admin_product/uploadProuctImg";
 $route['admin/addproductsubmit'] = "admin_product/addproductsubmit";
+$route['admin/fetchproductType'] = "admin_product/fetchproductType";
 $route['admin/typeproduct'] = "admin_type/typeproduct";
 $route['admin/fetchmaintype'] = "admin_type/fetchmaintype";
 $route['admin/insertmaintype'] = "admin_type/insertmaintype";

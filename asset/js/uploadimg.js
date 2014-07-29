@@ -25,7 +25,7 @@ $(function(){
                 },false);
                 return xhr;
             },
-            url:'admin/uploadProuctImg',
+            url:'uploadProuctImg',
             type:'POST',
             data:formdata,
             processData: false,

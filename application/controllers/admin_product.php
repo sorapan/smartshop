@@ -6,6 +6,7 @@ class admin_product extends CI_Controller {
 
         parent::__construct();
         $this->load->model("ProductModel");
+        $this->load->model("TypeModel");
 
         if(!$this->session->userdata("login") or $this->session->userdata("class")!="admin"){
             redirect(base_url());
@@ -20,7 +21,8 @@ class admin_product extends CI_Controller {
                 base_url().'asset/css/uploadproduct_style.css'
             ),
             'js' => array(
-                base_url().'asset/js/uploadimg.js'
+                base_url().'asset/js/uploadimg.js',
+                base_url().'asset/js/addproduct.js'
             )
         );
         $this->load->adminpage('addproduct',$data);
@@ -35,7 +37,7 @@ class admin_product extends CI_Controller {
         if($_FILES["img"]["error"] == UPLOAD_ERR_OK){
             move_uploaded_file( $_FILES["img"]["tmp_name"], $this->imgdirtemp.$_FILES['img']['name']);
         }
-        echo $this->imgdirtemp.$_FILES['img']['name'];
+        echo base_url()."productImg_temp/".$_FILES['img']['name'];
 
     }
 
@@ -73,6 +75,22 @@ class admin_product extends CI_Controller {
             $this->ProductModel->getproductdata($uptodb);
         }
         redirect(base_url()."admin");
+    }
+
+    function fetchproductType(){
+
+        $arr = array();
+        $maintype_arr = $this->TypeModel->fetchMainType();
+        foreach($maintype_arr as $m_arr){
+            $subtype = $this->TypeModel->fetchSubTypeByMainType($m_arr->id);
+            foreach($subtype as $s_key => $s_arr){
+                if($s_arr->name != null){
+                    $arr[$m_arr->name][$s_key] = $s_arr->name;
+                }
+            }
+        }
+        echo json_encode($arr);
+
     }
 
     private function productID(){
