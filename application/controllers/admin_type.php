@@ -43,6 +43,7 @@ class admin_type extends CI_Controller{
                 break;
             }
         }
+        if($_POST['name'] == "") $ok = false;
         if($ok)$this->TypeModel->insertMainType($_POST['name']);
         echo $ok;
 
@@ -51,6 +52,45 @@ class admin_type extends CI_Controller{
     function deletemaintype(){
 
         $this->TypeModel->deleteMainType($_POST['typename']);
+
+    }
+
+    function insertsubtype(){
+
+        $var = $this->TypeModel->fetchSubType();
+        $ok = true;
+        foreach($var as $val){
+            if( $_POST['name'] == $val->name){
+                $ok = false;
+                break;
+            }
+        }
+        if($_POST['name'] == "") $ok = false;
+        if($_POST['maintypenum'] == "")$ok = false;
+        if($ok)$this->TypeModel->insertSubType($_POST['name'],$_POST['maintypenum']);
+        echo $ok;
+
+    }
+
+    function fetchsubtype(){ //By Maintype
+
+        $arr = array();
+        $maintype_arr = $this->TypeModel->fetchMainType();
+        foreach($maintype_arr as $m_arr){
+            $subtype = $this->TypeModel->fetchSubTypeByMainType($m_arr->id);
+            foreach($subtype as $s_key => $s_arr){
+                if($s_arr->name != null){
+                    $arr[$m_arr->name][$s_key] = $s_arr->name;
+                }
+            }
+        }
+        echo json_encode($arr);
+
+    }
+
+    function deletesubtype(){
+
+        $this->TypeModel->deleteSubType($_POST['name']);
 
     }
 

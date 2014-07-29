@@ -29,6 +29,37 @@ class TypeModel extends CI_Model{
 
     }
 
+    function fetchSubType(){
 
+        $this->db->select("*");
+        $query = $this->db->get("subtype_product");
+        return $query->result();
+
+    }
+
+    function fetchSubTypeByMainType($maintype_id){
+
+        $this->db->select("*");
+        $this->db->where('maintype',$maintype_id);
+        $query = $this->db->get('subtype_product');
+        return $query->result();
+
+    }
+
+    function insertSubType($name,$maintype_num){
+
+        $data = array(
+            'name' => $name,
+            'maintype' => $maintype_num
+        );
+        $this->db->insert('subtype_product',$data);
+
+    }
+
+    function deleteSubType($name){
+
+        $this->db->delete("subtype_product",array('name'=>$name));
+
+    }
 
 } 

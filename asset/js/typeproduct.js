@@ -1,33 +1,68 @@
 $(function(){
 
+//    ================================= event =================================
+
     init();
 
     $("#addmaintype").click(function(){
         addMaintype();
         $("#maintype").val("");
+
     });
+
+    $(document).on('click','.del_maintype',function(e){
+
+        e.preventDefault();
+        var ip = $(this).parent().find('span').html();
+        var really = confirm("คุณต้องการลบใช่หรือไม่");
+        if(really) deleteMaintype(ip);
+
+    });
+
+    $("#addsubtype").click(function(){
+        addSubtype();
+        $('#subtype').val("");
+    });
+
+    $(document).on('click','.del_subtype',function(e){
+
+        e.preventDefault();
+        var ip = $(this).parent().find('span').html();
+        var really = confirm("คุณต้องการลบใช่หรือไม่");
+        if(really) deleteSubtype(ip);
+
+
+    });
+
+//    ================================= private function =================================
 
     function init(){
         fetchMaintype();
+        fetchSubtype();
         $("#warnmaintype").html("");
+        $("#warnsubtype").html("");
     }
+
+//    -------------------------- maintype --------------------------
 
     function fetchMaintype(){
 
+        var mmt = $("#managemaintype");
+        var smt = $("#selectmaintype");
         $.ajax({
             url:"fetchmaintype",
             type:"POST",
             dataType:"json",
             success:function(data){
-                $("#managemaintype").html("");
-                $("#selectmaintype").html("");
-                $("#selectmaintype").append('<option value="">-- เลือกประเภทหลัก --</option>');
+                mmt.html("");
+                smt.html("");
+                smt.append('<option value="">-- เลือกประเภทหลัก --</option>');
                 for(var i in data){
-                    $("#managemaintype").append(
+                    mmt.append(
                         '<li class="list-group-item"><span>'+data[i]+'</span><a class="del_maintype pull-right" href="">ลบ</a></li>'
                     );
 
-                    $("#selectmaintype").append('' +
+                    smt.append('' +
                         '<option value="'+i+'">'+data[i]+'</option>' +
                     '');
                 }
@@ -45,22 +80,11 @@ $(function(){
             },
             success:function(data){
                 if(data)init();
-                else $("#warnmaintype").html("**ซ้ำ**");
+                else $("#warnmaintype").html("**ผิดพลาด**");
             }
         });
 
     }
-
-    $(document).on('click','.del_maintype',function(e){
-
-        e.preventDefault();
-        var ip = $(this).parent().find('span').html();
-        var really = confirm("คุณต้องการลบใช่หรือไม่");
-        if(really) deleteMaintype(ip);
-
-    });
-
-
 
     function deleteMaintype(input){
 
@@ -68,7 +92,7 @@ $(function(){
             url:'deletemaintype',
             type:'POST',
             data:{
-                'typename':input
+                typename:input
             },
             success:function(data){
                 init();
@@ -77,5 +101,64 @@ $(function(){
 
     }
 
+//    -------------------------- subtype --------------------------
 
+    function addSubtype(){
+
+        $.ajax({
+            url:'insertsubtype',
+            type:'POST',
+            data:{
+                name:$('#subtype').val(),
+                maintypenum:$('#selectmaintype').val()
+            },
+            success:function(data){
+                if(data)init();
+                else $("#warnsubtype").html("**ผิดพลาด**");
+            }
+        });
+
+    }
+
+    function fetchSubtype(){
+
+        var m_sub = $("#managesubtype");
+
+        $.ajax({
+            url:'fetchsubtype',
+            type:'POST',
+            dataType:'json',
+            success:function(data){
+                m_sub.html("");
+                for(var z in data){
+                    m_sub.append('' +
+                        '<li style="padding-top: 20px"><b>'+z+'</b>' +
+                        '<ul class="list-group">' +
+                        '');
+                    for(var x in data[z]){
+                        m_sub.append('' +
+                            '<li class="list-group-item"><span>'+data[z][x]+'</span><a class="del_subtype pull-right" href="">ลบ</a></li>' +
+                        '');
+                    }
+                    m_sub.append('' +
+                        '</ul></li>'+
+                        '');
+                }
+            }
+        });
+    }
+
+    function deleteSubtype(name){
+
+        $.ajax({
+            url:'deletesubtype',
+            type:'POST',
+            data:{
+                name:name
+            },
+            success:function(data){
+                init();
+            }
+        });
+    }
 });

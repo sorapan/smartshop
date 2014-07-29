@@ -40,16 +40,17 @@
                 </select>
             </div>
         </div>
+        <div class="col-md-10 col-md-offset-2" style="color:red"><p id="warnsubtype"></p></div>
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-primary">ตกลง</button>
+                <button type="submit" id="addsubtype" class="btn btn-primary">ตกลง</button>
             </div>
         </div>
     </div>
 
     <h4>จัดการประเภทย่อย</h4>
     <div class="col-md-12">
-        <ul class="col-md-8 col-md-offset-2" style="list-style-type:none;">
+        <ul id="managesubtype" class="col-md-8 col-md-offset-2" style="list-style-type:none;">
             <li><h4>sssss</h4>
                 <ul class="list-group">
                     <li class="list-group-item">sssss<a class="pull-right" href="">ลบ</a></li>
