@@ -22,6 +22,7 @@ class ProductModel extends CI_Model{
             "img" => $dt['img'],
             "name" => $dt['name'],
             "type" => $dt['type'],
+            "price" => $dt['price'],
             "unit" => $dt['unit'],
             "unitnot" => $dt['unitnot'],
             "detail" => $dt['detail'],
@@ -36,7 +37,7 @@ class ProductModel extends CI_Model{
     function fetchproductdata(){
 
         $this->db->select("*");
-        $this->db->from('product');
+        return $this->db->get('product')->result();
 
     }
 

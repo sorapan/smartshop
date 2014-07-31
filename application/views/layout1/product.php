@@ -1,69 +1,54 @@
 <article>
 
-    <div class="col-md-12" style="font-size: 30px;height: 60px;line-height: 60px;margin-bottom: 20px">
-        รายการสินค้า
+    <div class="col-md-9" id="productheader" >
+        <h3>รายการสินค้า</h3>
+        <div class="col-md-3">
+            <h4>ประเภทหลัก</h4>
+            <ul style="list-style-type: none;">
+                <?php
+                foreach($mt_data as $mt_val){
+                    echo "<li>".$mt_val->name."<li>";
+                }
+                ?>
+            </ul>
+        </div>
+        <div class="col-md-2">
+            <h4>ประเภทหลัก</h4>
+            <ul style="list-style-type: none;">
+                <li>sdfdsfsd</li>
+                <li>dslifkjdnf</li>
+            </ul>
+        </div>
     </div>
+
     <div class="col-md-12 row">
-
         <div class="row">
-
-
-            <div class="col-md-3">
-                <div class="thumbnail">
-                    <img style="max-height: 150px" src="<?=base_url()?>asset/img/soong.png" alt="...">
-                    <div class="caption">
-                        <h4>สินค้า : MJ</h4>
-                        <h4>ราคา : 999 บาท</h4>
-                        <p>
-                            <a href="#" class="btn btn-default" >ดูรายระเอียด</a>
-                            <a href="#" class="btn btn-primary" >หยิบใส่ตะกร้า</a>
-                        </p>
-                    </div>
+<?php
+//for($z=0;$z<10;$z++){
+foreach($p_data as $p_val){
+?>
+        <div class="col-md-3 col-xs-6">
+            <div class="thumbnail">
+                <div class="limit_img">
+<!--                    <img src="--><?//=base_url()?><!--asset/img/qq.jpg">-->
+<!--                    <img src="--><?//=base_url()?><!--asset/img/soong.png">-->
+                    <img src="<?=base_url()?>productImg/<?=$p_val->img?>">
                 </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="thumbnail">
-                    <img  style="max-height: 150px"  src="<?=base_url()?>asset/img/qq.jpg" alt="...">
-                    <div class="caption">
-                        <h4>สินค้า : MJ</h4>
-                        <h4>ราคา : 999 บาท</h4>
-                        <p>
-                            <a href="#" class="btn btn-default" >ดูรายระเอียด</a>
-                            <a href="#" class="btn btn-primary" >หยิบใส่ตะกร้า</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="thumbnail">
-                    <img style="max-height: 150px" src="<?=base_url()?>asset/img/soong.png" alt="...">
-                    <div class="caption">
-                        <h4>สินค้า : MJ</h4>
-                        <h4>ราคา : 999 บาท</h4>
-                        <p>
-                            <a href="#" class="btn btn-default" >ดูรายระเอียด</a>
-                            <a href="#" class="btn btn-primary" >หยิบใส่ตะกร้า</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="thumbnail">
-                    <img  style="max-height: 150px"  src="<?=base_url()?>asset/img/qq.jpg" alt="...">
-                    <div class="caption">
-                        <h4>สินค้า : MJ</h4>
-                        <h4>ราคา : 999 บาท</h4>
-                        <p>
-                            <a href="#" class="btn btn-default" >ดูรายระเอียด</a>
-                            <a href="#" class="btn btn-primary" >หยิบใส่ตะกร้า</a>
-                        </p>
-                    </div>
+                <div class="caption">
+                    <h4><?=$p_val->name?></h4>
+                    <p>ราคา : <?=$p_val->price?> บาท</p>
+                    <p>จำนวน : <?=$p_val->unit?> ชิ้น</p>
+                    <p>
+                        <a href="#" class="btn" id="getdetail">ดูรายระเอียด</a>
+                        <a href="#" class="btn" id="getitem">หยิบใส่ตะกร้า</a>
+                    </p>
                 </div>
             </div>
         </div>
-    </div>
+<?php
+}
+?>
+</div>
+</div>
 
 </article>

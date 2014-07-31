@@ -60,7 +60,7 @@
             <div class="form-group">
                 <label for="detail" class="col-md-3 control-label"></label>
                 <div class="col-md-3">
-                    <button class=" btn-default btn-block">ตกลง</button>
+                    <button class=" btn-default btn-block" id="addproduct_ok">ตกลง</button>
                 </div>
             </div>
         </div>

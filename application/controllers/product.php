@@ -1,21 +1,26 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Sorapan
- * Date: 7/19/14
- * Time: 3:40 PM
- */
 
 class product extends CI_Controller {
 
     function __construct(){
         parent::__construct();
+        $this->load->model('ProductModel');
+        $this->load->model('TypeModel');
     }
 
     function index(){
 
+        $productdata = $this->ProductModel->fetchproductdata();
+        $mt = $this->TypeModel->fetchMainType();
 
-        $this->load->layout1('product');
+        $data = array(
+            'css' => array(
+              base_url().'asset/css/product.css'
+            ),
+            'p_data'=>$productdata,
+            'mt_data'=>$mt
+        );
+        $this->load->layout1('product',$data);
 
     }
 

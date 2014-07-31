@@ -1,0 +1,45 @@
+
+#productheader{
+    height: auto;
+    background-color: white;
+    margin: 20px 0 20px 0;
+    padding-bottom: 10px;
+}
+
+#productheader>i{
+    background-color: red;
+    color:white;
+    line-height: 60px;
+}
+
+.thumbnail{
+    border-radius: 0 0 0 0 !important;
+    padding: 0;
+    height: 380px;
+    position: relative;
+}
+
+.thumbnail>.limit_img{
+    height: 60%;
+    overflow: hidden;
+    position: relative;
+}
+
+.thumbnail>.limit_img>img{
+    width: auto;
+    height: 100%;
+    position: absolute;
+}
+
+.btn{
+    border-radius:  0 0 0 0 !important;
+}
+
+#getdetail{
+    border: 1px solid #5460fd;
+}
+
+#getitem{
+    color:white;
+    background-color: #5460fd;
+}

@@ -37,7 +37,7 @@ class admin_product extends CI_Controller {
         if($_FILES["img"]["error"] == UPLOAD_ERR_OK){
             move_uploaded_file( $_FILES["img"]["tmp_name"], $this->imgdirtemp.$_FILES['img']['name']);
         }
-        echo base_url()."productImg_temp/".$_FILES['img']['name'];
+        echo "../productImg_temp/".$_FILES['img']['name'];
 
     }
 
@@ -90,6 +90,12 @@ class admin_product extends CI_Controller {
             }
         }
         echo json_encode($arr);
+
+    }
+
+    function deleteTempImg(){
+
+        unlink($_POST['tempimg']);
 
     }
 

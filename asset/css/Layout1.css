@@ -1,7 +1,7 @@
 
 
 body{
-    background-color: #cbe4fd;
+    background-color: #f1f1f1;
 }
 
 header{
@@ -11,7 +11,6 @@ header{
     line-height: 60px;
     font-size: 30px;
 }
-
 
 #menu{
     background-color: #086FA1;
@@ -38,23 +37,29 @@ header{
 
 
 #menubar>.active>a{
-    background-color:#cae3fc;
+    background-color:#f1f1f1;
     color:#000000;
 }
 
 #sidebar{
-    background-color: white;
+    /*background-color: white;*/
     margin-top: 20px;
+}
+
+#sidebar>ul{
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 20px;
 }
 
 #sidebar #menubrand{
     /*background-color: #086fa0;*/
     /*color:white;*/
-    font-size: 22px;
+    font-size: 18px;
     padding: 5px 0 5px;
     text-align: left;
     text-indent: 12px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #cbcbcb;
 }
 
 #sidebar #login_form{
@@ -80,7 +85,6 @@ header{
     height: 40px;
     line-height: 40px;
     font-size: 22px;
-    border-bottom: 1px solid black;
 }
 
 #content{

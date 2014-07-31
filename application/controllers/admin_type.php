@@ -25,9 +25,7 @@ class admin_type extends CI_Controller{
         $var = $this->TypeModel->fetchMainType();
         $arr = array();
         foreach($var as $val){
-
            $arr[$val->id] = $val->name;
-
         }
         echo json_encode($arr);
 

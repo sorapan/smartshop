@@ -67,10 +67,10 @@ function js($js){
 </nav>
 
 <div class="col-md-12">
-<nav id="sidebar" class="col-md-2">
+
+<nav id="sidebar" class="col-md-2 row">
 
     <ul class="nav">
-
         <?php
         /////////////////////// login true
         if(!$this->session->userdata('login')){
@@ -126,11 +126,17 @@ function js($js){
         }
         ?>
     </ul>
+
+    <ul id="typemenu" class="nav">
+        <li class="sidebar-brand" id="menubrand">รายการสินค้า</li>
+    </ul>
+
 </nav>
 
 <div id="content" class="col-md-10" style="margin-bottom: 30px">
     <?php $this->load->view($include);?>
 </div>
+
 </div>
 <footer class="col-md-12">
 </footer>
@@ -138,6 +144,7 @@ function js($js){
 <script src="<?=base_url()?>asset/js/jquery.js"></script>
 <script src="<?=base_url()?>asset/js/bootstrap.min.js"></script>
 <script src="<?=base_url()?>asset/js/MenuControl.js"></script>
+<script src="<?=base_url()?>asset/js/productMenu.js"></script>
 <?php
 if(isset($js)){
     if(!is_array($js))echo '<script src="'.$js.'"></script>';
