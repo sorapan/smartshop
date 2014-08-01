@@ -10,17 +10,18 @@ $(function(){
 
             for(var z in data){
                 m_sub.append('' +
-                    '<li><b>'+z+'</b>' +
-                    '<ul>' +
+                    '<li><b>'+z+'</b>'+
+                        '<ul>' +
                     '');
                 for(var x in data[z]){
                     m_sub.append('' +
-                        '<li>'+data[z][x]+'</li>' +
+                        '<li><a href="">'+data[z][x]+'</a></li>' +
                         '');
                 }
                 m_sub.append('' +
-                    '</ul></li>'+
+                        '</ul></li>'+
                     '');
+                
             }
         }
     });

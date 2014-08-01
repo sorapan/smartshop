@@ -132,8 +132,8 @@ $(function(){
                 m_sub.html("");
                 for(var z in data){
                     m_sub.append('' +
-                        '<li style="padding-top: 20px"><b>'+z+'</b>' +
-                        '<ul class="list-group">' +
+                        '<li><b>'+z+'</b>' +
+                        '<ul>' +
                         '');
                     for(var x in data[z]){
                         m_sub.append('' +

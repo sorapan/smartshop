@@ -1,8 +1,9 @@
 <article>
 
-    <div class="col-md-9" id="productheader" >
-        <h3>รายการสินค้า</h3>
-        <div class="col-md-3">
+    <div class="col-md-9 cardshadow" id="productheader" >
+        <div class="row">
+        <span class="col-md-12 cardheader">รายการสินค้า</span>
+        <div class="col-md-3 ">
             <h4>ประเภทหลัก</h4>
             <ul style="list-style-type: none;">
                 <?php
@@ -19,6 +20,7 @@
                 <li>dslifkjdnf</li>
             </ul>
         </div>
+        </div>
     </div>
 
     <div class="col-md-12 row">
@@ -28,7 +30,7 @@
 foreach($p_data as $p_val){
 ?>
         <div class="col-md-3 col-xs-6">
-            <div class="thumbnail">
+            <div class="thumbnail cardshadow">
                 <div class="limit_img">
 <!--                    <img src="--><?//=base_url()?><!--asset/img/qq.jpg">-->
 <!--                    <img src="--><?//=base_url()?><!--asset/img/soong.png">-->

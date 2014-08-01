@@ -42,19 +42,19 @@ function js($js){
     <link rel="stylesheet" href="<?=base_url()?>asset/css/bootstrap-theme.css">
     <link rel="stylesheet" href="<?=base_url()?>asset/css/Layout1.css">
     <?php
-        if(isset($css)){
-            if(!is_array($css))echo '<link rel="stylesheet" href="'.$css.'">';
-            else foreach($css as $cssvalue)echo '<link rel="stylesheet" href="'.$cssvalue.'">';
-        }
+    if(isset($css)){
+        if(!is_array($css))echo '<link rel="stylesheet" href="'.$css.'">';
+        else foreach($css as $cssvalue)echo '<link rel="stylesheet" href="'.$cssvalue.'">';
+    }
     ?>
 </head>
 <body>
 
-<header class="col-md-12">
+<header class="col-md-12 ">
     Smartshop 2
 </header>
 
-<nav id="menu" class="col-md-12">
+<nav id="menu" class="col-md-12 ">
     <ul class="nav nav-justified" id="menubar">
         <li><a href="<?=base_url()?>">หน้าแรก</a></li>
         <li><a href="<?=base_url()?>product">สินค้า</a></li>
@@ -70,9 +70,9 @@ function js($js){
 
 <nav id="sidebar" class="col-md-2 row">
 
-    <ul class="nav">
+    <ul class="nav cardshadow">
         <?php
-        /////////////////////// login true
+        /////////////////////// login false
         if(!$this->session->userdata('login')){
             ?>
 
@@ -98,12 +98,12 @@ function js($js){
                         <br><input style="background-color:#086fa0;border:0;color:white" type="submit" value="Login" >
                     </form>
                     <br>
-                    <p style="font-size: 22px;color:red"><?=$this->session->flashdata('loginmessage')?></p>
-                    <p style="font-size: 16px">ถ้ายังไม่สมัครสมาชิก <a style="color:red" href="<?=base_url()?>regisform">คลิก</a> ที่นี่</p>
+                    <p style="font-size: 16px;color:red"><?=$this->session->flashdata('loginmessage')?></p>
+                    <p style="font-size: 14px">ถ้ายังไม่สมัครสมาชิก <a style="color:red" href="<?=base_url()?>regisform">คลิก</a> ที่นี่</p>
                 </div>
             </li>
 <?php
-/////////////////////// login false
+        /////////////////////// login true
         }else{
             ?>
 
@@ -127,7 +127,7 @@ function js($js){
         ?>
     </ul>
 
-    <ul id="typemenu" class="nav">
+    <ul id="typemenu" class="cardshadow">
         <li class="sidebar-brand" id="menubrand">รายการสินค้า</li>
     </ul>
 
@@ -140,6 +140,7 @@ function js($js){
 </div>
 <footer class="col-md-12">
 </footer>
+
 
 <script src="<?=base_url()?>asset/js/jquery.js"></script>
 <script src="<?=base_url()?>asset/js/bootstrap.min.js"></script>
