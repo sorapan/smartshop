@@ -133,7 +133,7 @@ function js($js){
 
 </nav>
 
-<div id="content" class="col-md-10" style="margin-bottom: 30px">
+<div id="content" class="col-md-9" style="margin-bottom: 30px">
     <?php $this->load->view($include);?>
 </div>
 

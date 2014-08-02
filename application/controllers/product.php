@@ -13,6 +13,9 @@ class product extends CI_Controller {
         $productdata = $this->ProductModel->fetchproductdata();
         $mt = $this->TypeModel->fetchMainType();
 
+        echo ' 2=> '.$this->uri->segment(2);
+//        echo ' 3=> '.$this->uri->segment(3);
+
         $data = array(
             'css' => array(
               base_url().'asset/css/product.css'
@@ -23,5 +26,7 @@ class product extends CI_Controller {
         $this->load->layout1('product',$data);
 
     }
+
+
 
 } 

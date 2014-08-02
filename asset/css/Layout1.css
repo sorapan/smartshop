@@ -112,7 +112,6 @@ header{
 
 #recom{
     background-color: white !important;
-    margin: 15px 0 15px 0;
 }
 
 #sinkamai{
@@ -129,6 +128,7 @@ article{
     margin-left: 5px;
     background-color: transparent;
     height:auto;
+    padding: 20px 0 20px 0;
 }
 
 #blog,#recom{

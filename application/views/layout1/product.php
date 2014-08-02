@@ -1,6 +1,6 @@
 <article>
 
-    <div class="col-md-9 cardshadow" id="productheader" >
+    <div class="col-md-12 cardshadow" id="productheader" >
         <div class="row">
         <span class="col-md-12 cardheader">รายการสินค้า</span>
         <div class="col-md-3 ">

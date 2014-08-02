@@ -39,24 +39,25 @@
 */
 
 $route['default_controller'] = "index";
-$route['admin'] = "admin";
-$route['admin/addproduct'] = "admin_product/addproduct";
-$route['admin/uploadProuctImg'] = "admin_product/uploadProuctImg";
-$route['admin/addproductsubmit'] = "admin_product/addproductsubmit";
-$route['admin/fetchproductType'] = "admin_product/fetchproductType";
-$route['admin/deleteTempImg'] = "admin_product/deleteTempImg";
-$route['admin/typeproduct'] = "admin_type/typeproduct";
-$route['admin/fetchmaintype'] = "admin_type/fetchmaintype";
-$route['admin/insertmaintype'] = "admin_type/insertmaintype";
-$route['admin/deletemaintype'] = "admin_type/deletemaintype";
-$route['admin/fetchsubtype'] = "admin_type/fetchsubtype";
-$route['admin/insertsubtype'] = "admin_type/insertsubtype";
-$route['admin/deletesubtype'] = "admin_type/deletesubtype";
-$route['product'] = "product";
+$route['admin'] = "admin";//a
+$route['admin/addproduct'] = "admin_product/addproduct";//a
+$route['admin/uploadProuctImg'] = "admin_product/uploadProuctImg";//p
+$route['admin/addproductsubmit'] = "admin_product/addproductsubmit";//p
+$route['admin/fetchproductType'] = "admin_product/fetchproductType";//p
+$route['admin/deleteTempImg'] = "admin_product/deleteTempImg";//p
+$route['admin/typeproduct'] = "admin_type/typeproduct";//a
+$route['admin/fetchmaintype'] = "admin_type/fetchmaintype";//p
+$route['admin/insertmaintype'] = "admin_type/insertmaintype";//p
+$route['admin/deletemaintype'] = "admin_type/deletemaintype";//p
+$route['admin/fetchsubtype'] = "admin_type/fetchsubtype";//p
+$route['admin/insertsubtype'] = "admin_type/insertsubtype";//p
+$route['admin/deletesubtype'] = "admin_type/deletesubtype";//p
+$route['product/(:any)/(:any)'] = "product";
+$route['product/(:any)'] = "product";
 $route['regisform'] = "register";
-$route['regis'] = "register/regis";
-$route['login'] = "register/login";
-$route['destroy'] = "register/destroysession";
+$route['regis'] = "register/regis";//p
+$route['login'] = "register/login";//p
+$route['destroy'] = "register/destroysession";//p
 $route['welcome'] = "welcome";
 $route['404_override'] = '';
 

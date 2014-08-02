@@ -56,7 +56,7 @@ function js($js){
 <div class="col-md-12">
 <nav id="sidebar" class="col-md-2">
 
-    <ul class="nav">
+    <ul class="nav cardshadow">
 
         <?php
         /////////////////////// login true
