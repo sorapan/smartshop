@@ -39,6 +39,7 @@
 */
 
 $route['default_controller'] = "index";
+
 $route['admin'] = "admin";//a
 $route['admin/addproduct'] = "admin_product/addproduct";//a
 $route['admin/uploadProuctImg'] = "admin_product/uploadProuctImg";//p
@@ -52,8 +53,12 @@ $route['admin/deletemaintype'] = "admin_type/deletemaintype";//p
 $route['admin/fetchsubtype'] = "admin_type/fetchsubtype";//p
 $route['admin/insertsubtype'] = "admin_type/insertsubtype";//p
 $route['admin/deletesubtype'] = "admin_type/deletesubtype";//p
-$route['product/(:any)/(:any)'] = "product";
-$route['product/(:any)'] = "product";
+
+$route['product/show/(:any)/(:any)'] = "product";
+$route['product/show/(:any)'] = "product";
+$route['product/menu/main'] = "product/fetchMain";
+$route['product/menu/sub/(:any)'] = "product/fetchsub/$1";
+
 $route['regisform'] = "register";
 $route['regis'] = "register/regis";//p
 $route['login'] = "register/login";//p
