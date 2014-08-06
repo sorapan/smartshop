@@ -8,13 +8,13 @@ class product extends CI_Controller {
         $this->load->model('TypeModel');
     }
 
-    function index(){
+    function index($main=null,$sub=null){
 
         $productdata = $this->ProductModel->fetchproductdata();
         $mt = $this->TypeModel->fetchMainType();
 
-//        echo ' 2=> '.$this->uri->segment(2);
-//        echo ' 3=> '.$this->uri->segment(3);
+//        echo 'main=> '.$main." ";
+//        echo 'sub=> '.$sub;
 
         $data = array(
             'css' => array(
@@ -49,6 +49,7 @@ class product extends CI_Controller {
 
     }
 
+//    private function
 
 
 } 

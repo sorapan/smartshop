@@ -45,7 +45,7 @@ class admin_product extends CI_Controller {
 
         if(
             $_POST['name']&&
-            $_POST['type']&&
+            $_POST['subtype']&&
             $_POST['price']&&
             $_POST['unit']&&
             $_POST['unitnot']&&
@@ -59,12 +59,15 @@ class admin_product extends CI_Controller {
             @copy($this->imgdirtemp.$file, $this->imgdir.$newfilename);
             @unlink($this->imgdirtemp.$file);
 
+            $maintype = $this->TypeModel->ChkmaintypeFromsubtype($_POST['subtype'])[0]->id;
+
             $uptodb = array(
 
                 'productid' => $this->productID(),
                 'img' => $newfilename,
                 'name' =>  $_POST['name'],
-                'type' =>  $_POST['type'],
+                'maintype' =>  $maintype,
+                'subtype' =>  $_POST['subtype'],
                 'price' =>  $_POST['price'],
                 'unit' =>  $_POST['unit'],
                 'unitnot' =>  $_POST['unitnot'],
@@ -85,7 +88,8 @@ class admin_product extends CI_Controller {
             $subtype = $this->TypeModel->fetchSubTypeByMainType($m_arr->id);
             foreach($subtype as $s_key => $s_arr){
                 if($s_arr->name != null){
-                    $arr[$m_arr->name][$s_key] = $s_arr->name;
+                    $arr[$m_arr->name][$s_key][0] = $s_arr->id;
+                    $arr[$m_arr->name][$s_key][1] = $s_arr->name;
                 }
             }
         }

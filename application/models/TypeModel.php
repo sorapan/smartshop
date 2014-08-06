@@ -62,4 +62,15 @@ class TypeModel extends CI_Model{
 
     }
 
+    function ChkmaintypeFromsubtype($subtypeid){
+
+        $this->db->select('type_product.id');
+        $this->db->from('type_product');
+        $this->db->join('subtype_product','type_product.id = subtype_product.maintype');
+        $this->db->where('subtype_product.id',$subtypeid);
+        $query = $this->db->get();
+        return $query->result();
+
+    }
+
 } 

@@ -21,7 +21,8 @@ class ProductModel extends CI_Model{
             "productid" => $dt['productid'],
             "img" => $dt['img'],
             "name" => $dt['name'],
-            "type" => $dt['type'],
+            "maintype" => $dt['maintype'],
+            "subtype" => $dt['subtype'],
             "price" => $dt['price'],
             "unit" => $dt['unit'],
             "unitnot" => $dt['unitnot'],
@@ -40,5 +41,7 @@ class ProductModel extends CI_Model{
         return $this->db->get('product')->result();
 
     }
+
+
 
 }

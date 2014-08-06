@@ -19,12 +19,12 @@
             </div>
 
             <div class="form-group">
-                <label for="type" class="col-md-3 control-label">ประเภท :</label>
+                <label for="subtype" class="col-md-3 control-label">ประเภท :</label>
                 <div class="col-md-8">
-                    <select id="type" name="type" class="form-control">
-                        <option value="aaa">aaa</option>
-                        <option value="aaa">aaa</option>
-                        <option value="aaa">aaa</option>
+                    <select id="subtype" name="subtype" class="form-control">
+                        <option value="aaa">error</option>
+                        <option value="aaa">error</option>
+                        <option value="aaa">error</option>
                     </select>
                 </div>
             </div>

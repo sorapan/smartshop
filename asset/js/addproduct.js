@@ -10,18 +10,18 @@ $(function(){
             dataType:'json',
             success:function(data){
 
-                var type = $("#type");
+                var type = $("#subtype");
 
                 type.html("");
 
                 for(var z in data){
 
                     type.append('' +
-                        '<option value="aaa" style="font-size: 20px;font-weight: bolder" disabled>=='+z+'==</option>'+
+                        '<option value="" disabled>=='+z+'==</option>'+
                     '');
                     for(var x in data[z]){
-                        type.append('' +
-                            '<option value="'+data[z][x]+'">'+data[z][x]+'</option>'+
+                        type.append(''+
+                            '<option value="'+data[z][x][0]+'">'+data[z][x][1]+'</option>'+
                             '');
 
                     }

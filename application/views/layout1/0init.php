@@ -107,14 +107,14 @@ function js($js){
         }else{
             ?>
 
-            <li class="sidebar-brand" id="menubrand">คุณ <b><?=$this->session->userdata('username')?></b></li>
+            <li class="sidebar-brand" id="menubrand">คุณ <?=$this->session->userdata('username')?></li>
             <li style="padding: 10px 0 0 10px;">
-                <p>ระดับ ,<b><?=$this->session->userdata('class')?></b></p>
+                <p>ระดับ : <?=$this->session->userdata('class')?></p>
                 <ul style="list-style-type: disc">
                     <?php
                     if($this->session->userdata('class') == "admin"){
                         ?>
-                        <li><p><a href="<?=base_url()?>admin">หน้าแอดมิน</a></p></li>
+                        <li><p><a target="_blank" href="<?=base_url()?>admin">หน้าแอดมิน</a></p></li>
                     <?php
                     }
                     ?>

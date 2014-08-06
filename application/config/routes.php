@@ -54,10 +54,12 @@ $route['admin/fetchsubtype'] = "admin_type/fetchsubtype";//p
 $route['admin/insertsubtype'] = "admin_type/insertsubtype";//p
 $route['admin/deletesubtype'] = "admin_type/deletesubtype";//p
 
-$route['product/show/(:any)/(:any)'] = "product";
-$route['product/show/(:any)'] = "product";
+
 $route['product/menu/main'] = "product/fetchMain";
 $route['product/menu/sub/(:any)'] = "product/fetchsub/$1";
+$route['product/(:any)'] = "product/index/$1";
+$route['product/(:any)/(:any)'] = "product/index/$1/$2";
+
 
 $route['regisform'] = "register";
 $route['regis'] = "register/regis";//p
