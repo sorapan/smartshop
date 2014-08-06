@@ -10,11 +10,13 @@ class product extends CI_Controller {
 
     function index($main=null,$sub=null){
 
-        $productdata = $this->ProductModel->fetchproductdata();
+//        $productdata = $this->ProductModel->fetchproductdata();
         $mt = $this->TypeModel->fetchMainType();
 
 //        echo 'main=> '.$main." ";
 //        echo 'sub=> '.$sub;
+
+        $productdata = $this->ProductModel->fetchproductBySubType($sub,$main);
 
         $data = array(
             'css' => array(
@@ -48,8 +50,5 @@ class product extends CI_Controller {
         echo json_encode($arr);
 
     }
-
-//    private function
-
 
 } 

@@ -113,7 +113,7 @@ function js($js){
                 <ul style="list-style-type: disc">
                     <?php
                     if($this->session->userdata('class') == "admin"){
-                        ?>
+                    ?>
                         <li><p><a target="_blank" href="<?=base_url()?>admin">หน้าแอดมิน</a></p></li>
                     <?php
                     }
@@ -129,6 +129,7 @@ function js($js){
 
     <ul id="typemenu" class="cardshadow">
         <li class="sidebar-brand" id="menubrand">รายการสินค้า</li>
+        <li><b><a href="<?=base_url()?>product">ทั้งหมด</a></b></li>
     </ul>
 
 </nav>

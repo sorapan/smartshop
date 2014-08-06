@@ -4,7 +4,7 @@
 
     <div class="col-md-12 cardshadow" id="productheader" >
         <div class="row">
-        <span class="col-md-12 cardheader">รายการสินค้า</span>
+        <span class="col-md-12 cardheader">รายการ</span>
         <div class="col-md-3 ">
             <h4>ประเภทหลัก</h4>
             <ul style="list-style-type: none;">
@@ -34,8 +34,6 @@ foreach($p_data as $p_val){
         <div class="col-md-3 col-xs-6">
             <div class="thumbnail cardshadow">
                 <div class="limit_img">
-<!--                    <img src="--><?//=base_url()?><!--asset/img/qq.jpg">-->
-<!--                    <img src="--><?//=base_url()?><!--asset/img/soong.png">-->
                     <img src="<?=base_url()?>productImg/<?=$p_val->img?>">
                 </div>
                 <div class="caption">
