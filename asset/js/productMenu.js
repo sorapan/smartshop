@@ -19,7 +19,7 @@ $(function(){
                 for(var z in data){
 
                     m_sub.append('' +
-                        '<li><b><a href="http://'+baseurl+'/'+producturl+'/'+z+'">'+data[z]+'</a></b>'+
+                        '<li><p><a href="http://'+baseurl+'/'+producturl+'/'+z+'">'+data[z]+'</a></p>'+
                         '<ul class="submenu'+z+'">' +
                         '</ul></li>');
                     fetchProductSubMenu(url_sub.url,z);

@@ -1,15 +1,12 @@
 
 #productheader{
-    height: auto;
     background-color: white;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
 }
 
 .thumbnail{
     border-radius: 0 0 0 0 !important;
     padding: 0;
-    height: 380px;
+    height: 400px;
     position: relative;
 }
 
@@ -25,16 +22,3 @@
     position: absolute;
 }
 
-.btn{
-    border-radius:  0 0 0 0 !important;
-    font-size: 12px;
-}
-
-#getdetail{
-    border: 1px solid #5460fd;
-}
-
-#getitem{
-    color:white;
-    background-color: #5460fd;
-}

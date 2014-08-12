@@ -6,6 +6,7 @@ class product extends CI_Controller {
         parent::__construct();
         $this->load->model('ProductModel');
         $this->load->model('TypeModel');
+        $this->load->model('BasketModel');
     }
 
     function index($main=null,$sub=null){
@@ -48,6 +49,45 @@ class product extends CI_Controller {
             $arr[$val->id] = $val->name;
         }
         echo json_encode($arr);
+
+    }
+
+
+    function basket(){
+
+        $user_session = $this->session->userdata('username');
+        if($user_session !== "user"){
+            echo "แอดมินไม่สามารถซื้อสินค้าได้";
+        }else{
+
+            $product = $this->ProductModel->fetchproductdataByproductId($_POST['productid']);
+            $product_price = $product[0]->price;
+            $product_name = $product[0]->name;
+
+            $data = array(
+                'product' => $_POST['productid'],
+                'unit' => $_POST['want'],
+                'user' => $this->session->userdata('user_id'),
+                'price' => $_POST['want']*$product_price,
+                'date' => time()
+            );
+            $this->BasketModel->addTobasket($data);
+
+        }
+
+    }
+
+    function inbasket(){
+
+        $inbasket = $this->BasketModel->fetchBasketDataByuserId($this->session->userdata('user_id'));
+        $product = $this->ProductModel->fetchproductdataByproductId($inbasket[0]->product);
+        $data = array(
+
+
+            'name' => $product[0]->name,
+            'unit' => $inbasket[0]->unit
+        );
+        echo json_encode($data);
 
     }
 

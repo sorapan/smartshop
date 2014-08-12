@@ -1,5 +1,4 @@
 
-
 <?php
 function titleMessage($title = "Smartshop | Welcome"){
     return $title;
@@ -28,11 +27,12 @@ function js($js){
 }
 
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/svg+xml" href="<?=base_url()?>asset/img/ss_fav.svg">
     <title><?=titleMessage()?></title>
     <!--Primary Color:-->
     <!--086FA1	235D79	034769	3CA0D0	63ADD0-->
@@ -41,6 +41,7 @@ function js($js){
     <link rel="stylesheet" href="<?=base_url()?>asset/css/bootstrap.css">
     <link rel="stylesheet" href="<?=base_url()?>asset/css/bootstrap-theme.css">
     <link rel="stylesheet" href="<?=base_url()?>asset/css/Layout1.css">
+
     <?php
     if(isset($css)){
         if(!is_array($css))echo '<link rel="stylesheet" href="'.$css.'">';
@@ -48,10 +49,10 @@ function js($js){
     }
     ?>
 </head>
-<body>
+<body  data-spy="scroll" data-target="#basketbox">
 
 <header class="col-md-12 ">
-    Smartshop 2
+    <img style="margin-left:5%;width: 280px" src="<?=base_url()?>asset/img/ss.svg">
 </header>
 
 <nav id="menu" class="col-md-12 ">
@@ -66,17 +67,17 @@ function js($js){
     </ul>
 </nav>
 
-<div class="col-md-12">
+<div class="container-fluid">
 
-<nav id="sidebar" class="col-md-2 row">
+<nav class="col-md-2">
 
-    <ul class="nav cardshadow">
-        <?php
+    <ul class="nav card margintop">
+<?php
         /////////////////////// login false
         if(!$this->session->userdata('login')){
-            ?>
+?>
 
-            <li class="sidebar-brand" id="menubrand">เข้าสู่ระบบ</li>
+            <li class="cardbrand">เข้าสู่ระบบ</li>
 
             <li>
                 <div id="login_form">
@@ -99,47 +100,64 @@ function js($js){
                     </form>
                     <br>
                     <p style="font-size: 16px;color:red"><?=$this->session->flashdata('loginmessage')?></p>
-                    <p style="font-size: 14px">ถ้ายังไม่สมัครสมาชิก <a style="color:red" href="<?=base_url()?>regisform">คลิก</a> ที่นี่</p>
+                    <p>ถ้ายังไม่สมัครสมาชิก <a style="color:red" href="<?=base_url()?>regisform">คลิก</a></p>
                 </div>
             </li>
 <?php
         /////////////////////// login true
         }else{
-            ?>
+?>
 
-            <li class="sidebar-brand" id="menubrand">คุณ <?=$this->session->userdata('username')?></li>
-            <li style="padding: 10px 0 0 10px;">
+            <li class="cardbrand">คุณ <?=$this->session->userdata('username')?></li>
+            <li>
                 <p>ระดับ : <?=$this->session->userdata('class')?></p>
                 <ul style="list-style-type: disc">
-                    <?php
+            <?php
                     if($this->session->userdata('class') == "admin"){
-                    ?>
+            ?>
                         <li><p><a target="_blank" href="<?=base_url()?>admin">หน้าแอดมิน</a></p></li>
-                    <?php
+            <?php
                     }
-                    ?>
+            ?>
                     <li><p><a href="<?=base_url()?>destroy">ออกจากระบบ</a></p></li>
                 </ul>
             </li>
 
-        <?php
+<?php
         }
-        ?>
+?>
     </ul>
 
-    <ul id="typemenu" class="cardshadow">
-        <li class="sidebar-brand" id="menubrand">รายการสินค้า</li>
-        <li><b><a href="<?=base_url()?>product">ทั้งหมด</a></b></li>
+    <ul id="typemenu" class="nav card margintop">
+        <li class="cardbrand">รายการสินค้า</li>
+        <li><p><a href="<?=base_url()?>product">ทั้งหมด</a></p></li>
     </ul>
 
 </nav>
 
-<div id="content" class="col-md-9" style="margin-bottom: 30px">
+
+<div id="content" class="col-md-8">
     <?php $this->load->view($include);?>
 </div>
 
+
+<div id="basketbox" class=" col-md-2" >
+    <div style="width: 200px;background-color: white " class="cardshadow margintop nav" data-spy="affix" data-offset-top="145">
+        <div class="col-md-12" style="text-indent: 10px"><h4>ตะกร้าสินค้า</h4></div>
+        <div class="col-md-12" style="background-color: #bbbbbb;height: 200px;overflow-y: scroll">
+            <div class="row" id="in_basket">
+<!--                <div class="col-md-12 basket_list">aaaa</div>-->
+            </div>
+        </div>
+        <div class="col-md-12" style="background-color: white;height: 50px;line-height: 50px;text-align: center">
+            <a href="" class="btn bluebutton">ดูรายการสั่งซื้อ</a>
+        </div>
+    </div>
 </div>
-<footer class="col-md-12">
+
+</div>
+
+<footer class="margintop col-md-12">
 </footer>
 
 
@@ -147,12 +165,16 @@ function js($js){
 <script src="<?=base_url()?>asset/js/bootstrap.min.js"></script>
 <script src="<?=base_url()?>asset/js/MenuControl.js"></script>
 <script src="<?=base_url()?>asset/js/productMenu.js"></script>
+<script src="<?=base_url()?>asset/js/basket.js"></script>
 <?php
 if(isset($js)){
     if(!is_array($js))echo '<script src="'.$js.'"></script>';
     else foreach($js as $jsvalue)echo '<script src="'.$jsvalue.'"></script>';
 }
 ?>
+
+
+
 </body>
 </html>
 

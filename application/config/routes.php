@@ -57,6 +57,8 @@ $route['admin/deletesubtype'] = "admin_type/deletesubtype";//p
 
 $route['product/menu/main'] = "product/fetchMain";
 $route['product/menu/sub/(:any)'] = "product/fetchsub/$1";
+$route['product/basket'] = "product/basket";
+$route['product/inbasket'] = "product/inbasket";
 $route['product/(:any)'] = "product/index/$1";
 $route['product/(:any)/(:any)'] = "product/index/$1/$2";
 

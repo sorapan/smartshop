@@ -54,6 +54,7 @@ class Register extends CI_Controller{
             foreach($loginresult as $logink=>$loginv){
                 $this->session->set_userdata('login',true);
                 $this->session->set_userdata('username',$loginv->username);
+                $this->session->set_userdata('user_id',$loginv->id);
                 $this->session->set_userdata('class',$loginv->class);
             }
             redirect("/");
