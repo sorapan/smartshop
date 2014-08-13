@@ -25,6 +25,7 @@ var data = [];
           'price' : price,
           'unit' : unit
         };
+
         $("#add_unit").val('');
         $("#addtobasket_img").html('<img class="img-responsive" src="'+img+'">');
         $("#addtobasket_name").html(name);
@@ -36,10 +37,8 @@ var data = [];
     $("#addtobasket").click(function(e){
 
         e.preventDefault();
-
         var addunit = $("#add_unit").val();
-
-        if(!isNaN(addunit)){
+        if(!isNaN(addunit) && addunit !== "" && addunit.indexOf(" ")){
             data['want'] = addunit;
             sendData(data);
         }else{
@@ -59,14 +58,8 @@ var data = [];
                 'want' : data['want']
             },
             success:function(data){
-
-                var $in_basket = $('#in_basket');
-                $in_basket.append('<div class="col-md-12 basket_list">' +
-                    data.name+' : '+data.unit+' ชิ้น '+
-                    '</div>');
-
+                fetch_inbasket();
             }
-
         });
 
     }
@@ -80,9 +73,14 @@ var data = [];
             success:function(data){
 
                 var $in_basket = $('#in_basket');
-                $in_basket.append('<div class="col-md-12 basket_list">' +
-                    data.name+' : '+data.unit+' ชิ้น '+
-                    '</div>');
+                $in_basket.html('');
+                for(var q in data){
+
+                    $in_basket.append('<div class="col-md-12 basket_list">' +
+                        data[q].name+' : '+data[q].unit+' ชิ้น '+
+                        '</div>');
+
+                }
 
             }
         })

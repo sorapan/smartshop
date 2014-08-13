@@ -60,33 +60,50 @@ class product extends CI_Controller {
             echo "แอดมินไม่สามารถซื้อสินค้าได้";
         }else{
 
+            $itemCheked = $this->BasketModel->chkItemByproductId($_POST['productid']);
             $product = $this->ProductModel->fetchproductdataByproductId($_POST['productid']);
             $product_price = $product[0]->price;
-            $product_name = $product[0]->name;
 
-            $data = array(
-                'product' => $_POST['productid'],
-                'unit' => $_POST['want'],
-                'user' => $this->session->userdata('user_id'),
-                'price' => $_POST['want']*$product_price,
-                'date' => time()
-            );
-            $this->BasketModel->addTobasket($data);
+            if(empty($itemCheked)){
 
+                $data = array(
+                    'product' => $_POST['productid'],
+                    'unit' => $_POST['want'],
+                    'user' => $this->session->userdata('user_id'),
+                    'price' => $_POST['want']*$product_price,
+                    'date' => time()
+                );
+                $this->BasketModel->addTobasket($data);
+
+
+            }else{
+
+                $unit = $_POST['want']+$itemCheked[0]->unit;
+                $price = ($_POST['want']*$product_price)+$itemCheked[0]->price;
+
+                $this->BasketModel->updateTobasket(
+                    $_POST['productid'],
+                    $this->session->userdata('user_id'),
+                    $unit,
+                    $price
+                );
+            }
         }
-
     }
 
     function inbasket(){
 
         $inbasket = $this->BasketModel->fetchBasketDataByuserId($this->session->userdata('user_id'));
-        $product = $this->ProductModel->fetchproductdataByproductId($inbasket[0]->product);
-        $data = array(
 
+        foreach($inbasket as $k=>$inbasket_v){
 
-            'name' => $product[0]->name,
-            'unit' => $inbasket[0]->unit
-        );
+            $product = $this->ProductModel->fetchproductdataByproductId($inbasket_v->product);
+            $data[$k] = array(
+                'name' => $product[0]->name,
+                'unit' => $inbasket_v->unit
+            );
+
+        }
         echo json_encode($data);
 
     }

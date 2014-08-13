@@ -36,7 +36,7 @@ h4{
 }
 
 .bigheader{
-    background-color: #63accf;
+    background-color: #4cacdb;
     color:white;
     font-size: 28px;
     padding: 5px 0 5px;
@@ -46,7 +46,7 @@ h4{
 }
 
 .mheader{
-    background-color: #63accf;
+    background-color: #4cacdb;
     color:white;
     font-size: 18px;
     padding: 5px 0 5px;
@@ -86,17 +86,22 @@ h4{
     margin-top: 20px;
 }
 
+.marginbot{
+    margin-bottom: 20px;
+}
+
 .btn{
     border-radius:  0 0 0 0 !important;
 }
 
 .whitebutton{
-    border: 1px solid #63add0;
+    border: 1px solid #4cacdb;
+    background-color: white;
 }
 
 .bluebutton{
     color:white;
-    background-color: #63add0;
+    background-color: #4cacdb;
 }
 
 .affix{
@@ -104,8 +109,20 @@ h4{
     margin-top: 10px;
 }
 
-.modal-header{
+.modal-content{
     border-radius: 0;
+}
+
+.modal-header, .modal-body, .modal-footer{
+    border:0;
+}
+
+.form-in-modal{
+    line-height: 8px;
+}
+
+.form-control{
+    border-radius:0;
 }
 
 /*////////////////^^^ MY LAYOUT ^^^///////////////////*/
@@ -113,17 +130,17 @@ h4{
 
 header{
     /*background-color: #086FA1;*/
-    background-color: #0977b3;
+    background-color: #4db7e6;
     color:white;
-    height: 95px;
-    line-height: 90px;
+    height: 70px;
+    line-height: 65px;
     font-size: 30px;
 }
 
 
 #menu{
     /*background-color: #086FA1;*/
-    background-color: #0977b3;
+    background-color: transparent;
 }
 
 #menubar{
@@ -132,13 +149,13 @@ header{
 }
 
 #menubar li>a{
-    background-color: #63ADD0;
-    font-size: 1.6em;
+    background-color: #4cacdb;
+    font-size: 1.4em;
     color:white;
 }
 
 #menubar li>a:hover{
-    background-color: #abd7ff;
+    background-color: #4788b7;
     color:white;
 }
 
@@ -153,7 +170,7 @@ header{
 }
 
 footer{
-    background-color: #0977b3;
+    background-color: #4cacdb;
     height: 100px;
 }
 

@@ -52,26 +52,28 @@ function js($js){
 <body  data-spy="scroll" data-target="#basketbox">
 
 <header class="col-md-12 ">
-    <img style="margin-left:5%;width: 280px" src="<?=base_url()?>asset/img/ss.svg">
+    <img style="margin-left:1%;width: 200px" src="<?=base_url()?>asset/img/ss.svg">
 </header>
 
 <nav id="menu" class="col-md-12 ">
-    <ul class="nav nav-justified" id="menubar">
-        <li><a href="<?=base_url()?>">หน้าแรก</a></li>
-        <li><a href="<?=base_url()?>product">สินค้า</a></li>
-        <li><a href="#">โปรโมชั่น</a></li>
-        <li><a href="#">สินค้าเคลม</a></li>
-        <li><a href="#">วิธีสั่งซื้อ</a></li>
-        <li><a href="#">เกี่ยวกับเรา</a></li>
-        <li><a href="#">ดาวน์โหลด</a></li>
-    </ul>
+    <div class="row">
+        <ul class="nav nav-justified" id="menubar">
+            <li><a href="<?=base_url()?>">หน้าแรก</a></li>
+            <li><a href="<?=base_url()?>product">สินค้า</a></li>
+            <li><a href="#">โปรโมชั่น</a></li>
+            <li><a href="#">สินค้าเคลม</a></li>
+            <li><a href="#">วิธีสั่งซื้อ</a></li>
+            <li><a href="#">เกี่ยวกับเรา</a></li>
+            <li><a href="#">ดาวน์โหลด</a></li>
+        </ul>
+    </div>
 </nav>
 
 <div class="container-fluid">
 
 <nav class="col-md-2">
 
-    <ul class="nav card margintop">
+<ul class="nav card margintop">
 <?php
         /////////////////////// login false
         if(!$this->session->userdata('login')){
@@ -82,18 +84,15 @@ function js($js){
             <li>
                 <div id="login_form">
                     <form method="POST" action="<?=base_url()?>login">
+
                         <div class="form-group">
                             <label for="userlogin">Username :</label>
-                            <div class="col-md-12" style="padding: 0">
-                                <input id="userlogin" name="userlogin" type="text">
-                            </div>
+                            <input id="userlogin" class="form-control"  name="userlogin" type="text">
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label" for="passlogin">Password :</label>
-                            <div class="col-md-12" style="padding: 0">
-                                <input id="passlogin" name="passlogin" type="password">
-                            </div>
+                            <label for="passlogin">Password :</label>
+                            <input id="passlogin" class="form-control"  name="passlogin" type="password">
                         </div>
 
                         <br><input style="background-color:#086fa0;border:0;color:white" type="submit" value="Login" >

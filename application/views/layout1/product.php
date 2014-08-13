@@ -69,31 +69,39 @@ foreach($p_data as $p_val){
             </div>
             <div class="modal-body">
 
-                <div class="col-md-12">
 
-                    <div class="col-md-12">
-                        <div id="addtobasket_img" class="col-md-10 col-md-offset-1 "></div>
-                    </div>
-
-                    <div class="col-md-12" style="margin: 20px">
-                        <p>มีอยู่จำนวน <span id="addtobasket_unit"></span> ชิ้น</p>
-                        <p>ราคา <span id="addtobasket_price"></span> บาท</p>
-                    </div>
+                <div class="col-md-12 marginbot">
+                    <div id="addtobasket_img" class="col-md-10 col-md-offset-1 "></div>
                 </div>
 
-                <div class="form-horizontal col-md-offset-3">
+                <form class="form-horizontal form-in-modal">
                     <div class="form-group">
-                        <label for="buy_unit" class="col-md-2 control-label">จำนวน </label>
-                        <div class="col-md-5">
+                        <label class="col-md-3 control-label">มีอยู่จำนวน</label>
+                        <div class="col-md-9">
+                            <p class="form-control-static" id="addtobasket_unit"></p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">ราคา</label>
+                        <div class="col-md-9">
+                            <p class="form-control-static" id="addtobasket_price"></p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" for="add_unit" >จำนวน </label>
+                        <div class="col-md-4">
                             <input maxlength="5" type="text" class=" form-control" id="add_unit">
                         </div>
                     </div>
-                </div>
+                </form>
+
+
+
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
-                <button type="button" id="addtobasket" data-dismiss="modal" class="btn btn-primary">ตกลง</button>
+                <button type="button" class="btn whitebutton" data-dismiss="modal">ปิด</button>
+                <button type="button" id="addtobasket" data-dismiss="modal" class="btn bluebutton">ตกลง</button>
             </div>
 
         </div>

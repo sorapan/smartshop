@@ -12,6 +12,30 @@ class BasketModel extends CI_Model{
 
     }
 
+    function updateTobasket($productid,$userid,$unit,$price){
+
+        $data = array(
+
+            'unit' => $unit,
+            'price' => $price,
+            'date' => time()
+
+        );
+
+        $this->db->where('product', $productid);
+        $this->db->where('user', $userid);
+        $this->db->update('basket', $data);
+
+    }
+
+    function chkItemByproductId($productId){
+
+        $this->db->select('*');
+        $this->db->where('product',$productId);
+        return $this->db->get('basket')->result();
+
+    }
+
     function fetchBasketDataByuserId($userid){
 
         $this->db->select('*');
