@@ -60,11 +60,11 @@ class product extends CI_Controller {
             echo "แอดมินไม่สามารถซื้อสินค้าได้";
         }else{
 
-            $itemCheked = $this->BasketModel->chkItemByproductId($_POST['productid']);
+            $itemChecked = $this->BasketModel->chkItemByproductId($_POST['productid']);
             $product = $this->ProductModel->fetchproductdataByproductId($_POST['productid']);
             $product_price = $product[0]->price;
 
-            if(empty($itemCheked)){
+            if(empty($itemChecked)){
 
                 $data = array(
                     'product' => $_POST['productid'],
@@ -78,8 +78,8 @@ class product extends CI_Controller {
 
             }else{
 
-                $unit = $_POST['want']+$itemCheked[0]->unit;
-                $price = ($_POST['want']*$product_price)+$itemCheked[0]->price;
+                $unit = $_POST['want']+$itemChecked[0]->unit;
+                $price = ($_POST['want']*$product_price)+$itemChecked[0]->price;
 
                 $this->BasketModel->updateTobasket(
                     $_POST['productid'],
