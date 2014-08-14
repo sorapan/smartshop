@@ -18,11 +18,11 @@ class admin_product extends CI_Controller {
 
         $data = array(
             'css' => array(
-                base_url().'asset/css/uploadproduct_style.css'
+                base_url().'asset/css/admin_product_uploadproduct.css'
             ),
             'js' => array(
-                base_url().'asset/js/uploadimg.js',
-                base_url().'asset/js/addproduct.js'
+                base_url().'asset/js/admin_product_uploadimg.js',
+                base_url().'asset/js/admin_product_.js'
             )
         );
         $this->load->adminpage('addproduct',$data);

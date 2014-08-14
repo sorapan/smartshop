@@ -13,7 +13,7 @@ class admin_type extends CI_Controller{
 
         $data = array(
             'js' => array(
-                base_url().'asset/js/typeproduct.js'
+                base_url().'asset/js/admin_type_.js'
             )
         );
         $this->load->adminpage('typeproduct',$data);

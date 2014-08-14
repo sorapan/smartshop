@@ -19,8 +19,8 @@ $(function(){
                 for(var z in data){
 
                     m_sub.append('' +
-                        '<li><p><a href="http://'+baseurl+'/'+producturl+'/'+z+'">'+data[z]+'</a></p>'+
-                        '<ul class="submenu'+z+'">' +
+                        '<li><a href="http://'+baseurl+'/'+producturl+'/'+z+'">'+data[z]+'</a>'+
+                        '<ul class="list-disc-type submenu'+z+'">' +
                         '</ul></li>');
                     fetchProductSubMenu(url_sub.url,z);
 

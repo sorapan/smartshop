@@ -1,4 +1,3 @@
-<article>
 
     <h2>เพิ่มข้อมูลสินค้า</h2>
 
@@ -60,11 +59,11 @@
             <div class="form-group">
                 <label for="detail" class="col-md-3 control-label"></label>
                 <div class="col-md-3">
-                    <button class=" btn-default btn-block" id="addproduct_ok">ตกลง</button>
+                    <button class=" btn bluebutton" id="addproduct_ok">ตกลง</button>
                 </div>
             </div>
         </div>
 
     </form>
 
-</article>
+

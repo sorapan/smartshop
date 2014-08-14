@@ -21,11 +21,24 @@ class product extends CI_Controller {
 
         $data = array(
             'css' => array(
-              base_url().'asset/css/product.css'
+              base_url().'asset/css/product_.css'
             ),
             'p_data'=>$productdata,
-            'mt_data'=>$mt
+            'mt_data'=>$mt,
         );
+
+        if($main==null){
+            $data['mt_name']="ทั้งหมด";
+        }else if($sub==null){
+            $maintypename = $this->TypeModel->MainTypeFromId($main);
+            $data['mt_name']=$maintypename->name;
+        }else{
+            $maintypename = $this->TypeModel->MainTypeFromId($main);
+            $subtypename = $this->TypeModel->SubTypeFromId($sub);
+            $data['mt_name']=$maintypename->name;
+            $data['st_name']=$subtypename->name;
+        }
+
         $this->load->layout1('product',$data);
 
     }
@@ -49,62 +62,6 @@ class product extends CI_Controller {
             $arr[$val->id] = $val->name;
         }
         echo json_encode($arr);
-
-    }
-
-
-    function basket(){
-
-        $user_session = $this->session->userdata('username');
-        if($user_session !== "user"){
-            echo "แอดมินไม่สามารถซื้อสินค้าได้";
-        }else{
-
-            $itemChecked = $this->BasketModel->chkItemByproductId($_POST['productid']);
-            $product = $this->ProductModel->fetchproductdataByproductId($_POST['productid']);
-            $product_price = $product[0]->price;
-
-            if(empty($itemChecked)){
-
-                $data = array(
-                    'product' => $_POST['productid'],
-                    'unit' => $_POST['want'],
-                    'user' => $this->session->userdata('user_id'),
-                    'price' => $_POST['want']*$product_price,
-                    'date' => time()
-                );
-                $this->BasketModel->addTobasket($data);
-
-
-            }else{
-
-                $unit = $_POST['want']+$itemChecked[0]->unit;
-                $price = ($_POST['want']*$product_price)+$itemChecked[0]->price;
-
-                $this->BasketModel->updateTobasket(
-                    $_POST['productid'],
-                    $this->session->userdata('user_id'),
-                    $unit,
-                    $price
-                );
-            }
-        }
-    }
-
-    function inbasket(){
-
-        $inbasket = $this->BasketModel->fetchBasketDataByuserId($this->session->userdata('user_id'));
-
-        foreach($inbasket as $k=>$inbasket_v){
-
-            $product = $this->ProductModel->fetchproductdataByproductId($inbasket_v->product);
-            $data[$k] = array(
-                'name' => $product[0]->name,
-                'unit' => $inbasket_v->unit
-            );
-
-        }
-        echo json_encode($data);
 
     }
 

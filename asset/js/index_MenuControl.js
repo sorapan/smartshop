@@ -8,6 +8,7 @@ $(function(){
         $(this).removeClass();
         if($(this).find("a").attr("href") == current_url){
             $(this).addClass("active");
+//            alert($('.active').html());
         }
     });
 

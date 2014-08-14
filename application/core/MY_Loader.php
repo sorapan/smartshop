@@ -18,11 +18,11 @@ class MY_Loader extends CI_Loader{
 
     public function adminpage($include, $vars = array(), $return = FALSE){
 
-        $data['include'] = 'adminpage/'.$include;
+        $data['include'] = 'layout2_admin/'.$include;
         foreach($vars as $varskey => $varsval){
             $data[$varskey] = $varsval;
         }
-        $this->view('adminpage/0init',$data);
+        $this->view('layout2_admin/0init',$data);
 
     }
 

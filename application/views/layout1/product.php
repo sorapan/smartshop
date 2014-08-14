@@ -25,6 +25,15 @@
         </div>
     </div>
 
+<div class=" col-md-12 margintop medheader">
+<?php
+    echo 'แสดง : '.$mt_name;
+    if(isset($st_name)){
+        echo " > ".$st_name;
+    }
+?>
+</div>
+
     <div class="col-md-12 margintop">
 <?php
 //for($z=0;$z<10;$z++){
@@ -42,7 +51,7 @@ foreach($p_data as $p_val){
                     <p>จำนวน : <span class="product_unit"><?=$p_val->unit?></span> ชิ้น</p>
 
                         <div style="text-align: center" class="col-md-12">
-                            <a href="#" class="btn btn-sm whitebutton" >ดูรายระเอียด</a>
+                            <a href="#" class="btn btn-sm whitebutton" >ดูรายละเอียด</a>
                             <a href="#" data-toggle="modal" data-target="#myModal" class="btn btn-sm bluebutton getitem" >หยิบใส่ตะกร้า</a>
                         </div>
 
@@ -94,9 +103,6 @@ foreach($p_data as $p_val){
                         </div>
                     </div>
                 </form>
-
-
-
 
             </div>
             <div class="modal-footer">

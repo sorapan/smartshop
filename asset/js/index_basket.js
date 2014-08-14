@@ -47,17 +47,44 @@ var data = [];
 
     });
 
+    $(document).on('click','.delete_basket_item',function(e){
+
+        e.preventDefault();
+        var a = $(this).parent().find(".product_id_inbasket").html();
+        if(confirm('คุณต้องการลบออกจากตะกร้า?')){
+            return delete_item_inbasket(a);
+        }else{
+            return false;
+        }
+
+
+    });
 
     function sendData(data){
 
         $.ajax({
-            url:'product/basket',
+            url:'basket/basket',
             type:'POST',
             data:{
                 'productid' : data['productid'],
                 'want' : data['want']
             },
             success:function(data){
+                if(data !== null && data !== "" && data.indexOf(' ')) alert(data);
+                else fetch_inbasket();
+            }
+        });
+    }
+
+    function delete_item_inbasket(itemid){
+
+        $.ajax({
+            url:'basket/deleteiteminbasket',
+            type:'POST',
+            data:{
+                'itemid':itemid
+            },
+            success:function(){
                 fetch_inbasket();
             }
         });
@@ -67,7 +94,7 @@ var data = [];
     function fetch_inbasket(){
 
         $.ajax({
-            url:'product/inbasket',
+            url:'basket/inbasket',
             type:'POST',
             dataType:'JSON',
             success:function(data){
@@ -76,15 +103,16 @@ var data = [];
                 $in_basket.html('');
                 for(var q in data){
 
-                    $in_basket.append('<div class="col-md-12 basket_list">' +
-                        data[q].name+' : '+data[q].unit+' ชิ้น '+
-                        '</div>');
+                    $in_basket.append('<div class="col-md-12 basket_list"><div class="row">' +
+                        '<button class="close close-sm"><span>&times;</span></button>'+
+                        '<div class="col-md-6 text-overflow">'+data[q].name+'</div> : '+data[q].unit+' ชิ้น '+
+                        '<div class="product_id_inbasket hidden">'+data[q].id+'</div>'+
+                        '</div></div>');
 
                 }
-
             }
-        })
-
+        });
     }
+
 
 });

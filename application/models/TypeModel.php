@@ -73,4 +73,20 @@ class TypeModel extends CI_Model{
 
     }
 
+    function MainTypeFromId($maintypeid){
+
+        $this->db->select('name');
+        $this->db->where('id',$maintypeid);
+        return $this->db->get('type_product')->result()[0];
+
+    }
+
+    function SubTypeFromId($subtypeid){
+
+        $this->db->select('name');
+        $this->db->where('id',$subtypeid);
+        return $this->db->get('subtype_product')->result()[0];
+
+    }
+
 } 

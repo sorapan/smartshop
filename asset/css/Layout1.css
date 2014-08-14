@@ -12,7 +12,7 @@ body{
 }
 
 
-.cardheader, .bigheader , .mheader , .cardbrand , #menubar li>a ,h1 ,h2 ,h3 ,h4 ,h5{
+.cardheader, .bigheader , .medheader , .mheader , .cardbrand , #menubar li>a ,h1 ,h2 ,h3 ,h4 ,h5{
     font-family: "thaisans";
 }
 
@@ -45,14 +45,13 @@ h4{
     margin: 0 0 15px;
 }
 
-.mheader{
-    background-color: #4cacdb;
-    color:white;
-    font-size: 18px;
+.medheader{
+    background-color: #ffffff;
+    color: #4cacdb;
+    font-size: 24px;
     padding: 5px 0 5px;
     text-align: left;
     text-indent: 22px;
-    margin: 0 0 15px;
 }
 
 .card{
@@ -97,11 +96,25 @@ h4{
 .whitebutton{
     border: 1px solid #4cacdb;
     background-color: white;
+    color: #4cacdb;
+    transition: all 0.3s ease-in-out;
+}
+
+.whitebutton:hover{
+    border: 1px solid #4788b7;
+    color: #4cacdb;
+    background-color: #e7e7e7;
 }
 
 .bluebutton{
     color:white;
     background-color: #4cacdb;
+}
+
+.bluebutton:hover{
+    color:white;
+    background-color: #4788b7;
+    transition: all 0.3s ease-in-out;
 }
 
 .affix{
@@ -123,6 +136,30 @@ h4{
 
 .form-control{
     border-radius:0;
+}
+
+.text-overflow{
+    /*padding: 0 0 0 3px ;*/
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    overflow:hidden;
+}
+.close-sm{
+    font-size: 18px;
+}
+
+.list-group-item{
+    border-radius: 0 !important;
+    background-color: #f4f4f4;
+    border:1px solid #afafaf;
+}
+
+.list-none-type{
+    list-style-type: none;
+}
+
+.list-disc-type{
+    list-style-type: disc;
 }
 
 /*////////////////^^^ MY LAYOUT ^^^///////////////////*/
@@ -152,6 +189,7 @@ header{
     background-color: #4cacdb;
     font-size: 1.4em;
     color:white;
+    transition: all 0.3s ease;
 }
 
 #menubar li>a:hover{
@@ -182,6 +220,8 @@ footer{
     border-width: 0 1px 1px 0;
     border-style: solid;
     border-color: #afafaf;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .basket_list:not(:first-child){

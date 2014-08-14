@@ -32,7 +32,7 @@ function js($js){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/svg+xml" href="<?=base_url()?>asset/img/ss_fav.svg">
+    <link rel="icon" type="image/svg+xml" href="<?=base_url()?>asset/img/ss_new_fav.svg">
     <title><?=titleMessage()?></title>
     <!--Primary Color:-->
     <!--086FA1	235D79	034769	3CA0D0	63ADD0-->
@@ -73,7 +73,7 @@ function js($js){
 
 <nav class="col-md-2">
 
-<ul class="nav card margintop">
+<ul class="list-none-type card margintop">
 <?php
         /////////////////////// login false
         if(!$this->session->userdata('login')){
@@ -95,10 +95,10 @@ function js($js){
                             <input id="passlogin" class="form-control"  name="passlogin" type="password">
                         </div>
 
-                        <br><input style="background-color:#086fa0;border:0;color:white" type="submit" value="Login" >
+                        <br><input class="btn bluebutton" type="submit" value="Login" >
                     </form>
                     <br>
-                    <p style="font-size: 16px;color:red"><?=$this->session->flashdata('loginmessage')?></p>
+                    <p class="text-danger"><?=$this->session->flashdata('loginmessage')?></p>
                     <p>ถ้ายังไม่สมัครสมาชิก <a style="color:red" href="<?=base_url()?>regisform">คลิก</a></p>
                 </div>
             </li>
@@ -110,7 +110,7 @@ function js($js){
             <li class="cardbrand">คุณ <?=$this->session->userdata('username')?></li>
             <li>
                 <p>ระดับ : <?=$this->session->userdata('class')?></p>
-                <ul style="list-style-type: disc">
+                <ul class="list-disc-type">
             <?php
                     if($this->session->userdata('class') == "admin"){
             ?>
@@ -127,9 +127,9 @@ function js($js){
 ?>
     </ul>
 
-    <ul id="typemenu" class="nav card margintop">
+    <ul id="typemenu" class="list-none-type card margintop">
         <li class="cardbrand">รายการสินค้า</li>
-        <li><p><a href="<?=base_url()?>product">ทั้งหมด</a></p></li>
+        <li><a href="<?=base_url()?>product">ทั้งหมด</a></li>
     </ul>
 
 </nav>
@@ -141,15 +141,15 @@ function js($js){
 
 
 <div id="basketbox" class=" col-md-2" >
-    <div style="width: 200px;background-color: white " class="cardshadow margintop nav" data-spy="affix" data-offset-top="145">
-        <div class="col-md-12" style="text-indent: 10px"><h4>ตะกร้าสินค้า</h4></div>
+    <div style="width: 200px;background-color: white " class="cardshadow margintop nav" data-spy="affix" data-offset-top="125">
+        <div class="col-md-12"><h4>ตะกร้าสินค้า</h4></div>
         <div class="col-md-12" style="background-color: #bbbbbb;height: 200px;overflow-y: scroll">
             <div class="row" id="in_basket">
 <!--                <div class="col-md-12 basket_list">aaaa</div>-->
             </div>
         </div>
         <div class="col-md-12" style="background-color: white;height: 50px;line-height: 50px;text-align: center">
-            <a href="" class="btn bluebutton">ดูรายการสั่งซื้อ</a>
+            <a href="<?=base_url()?>takeitem" class="btn bluebutton">ดูรายการสั่งซื้อ</a>
         </div>
     </div>
 </div>
@@ -162,9 +162,9 @@ function js($js){
 
 <script src="<?=base_url()?>asset/js/jquery.js"></script>
 <script src="<?=base_url()?>asset/js/bootstrap.min.js"></script>
-<script src="<?=base_url()?>asset/js/MenuControl.js"></script>
-<script src="<?=base_url()?>asset/js/productMenu.js"></script>
-<script src="<?=base_url()?>asset/js/basket.js"></script>
+<script src="<?=base_url()?>asset/js/index_MenuControl.js"></script>
+<script src="<?=base_url()?>asset/js/index_productMenu.js"></script>
+<script src="<?=base_url()?>asset/js/index_basket.js"></script>
 <?php
 if(isset($js)){
     if(!is_array($js))echo '<script src="'.$js.'"></script>';

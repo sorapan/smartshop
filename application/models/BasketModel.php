@@ -36,10 +36,35 @@ class BasketModel extends CI_Model{
 
     }
 
+    function delBasketData($product,$user){
+
+        $this->db->where('product',$product);
+        $this->db->where('user',$user);
+        $this->db->delete('basket');
+
+    }
+
     function fetchBasketDataByuserId($userid){
 
         $this->db->select('*');
         $this->db->where('user',$userid);
+        return $this->db->get('basket')->result();
+
+    }
+
+    function fetchdataJoinproductTable($userid){
+
+        $this->db->select('basket.id,basket.user,product.name,basket.unit,basket.price');
+        $this->db->from('basket');
+        $this->db->join('product', 'product.id = basket.product');
+        $this->db->where('user',$userid);
+        return $this->db->get()->result();
+
+    }
+
+    function allPrice($userid){
+
+        $this->db->select_sum('price');
         return $this->db->get('basket')->result();
 
     }
