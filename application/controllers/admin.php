@@ -18,13 +18,15 @@ class admin extends CI_Controller {
         $data = array(
             'css' => array(
                 base_url().'asset/css/admin_style.css'
-            ),
-            'js' => array(
-//                base_url().'asset/js/adminMenuControl.js'
             )
         );
-//        echo $this->productID();
         $this->load->adminpage('admin',$data);
+
+    }
+
+    function bought_list(){
+
+        $this->load->adminpage('boughtlist');
 
     }
 

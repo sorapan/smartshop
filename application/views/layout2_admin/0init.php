@@ -114,26 +114,27 @@ function js($js){
     </nav>
 
     <div id="content" class="col-md-8">
-
-            <div class="container-fluid">
-                <?php $this->load->view($include);?>
-            </div>
-
+        <?php $this->load->view($include);?>
     </div>
 
-    <div class="col-md-2 sidebar-module">
-        <h4>เมนูแอดมิน</h4>
-        <ul id="adminmenu"  class="nav navbar">
-            <li><a class="AdminMenuButton" href="<?=base_url()?>admin/addproduct">เพิ่มข้อมูลสินค้า</a></li>
-            <!--            <li><a class="AdminMenuButton" href="--><?//=base_url()?><!--">จัดการสมาชิก</a></li>-->
-            <li><a class="AdminMenuButton" href="<?=base_url()?>admin/typeproduct">จัดการประเภทสินค้า</a></li>
-            <!--            <li><a class="AdminMenuButton" href="#">ข้อความ</a></li>-->
-            <!--            <li><a class="AdminMenuButton" href="#">ประวัติการขาย</a></li>-->
-            <!--            <li><a class="AdminMenuButton" href="#">โปรโมชั่น</a></li>-->
-            <!--            <li><a class="AdminMenuButton" href="#">สินค้าเคลม</a></li>-->
-            <!--            <li><a class="AdminMenuButton" href="#">อัพโหลด</a></li>-->
-            <!--            <li><a class="AdminMenuButton" href="#">เกี่ยวกับร้านค้า</a></li>-->
-        </ul>
+    <div class="col-md-2 margintop">
+        <div class="card">
+
+            <div class="cardbrand">เมนูแอดมิน</div>
+            <ul >
+                <li><p><a class="AdminMenuButton" href="<?=base_url()?>admin/boughtlist">ยืนยันข้อมูลการซื้อ</a></p></li>
+                <li><p><a class="AdminMenuButton" href="<?=base_url()?>admin/addproduct">เพิ่มข้อมูลสินค้า</a></p></li>
+                <!--            <li><a class="AdminMenuButton" href="--><?//=base_url()?><!--">จัดการสมาชิก</a></li>-->
+                <li><p><a class="AdminMenuButton" href="<?=base_url()?>admin/typeproduct">จัดการประเภทสินค้า</a></p></li>
+                <!--            <li><a class="AdminMenuButton" href="#">ข้อความ</a></li>-->
+                <!--            <li><a class="AdminMenuButton" href="#">ประวัติการขาย</a></li>-->
+                <!--            <li><a class="AdminMenuButton" href="#">โปรโมชั่น</a></li>-->
+                <!--            <li><a class="AdminMenuButton" href="#">สินค้าเคลม</a></li>-->
+                <!--            <li><a class="AdminMenuButton" href="#">อัพโหลด</a></li>-->
+                <!--            <li><a class="AdminMenuButton" href="#">เกี่ยวกับร้านค้า</a></li>-->
+            </ul>
+
+        </div>
     </div>
 
 </div>

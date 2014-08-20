@@ -1,5 +1,6 @@
 
 <?php
+
 function titleMessage($title = "Smartshop | Welcome"){
     return $title;
 }
@@ -73,7 +74,7 @@ function js($js){
 
 <nav class="col-md-2">
 
-<ul class="list-none-type card margintop">
+<ul class="nav card margintop">
 <?php
         /////////////////////// login false
         if(!$this->session->userdata('login')){
@@ -148,8 +149,21 @@ function js($js){
 <!--                <div class="col-md-12 basket_list">aaaa</div>-->
             </div>
         </div>
-        <div class="col-md-12" style="background-color: white;height: 50px;line-height: 50px;text-align: center">
+        <div class="col-md-12" style="background-color: white;height: auto;line-height: 50px;text-align: center">
+
+    <?php
+        if($this->session->userdata('buy_status') == 'none'){
+    ?>
             <a href="<?=base_url()?>takeitem" class="btn bluebutton">ดูรายการสั่งซื้อ</a>
+
+    <?php
+        }else{
+    ?>
+            <a href="<?=base_url()?>takeitem" class="btn bluebutton">ดูรายการสั่งซื้อ</a>
+            <a href="<?=base_url()?>takeitem" class="btn yellowbutton">ยืนยันการโอนเงิน</a>
+    <?php
+        }
+    ?>
         </div>
     </div>
 </div>
@@ -159,20 +173,19 @@ function js($js){
 <footer class="margintop col-md-12">
 </footer>
 
-
 <script src="<?=base_url()?>asset/js/jquery.js"></script>
 <script src="<?=base_url()?>asset/js/bootstrap.min.js"></script>
+<script src="<?=base_url()?>asset/js/index_publicMethod.js"></script>
 <script src="<?=base_url()?>asset/js/index_MenuControl.js"></script>
 <script src="<?=base_url()?>asset/js/index_productMenu.js"></script>
 <script src="<?=base_url()?>asset/js/index_basket.js"></script>
 <?php
 if(isset($js)){
+
     if(!is_array($js))echo '<script src="'.$js.'"></script>';
     else foreach($js as $jsvalue)echo '<script src="'.$jsvalue.'"></script>';
 }
 ?>
-
-
 
 </body>
 </html>

@@ -1,14 +1,17 @@
 
-    <h2>เพิ่มข้อมูลสินค้า</h2>
+    <div class="col-xs-12 bigheader"><h4>
+        เพิ่มข้อมูลสินค้า
+    </h4></div>
 
-    <div id="showimg">
-    <div class="col-md-4 col-md-push-4" id="uploadimgbox">+</div>
+    <div class="col-xs-12 card">
+
+    <div id="showimg" class="margintop">
+        <div class="col-md-4 col-md-push-4 margintop" id="uploadimgbox">+</div>
     </div>
+
 <!--        <img  class="col-md-4 col-md-push-4" src="--><?//=base_url()?><!--asset/img/qq.jpg">-->
     <input type="file" id="inputfilehidden" style="display:none">
-
     <form method="post" action="<?=base_url()?>admin/addproductsubmit">
-
         <div id="uploadproductform" class="form-horizontal col-md-12">
             <div class="form-group">
                 <label for="name" class="col-md-3 control-label">ชื่อ :</label>
@@ -63,7 +66,7 @@
                 </div>
             </div>
         </div>
-
     </form>
 
+    </div>
 

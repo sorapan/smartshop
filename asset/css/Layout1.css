@@ -29,6 +29,10 @@ h4{
     font-size: 1.8em;
 }
 
+hr{
+    border-color: #bbbbbb;
+}
+
 /*////////////////vvv MY LAYOUT vvv///////////////////*/
 
 .container {
@@ -117,9 +121,34 @@ h4{
     transition: all 0.3s ease-in-out;
 }
 
+.yellowbutton{
+    color:white;
+    background-color: #f6c21b;
+}
+
+.yellowbutton:hover{
+    color:white;
+    background-color: #d05426;
+    transition: all 0.3s ease-in-out;
+}
+
 .affix{
     top:0;
     margin-top: 10px;
+}
+
+select:focus{
+    outline: 0;
+}
+
+.form-control{
+    border: 1px solid #d5d5d5;
+}
+
+.form-control:focus{
+    box-shadow: none;
+    border: 1px solid #3e3e3e;
+    transition: all 0s;
 }
 
 .modal-content{
@@ -200,6 +229,7 @@ header{
 #menubar>.active>a, #menubar>.active>a:hover{
     background-color:#e7e7e7;
     color:#000000;
+    transition: all .5s ease-in-out;
 }
 
 #content{
@@ -211,7 +241,6 @@ footer{
     background-color: #4cacdb;
     height: 100px;
 }
-
 
 .basket_list{
     height: 40px;
