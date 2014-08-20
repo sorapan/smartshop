@@ -1,12 +1,10 @@
 $(function(){
 
 var $getitem = $('.getitem');
-var $item_unit = $("#item_buyed_unit");
-var $price = $("#item_buyed_price");
 var data = [];
 
 
-    fetch_inbasket();
+    $.fetch_inbasket();
 
     $getitem.click(function(e){
 
@@ -47,9 +45,9 @@ var data = [];
 
     });
 
-    $(document).on('click','.delete_basket_item',function(e){
+    $(document).on('click','.delete_basket_item',function(){
 
-        e.preventDefault();
+
         var a = $(this).parent().find(".product_id_inbasket").html();
         if(confirm('คุณต้องการลบออกจากตะกร้า?')){
             return delete_item_inbasket(a);
@@ -63,7 +61,7 @@ var data = [];
     function sendData(data){
 
         $.ajax({
-            url:'basket/basket',
+            url:$.autoFindDir('basket/basket').url,
             type:'POST',
             data:{
                 'productid' : data['productid'],
@@ -71,7 +69,7 @@ var data = [];
             },
             success:function(data){
                 if(data !== null && data !== "" && data.indexOf(' ')) alert(data);
-                else fetch_inbasket();
+                else $.fetch_inbasket();
             }
         });
     }
@@ -79,40 +77,17 @@ var data = [];
     function delete_item_inbasket(itemid){
 
         $.ajax({
-            url:'basket/deleteiteminbasket',
+            url: $.autoFindDir('basket/deleteiteminbasket').url,
             type:'POST',
             data:{
                 'itemid':itemid
             },
             success:function(){
-                fetch_inbasket();
+                $.fetch_inbasket();
+                $.fetchListData();
             }
         });
 
     }
-
-    function fetch_inbasket(){
-
-        $.ajax({
-            url:'basket/inbasket',
-            type:'POST',
-            dataType:'JSON',
-            success:function(data){
-
-                var $in_basket = $('#in_basket');
-                $in_basket.html('');
-                for(var q in data){
-
-                    $in_basket.append('<div class="col-md-12 basket_list"><div class="row">' +
-                        '<button class="close close-sm"><span>&times;</span></button>'+
-                        '<div class="col-md-6 text-overflow">'+data[q].name+'</div> : '+data[q].unit+' ชิ้น '+
-                        '<div class="product_id_inbasket hidden">'+data[q].id+'</div>'+
-                        '</div></div>');
-
-                }
-            }
-        });
-    }
-
 
 });

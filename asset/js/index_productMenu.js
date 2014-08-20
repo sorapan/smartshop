@@ -1,7 +1,7 @@
 $(function(){
 
-    var url = findDir("product/menu/main");
-    var url_sub = findDir("product/menu/sub");
+    var url =   $.autoFindDir('product/menu/main');
+    var url_sub = $.autoFindDir("product/menu/sub");
 //    alert(location.pathname);
     fetchProductMenu(url.url);
     var producturl = url.product;
@@ -43,17 +43,6 @@ $(function(){
                 }
             }
         });
-    }
-
-    function findDir(urlparam){
-        var path = location.pathname.split("/");
-        var urlsplit = urlparam.split("/");
-        if(path.length >= 3) for(var z=0;z<path.length-3;z++) urlparam = "../"+urlparam;
-        return {
-            url:        urlparam,
-            product:    urlsplit[0],
-            baseurl:    location.hostname+'/'+path[1]
-        };
     }
 
 });

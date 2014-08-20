@@ -51,6 +51,7 @@ class basket extends CI_Controller {
     function inbasket(){
 
         $inbasket = $this->BasketModel->fetchBasketDataByuserId($this->session->userdata('user_id'));
+        $data  = array();
 
         foreach($inbasket as $k=>$inbasket_v){
 
@@ -62,7 +63,14 @@ class basket extends CI_Controller {
             );
 
         }
-        echo json_encode($data);
+
+        if(!empty($data))echo json_encode($data);
+        else{
+
+            $data[0] = "fuck";
+            echo json_encode($data);
+        }
+
 
     }
 

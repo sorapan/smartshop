@@ -159,9 +159,9 @@ function js($js){
 <footer class="margintop col-md-12">
 </footer>
 
-
 <script src="<?=base_url()?>asset/js/jquery.js"></script>
 <script src="<?=base_url()?>asset/js/bootstrap.min.js"></script>
+<script src="<?=base_url()?>asset/js/index_publicMethod.js"></script>
 <script src="<?=base_url()?>asset/js/index_MenuControl.js"></script>
 <script src="<?=base_url()?>asset/js/index_productMenu.js"></script>
 <script src="<?=base_url()?>asset/js/index_basket.js"></script>
@@ -171,8 +171,6 @@ if(isset($js)){
     else foreach($js as $jsvalue)echo '<script src="'.$jsvalue.'"></script>';
 }
 ?>
-
-
 
 </body>
 </html>

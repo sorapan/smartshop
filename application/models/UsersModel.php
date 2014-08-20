@@ -24,9 +24,26 @@ class UsersModel extends CI_Model{
 
     }
 
+    function fetchUserData($userid){
+
+        $this->db->select('*');
+        $this->db->where('id',$userid);
+        return $this->db->get('user')->result();
+
+    }
+
+    function updateBuyStatusToWaiting($userid){
+
+        $this->db->where('id', $userid);
+        $this->db->update('user', array(
+            'buy_status' => 'wait'
+        ));
+
+    }
+
     function loginUser($username,$password){
 
-        $this->db->select('username,password,class,id');
+        $this->db->select('username,password,class,id,buy_status');
         $this->db->where('username',$username)->where('password',$password);
         $query = $this->db->get('user');
         return $query->result();

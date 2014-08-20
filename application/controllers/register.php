@@ -55,6 +55,7 @@ class Register extends CI_Controller{
                 $this->session->set_userdata('login',true);
                 $this->session->set_userdata('username',$loginv->username);
                 $this->session->set_userdata('user_id',$loginv->id);
+                $this->session->set_userdata('buy_status',$loginv->buy_status);
                 $this->session->set_userdata('class',$loginv->class);
             }
             redirect("/");
