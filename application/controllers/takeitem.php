@@ -32,8 +32,12 @@ class takeitem  extends CI_Controller{
 
         }else{
 
+<<<<<<< HEAD
             $data['js'][1] = base_url().'asset/js/takeitem_takebasket.js';
             $this->load->layout1('takeitem_takebasket',$data);
+=======
+            $this->load->layout1('takeitem_takebasket');
+>>>>>>> fd2ebfe866bd57788b6178cb1a6d4a61dbc2030d
 
         }
 

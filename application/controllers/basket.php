@@ -64,6 +64,7 @@ class basket extends CI_Controller {
 
         }
 
+<<<<<<< HEAD
         if($this->session->userdata('buy_status') == 'wait'){
             $data[0]['non-close'] = true;
         }
@@ -71,6 +72,12 @@ class basket extends CI_Controller {
         if(!empty($data))echo json_encode($data);
         else{
             $data[0] = "basket_empty";
+=======
+        if(!empty($data))echo json_encode($data);
+        else{
+
+            $data[0] = "fuck";
+>>>>>>> fd2ebfe866bd57788b6178cb1a6d4a61dbc2030d
             echo json_encode($data);
         }
 

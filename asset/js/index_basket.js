@@ -5,8 +5,11 @@ var data = [];
 
 
     $.fetch_inbasket();
+<<<<<<< HEAD
 
     if($)
+=======
+>>>>>>> fd2ebfe866bd57788b6178cb1a6d4a61dbc2030d
 
     $getitem.click(function(e){
 

@@ -50,6 +50,7 @@
                     <input type="radio" name="howtosend" value="100">
                     <span class="howtosend_message">ส่งทางไปรษณีย์ EMS ( ค่าบริการ 100 บาททุกกรณี )</span>
                 </label>
+<<<<<<< HEAD
             </div>
         </div>
 
@@ -71,6 +72,29 @@
             </div>
         </div>
 
+=======
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label">ที่อยู่ : </label>
+            <div style="text-align: left" class="col-md-8 control-label">
+                <label>
+                    <input type="radio" name="address" value="profile_address" checked>
+                    <span>ที่อยู่ตามที่กรอกไว้ใน Profile</span>
+                </label>
+            </div>
+            <div style="text-align: left" class="col-md-8 col-md-offset-4 control-label">
+                <label>
+                    <input type="radio" name="address" value="new_addresss">
+                    <span>ที่อยู่ใหม่
+                        <textarea class="margintop form-control col-xs-12" id="new_address" rows="4" disabled></textarea>
+                    </span>
+                </label>
+            </div>
+        </div>
+
+>>>>>>> fd2ebfe866bd57788b6178cb1a6d4a61dbc2030d
         <hr>
 
         <div class="form-group">

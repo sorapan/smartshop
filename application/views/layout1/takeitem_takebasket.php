@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <div class="col-md-12 bigheader">รายการที่สั่งซื้อแล้ว</div>
 <div class="col-md-12 card">
@@ -95,3 +96,17 @@
     </div>
 
 </div>
+=======
+<div class="col-md-12">
+    <div class="bigheader">รายการที่สั่งซื้อแล้ว</div>
+</div>
+<div class="col-md-12">
+    <div class="card">
+
+        <div class="cardbrand"><center>รายการ</center></div>
+
+
+
+    </div>
+</div>
+>>>>>>> fd2ebfe866bd57788b6178cb1a6d4a61dbc2030d
