@@ -22,7 +22,6 @@
             dataType:'JSON',
             success:function(data){
                 var $in_basket = $('#in_basket');
-<<<<<<< HEAD
                 if(data[0] !== "basket_empty"){
                     $in_basket.html('');
                     var close_button;
@@ -31,13 +30,6 @@
                     for(var q in data){
                         $in_basket.append('<div class="col-md-12 basket_list"><div class="row">' +
                             close_button+
-=======
-                if(data[0] !== 'fuck'){
-                    $in_basket.html('');
-                    for(var q in data){
-                        $in_basket.append('<div class="col-md-12 basket_list"><div class="row">' +
-                            '<button class="close close-sm delete_basket_item"><span>&times;</span></button>'+
->>>>>>> fd2ebfe866bd57788b6178cb1a6d4a61dbc2030d
                             '<div class="col-md-6 text-overflow">'+data[q].name+'</div> : '+data[q].unit+' ชิ้น '+
                             '<div class="product_id_inbasket hidden">'+data[q].id+'</div>'+
                             '</div></div>');

@@ -10,6 +10,7 @@ class takeitem  extends CI_Controller{
         $this->load->model('TypeModel');
         $this->load->model('BasketModel');
         $this->load->model('Bought_listModel');
+        $this->load->model('Wait_listModel');
 
     }
 
@@ -32,12 +33,8 @@ class takeitem  extends CI_Controller{
 
         }else{
 
-<<<<<<< HEAD
             $data['js'][1] = base_url().'asset/js/takeitem_takebasket.js';
             $this->load->layout1('takeitem_takebasket',$data);
-=======
-            $this->load->layout1('takeitem_takebasket');
->>>>>>> fd2ebfe866bd57788b6178cb1a6d4a61dbc2030d
 
         }
 
@@ -76,6 +73,37 @@ class takeitem  extends CI_Controller{
         ));
 
         $this->UsersModel->updateBuyStatusToWaiting($this->session->userdata('user_id'));
+
+    }
+
+    function to_waiting_list(){
+
+        $data = array(
+            'money' => $_POST['money'],
+            'date' => strtotime($_POST['day']." ".$_POST['mon']." ".$_POST['year']-543),
+            'time' => $_POST['time'],
+            'user' => $this->session->userdata('user_id')
+        );
+
+        $this->Wait_listModel->insertWaitList($data);
+
+
+        if(isset($_FILES['bill_file'])){
+
+            $temp = explode(".", $_FILES["bill_file"]["name"]);
+            $extension = end($temp);
+
+            $basket = $this->Wait_listModel->fetchData()[0]->id;
+
+            $img_name = $basket.".".$extension;
+            move_uploaded_file($_FILES['bill_file']['tmp_name'],"../peter/bill_img/".$img_name);
+            $this->Wait_listModel->updateWaitList(array(
+                'bill_dir' => $basket.".".$extension
+            ),$basket);
+
+        }
+
+        redirect(base_url());
 
     }
 

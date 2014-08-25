@@ -159,7 +159,6 @@ function js($js){
     <?php
         }else{
     ?>
-            <a href="<?=base_url()?>takeitem" class="btn bluebutton">ดูรายการสั่งซื้อ</a>
             <a href="<?=base_url()?>takeitem" class="btn yellowbutton">ยืนยันการโอนเงิน</a>
     <?php
         }

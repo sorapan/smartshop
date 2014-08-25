@@ -1,7 +1,9 @@
-<div class="bigheader"><h4>
+<div class="col-xs-12 bigheader"><h4>
         ข้อมูลการซื้อ
 </h4></div>
 
-<div class="card">
+<div class="col-xs-12 card">
+
+
 
 </div>

@@ -81,6 +81,7 @@ $route['basket/deleteiteminbasket'] = "basket/delete_item_in_basket";
 $route['takeitem'] = "takeitem/index";
 $route['takeitem/itemlist'] = "takeitem/itemlist";
 $route['takeitem/boughtit'] = "takeitem/bought_it";
+$route['takeitem/towaitinglist'] = "takeitem/to_waiting_list";
 
 
 $route['regisform'] = "register";
