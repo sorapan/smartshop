@@ -24,12 +24,6 @@ class admin extends CI_Controller {
 
     }
 
-    function bought_list(){
-
-        $this->load->adminpage('boughtlist');
-
-    }
-
 
 
 } 

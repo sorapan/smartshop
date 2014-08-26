@@ -1,6 +1,6 @@
 
     <div class="col-xs-12 bigheader">
-        <h4>จัดการประเภทสินค้า</h4>
+        จัดการประเภทสินค้า
     </div>
 
     <div class="col-xs-12 card">

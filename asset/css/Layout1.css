@@ -191,6 +191,10 @@ select:focus{
     list-style-type: disc;
 }
 
+.text-grey{
+    color:#b6b6b6;
+}
+
 /*////////////////^^^ MY LAYOUT ^^^///////////////////*/
 
 
@@ -233,13 +237,14 @@ header{
 }
 
 #content{
-    /*min-height: 400px;*/
+    min-height: 400px;
     margin-top: 20px;
 }
 
 footer{
     background-color: #4cacdb;
     height: 100px;
+    margin-top: 90px;
 }
 
 .basket_list{
@@ -259,6 +264,11 @@ footer{
     border-width: 0 1px 1px 0;
     border-style: solid;
     border-color: #afafaf;
+}
+
+a.badge{
+    border-radius: 0;
+    background-color: cornflowerblue;
 }
 
 /*#sidebar{*/

@@ -41,6 +41,7 @@ $(function(){
 
                     $.fetch_inbasket();
                     $.fetchListData();
+                    location.reload();
 
                 }
             });
@@ -70,7 +71,9 @@ $(function(){
             },
             success:function(data){
 
-               location = $.autoFindDir('takeitem/takebasket').url;
+//               location = $.autoFindDir('takeitem/takebasket').url;
+
+                location.reload();
 
             }
         });

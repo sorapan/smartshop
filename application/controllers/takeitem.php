@@ -31,10 +31,14 @@ class takeitem  extends CI_Controller{
 
             $this->load->layout1('takeitem',$data);
 
-        }else{
+        }else if($this->session->userdata('buy_status') == 'wait'){
 
             $data['js'][1] = base_url().'asset/js/takeitem_takebasket.js';
             $this->load->layout1('takeitem_takebasket',$data);
+
+        }else{
+
+            $this->load->layout1('takeitem',$data);
 
         }
 
@@ -73,6 +77,7 @@ class takeitem  extends CI_Controller{
         ));
 
         $this->UsersModel->updateBuyStatusToWaiting($this->session->userdata('user_id'));
+        $this->session->set_userdata('buy_status','wait');
 
     }
 
@@ -102,6 +107,19 @@ class takeitem  extends CI_Controller{
             ),$basket);
 
         }
+
+        $this->UsersModel->updateBuyStatusToNone($this->session->userdata('user_id'));
+        $this->session->set_userdata('buy_status','none');
+        $basket_data = $this->BasketModel->fetchBasketDataByuserId($this->session->userdata('user_id'));
+        foreach($basket_data as $basket_val){
+
+            $productmodel = $this->ProductModel->fetchproductdataByproductId($basket_val->product);
+            $productunit = $productmodel[0]->unit;
+            $productid = $basket_val->product;
+            $this->ProductModel->updateProductData($productid,$productunit-$basket_val->unit);
+
+        }
+        $this->BasketModel->clearBasketDataByUserid($this->session->userdata('user_id'));
 
         redirect(base_url());
 

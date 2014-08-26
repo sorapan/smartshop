@@ -1,7 +1,7 @@
 
-    <div class="col-xs-12 bigheader"><h4>
+    <div class="col-xs-12 bigheader">
         เพิ่มข้อมูลสินค้า
-    </h4></div>
+    </div>
 
     <div class="col-xs-12 card">
 

@@ -52,7 +52,11 @@ foreach($p_data as $p_val){
 
                         <div style="text-align: center" class="col-md-12">
                             <a href="#" class="btn btn-sm whitebutton" >ดูรายละเอียด</a>
-                            <a href="#" data-toggle="modal" data-target="#myModal" class="btn btn-sm bluebutton getitem" >หยิบใส่ตะกร้า</a>
+                            <?php if($this->session->userdata('class')!=='admin'){
+                            ?>
+                                <a href="#" data-toggle="modal" data-target="#myModal" class="btn btn-sm bluebutton getitem" >หยิบใส่ตะกร้า</a>
+                            <?php
+                            }?>
                         </div>
 
                 </div>

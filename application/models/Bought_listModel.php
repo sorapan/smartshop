@@ -12,5 +12,12 @@ class Bought_listModel  extends CI_Model{
 
     }
 
+    function selectAllData(){
+
+        $this->db->select('*');
+        return $this->db->get('bought_list')->result();
+
+    }
+
 
 }

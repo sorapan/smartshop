@@ -143,6 +143,13 @@ function js($js){
 
 <div id="basketbox" class=" col-md-2" >
     <div style="width: 200px;background-color: white " class="cardshadow margintop nav" data-spy="affix" data-offset-top="125">
+
+        <?php
+
+        if($this->session->userdata('class') !== 'admin'){
+
+        ?>
+
         <div class="col-md-12"><h4>ตะกร้าสินค้า</h4></div>
         <div class="col-md-12" style="background-color: #bbbbbb;height: 200px;overflow-y: scroll">
             <div class="row" id="in_basket">
@@ -152,7 +159,7 @@ function js($js){
         <div class="col-md-12" style="background-color: white;height: auto;line-height: 50px;text-align: center">
 
     <?php
-        if($this->session->userdata('buy_status') == 'none'){
+        if($this->session->userdata('buy_status') == 'none' || $this->session->userdata('buy_status') == null ){
     ?>
             <a href="<?=base_url()?>takeitem" class="btn bluebutton">ดูรายการสั่งซื้อ</a>
 
@@ -164,12 +171,25 @@ function js($js){
         }
     ?>
         </div>
+
+
+        <?php
+        }else{
+        ?>
+
+            <h3 class="text-center marginbot text-grey">ADMIN</h3>
+
+        <?php
+        }
+        ?>
+
     </div>
 </div>
 
+
 </div>
 
-<footer class="margintop col-md-12">
+<footer class=" col-md-12">
 </footer>
 
 <script src="<?=base_url()?>asset/js/jquery.js"></script>

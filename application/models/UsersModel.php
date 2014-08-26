@@ -41,6 +41,24 @@ class UsersModel extends CI_Model{
 
     }
 
+    function updateBuyStatusToVerified($userid){
+
+        $this->db->where('id', $userid);
+        $this->db->update('user', array(
+            'buy_status' => 'verified'
+        ));
+
+    }
+
+    function updateBuyStatusToNone($userid){
+
+        $this->db->where('id', $userid);
+        $this->db->update('user', array(
+            'buy_status' => 'none'
+        ));
+
+    }
+
     function loginUser($username,$password){
 
         $this->db->select('username,password,class,id,buy_status');

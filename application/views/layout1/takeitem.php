@@ -1,14 +1,20 @@
 
+
 <div class="col-md-12 bigheader">รายการสั่งซื้อ</div>
 <div class="col-md-12 card">
+
+    <?php
+    if(!empty($basket_data)){
+    ?>
+
     <div class="cardbrand">รายการ</div>
     <div class="col-md-10 col-md-offset-1">
         <ul class="list-group list_data">
+
             <?php
-
             foreach($basket_data as $b_v ){
-
             ?>
+
             <li class="list-group-item">
                 <div class="container-fluid">
                     <div class="col-xs-4"><?= $b_v->name?></div>
@@ -20,9 +26,7 @@
             </li>
 
             <?php
-
             }
-
             ?>
 
         </ul>
@@ -83,4 +87,15 @@
     </div>
 <!--    <a href="--><?//=base_url()?><!--takeitem/takebasket" style="width: 150px" class="col-md-offset-9 btn bluebutton margintop">สั่งซื้อ</a>-->
     <a id="buy_it_now" style="width: 150px" class="col-md-offset-9 btn bluebutton margintop">สั่งซื้อ</a>
+
+    <?php
+    }else{
+    ?>
+
+        <h2 class="text-center text-grey">ตะกร้าว่างเปล่า</h2>
+
+    <?php
+    }
+    ?>
+
 </div>

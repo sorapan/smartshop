@@ -63,7 +63,7 @@ $route['admin/deletesubtype'] = "admin_type/deletesubtype";//p
 
 /////////////////////////////////////
 
-$route['admin/boughtlist'] = "admin/bought_list";//p
+$route['admin/boughtlist'] = "admin_boughtlist/index";//p
 
 /////////////////////////////////////
 

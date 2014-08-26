@@ -66,4 +66,14 @@ class ProductModel extends CI_Model{
         return $this->db->get()->result();
 
     }
+
+    function updateProductData($productid,$unit){
+
+        $this->db->where('id',$productid);
+        $this->db->update('product',array(
+            'unit' => $unit
+        ));
+
+    }
+
 }

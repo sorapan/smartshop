@@ -87,9 +87,9 @@ var data = [];
             success:function(){
                 $.fetch_inbasket();
                 $.fetchListData();
+                if(location.pathname == "/peter/takeitem")location.reload();
             }
         });
-
     }
 
 });

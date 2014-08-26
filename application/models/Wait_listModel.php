@@ -20,4 +20,11 @@ class Wait_listModel extends CI_Model{
         return $this->db->get("wait_list")->result();
     }
 
+    function selectAllData(){
+
+        $this->db->select('*');
+        return $this->db->get('wait_list')->result();
+
+    }
+
 } 
