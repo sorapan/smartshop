@@ -4,6 +4,7 @@
 
 <div class="col-xs-12 card">
 
+    <div class="cardbrand">รายการ</div>
     <div class="col-xs-12 margintop">
         <ul class="list-group list_data">
             <?php
@@ -19,6 +20,7 @@
                     if($b_val->bill_dir !== NULL){
                 ?>
                     <a target="_blank" href="../bill_img/<?=$b_val->bill_dir?>">ภาพสลิป</a>
+                    <a href="">รายละเอียด</a>
                 <?php
                 }
                 ?>

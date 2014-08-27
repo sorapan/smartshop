@@ -27,4 +27,15 @@ class Wait_listModel extends CI_Model{
 
     }
 
+    function updateCartID($userid,$cartID){
+
+        $this->db->where('user',$userid);
+        $this->db->update('wait_list',array(
+            'cartID' => $cartID
+        ));
+
+    }
+
+
+
 } 

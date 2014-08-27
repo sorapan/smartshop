@@ -55,6 +55,7 @@ class BasketModel extends CI_Model{
 
         $this->db->select('*');
         $this->db->where('user',$userid);
+        $this->db->where('bought','N');
         return $this->db->get('basket')->result();
 
     }
@@ -69,10 +70,29 @@ class BasketModel extends CI_Model{
 
     }
 
-    function allPrice($userid){
+    function allPrice(){
 
         $this->db->select_sum('price');
         return $this->db->get('basket')->result();
+
+    }
+
+    function updateBoughtDataToY($userid){
+
+        $this->db->where('user',$userid);
+        $this->db->where('bought','N');
+        $this->db->update('basket',array(
+            'bought' => 'Y'
+        ));
+
+    }
+
+    function updateCartID($userid,$cartID){
+
+        $this->db->where('user',$userid);
+        $this->db->update('basket',array(
+            'cartID' => $cartID
+        ));
 
     }
 

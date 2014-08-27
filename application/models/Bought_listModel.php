@@ -12,9 +12,10 @@ class Bought_listModel  extends CI_Model{
 
     }
 
-    function selectAllData(){
+    function selectDataByUserID($userid){
 
         $this->db->select('*');
+        $this->db->where('user',$userid);
         return $this->db->get('bought_list')->result();
 
     }

@@ -6,8 +6,6 @@ var data = [];
 
     $.fetch_inbasket();
 
-    if($)
-
     $getitem.click(function(e){
 
         e.preventDefault();
@@ -27,10 +25,10 @@ var data = [];
         };
 
         $("#add_unit").val('');
-        $("#addtobasket_img").html('<img class="img-responsive" src="'+img+'">');
+        $("#addtobasket_img").html('<img class="img-responsive" style="width: 500px;" src="'+img+'">');
         $("#addtobasket_name").html(name);
-        $("#addtobasket_unit").html(price);
-        $("#addtobasket_price").html(unit);
+        $("#addtobasket_unit").html(price+" บาท");
+        $("#addtobasket_price").html(unit+" ชิ้น");
 
     });
 

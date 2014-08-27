@@ -73,11 +73,16 @@ class takeitem  extends CI_Controller{
             'price' => $price,
             'address' => $address,
             'sendby' => $sendby,
-            'date' => time()
+            'date' => time(),
+            'user' => $this->session->userdata('user_id')
         ));
 
         $this->UsersModel->updateBuyStatusToWaiting($this->session->userdata('user_id'));
         $this->session->set_userdata('buy_status','wait');
+        $this->BasketModel->updateCartID(
+            $this->session->userdata('user_id'),
+            $this->Bought_listModel->selectDataByUserID($this->session->userdata('user_id'))[0]->date
+        );
 
     }
 
@@ -91,7 +96,6 @@ class takeitem  extends CI_Controller{
         );
 
         $this->Wait_listModel->insertWaitList($data);
-
 
         if(isset($_FILES['bill_file'])){
 
@@ -119,7 +123,12 @@ class takeitem  extends CI_Controller{
             $this->ProductModel->updateProductData($productid,$productunit-$basket_val->unit);
 
         }
-        $this->BasketModel->clearBasketDataByUserid($this->session->userdata('user_id'));
+
+        $this->BasketModel->updateBoughtDataToY($this->session->userdata('user_id'));
+        $this->Wait_listModel->updateCartID(
+            $this->session->userdata('user_id'),
+            $this->Bought_listModel->selectDataByUserID($this->session->userdata('user_id'))[0]->date
+        );
 
         redirect(base_url());
 

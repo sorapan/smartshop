@@ -84,24 +84,24 @@ foreach($p_data as $p_val){
 
 
                 <div class="col-md-12 marginbot">
-                    <div id="addtobasket_img" class="col-md-10 col-md-offset-1 "></div>
+                    <div id="addtobasket_img" class="col-md-10 col-md-offset-1"></div>
                 </div>
 
                 <form class="form-horizontal form-in-modal">
                     <div class="form-group">
-                        <label class="col-md-3 control-label">มีอยู่จำนวน</label>
-                        <div class="col-md-9">
+                        <label class="col-md-4 control-label">มีอยู่จำนวน</label>
+                        <div class="col-md-8">
                             <p class="form-control-static" id="addtobasket_unit"></p>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-3 control-label">ราคา</label>
-                        <div class="col-md-9">
+                        <label class="col-md-4 control-label">ราคา</label>
+                        <div class="col-md-8">
                             <p class="form-control-static" id="addtobasket_price"></p>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-3 control-label" for="add_unit" >จำนวน </label>
+                        <label class="col-md-4 control-label" for="add_unit" >จำนวน </label>
                         <div class="col-md-4">
                             <input maxlength="5" type="text" class=" form-control" id="add_unit">
                         </div>
