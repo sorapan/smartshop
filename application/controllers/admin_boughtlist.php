@@ -16,14 +16,21 @@ class admin_boughtlist extends CI_Controller {
     function index(){
 
         $waitingdata = $this->Wait_listModel->selectAllData();
+
         $data = array(
-            'wait_listdata' => $waitingdata
+            'wait_listdata' => $waitingdata,
+            'js' => array(
+            base_url().'asset/js/admin_boughtlist.js'
+        )
         );
 
         foreach($waitingdata as $w_key=>$w_val){
 
             $user = $this->UsersModel->fetchUserData($w_val->user)[0]->username;
+            $boughtdata = $this->Bought_listModel->selectDataByUserID($data['wait_listdata'][$w_key]->user)[0];
             $data['wait_listdata'][$w_key]->username = $user;
+            $data['wait_listdata'][$w_key]->price = $boughtdata->price;
+            $data['wait_listdata'][$w_key]->send = $boughtdata->sendby;
 
         }
 
