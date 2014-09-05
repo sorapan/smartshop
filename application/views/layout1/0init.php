@@ -76,7 +76,7 @@ function js($js){
 
 <ul class="nav card margintop">
 <?php
-        /////////////////////// login false
+        /////////////////////// login == false
         if(!$this->session->userdata('login')){
 ?>
 
@@ -104,7 +104,7 @@ function js($js){
                 </div>
             </li>
 <?php
-        /////////////////////// login true
+        /////////////////////// login == true
         }else{
 ?>
 
@@ -116,6 +116,11 @@ function js($js){
                     if($this->session->userdata('class') == "admin"){
             ?>
                         <li><p><a target="_blank" href="<?=base_url()?>admin">หน้าแอดมิน</a></p></li>
+            <?php
+                    }
+                    if($this->session->userdata('class') == "user"){
+            ?>
+                    <li><p><a href="<?=base_url()?>boughtlist">ติดตามรายการสั่งซื้อ</a></p></li>
             <?php
                     }
             ?>

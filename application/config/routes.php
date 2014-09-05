@@ -64,6 +64,8 @@ $route['admin/deletesubtype'] = "admin_type/deletesubtype";//p
 /////////////////////////////////////
 
 $route['admin/boughtlist'] = "admin_boughtlist/index";//p
+$route['admin/boughtverify'] = "admin_boughtlist/bought_verify";//p
+$route['admin/basket_detail'] = "admin_boughtlist/basket_detail";//p
 
 /////////////////////////////////////
 
@@ -71,6 +73,9 @@ $route['product/menu/main'] = "product/fetchMain";
 $route['product/menu/sub/(:any)'] = "product/fetchsub/$1";
 $route['product/(:any)'] = "product/index/$1";
 $route['product/(:any)/(:any)'] = "product/index/$1/$2";
+
+
+$route['boughtlist/basketdetail'] = "boughtlist/basket_detail";
 
 
 $route['basket/basket'] = "basket/index";

@@ -39,7 +39,6 @@ function js($js){
     <link rel="stylesheet" href="<?=base_url()?>asset/css/bootstrap.css">
     <link rel="stylesheet" href="<?=base_url()?>asset/css/bootstrap-theme.css">
     <link rel="stylesheet" href="<?=base_url()?>asset/css/Layout1.css">
-    <link rel="stylesheet" href="<?=base_url()?>asset/css/admin_style.css">
     <?php
     if(isset($css)){
         if(!is_array($css))echo '<link rel="stylesheet" href="'.$css.'">';
@@ -145,7 +144,7 @@ function js($js){
 
 <script src="<?=base_url()?>asset/js/jquery.js"></script>
 <script src="<?=base_url()?>asset/js/bootstrap.min.js"></script>
-<script src="<?=base_url()?>asset/js/MenuControl.js"></script>
+<script src="<?=base_url()?>asset/js/index_publicMethod.js"></script>
 <?php
 if(isset($js)){
     if(!is_array($js))echo '<script src="'.$js.'"></script>';

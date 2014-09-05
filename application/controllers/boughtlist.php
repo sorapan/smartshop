@@ -1,6 +1,6 @@
 <?php
 
-class admin_boughtlist extends CI_Controller {
+class boughtlist extends CI_Controller {
 
     function __construct(){
 
@@ -21,8 +21,8 @@ class admin_boughtlist extends CI_Controller {
         $data = array(
             'wait_listdata' => $waitingdata,
             'js' => array(
-                base_url().'asset/js/admin_boughtlist.js'
-        ));
+                base_url().'asset/js/boughtlist.js'
+            ));
 
         foreach($waitingdata as $w_key=>$w_val){
 
@@ -38,16 +38,10 @@ class admin_boughtlist extends CI_Controller {
             $data['wait_listdata'][$w_key]->userid = $user->id;
 
         }
-        $this->load->adminpage('boughtlist',$data);
+        $this->load->layout1('boughtlist',$data);
 
     }
 
-    function bought_verify(){
-
-        $this->Bought_listModel->bought_verify($_POST['userid']);
-        $this->Wait_listModel->bought_verify($_POST['userid']);
-
-    }
 
     function basket_detail(){
 

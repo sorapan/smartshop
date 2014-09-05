@@ -60,6 +60,15 @@ class BasketModel extends CI_Model{
 
     }
 
+    function fetchBasketBoughtDataByuserId($userid){
+
+        $this->db->select('*');
+        $this->db->where('user',$userid);
+        $this->db->where('bought','Y');
+        return $this->db->get('basket')->result();
+
+    }
+
     function fetchdataJoinproductTable($userid){
 
         $this->db->select('product.id,basket.user,product.name,basket.unit,basket.price');
