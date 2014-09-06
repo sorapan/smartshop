@@ -20,7 +20,7 @@ a{
     cursor: pointer;
 }
 
-.cardheader, .bigheader , .medheader , .mheader , .cardbrand , #menubar li>a ,h1 ,h2 ,h3 ,h4 ,h5{
+.cardheader, .bigheader , .medheader , .mheader , .cardbrand , #menubar li>a ,h1 ,h2 ,h3 ,h4 ,h5, .tilemenu{
     font-family: 'thaisans';
 }
 
@@ -201,6 +201,22 @@ select:focus{
 
 .text-grey{
     color:#b6b6b6;
+}
+
+.tilemenu{
+    height: 50px;
+    line-height: 50px;
+    background-color: #4cabda;
+    color: white;
+    text-align: center;
+    border: 1px #ffffff solid;
+    font-size: 1.5em;
+}
+
+.tilemenu:hover{
+    text-decoration: none;
+    color:white;
+    background-color: #60d0fc;
 }
 
 /*////////////////^^^ MY LAYOUT ^^^///////////////////*/

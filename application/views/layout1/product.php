@@ -5,22 +5,23 @@
 <div class="col-md-12 cardshadow" id="productheader" >
         <div class="row">
         <div class="col-md-12"><h3>รายการ</h3></div>
-        <div class="col-md-3 ">
+        <div class="col-md-12 marginbot">
             <h4>ประเภทหลัก</h4>
-            <ul style="list-style-type: none;">
+            <div>
+                <a class="tilemenu col-xs-3" href="<?=base_url()?>product">ทั้งหมด</a>
                 <?php
                 foreach($mt_data as $mt_val){
-                    echo "<li>".$mt_val->name."<li>";
+                ?>
+                    <a class="tilemenu col-xs-3 producttype" typeid="<?=$mt_val->id?>"><?=$mt_val->name?></a>
+                <?php
                 }
                 ?>
-            </ul>
+            </div>
         </div>
-        <div class="col-md-2">
-            <h4>ประเภทหลัก</h4>
-            <ul style="list-style-type: none;">
-                <li>sdfdsfsd</li>
-                <li>dslifkjdnf</li>
-            </ul>
+        <div class="col-md-12 marginbot">
+            <h4 class="subtype_header"></h4>
+            <div class="subtype_menu" style="list-style-type: none;">
+            </div>
         </div>
         </div>
     </div>

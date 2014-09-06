@@ -17,12 +17,11 @@
 
             <thead>
             <tr>
-                <th>#</th>
+                <th>วันที่</th>
+                <th>เวลา</th>
                 <th>วิธีส่ง</th>
                 <th>เงินที่ต้องจ่าย</th>
                 <th>เงินที่โอน</th>
-                <th>วันที่</th>
-                <th>เวลา</th>
                 <th>ภาพสลิป</th>
                 <th>สินค้าในตะกร้า</th>
             </tr>
@@ -34,13 +33,12 @@
                 ?>
 
                 <tr>
-                    <td><?=$b_val->id?> </td>
+                    <td><?=date("d.m.Y",$b_val->date)?> </td>
+                    <td><?=$b_val->time?> </td>
                     <td class="hidden userid"><?=$b_val->userid?> </td>
                     <td><?=$b_val->send=='none' ? 'รับด้วยตัวเอง' : 'ส่ง EMS' ?></td>
                     <td><?=$b_val->price?> บาท</td>
                     <td><?=$b_val->money?> บาท </td>
-                    <td><?=date("d.m.Y",$b_val->date)?> </td>
-                    <td><?=$b_val->time?> </td>
                     <?php
                     if($b_val->bill_dir !== NULL){
                         ?>
@@ -72,6 +70,66 @@
 
 <div class="col-xs-12 card margintop">
     <div class="cardbrand">รายการที่แอดมินดำเนินการแล้ว</div>
+    <div class="col-xs-12 margintop">
+
+        <?php
+
+        if(count($wait_listdatay)){
+
+        ?>
+
+        <table class="table">
+
+            <thead>
+            <tr>
+                <th>วันที่</th>
+                <th>เวลา</th>
+                <th>วิธีส่ง</th>
+                <th>เงินที่ต้องจ่าย</th>
+                <th>เงินที่โอน</th>
+                <th>ภาพสลิป</th>
+                <th>สินค้าในตะกร้า</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <?php
+            foreach($wait_listdatay as $b_val){
+                ?>
+
+                <tr>
+                    <td><?=date("d.m.Y",$b_val->date)?> </td>
+                    <td><?=$b_val->time?> </td>
+                    <td><?=$b_val->id?> </td>
+                    <td class="hidden userid"><?=$b_val->userid?> </td>
+                    <td><?=$b_val->send=='none' ? 'รับด้วยตัวเอง' : 'ส่ง EMS' ?></td>
+                    <td><?=$b_val->price?> บาท</td>
+                    <td><?=$b_val->money?> บาท </td>
+                    <?php
+                    if($b_val->bill_dir !== NULL){
+                        ?>
+                        <td><a class="bill_img" data-toggle="modal" data-target="#myModal" www='bill_img/<?=$b_val->bill_dir?>'>คลิ๊ก</a></td>
+                    <?php
+                    }
+                    ?>
+                    <td>
+                        <a class="badge basket_detail" data-toggle="modal" data-target="#modal_basketdata">รายละเอียด</a>
+                    </td>
+
+                </tr>
+
+            <?php
+            }
+            }else{
+
+                echo '<h2 class="text-center text-grey marginbot">ข้อมูลว่างเปล่า</h2>';
+
+            }
+            ?>
+
+            </tbody>
+        </table>
+    </div>
 </div>
 
 <!--/////////////////////////////////////////////////-->

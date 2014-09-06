@@ -28,6 +28,14 @@ class Wait_listModel extends CI_Model{
 
     }
 
+    function selectAllDataVerified(){
+
+        $this->db->select('*');
+        $this->db->where('verified','Y');
+        return $this->db->get('wait_list')->result();
+
+    }
+
     function updateCartID($userid,$cartID){
 
         $this->db->where('user',$userid);

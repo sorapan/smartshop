@@ -32,6 +32,7 @@ class BasketModel extends CI_Model{
 
         $this->db->select('*');
         $this->db->where('product',$productId);
+        $this->db->where('bought','N');
         return $this->db->get('basket')->result();
 
     }

@@ -47,7 +47,6 @@ var data = [];
 
     $(document).on('click','.delete_basket_item',function(){
 
-
         var a = $(this).parent().find(".product_id_inbasket").html();
         if(confirm('คุณต้องการลบออกจากตะกร้า?')){
             return delete_item_inbasket(a);

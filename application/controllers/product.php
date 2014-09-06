@@ -21,7 +21,10 @@ class product extends CI_Controller {
 
         $data = array(
             'css' => array(
-              base_url().'asset/css/product_.css'
+                base_url().'asset/css/product_.css'
+            ),
+            'js' => array(
+                base_url().'asset/js/product_.js'
             ),
             'p_data'=>$productdata,
             'mt_data'=>$mt,
