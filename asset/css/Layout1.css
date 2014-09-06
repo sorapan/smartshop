@@ -41,6 +41,35 @@ hr{
     border-color: #bbbbbb;
 }
 
+li{
+    display: block;
+}
+
+.navnav>li>a{
+    border-left: 4px solid transparent;
+    height: 30px;
+    line-height: 10px;
+    padding-left: 10px;
+    background-color: transparent;
+}
+
+.navnav>li>a:hover{
+    background-color: #dfe7ff;
+    border-left: 4px solid #4cabda;
+}
+
+.navnav>li>.navnav>li>a{
+    background-color: transparent;
+    border-left: 2px solid transparent;
+    padding-left: 40px;
+}
+
+.navnav>li>.navnav>li>a:hover{
+    background-color: #dfe7ff;
+    border-left: 2px solid #4cabda;
+}
+
+
 /*////////////////vvv MY LAYOUT vvv///////////////////*/
 
 .container {
@@ -150,12 +179,13 @@ select:focus{
 }
 
 .form-control{
-    border: 1px solid #d5d5d5;
+    border-bottom: 1px solid #4cabda;
 }
 
 .form-control:focus{
     box-shadow: none;
-    border: 1px solid #3e3e3e;
+    border-color: #d5d5d5;
+    border-bottom: 2px solid #4cabda;
     transition: all 0s;
 }
 
@@ -206,17 +236,18 @@ select:focus{
 .tilemenu{
     height: 50px;
     line-height: 50px;
-    background-color: #4cabda;
+    background-color: #bababa;
     color: white;
     text-align: center;
     border: 1px #ffffff solid;
     font-size: 1.5em;
+    transition: .2s all ease;
 }
 
 .tilemenu:hover{
     text-decoration: none;
     color:white;
-    background-color: #60d0fc;
+    background-color: #4cabda;
 }
 
 /*////////////////^^^ MY LAYOUT ^^^///////////////////*/

@@ -111,20 +111,20 @@ function js($js){
             <li class="cardbrand">คุณ <?=$this->session->userdata('username')?></li>
             <li>
                 <p>ระดับ : <?=$this->session->userdata('class')?></p>
-                <ul class="list-disc-type">
+                <ul class="nav navnav">
             <?php
                     if($this->session->userdata('class') == "admin"){
             ?>
-                        <li><p><a target="_blank" href="<?=base_url()?>admin">หน้าแอดมิน</a></p></li>
+                        <li><a target="_blank" href="<?=base_url()?>admin">หน้าแอดมิน</a></li>
             <?php
                     }
                     if($this->session->userdata('class') == "user"){
             ?>
-                    <li><p><a href="<?=base_url()?>boughtlist">ติดตามรายการสั่งซื้อ</a></p></li>
+                    <li><a href="<?=base_url()?>boughtlist">ติดตามรายการสั่งซื้อ</a></li>
             <?php
                     }
             ?>
-                    <li><p><a href="<?=base_url()?>destroy">ออกจากระบบ</a></p></li>
+                    <li><a href="<?=base_url()?>destroy">ออกจากระบบ</a></li>
                 </ul>
             </li>
 
@@ -133,7 +133,7 @@ function js($js){
 ?>
     </ul>
 
-    <ul id="typemenu" class="list-none-type card margintop">
+    <ul id="typemenu" class="nav navnav card margintop">
         <li class="cardbrand">รายการสินค้า</li>
         <li><a href="<?=base_url()?>product">ทั้งหมด</a></li>
     </ul>

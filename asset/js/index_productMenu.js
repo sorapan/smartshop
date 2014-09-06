@@ -20,7 +20,7 @@ $(function(){
 
                     m_sub.append('' +
                         '<li><a href="http://'+baseurl+'/'+producturl+'/'+z+'">'+data[z]+'</a>'+
-                        '<ul class="list-disc-type submenu'+z+'">' +
+                        '<ul class="nav navnav list-disc-type submenu'+z+'">' +
                         '</ul></li>');
                     fetchProductSubMenu(url_sub.url,z);
 

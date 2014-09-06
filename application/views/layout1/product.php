@@ -2,9 +2,9 @@
 
 <div class="col-md-12 bigheader">สินค้า</div>
 
-<div class="col-md-12 cardshadow" id="productheader" >
-        <div class="row">
-        <div class="col-md-12"><h3>รายการ</h3></div>
+<div class="col-md-12 card"  >
+
+        <div class="col-md-12 cardbrand">รายการ</div>
         <div class="col-md-12 marginbot">
             <h4>ประเภทหลัก</h4>
             <div>
@@ -12,28 +12,57 @@
                 <?php
                 foreach($mt_data as $mt_val){
                 ?>
-                    <a class="tilemenu col-xs-3 producttype" typeid="<?=$mt_val->id?>"><?=$mt_val->name?></a>
+                    <a class="tilemenu col-xs-3 producttype" href="<?=base_url()?>product/<?=$mt_val->id?>"><?=$mt_val->name?></a>
                 <?php
                 }
                 ?>
             </div>
         </div>
         <div class="col-md-12 marginbot">
-            <h4 class="subtype_header"></h4>
+            <h4 class="subtype_header"><?=isset($mt_name)?$mt_name!=='ทั้งหมด'?'ประเภทย่อยของ > '.$mt_name:'':''?></h4>
             <div class="subtype_menu" style="list-style-type: none;">
+
+                <?php
+
+                   if(isset($subtype_data))foreach($subtype_data as $val){
+                ?>
+                   <a class="tilemenu col-xs-3" href="<?=base_url()?>product/<?=$val->maintype?>/<?=$val->id?>"><?=$val->name?></a>
+                <?php
+                   }
+                ?>
+
             </div>
-        </div>
+
         </div>
     </div>
 
+<div class=" col-xs-12 margintop card">
+
+    <div class="col-xs-12 cardbrand">ค้นหาตามชื่อสินค้า</div>
+
+    <form action="<?=base_url()?>product/search" method="GET">
+    <div class="col-xs-8 col-xs-offset-2 input-group">
+        <input type="text" name="word" class="form-control search_product_textbox">
+        <div class="input-group-btn">
+            <button type="submit" class="search_product_btn btn bluebutton">ค้นหา</button>
+        </div>
+    </div>
+    </form>
+
+</div>
+
+<?php
+if(isset($mt_name)){
+?>
 <div class=" col-md-12 margintop medheader">
 <?php
     echo 'แสดง : '.$mt_name;
-    if(isset($st_name)){
-        echo " > ".$st_name;
-    }
+    if(isset($st_name))echo " > ".$st_name;
 ?>
 </div>
+<?php
+}
+?>
 
     <div class="col-md-12 margintop">
 <?php

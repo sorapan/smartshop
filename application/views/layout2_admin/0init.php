@@ -92,16 +92,16 @@ function js($js){
                 <li class="cardbrand">คุณ <?=$this->session->userdata('username')?></li>
                 <li>
                     <p>ระดับ : <?=$this->session->userdata('class')?></p>
-                    <ul style="list-style-type: disc">
-                        <li><p><a href="<?=base_url()?>">หน้าแรก</a></p></li>
+                    <ul class="nav navnav">
+                        <li><a href="<?=base_url()?>">หน้าแรก</a></li>
                         <?php
                         if($this->session->userdata('class') == "admin"){
                             ?>
-                            <li><p><a href="<?=base_url()?>admin">หน้าแอดมิน</a></p></li>
+                            <li><a href="<?=base_url()?>admin">หน้าแอดมิน</a></li>
                         <?php
                         }
                         ?>
-                        <li><p><a href="<?=base_url()?>destroy">ออกจากระบบ</a></p></li>
+                        <li><a href="<?=base_url()?>destroy">ออกจากระบบ</a></li>
                     </ul>
                 </li>
 
@@ -120,11 +120,11 @@ function js($js){
         <div class="card">
 
             <div class="cardbrand">เมนูแอดมิน</div>
-            <ul >
-                <li><p><a class="AdminMenuButton" href="<?=base_url()?>admin/boughtlist">ยืนยันข้อมูลการซื้อ</a></p></li>
-                <li><p><a class="AdminMenuButton" href="<?=base_url()?>admin/addproduct">เพิ่มข้อมูลสินค้า</a></p></li>
+            <ul class="nav navnav">
+                <li><a class="AdminMenuButton" href="<?=base_url()?>admin/boughtlist">ยืนยันข้อมูลการซื้อ</a></li>
+                <li><a class="AdminMenuButton" href="<?=base_url()?>admin/addproduct">เพิ่มข้อมูลสินค้า</a></li>
                 <!--            <li><a class="AdminMenuButton" href="--><?//=base_url()?><!--">จัดการสมาชิก</a></li>-->
-                <li><p><a class="AdminMenuButton" href="<?=base_url()?>admin/typeproduct">จัดการประเภทสินค้า</a></p></li>
+                <li><a class="AdminMenuButton" href="<?=base_url()?>admin/typeproduct">จัดการประเภทสินค้า</a></li>
                 <!--            <li><a class="AdminMenuButton" href="#">ข้อความ</a></li>-->
                 <!--            <li><a class="AdminMenuButton" href="#">ประวัติการขาย</a></li>-->
                 <!--            <li><a class="AdminMenuButton" href="#">โปรโมชั่น</a></li>-->
