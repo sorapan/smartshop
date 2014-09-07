@@ -75,4 +75,11 @@ class UsersModel extends CI_Model{
 
     }
 
+    function deleteUserByUSerID($userid){
+
+        $this->db->where('id', $userid);
+        $this->db->delete('user');
+
+    }
+
 } 

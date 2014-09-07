@@ -26,7 +26,19 @@ class admin_member extends CI_Controller{
 
     function memeberdetail(){
 
-        $data['userdata'] = $this->UsersModel->fetchUserData();
+        echo json_encode($this->UsersModel->fetchUserData($_POST['userid']));
+
+    }
+
+    function editmember(){
+
+
+
+    }
+
+    function deletemember(){
+
+        $this->UsersModel->deleteUserByUSerID($_POST['userid']);
 
     }
 
