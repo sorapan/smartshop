@@ -122,8 +122,8 @@ function js($js){
             <div class="cardbrand">เมนูแอดมิน</div>
             <ul class="nav navnav">
                 <li><a class="AdminMenuButton" href="<?=base_url()?>admin/boughtlist">ยืนยันข้อมูลการซื้อ</a></li>
+                <li><a class="AdminMenuButton" href="<?=base_url()?>admin/member">จัดการสมาชิก</a></li>
                 <li><a class="AdminMenuButton" href="<?=base_url()?>admin/addproduct">เพิ่มข้อมูลสินค้า</a></li>
-                <!--            <li><a class="AdminMenuButton" href="--><?//=base_url()?><!--">จัดการสมาชิก</a></li>-->
                 <li><a class="AdminMenuButton" href="<?=base_url()?>admin/typeproduct">จัดการประเภทสินค้า</a></li>
                 <!--            <li><a class="AdminMenuButton" href="#">ข้อความ</a></li>-->
                 <!--            <li><a class="AdminMenuButton" href="#">ประวัติการขาย</a></li>-->

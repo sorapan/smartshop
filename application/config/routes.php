@@ -69,6 +69,13 @@ $route['admin/basket_detail'] = "admin_boughtlist/basket_detail";//p
 
 /////////////////////////////////////
 
+$route['admin/member'] = "admin_member/index";//p
+$route['admin/memberfetchdetail'] = "admin_member/memeberdetail";//p
+
+/////////////////////////////////////
+
+
+
 $route['product/menu/main'] = "product/fetchMain";
 $route['product/menu/sub/(:any)'] = "product/fetchsub/$1";
 $route['product/(:any)'] = "product/index/$1";

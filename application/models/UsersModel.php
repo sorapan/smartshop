@@ -24,6 +24,13 @@ class UsersModel extends CI_Model{
 
     }
 
+    function fetchAllUserData(){
+
+        $this->db->select('*');
+        return $this->db->get('user')->result();
+
+    }
+
     function fetchUserData($userid){
 
         $this->db->select('*');
