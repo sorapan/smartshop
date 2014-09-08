@@ -76,6 +76,12 @@ $route['admin/deletemember'] = "admin_member/deletemember";//p
 
 /////////////////////////////////////
 
+$route['admin/productmanage'] = "admin_productmanage/index";//p
+$route['admin/productmanage/(:any)'] = "product/index/$1";
+$route['admin/productmanage/(:any)/(:any)'] = "product/index/$1/$2";
+
+/////////////////////////////////////
+
 $route['product/menu/main'] = "product/fetchMain";
 $route['product/menu/sub/(:any)'] = "product/fetchsub/$1";
 $route['product/(:any)'] = "product/index/$1";

@@ -189,6 +189,30 @@ select:focus{
     transition: all 0s;
 }
 
+
+#productheader{
+    background-color: white;
+}
+
+.thumbnail{
+    border-radius: 0 0 0 0 !important;
+    padding: 0;
+    height: 400px;
+    position: relative;
+}
+
+.thumbnail>.limit_img{
+    height: 60%;
+    overflow: hidden;
+    position: relative;
+}
+
+.thumbnail>.limit_img>img{
+    width: auto;
+    height: 300px;
+    position: absolute;
+}
+
 .modal-content{
     border-radius: 0;
 }
