@@ -39,6 +39,7 @@ var data = [];
         if(!isNaN(addunit) && addunit !== "" && addunit.indexOf(" ")){
             data['want'] = addunit;
             sendData(data);
+            $('#myModal').modal('hide');
         }else{
             alert('กรอกข้อมูลผิดพลาด');
         }

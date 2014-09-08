@@ -14,6 +14,8 @@ class product extends CI_Controller {
         $mt = $this->TypeModel->fetchMainType();
         $productdata = $this->ProductModel->fetchproductBySubType($sub,$main);
 
+        //index_basket.js
+
         $data = array(
             'css' => array(
                 base_url().'asset/css/product_.css'

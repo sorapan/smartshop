@@ -66,6 +66,13 @@ class UsersModel extends CI_Model{
 
     }
 
+    function updateUserData($userid,$data){
+
+        $this->db->where('id',$userid);
+        $this->db->update('user', $data);
+
+    }
+
     function loginUser($username,$password){
 
         $this->db->select('username,password,class,id,buy_status');

@@ -141,7 +141,7 @@ foreach($p_data as $p_val){
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn whitebutton" data-dismiss="modal">ปิด</button>
-                <button type="button" id="addtobasket" data-dismiss="modal" class="btn bluebutton">ตกลง</button>
+                <button type="button" id="addtobasket" class="btn bluebutton">ตกลง</button>
             </div>
 
         </div>

@@ -32,7 +32,19 @@ class admin_member extends CI_Controller{
 
     function editmember(){
 
+        $this->UsersModel->updateUserData($_POST['id'],array(
 
+            'password' => $_POST['password'],
+            'class' => $_POST['class'],
+            'email' => $_POST['email'],
+            'realname' => $_POST['realname'],
+            'lastname' => $_POST['lastname'],
+            'tel' => $_POST['tel'],
+            'address' => $_POST['address'],
+            'province' => $_POST['province'],
+            'zipcode' => $_POST['zipcode']
+
+        ));
 
     }
 
@@ -41,5 +53,6 @@ class admin_member extends CI_Controller{
         $this->UsersModel->deleteUserByUSerID($_POST['userid']);
 
     }
+
 
 } 
