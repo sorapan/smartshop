@@ -16,11 +16,14 @@ class admin_productmanage extends CI_Controller {
         $mt = $this->TypeModel->fetchMainType();
         $productdata = $this->ProductModel->fetchproductBySubType($sub,$main);
 
-        //index_basket.js
-
         $data = array(
             'p_data'=>$productdata,
             'mt_data'=>$mt,
+            'js' => array(
+                base_url().'asset/js/admin_productmanage.js',
+                base_url().'asset/js/admin_product_uploadimg.js',
+                base_url().'asset/js/admin_product_.js'
+            )
         );
 
         if($main==null){
@@ -41,6 +44,12 @@ class admin_productmanage extends CI_Controller {
         }
 
         $this->load->adminpage('productmanage',$data);
+
+    }
+
+    function fetchproductdata(){
+
+        $productid = $_POST['productid'];
 
     }
 

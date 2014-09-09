@@ -7,10 +7,10 @@
 
     <div id="showimg" class="margintop">
         <div class="col-md-4 col-md-push-4 margintop" id="uploadimgbox">+</div>
+        <input type="file" class="uploadbyclick hide">
     </div>
 
 <!--        <img  class="col-md-4 col-md-push-4" src="--><?//=base_url()?><!--asset/img/qq.jpg">-->
-    <input type="file" id="inputfilehidden" style="display:none">
     <form method="post" action="<?=base_url()?>admin/addproductsubmit">
         <div id="uploadproductform" class="form-horizontal col-md-12">
             <div class="form-group">

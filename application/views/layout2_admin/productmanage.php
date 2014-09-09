@@ -30,7 +30,7 @@
                     <p>จำนวน : <span class="product_unit"><?=$p_val->unit?></span> ชิ้น</p>
 
                     <div style="text-align: right" class="col-md-12">
-                        <a href="#" class="btn btn-sm bluebutton" >แก้ไข</a>
+                        <a href="#" data-toggle="modal" data-target="#myModal"  class="btn btn-sm bluebutton edit_btn" >แก้ไข</a>
                         <a href="#" class="btn btn-sm yellowbutton" >ลบ</a>
                     </div>
 
@@ -47,7 +47,7 @@
 <!--////////////////////////////-->
 
 
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
 
@@ -57,36 +57,71 @@
             </div>
             <div class="modal-body">
 
-
-                <div class="col-md-12 marginbot">
-                    <div id="addtobasket_img" class="col-md-10 col-md-offset-1"></div>
+                <div id="showimg">
+                    <div class="col-md-6 col-md-push-3" id="uploadimgbox">+</div>
+                    <input type="file" class="uploadbyclick hide">
                 </div>
 
-                <form class="form-horizontal form-in-modal">
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">มีอยู่จำนวน</label>
-                        <div class="col-md-8">
-                            <p class="form-control-static" id="addtobasket_unit"></p>
+                <form method="post" class="marginbot" action="<?=base_url()?>admin/addproductsubmit">
+                    <div id="uploadproductform" class="form-horizontal col-md-12">
+                        <div class="form-group">
+                            <label for="name" class="col-md-3 control-label">ชื่อ :</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" name="name" id="name" placeholder="">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">ราคา</label>
-                        <div class="col-md-8">
-                            <p class="form-control-static" id="addtobasket_price"></p>
+
+                        <div class="form-group">
+                            <label for="subtype" class="col-md-3 control-label">ประเภท :</label>
+                            <div class="col-md-8">
+                                <select id="subtype" name="subtype" class="form-control">
+                                    <option value="aaa">error</option>
+                                    <option value="aaa">error</option>
+                                    <option value="aaa">error</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="add_unit" >จำนวน </label>
-                        <div class="col-md-4">
-                            <input maxlength="5" type="text" class=" form-control" id="add_unit">
+
+                        <div class="form-group">
+                            <label for="price" class="col-md-3 control-label">ราคา :</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" id="price" name="price" placeholder="">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="unit" class="col-md-3 control-label">จำนวน :</label>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" id="unit" name="unit" placeholder="">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="unitnot" class="col-md-3 control-label">แจ้งเตือนเมื่อเหลือ :</label>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" id="unitnot" name="unitnot" placeholder="">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="detail" class="col-md-3 control-label">รายละเอียด :</label>
+                            <div class="col-md-8">
+                                <textarea style="height: 150px" class="form-control" id="detail" name="detail" placeholder=""></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="detail" class="col-md-3 control-label"></label>
+                            <div class="col-md-3">
+                                <button class=" btn bluebutton" id="addproduct_ok">ตกลง</button>
+                            </div>
                         </div>
                     </div>
                 </form>
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn whitebutton" data-dismiss="modal">ปิด</button>
-                <button type="button" id="addtobasket" class="btn bluebutton">ตกลง</button>
+
             </div>
 
         </div>

@@ -1,12 +1,23 @@
 $(function(){
 
-    var uploadimgbox = $(" #uploadimgbox");
-    uploadimgbox.on('dragenter',function(e){e.preventDefault();});
-    uploadimgbox.on('dragover',function(e){e.preventDefault();});
-    uploadimgbox.on('drop', function(e)
+    var $uploadimgbox = $(" #uploadimgbox");
+    var $uploadclick = $(' .uploadbyclick');
+    $(document).on('dragenter',$uploadimgbox,function(e){e.preventDefault();});
+    $(document).on('dragover',$uploadimgbox,function(e){e.preventDefault();});
+    $(document).on('drop',$uploadimgbox,function(e)
     {
         e.preventDefault();
         upload(e.originalEvent.dataTransfer);
+    });
+
+    $(document).on('click'," #uploadimgbox",function(e){
+        e.preventDefault();
+        $(this).parent().find('input').click();
+    });
+
+    $(document).on('change'," .uploadbyclick",function(e){
+        e.preventDefault();
+        upload($(this)[0]);
     });
 
     $(document).on('click','#delpic',function(){
@@ -64,8 +75,9 @@ $(function(){
             },
             success:function(){
 
-                $('#showimg').html('' +
+                $('#showimg').html(''+
                     '<div class="col-md-4 col-md-push-4" id="uploadimgbox">+</div>' +
+                    '<input type="file" class="uploadbyclick hide">'+
                     '');
 
             }

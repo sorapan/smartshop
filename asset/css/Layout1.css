@@ -253,6 +253,26 @@ select:focus{
     list-style-type: disc;
 }
 
+#uploadimgbox{
+
+    border:2px dashed #a3a3a3;
+    color:#a3a3a3;
+    height:200px;
+    line-height: 200px;
+    margin: 30px 0 0 30px;
+    text-align: center;
+    font-size: 30px;
+    cursor: pointer;
+
+}
+
+
+#uploadproductform{
+
+    padding-top: 30px;
+
+}
+
 .text-grey{
     color:#b6b6b6;
 }
