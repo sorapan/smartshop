@@ -86,4 +86,10 @@ class ProductModel extends CI_Model{
 
     }
 
+    function delProductImg($productID){
+
+        $this->db->delete('product',array('id'=>$productID));
+
+    }
+
 }

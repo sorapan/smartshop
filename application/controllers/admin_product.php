@@ -33,11 +33,12 @@ class admin_product extends CI_Controller {
 
     function uploadProuctImg(){
 
-        $this->session->set_userdata('imguploadfile',$_FILES['img']['name']);
+        $typefile = strchr($_FILES['img']['name'],".");
         if($_FILES["img"]["error"] == UPLOAD_ERR_OK){
-            move_uploaded_file( $_FILES["img"]["tmp_name"], $this->imgdirtemp.$_FILES['img']['name']);
+            move_uploaded_file( $_FILES["img"]["tmp_name"], $this->imgdirtemp.$this->session->userdata('user_id').$typefile);
         }
-        echo "../productImg_temp/".$_FILES['img']['name'];
+        $this->session->set_userdata('imguploadfile',$this->session->userdata('user_id').$typefile);
+        echo "../productImg_temp/".$this->session->userdata('user_id').$typefile;
 
     }
 

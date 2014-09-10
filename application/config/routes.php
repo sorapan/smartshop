@@ -78,6 +78,7 @@ $route['admin/deletemember'] = "admin_member/deletemember";//p
 
 $route['admin/productmanage'] = "admin_productmanage/index";//p
 $route['admin/fetchproductdata'] = "admin_productmanage/fetchproductdata";//p
+$route['admin/deleteImgInStore'] = "admin_productmanage/deleteImgInStore";//p
 
 /////////////////////////////////////
 
@@ -86,6 +87,7 @@ $route['product/menu/sub/(:any)'] = "product/fetchsub/$1";
 $route['product/(:any)'] = "product/index/$1";
 $route['product/(:any)/(:any)'] = "product/index/$1/$2";
 $route['product/search'] = "product/fetchProductWithWord";
+
 
 $route['boughtlist/basketdetail'] = "boughtlist/basket_detail";
 

@@ -50,6 +50,22 @@ class admin_productmanage extends CI_Controller {
     function fetchproductdata(){
 
         $productid = $_POST['productid'];
+        echo json_encode($this->ProductModel->fetchproductdataByproductId($productid));
+
+    }
+
+    function updateproduct(){
+
+        $this->ProductModel->updateProductData($_POST['productid'],array(
+
+        ));
+
+    }
+
+    function deleteImgInStore(){
+
+        $this->ProductModel->delProductImg($_POST['productid']);
+        unlink($_POST['tempimg']);
 
     }
 
