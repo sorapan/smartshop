@@ -17,11 +17,22 @@ $(function(){
             dataType: 'JSON',
             success: function(data){
 
-                $(' #showimg').html('<img class="col-xs-8 col-xs-push-2" src="../productImg/'+data[0]['img']+'">' +
-                  '<div style="margin-top:10px" class="col-md-12">' +
-                  '<button class="col-xs-4 col-xs-push-4" id="delpicfirst">ลบรูปภาพ</button></div>');
+                if(data[0]['img'] !== ""){
 
-                $('#name').val(data[0]['name']);
+                    $(' #showimg').html('<img class="col-xs-8 col-xs-push-2" src="../productImg/'+data[0]['img']+'">' +
+                        '<div style="margin-top:10px" class="col-md-12">' +
+                        '<button class="col-xs-4 col-xs-push-4" id="delpicfirst">ลบรูปภาพ</button></div>');
+
+                }else{
+
+                    $(' #showimg').html(''+
+                        '<div class="col-md-4 col-md-push-4" id="uploadimgbox">+</div>' +
+                        '<input type="file" class="uploadbyclick hide">'+
+                        '');
+
+                }
+
+                $('#name').html(data[0]['name']);
                 $('.productid').val(data[0]['id']);
                 $('#subtype').val(data[0]['subtype']);
                 $('#price').val(data[0]['price']);
@@ -54,6 +65,31 @@ $(function(){
                     '<div class="col-md-4 col-md-push-4" id="uploadimgbox">+</div>' +
                     '<input type="file" class="uploadbyclick hide">'+
                     '');
+
+//                location.reload();
+
+            }
+        });
+
+    });
+
+    $(document).on('click','#change_product_data',function(){
+
+
+        $.ajax({
+            url:$.autoFindDir('admin/updateproduct').url,
+            type:'POST',
+            data:{
+                'productid' : $(this).parents().eq(2).find('.productid').val(),
+                'subtype' : $('#subtype').val(),
+                'price' : $('#price').val(),
+                'unit' : $('#unit').val(),
+                'unitnot' : $('#unitnot').val(),
+                'detail' : $('#detail').val()
+            },
+            success: function(data){
+
+                location.reload();
 
             }
         });

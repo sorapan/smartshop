@@ -21,7 +21,15 @@
         <div class="col-md-4 col-xs-6">
             <div class="thumbnail cardshadow">
                 <div style="position: relative" class="limit_img">
-                    <img src="<?=base_url()?>productImg/<?=$p_val->img?>">
+
+                    <img src="
+                    <?php
+
+                        echo strpos($p_val->img,'www') == false ? base_url()."productImg/".$p_val->img : base_url().'/asset/img/noimage.jpg';
+
+                    ?>
+
+                    ">
                 </div>
                 <div style="display:none" class="productid"><?=$p_val->id?></div>
                 <div class="caption">
@@ -67,7 +75,7 @@
                     <div class="form-group">
                         <label for="name" class="col-md-3 control-label">ชื่อ :</label>
                         <div class="col-md-8">
-                            <input type="text" class="form-control" name="name" id="name" placeholder="">
+                            <p  class="form-control-static" name="name" id="name"></p>
                         </div>
                     </div>
 
@@ -117,7 +125,7 @@
                     <div class="form-group text-right">
                         <label for="detail" class="col-md-3 control-label"></label>
                         <div class="col-xs-3">
-                            <button class=" btn bluebutton" id="addproduct_ok">เปลี่ยนแปลงข้อมูล</button>
+                            <button class=" btn bluebutton" id="change_product_data">เปลี่ยนแปลงข้อมูล</button>
                         </div>
                         <div class="col-md-2">
                             <button data-dismiss="modal" class=" btn yellowbutton" id="addproduct_ok">ยกเลิก</button>

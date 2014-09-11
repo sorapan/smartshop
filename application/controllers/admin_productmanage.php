@@ -26,6 +26,13 @@ class admin_productmanage extends CI_Controller {
             )
         );
 
+        foreach($productdata as $key => $val){
+
+            if($val->img == ""){
+                $data['p_data'][2]->img = "http://www.parentcenterhub.org/wp-content/uploads/2014/03/No-Image-.jpg";
+            }
+        }
+
         if($main==null){
             $data['mt_name']="ทั้งหมด";
         }else if($sub==null){
@@ -56,8 +63,27 @@ class admin_productmanage extends CI_Controller {
 
     function updateproduct(){
 
-        $this->ProductModel->updateProductData($_POST['productid'],array(
+        $imgdir = "productImg/";
+        $imgdirtemp =  "productImg_temp/";
 
+        $file = $this->session->userdata('imguploadfile');
+        $typefile = strchr($file,".");
+
+        $newfilename = $this->productID().$typefile;
+        @copy($imgdirtemp.$file, $imgdir.$newfilename);
+        @unlink($imgdirtemp.$file);
+
+        $maintype = $this->TypeModel->ChkmaintypeFromsubtype($_POST['subtype'])[0]->id;
+
+        $this->ProductModel->updateProductData($_POST['productid'],array(
+            'img' => $newfilename,
+            'maintype' =>  $maintype,
+            'subtype' =>  $_POST['subtype'],
+            'price' =>  $_POST['price'],
+            'unit' =>  $_POST['unit'],
+            'unitnot' =>  $_POST['unitnot'],
+            'detail' =>  $_POST['detail'],
+            'date' => time()
         ));
 
     }
@@ -65,7 +91,16 @@ class admin_productmanage extends CI_Controller {
     function deleteImgInStore(){
 
         $this->ProductModel->delProductImg($_POST['productid']);
-        unlink($_POST['tempimg']);
+        $aa = explode("/",$_POST['img_url']);
+        $imgdir = "productImg/";
+        @unlink($imgdir.end($aa));
+
+    }
+
+    private function productID(){
+
+        $productid = $this->ProductModel->productID();
+        return sprintf("%010d", $productid[0]->id);
 
     }
 

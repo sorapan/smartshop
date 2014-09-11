@@ -80,15 +80,16 @@ class ProductModel extends CI_Model{
     function updateProductData($productid,$unit){
 
         $this->db->where('id',$productid);
-        $this->db->update('product',array(
-            'unit' => $unit
-        ));
+        $this->db->update('product',$unit);
 
     }
 
-    function delProductImg($productID){
+    function delProductImg($productid){
 
-        $this->db->delete('product',array('id'=>$productID));
+        $this->db->where('id',$productid);
+        $this->db->update('product',array(
+            'img' => ''
+        ));
 
     }
 

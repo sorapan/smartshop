@@ -79,6 +79,7 @@ $route['admin/deletemember'] = "admin_member/deletemember";//p
 $route['admin/productmanage'] = "admin_productmanage/index";//p
 $route['admin/fetchproductdata'] = "admin_productmanage/fetchproductdata";//p
 $route['admin/deleteImgInStore'] = "admin_productmanage/deleteImgInStore";//p
+$route['admin/updateproduct'] = "admin_productmanage/updateproduct";//p
 
 /////////////////////////////////////
 
