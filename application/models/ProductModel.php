@@ -72,7 +72,7 @@ class ProductModel extends CI_Model{
         $this->db->select('*');
         $this->db->from('type_product');
         $this->db->join('product','product.maintype = type_product.id');
-        $this->db->like('product.name',$word);
+        if($word !== "")$this->db->like('product.name',$word);
         return $this->db->get()->result();
 
     }

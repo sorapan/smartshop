@@ -8,6 +8,7 @@ class admin_promotion extends CI_Controller{
         $this->load->model('ProductModel');
         $this->load->model('TypeModel');
         $this->load->model('BasketModel');
+        $this->load->model('PromotionModel');
 
     }
 
@@ -22,7 +23,8 @@ class admin_promotion extends CI_Controller{
             'js' => array(
                 base_url().'asset/js/admin_productmanage.js',
                 base_url().'asset/js/admin_product_uploadimg.js',
-                base_url().'asset/js/admin_product_.js'
+                base_url().'asset/js/admin_product_.js',
+                base_url().'asset/js/admin_promotion.js'
             )
         );
 
@@ -50,6 +52,50 @@ class admin_promotion extends CI_Controller{
             $data['subtype_data']=$subtypedata;
         }
         $this->load->adminpage('createpromotion',$data);
+
+    }
+
+    function fetchproductdataforpromotion(){
+
+        $productid = $_POST['productid'];
+        $data = $this->ProductModel->fetchproductdataByproductId($productid);
+        $maintype = $this->TypeModel->MainTypeFromId($data[0]->subtype);
+        $subtype = $this->TypeModel->SubTypeFromId($data[0]->subtype);
+        $data[0]->maintype = $maintype->name;
+        $data[0]->subtype = $subtype->name;
+        echo json_encode($data);
+
+    }
+
+    function fetchproductbyword(){
+
+        echo json_encode($this->ProductModel->fetchproductByWord($_POST['word']));
+
+    }
+
+    function addpromotion(){
+
+        $promotion_list = $_POST['promotion_list'];
+        $name = $_POST['name'];
+        $price = $_POST['price'];
+        $detail = $_POST['detail'];
+
+        $this->PromotionModel->addpromotion_list(array(
+            'promotion_name' => $name,
+            'price' => $price,
+            'detail' => $detail
+        ));
+
+        $promotionlist_id =  $this->PromotionModel->promotionlist_id();
+
+        foreach($promotion_list as $val){
+
+            $this->PromotionModel->addpromotion_product(array(
+                'productid' => $val,
+                'promotionid' => $promotionlist_id
+            ));
+
+        }
 
     }
 

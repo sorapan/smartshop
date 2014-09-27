@@ -84,6 +84,9 @@ $route['admin/updateproduct'] = "admin_productmanage/updateproduct";//p
 ///////////////////////////////////// admin_promotion
 
 $route['admin/promotion'] = "admin_promotion/index";//p
+$route['admin/fetchproductdataforpromotion'] = "admin_promotion/fetchproductdataforpromotion";//p
+$route['admin/search'] = "admin_promotion/fetchproductbyword";//p
+$route['admin/addpromotion'] = "admin_promotion/addpromotion";//p
 $route['admin/promotion/(:any)'] = "admin_promotion/index/$1";
 $route['admin/promotion/(:any)/(:any)'] = "admin_promotion/index/$1/$2";
 
