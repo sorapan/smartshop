@@ -32,7 +32,7 @@ $(function(){
 
 //    console.log(hide);
 
-    $(document).on('click','.close',function(){
+    $(document).on('click','.hide_menu',function(){
 
         if(!hide){
             $('.menuFromDown').animate({'bottom':'-150px'},300);

@@ -99,6 +99,9 @@ $route['product/(:any)/(:any)'] = "product/index/$1/$2";
 $route['product/search'] = "product/fetchProductWithWord";
 
 
+$route['promotion'] = "promotion/index";
+
+
 $route['boughtlist/basketdetail'] = "boughtlist/basket_detail";
 
 

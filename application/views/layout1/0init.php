@@ -61,7 +61,7 @@ function js($js){
         <ul class="nav nav-justified" id="menubar">
             <li><a href="<?=base_url()?>">หน้าแรก</a></li>
             <li><a href="<?=base_url()?>product">สินค้า</a></li>
-            <li><a href="#">โปรโมชั่น</a></li>
+            <li><a href="<?=base_url()?>promotion">โปรโมชั่น</a></li>
             <li><a href="#">สินค้าเคลม</a></li>
             <li><a href="#">วิธีสั่งซื้อ</a></li>
             <li><a href="#">เกี่ยวกับเรา</a></li>

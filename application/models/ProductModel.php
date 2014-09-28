@@ -88,7 +88,7 @@ class ProductModel extends CI_Model{
 
         $this->db->where('id',$productid);
         $this->db->update('product',array(
-            'img' => ''
+            'img' => 'pro'
         ));
 
     }
