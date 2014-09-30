@@ -15,21 +15,41 @@ class promotion extends CI_Controller{
     function index(){
 
         $prom_list = $this->PromotionModel->fetchPromotionlist();
-        $prom_data = $this->PromotionModel->fetchPromotionlist();
 
-        $data['promotionlist'] = $prom_list;
+        $data = array(
+            'promotionlist' => $prom_list
+        );
 
-        foreach($prom_list as $prom_list_key => $prom_list_val){
+        foreach($data['promotionlist'] as $prom_list_key => $prom_list_val){
 
-            $data['promotionlist'][0]->promotiondata = $this->PromotionModel->fetchPromotiondataByPromotionID($prom_list_val->id);
+            $prom_list_val->promotiondata = $this->PromotionModel->fetchPromotiondataByPromotionID($prom_list_val->id);
+
+        }
+
+
+        foreach($data['promotionlist'] as $val){
+
+            foreach($val->promotiondata as $v){
+
+                $v->productdata = $this->ProductModel->fetchproductdataByproductId($v->productid);
+
+            }
 
         }
 
-        foreach($data['promotionlist'] as $key => $val){
+//        foreach($data['promotionlist'] as $val){
+//
+//            foreach($val->promotiondata as $v){
+//
+//                var_dump($v->productdata);
+//                echo "<br>-------------<br>";
+//
+//            }
+//
+//            echo "<br>XXXXXXXXXXXXXXXXXXXXXX<br><br>";
+//
+//        }
 
-            $data['productdata'][0]->promotiondata = $this->PromotionModel->
-
-        }
 
         $this->load->layout1('promotion',$data);
 
