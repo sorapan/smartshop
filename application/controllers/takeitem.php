@@ -11,17 +11,29 @@ class takeitem  extends CI_Controller{
         $this->load->model('BasketModel');
         $this->load->model('Bought_listModel');
         $this->load->model('Wait_listModel');
+        $this->load->model('PromotionModel');
 
     }
 
     function index(){
 
         $inbasket = $this->BasketModel->fetchdataJoinproductTable($this->session->userdata('user_id'));
-        $allPrice = $this->BasketModel->allPrice($this->session->userdata('user_id'));
+
+        if($inbasket[0]->promotion_id == null){
+
+            $allPrice = $this->BasketModel->allPrice($this->session->userdata('user_id'));
+            $allPrice = $allPrice[0]->price;
+
+        }else{
+
+            $promotionlist_data = $this->PromotionModel->fetchPromotionlistByPromotionId($inbasket[0]->promotion_id);
+            $allPrice = $promotionlist_data[0]->price;
+
+        }
 
             $data = array(
                 'basket_data' => $inbasket,
-                'all_price' => $allPrice[0]->price,
+                'all_price' => $allPrice,
                 'js'=>array(
                     base_url().'asset/js/takeitem_.js'
                 )
@@ -120,7 +132,7 @@ class takeitem  extends CI_Controller{
             $productmodel = $this->ProductModel->fetchproductdataByproductId($basket_val->product);
             $productunit = $productmodel[0]->unit;
             $productid = $basket_val->product;
-            $this->ProductModel->updateProductData($productid,$productunit-$basket_val->unit);
+            $this->ProductModel->updateProductData($productid, $productunit-$basket_val->unit );
 
         }
 

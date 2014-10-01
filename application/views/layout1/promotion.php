@@ -35,17 +35,18 @@
 
             <div class="form-horizontal" style="line-height: 16px">
 
+                <p class="hidden promotion_id"><?=$promval->id?></p>
                 <div class="form-group">
                     <label class="control-label col-xs-3">ชื่อโปรโมชั่น</label>
                     <div class="col-xs-8">
-                        <p class="form-control-static"><?=$promval->promotion_name?></p>
+                        <p class="form-control-static promotion_name"><?=$promval->promotion_name?></p>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="control-label col-xs-3">ราคา</label>
                     <div class="col-xs-8">
-                        <p class="form-control-static"><?=$promval->price." บาท"?></p>
+                        <p class="form-control-static promotion_price"><?=$promval->price." บาท"?></p>
                     </div>
                 </div>
 
@@ -61,8 +62,7 @@
             <hr>
 
             <div>
-                <button class="btn bluebutton">ซื้อโปรโมชั่น</button>
-                <button class="btn yellowbutton">ยกเลิก</button>
+                <button class="btn bluebutton buy_promotion">ซื้อโปรโมชั่น</button>
             </div>
 
         </div>

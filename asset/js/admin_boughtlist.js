@@ -11,6 +11,8 @@ $(function(){
     $(document).on('click','.bought_verify',function(){
 
 
+//        alert($(this).parents().eq(1).find('.userid').html());
+
         if(confirm('คุณต้องการจะยืนยันการซื้อ?')){
 
             $.ajax({

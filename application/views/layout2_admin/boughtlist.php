@@ -31,6 +31,8 @@
             <tbody>
 
             <?php
+
+
             foreach($wait_listdata as $b_val){
             ?>
 

@@ -7,6 +7,7 @@ class basket extends CI_Controller {
         $this->load->model('ProductModel');
         $this->load->model('TypeModel');
         $this->load->model('BasketModel');
+        $this->load->model('PromotionModel');
     }
 
 
@@ -59,10 +60,14 @@ class basket extends CI_Controller {
             $data[$k] = array(
                 'name' => $product[0]->name,
                 'id' => $product[0]->id,
-                'unit' => $inbasket_v->unit
+                'unit' => $inbasket_v->unit,
             );
 
         }
+
+        $data[0]['promotion_id'] = $inbasket[0]->promotion_id;
+        $promotionlist_data = $this->PromotionModel->fetchPromotionlistByPromotionId($data[0]['promotion_id']);
+        $data[0]['promotion_name'] = $promotionlist_data[0]->promotion_name;
 
         if($this->session->userdata('buy_status') == 'wait'){
             $data[0]['non-close'] = true;
@@ -73,7 +78,6 @@ class basket extends CI_Controller {
             $data[0] = "basket_empty";
             echo json_encode($data);
         }
-
 
     }
 

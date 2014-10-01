@@ -11,6 +11,7 @@ class boughtlist extends CI_Controller {
         $this->load->model("Bought_listModel");
         $this->load->model("UsersModel");
         $this->load->model("BasketModel");
+        $this->load->model("PromotionModel");
 
     }
 
@@ -56,7 +57,7 @@ class boughtlist extends CI_Controller {
 
         }
 
-
+//        print_r($data['wait_listdata']);
         $this->load->layout1('boughtlist',$data);
 
     }

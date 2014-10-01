@@ -30,6 +30,7 @@
 
             <?php
             foreach($wait_listdata as $b_val){
+
                 ?>
 
                 <tr>
@@ -39,13 +40,24 @@
                     <td><?=$b_val->send=='none' ? 'รับด้วยตัวเอง' : 'ส่ง EMS' ?></td>
                     <td><?=$b_val->price?> บาท</td>
                     <td><?=$b_val->money?> บาท </td>
+                    <td>
                     <?php
                     if($b_val->bill_dir !== NULL){
                         ?>
-                        <td><a class="bill_img" data-toggle="modal" data-target="#myModal" www='bill_img/<?=$b_val->bill_dir?>'>คลิ๊ก</a></td>
+
+                        <a class="bill_img" data-toggle="modal" data-target="#myModal" www='bill_img/<?=$b_val->bill_dir?>'>คลิ๊ก</a>
+
+
+                    <?php
+                    }else{
+                    ?>
+
+                        <p>ไม่มีข้อมูล</p>
+
                     <?php
                     }
                     ?>
+                    </td>
                     <td>
                         <a class="badge basket_detail" data-toggle="modal" data-target="#modal_basketdata">รายละเอียด</a>
                     </td>
@@ -100,18 +112,23 @@
                 <tr>
                     <td><?=date("d.m.Y",$b_val->date)?> </td>
                     <td><?=$b_val->time?> </td>
-                    <td><?=$b_val->id?> </td>
                     <td class="hidden userid"><?=$b_val->userid?> </td>
                     <td><?=$b_val->send=='none' ? 'รับด้วยตัวเอง' : 'ส่ง EMS' ?></td>
                     <td><?=$b_val->price?> บาท</td>
                     <td><?=$b_val->money?> บาท </td>
+                    <td>
                     <?php
                     if($b_val->bill_dir !== NULL){
                         ?>
-                        <td><a class="bill_img" data-toggle="modal" data-target="#myModal" www='bill_img/<?=$b_val->bill_dir?>'>คลิ๊ก</a></td>
+                        <a class="bill_img" data-toggle="modal" data-target="#myModal" www='bill_img/<?=$b_val->bill_dir?>'>คลิ๊ก</a>
+                    <?php
+                    }else{
+                    ?>
+                        <p>ไม่มีข้อมูล</p>
                     <?php
                     }
                     ?>
+                    </td>
                     <td>
                         <a class="badge basket_detail" data-toggle="modal" data-target="#modal_basketdata">รายละเอียด</a>
                     </td>

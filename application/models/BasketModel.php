@@ -48,6 +48,7 @@ class BasketModel extends CI_Model{
     function clearBasketDataByUserid($user){
 
         $this->db->where('user',$user);
+        $this->db->where('bought','N');
         $this->db->delete('basket');
 
     }
@@ -72,10 +73,11 @@ class BasketModel extends CI_Model{
 
     function fetchdataJoinproductTable($userid){
 
-        $this->db->select('product.id,basket.user,product.name,basket.unit,basket.price');
+        $this->db->select('product.id,basket.user,product.name,basket.unit,basket.price,basket.promotion_id');
         $this->db->from('basket');
         $this->db->join('product', 'product.id = basket.product');
         $this->db->where('user',$userid);
+        $this->db->where('bought','N');
         return $this->db->get()->result();
 
     }
@@ -83,6 +85,7 @@ class BasketModel extends CI_Model{
     function allPrice(){
 
         $this->db->select_sum('price');
+        $this->db->where('bought','N');
         return $this->db->get('basket')->result();
 
     }

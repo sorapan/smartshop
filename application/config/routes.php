@@ -98,8 +98,12 @@ $route['product/(:any)'] = "product/index/$1";
 $route['product/(:any)/(:any)'] = "product/index/$1/$2";
 $route['product/search'] = "product/fetchProductWithWord";
 
+//===========================================
 
 $route['promotion'] = "promotion/index";
+$route['promotion/buypromotion'] = "promotion/buy_promotion";
+
+//===========================================
 
 
 $route['boughtlist/basketdetail'] = "boughtlist/basket_detail";

@@ -79,6 +79,7 @@ class admin_promotion extends CI_Controller{
         $name = $_POST['name'];
         $price = $_POST['price'];
         $detail = $_POST['detail'];
+        $promotion_list_count = array();
 
         $this->PromotionModel->addpromotion_list(array(
             'promotion_name' => $name,
@@ -90,9 +91,17 @@ class admin_promotion extends CI_Controller{
 
         foreach($promotion_list as $val){
 
+            @$promotion_list_count[$val] += 1;
+            // Maybe bug...
+
+        }
+
+        foreach(array_unique($promotion_list) as $val){
+
             $this->PromotionModel->addpromotion_product(array(
                 'productid' => $val,
-                'promotionid' => $promotionlist_id
+                'promotionid' => $promotionlist_id,
+                'unit' => $promotion_list_count[$val]
             ));
 
         }
