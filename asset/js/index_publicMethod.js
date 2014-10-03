@@ -39,6 +39,7 @@
 
                     }else{
 
+
                         $in_basket.append('<div class="col-md-12 basket_list"><div class="row">' +
                             close_button+
                             '<div class="col-xs-10">ซื้อโปรโมชั่น : '+data[0]['promotion_name']+'</div>'+

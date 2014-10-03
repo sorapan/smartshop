@@ -100,14 +100,12 @@ class takeitem  extends CI_Controller{
 
     function to_waiting_list(){
 
-        $data = array(
+        $this->Wait_listModel->insertWaitList(array(
             'money' => $_POST['money'],
             'date' => strtotime($_POST['day']." ".$_POST['mon']." ".$_POST['year']-543),
             'time' => $_POST['time'],
             'user' => $this->session->userdata('user_id')
-        );
-
-        $this->Wait_listModel->insertWaitList($data);
+        ));
 
         if(isset($_FILES['bill_file'])){
 
@@ -140,6 +138,16 @@ class takeitem  extends CI_Controller{
         $this->Wait_listModel->updateCartID(
             $this->session->userdata('user_id'),
             $this->Bought_listModel->selectDataByUserID($this->session->userdata('user_id'))[0]->date
+        );
+
+        $this->Wait_listModel->updateBoughtlistID(
+            $this->session->userdata('user_id'),
+            $this->Bought_listModel->selectDataByUserID($this->session->userdata('user_id'))[0]->id
+        );
+
+        $this->Bought_listModel->updateWaitlistID(
+            $this->session->userdata('user_id'),
+            $this->Wait_listModel->selectDataByUserID($this->session->userdata('user_id'))[0]->id
         );
 
         redirect(base_url());

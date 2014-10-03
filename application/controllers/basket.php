@@ -67,7 +67,12 @@ class basket extends CI_Controller {
 
         $data[0]['promotion_id'] = $inbasket[0]->promotion_id;
         $promotionlist_data = $this->PromotionModel->fetchPromotionlistByPromotionId($data[0]['promotion_id']);
-        $data[0]['promotion_name'] = $promotionlist_data[0]->promotion_name;
+
+        if(isset($promotionlist_data[0]->promotion_name)){
+
+            $data[0]['promotion_name'] = $promotionlist_data[0]->promotion_name;
+
+        }
 
         if($this->session->userdata('buy_status') == 'wait'){
             $data[0]['non-close'] = true;
