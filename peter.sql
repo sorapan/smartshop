@@ -2,7 +2,7 @@
 -- Host:                         127.0.0.1
 -- Server version:               5.6.16 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
--- HeidiSQL Version:             8.3.0.4792
+-- HeidiSQL Version:             8.3.0.4823
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS `basket` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
--- Dumping data for table smartshop.basket: ~8 rows (approximately)
+-- Dumping data for table smartshop.basket: ~-1 rows (approximately)
 DELETE FROM `basket`;
 /*!40000 ALTER TABLE `basket` DISABLE KEYS */;
 INSERT INTO `basket` (`id`, `user`, `product`, `unit`, `price`, `date`, `bought`, `cartID`, `promotion_id`) VALUES
@@ -42,6 +42,25 @@ INSERT INTO `basket` (`id`, `user`, `product`, `unit`, `price`, `date`, `bought`
 	(16, 2, '4', '1', '0', '1412157984', 'Y', '1412263586', '14'),
 	(17, 2, '3', '2', '444', '1412247723', 'Y', '1412263586', NULL);
 /*!40000 ALTER TABLE `basket` ENABLE KEYS */;
+
+
+-- Dumping structure for table smartshop.blog
+CREATE TABLE IF NOT EXISTS `blog` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `header` longtext,
+  `content` longtext,
+  `author` tinytext,
+  `date` tinytext,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- Dumping data for table smartshop.blog: ~-1 rows (approximately)
+DELETE FROM `blog`;
+/*!40000 ALTER TABLE `blog` DISABLE KEYS */;
+INSERT INTO `blog` (`id`, `header`, `content`, `author`, `date`) VALUES
+	(1, 'ssssssssssssss', '<div style="text-align: center;"><b style="font-size: 0.9em; line-height: 1.42857143;"><font size="5">ssssssssssssssssssssssssssssssssssss</font></b></div><div style="text-align: left;"><span style="line-height: 1.42857143;"><font size="2">ssssssssssssssssssssssssssssssssssssssssssssssssssss</font></span></div><div style="text-align: left;"><span style="line-height: 1.42857143;"><font size="2">ssssssssssssssssssssssssssssssssss</font></span></div><div style="text-align: left;"><span style="line-height: 1.42857143;"><font size="2">sssssssssssssssssssssssssssssssssssss</font></span></div>', '1', '1412588178'),
+	(2, 'สวัสดีครับ', '<div style="text-align: center;"><span style="line-height: 1.42857143;"><font size="5">สวัสดีครับ</font></span></div><div style="text-align: left;"><span style="line-height: 34.2857170104981px;"><font size="2">สวัสดี สวสัดี</font></span></div><div style="text-align: center;"><span style="line-height: 1.42857143;"><font size="5"><br></font></span></div>', '1', '1412592220');
+/*!40000 ALTER TABLE `blog` ENABLE KEYS */;
 
 
 -- Dumping structure for table smartshop.bought_list
@@ -57,15 +76,29 @@ CREATE TABLE IF NOT EXISTS `bought_list` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- Dumping data for table smartshop.bought_list: ~4 rows (approximately)
+-- Dumping data for table smartshop.bought_list: ~-1 rows (approximately)
 DELETE FROM `bought_list`;
 /*!40000 ALTER TABLE `bought_list` DISABLE KEYS */;
 INSERT INTO `bought_list` (`id`, `price`, `address`, `sendby`, `verified`, `date`, `user`, `wait_list_id`) VALUES
-	(1, '64', 'dsfsdf', 'none', 'Y', '1409130118', 2, NULL),
-	(4, '8484', 'dsfsdf sdfdsf dfds dsfsdf', 'none', 'N', '1412148451', 2, NULL),
-	(5, '222', 'dsfsdf sdfdsf dfds dsfsdf', 'none', 'N', '1412159604', 2, NULL),
+	(1, '64', 'dsfsdf', 'none', 'Y', '1409130118', 2, '1'),
 	(7, '444', 'dsfsdf sdfdsf dfds dsfsdf', 'none', 'N', '1412263586', 2, '12');
 /*!40000 ALTER TABLE `bought_list` ENABLE KEYS */;
+
+
+-- Dumping structure for table smartshop.howtobuy_blog
+CREATE TABLE IF NOT EXISTS `howtobuy_blog` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `header` tinytext,
+  `content` longtext,
+  `author` tinytext,
+  `date` tinytext,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Dumping data for table smartshop.howtobuy_blog: ~-1 rows (approximately)
+DELETE FROM `howtobuy_blog`;
+/*!40000 ALTER TABLE `howtobuy_blog` DISABLE KEYS */;
+/*!40000 ALTER TABLE `howtobuy_blog` ENABLE KEYS */;
 
 
 -- Dumping structure for table smartshop.product
@@ -85,7 +118,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
--- Dumping data for table smartshop.product: ~3 rows (approximately)
+-- Dumping data for table smartshop.product: ~-1 rows (approximately)
 DELETE FROM `product`;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
 INSERT INTO `product` (`id`, `productid`, `img`, `name`, `maintype`, `subtype`, `price`, `unit`, `unitnot`, `detail`, `author`, `date`) VALUES
@@ -104,7 +137,7 @@ CREATE TABLE IF NOT EXISTS `promotion_list` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
--- Dumping data for table smartshop.promotion_list: ~4 rows (approximately)
+-- Dumping data for table smartshop.promotion_list: ~-1 rows (approximately)
 DELETE FROM `promotion_list`;
 /*!40000 ALTER TABLE `promotion_list` DISABLE KEYS */;
 INSERT INTO `promotion_list` (`id`, `promotion_name`, `price`, `detail`) VALUES
@@ -124,7 +157,7 @@ CREATE TABLE IF NOT EXISTS `promotion_product` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
--- Dumping data for table smartshop.promotion_product: ~8 rows (approximately)
+-- Dumping data for table smartshop.promotion_product: ~-1 rows (approximately)
 DELETE FROM `promotion_product`;
 /*!40000 ALTER TABLE `promotion_product` DISABLE KEYS */;
 INSERT INTO `promotion_product` (`id`, `productid`, `promotionid`, `unit`) VALUES
@@ -147,7 +180,7 @@ CREATE TABLE IF NOT EXISTS `subtype_product` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- Dumping data for table smartshop.subtype_product: ~5 rows (approximately)
+-- Dumping data for table smartshop.subtype_product: ~-1 rows (approximately)
 DELETE FROM `subtype_product`;
 /*!40000 ALTER TABLE `subtype_product` DISABLE KEYS */;
 INSERT INTO `subtype_product` (`id`, `name`, `maintype`) VALUES
@@ -166,7 +199,7 @@ CREATE TABLE IF NOT EXISTS `type_product` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
--- Dumping data for table smartshop.type_product: ~5 rows (approximately)
+-- Dumping data for table smartshop.type_product: ~-1 rows (approximately)
 DELETE FROM `type_product`;
 /*!40000 ALTER TABLE `type_product` DISABLE KEYS */;
 INSERT INTO `type_product` (`id`, `name`) VALUES
@@ -195,7 +228,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Dumping data for table smartshop.user: ~3 rows (approximately)
+-- Dumping data for table smartshop.user: ~-1 rows (approximately)
 DELETE FROM `user`;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`id`, `username`, `password`, `realname`, `lastname`, `email`, `address`, `tel`, `province`, `zipcode`, `class`, `buy_status`) VALUES
@@ -219,13 +252,11 @@ CREATE TABLE IF NOT EXISTS `wait_list` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
--- Dumping data for table smartshop.wait_list: ~4 rows (approximately)
+-- Dumping data for table smartshop.wait_list: ~-1 rows (approximately)
 DELETE FROM `wait_list`;
 /*!40000 ALTER TABLE `wait_list` DISABLE KEYS */;
 INSERT INTO `wait_list` (`id`, `money`, `date`, `time`, `bill_dir`, `user`, `cartID`, `verified`, `bought_list_id`) VALUES
-	(1, '100', '1409156770', 'บ่ายโมง', '1.', 2, '1412148451', 'Y', NULL),
-	(12, '12', '1412176179', '2.40 น', NULL, 2, '1412148451', 'N', NULL),
-	(13, '400', '1412187341', ' 2.40 น', NULL, 2, '1412148451', 'N', NULL),
+	(1, '100', '1409156770', 'บ่ายโมง', '1.', 2, '1412148451', 'Y', '1'),
 	(15, '500', '1412291324', '2.40 น', NULL, 2, '1412263586', 'N', '7');
 /*!40000 ALTER TABLE `wait_list` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

@@ -24,7 +24,8 @@ $(function(){
             url:'boughtlist/basketdetail',
             type:'POST',
             data:{
-                'userid' : $(this).parents().eq(2).find('.userid').html()
+                'userid' : $(this).parents().eq(2).find('.userid').html(),
+                'bought' : 'N'
             },
             dataType:'JSON',
             success:function(data){

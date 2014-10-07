@@ -63,7 +63,7 @@ function js($js){
             <li><a href="<?=base_url()?>product">สินค้า</a></li>
             <li><a href="<?=base_url()?>promotion">โปรโมชั่น</a></li>
             <li><a href="#">สินค้าเคลม</a></li>
-            <li><a href="#">วิธีสั่งซื้อ</a></li>
+            <li><a href="<?=base_url()?>howtobuy">วิธีสั่งซื้อ</a></li>
             <li><a href="#">เกี่ยวกับเรา</a></li>
             <li><a href="#">ดาวน์โหลด</a></li>
         </ul>

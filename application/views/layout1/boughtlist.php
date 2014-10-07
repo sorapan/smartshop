@@ -36,8 +36,8 @@
                 <tr>
                     <td><?=date("d.m.Y",$b_val->date)?> </td>
                     <td><?=$b_val->time?> </td>
-                    <td class="hidden userid"><?=$b_val->userid?> </td>
-                    <td><?=$b_val->send=='none' ? 'รับด้วยตัวเอง' : 'ส่ง EMS' ?></td>
+                    <td class="hidden userid"><?=$b_val->user?> </td>
+                    <td><?=$b_val->sendby=='none' ? 'รับด้วยตัวเอง' : 'ส่ง EMS' ?></td>
                     <td><?=$b_val->price?> บาท</td>
                     <td><?=$b_val->money?> บาท </td>
                     <td>
@@ -112,8 +112,8 @@
                 <tr>
                     <td><?=date("d.m.Y",$b_val->date)?> </td>
                     <td><?=$b_val->time?> </td>
-                    <td class="hidden userid"><?=$b_val->userid?> </td>
-                    <td><?=$b_val->send=='none' ? 'รับด้วยตัวเอง' : 'ส่ง EMS' ?></td>
+                    <td class="hidden userid"><?=$b_val->user?> </td>
+                    <td><?=$b_val->sendby=='none' ? 'รับด้วยตัวเอง' : 'ส่ง EMS' ?></td>
                     <td><?=$b_val->price?> บาท</td>
                     <td><?=$b_val->money?> บาท </td>
                     <td>

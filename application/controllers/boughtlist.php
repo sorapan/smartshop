@@ -17,8 +17,9 @@ class boughtlist extends CI_Controller {
 
     function index(){
 
-        $waitingdata = $this->Wait_listModel->selectAllData();
-        $waitingdatay = $this->Wait_listModel->selectAllDataVerified();
+        $userid = $this->session->userdata('user_id');
+        $waitingdata = $this->Wait_listModel->selectAllDataJoinBoughtlistByUserid($userid);
+        $waitingdatay = $this->Wait_listModel->selectAllDataJoinBoughtlistByUseridVerified($userid);
 
         $data = array(
             'wait_listdata' => $waitingdata,
@@ -27,37 +28,38 @@ class boughtlist extends CI_Controller {
                 base_url().'asset/js/boughtlist.js'
             ));
 
-        foreach($waitingdata as $w_key=>$w_val){
-
-            $bought_list_data = $this->Bought_listModel->selectDataByUserID($data['wait_listdata'][$w_key]->user);
-            if(isset($bought_list_data[0])){
-                $boughtdata = $bought_list_data[0];
-                $data['wait_listdata'][$w_key]->price = $boughtdata->price;
-                $data['wait_listdata'][$w_key]->send = $boughtdata->sendby;
-            }
-
-            $user = $this->UsersModel->fetchUserData($w_val->user)[0];
-            $data['wait_listdata'][$w_key]->username = $user->username;
-            $data['wait_listdata'][$w_key]->userid = $user->id;
-
-        }
-
-        foreach($waitingdatay as $w_key=>$w_val){
-
-            $bought_list_data = $this->Bought_listModel->selectDataByUserID($data['wait_listdatay'][$w_key]->user);
-            if(isset($bought_list_data[0])){
-                $boughtdata = $bought_list_data[0];
-                $data['wait_listdatay'][$w_key]->price = $boughtdata->price;
-                $data['wait_listdatay'][$w_key]->send = $boughtdata->sendby;
-            }
-
-            $user = $this->UsersModel->fetchUserData($w_val->user)[0];
-            $data['wait_listdatay'][$w_key]->username = $user->username;
-            $data['wait_listdatay'][$w_key]->userid = $user->id;
-
-        }
+//        foreach($waitingdata as $w_key=>$w_val){
+//
+//            $bought_list_data = $this->Bought_listModel->selectDataByUserID($data['wait_listdata'][$w_key]->user);
+//            if(isset($bought_list_data[0])){
+//                $boughtdata = $bought_list_data[0];
+//                $data['wait_listdata'][$w_key]->price = $boughtdata->price;
+//                $data['wait_listdata'][$w_key]->send = $boughtdata->sendby;
+//            }
+//
+//            $user = $this->UsersModel->fetchUserData($w_val->user)[0];
+//            $data['wait_listdata'][$w_key]->username = $user->username;
+//            $data['wait_listdata'][$w_key]->userid = $user->id;
+//
+//        }
+//
+//        foreach($waitingdatay as $w_key=>$w_val){
+//
+//            $bought_list_data = $this->Bought_listModel->selectDataByUserID($data['wait_listdatay'][$w_key]->user);
+//            if(isset($bought_list_data[0])){
+//                $boughtdata = $bought_list_data[0];
+//                $data['wait_listdatay'][$w_key]->price = $boughtdata->price;
+//                $data['wait_listdatay'][$w_key]->send = $boughtdata->sendby;
+//            }
+//
+//            $user = $this->UsersModel->fetchUserData($w_val->user)[0];
+//            $data['wait_listdatay'][$w_key]->username = $user->username;
+//            $data['wait_listdatay'][$w_key]->userid = $user->id;
+//
+//        }
 
 //        print_r($data['wait_listdata']);
+
         $this->load->layout1('boughtlist',$data);
 
     }

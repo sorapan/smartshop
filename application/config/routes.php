@@ -92,6 +92,11 @@ $route['admin/promotion/(:any)/(:any)'] = "admin_promotion/index/$1/$2";
 
 /////////////////////////////////////
 
+$route['admin/blog'] = "admin_blog/index";
+$route['admin/submitContent'] = "admin_blog/submitContent";
+
+/////////////////////////////////////
+
 $route['product/menu/main'] = "product/fetchMain";
 $route['product/menu/sub/(:any)'] = "product/fetchsub/$1";
 $route['product/(:any)'] = "product/index/$1";
@@ -124,6 +129,8 @@ $route['regisform'] = "register";
 $route['regis'] = "register/regis";//p
 $route['login'] = "register/login";//p
 $route['destroy'] = "register/destroysession";//p
+
+$route['howtobuy'] = "howtobuy/index";
 
 
 $route['welcome'] = "welcome";
