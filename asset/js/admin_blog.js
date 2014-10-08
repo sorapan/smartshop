@@ -1,6 +1,8 @@
+
+var content = $('.content');
+
 $(function(){
 
-    var content = $('.content');
 
     $(' .bold_txt').click(function(){
 
@@ -38,16 +40,34 @@ $(function(){
 
     });
 
+    $(' .link_txt').click(function(){
+
+        var linkURL = prompt('Enter a URL:', 'http://');
+        var sText = document.getSelection();
+        document.execCommand('insertHTML', false, '<a target="_blank" href="'+linkURL+'">'+sText+'</a>');
+
+    });
+
     $(' .submit').click(function(e){
+
+        $.submitform($.autoFindDir('admin/submitContent').url);
+
+    });
+
+});
+
+(function($){
+
+    $.submitform = function($url){
 
         if(confirm('คุณแน่ใจแล้วใช่หรือไม่?')){
 
             $.ajax({
-                url: $.autoFindDir('admin/submitContent').url,
+                url: $url,
                 type:'POST',
                 data:{
                     'header' : $('.header').val(),
-                    'content' : content.html()
+                    'content' : $('.content').html()
                 },
                 success:function(data){
 
@@ -59,6 +79,6 @@ $(function(){
 
         }
 
-    });
+    }
 
-});
+}(jQuery));

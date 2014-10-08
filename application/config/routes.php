@@ -97,6 +97,10 @@ $route['admin/submitContent'] = "admin_blog/submitContent";
 
 /////////////////////////////////////
 
+$route['admin/howtobuy'] = "admin_howtobuy/index";
+
+/////////////////////////////////////
+
 $route['product/menu/main'] = "product/fetchMain";
 $route['product/menu/sub/(:any)'] = "product/fetchsub/$1";
 $route['product/(:any)'] = "product/index/$1";

@@ -1,4 +1,4 @@
-<div class="bigheader">เพิ่มข้อความหน้าโฮมเพจ</div>
+<div class="bigheader">วิธีการสั่งซื้อ</div>
 
 <div class="form-horizontal">
     <div class="form-group">
@@ -24,4 +24,4 @@
     </div>
 </div>
 
-<button class="col-xs-2 submit margintop btn bluebutton">ตกลง</button>
+<button class="col-xs-2 submit_howtobuy margintop btn bluebutton">ตกลง</button>
