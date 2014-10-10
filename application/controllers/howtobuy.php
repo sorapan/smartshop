@@ -12,9 +12,7 @@ class howtobuy extends CI_Controller{
     function index(){
 
         $this->load->layout1('howtobuy',array(
-
-            'blogdata' => $this->HowtobuyModel->selectLastBlogData();
-
+            'blogdata' => $this->HowtobuyModel->selectLastBlogData()
         ));
 
     }

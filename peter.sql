@@ -263,6 +263,27 @@ INSERT INTO `wait_list` (`id`, `money`, `date`, `time`, `bill_dir`, `user`, `car
 	(1, '100', '1409156770', 'บ่ายโมง', '1.', 2, '1412148451', 'Y', '1'),
 	(15, '500', '1412291324', '2.40 น', NULL, 2, '1412263586', 'N', '7');
 /*!40000 ALTER TABLE `wait_list` ENABLE KEYS */;
+
+
+-- Dumping structure for table smartshop.warranty
+CREATE TABLE IF NOT EXISTS `warranty` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `crame_code` tinytext NOT NULL,
+  `product_name` tinytext NOT NULL,
+  `status` enum('waiting','inprogress','finished') NOT NULL DEFAULT 'waiting',
+  `customer_name` tinytext NOT NULL,
+  `date` tinytext NOT NULL,
+  `detail` longtext,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- Dumping data for table smartshop.warranty: ~-1 rows (approximately)
+DELETE FROM `warranty`;
+/*!40000 ALTER TABLE `warranty` DISABLE KEYS */;
+INSERT INTO `warranty` (`id`, `crame_code`, `product_name`, `status`, `customer_name`, `date`, `detail`) VALUES
+	(1, '141284447300001', 'เครื่องซักผ้า', 'waiting', 'จอร์จ ดีนายด์', '1412844473', 'ซักผ้าไม่ได้'),
+	(2, '141233337300002', 'ราวตากผ้า', 'inprogress', 'ไไไไ', '1412844473', 'ตากผ้าไม่ได้');
+/*!40000 ALTER TABLE `warranty` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

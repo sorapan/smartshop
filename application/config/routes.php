@@ -101,6 +101,14 @@ $route['admin/howtobuy'] = "admin_howtobuy/index";
 
 /////////////////////////////////////
 
+$route['admin/warranty'] = "admin_warranty/index";
+$route['admin/addwarrantylist'] = "admin_warranty/addwarrantylist";
+$route['admin/updateStatus'] = "admin_warranty/updateStatus";
+$route['admin/deleteList'] = "admin_warranty/deleteList";
+$route['admin/searchData'] = "admin_warranty/searchData";
+
+/////////////////////////////////////
+
 $route['product/menu/main'] = "product/fetchMain";
 $route['product/menu/sub/(:any)'] = "product/fetchsub/$1";
 $route['product/(:any)'] = "product/index/$1";
@@ -136,6 +144,7 @@ $route['destroy'] = "register/destroysession";//p
 
 $route['howtobuy'] = "howtobuy/index";
 
+$route['warranty'] = "warranty/index";
 
 $route['welcome'] = "welcome";
 $route['404_override'] = '';

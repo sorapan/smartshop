@@ -50,6 +50,7 @@ function js($js){
 
 <header class="col-md-12">
     <img style="margin-left:1%;width: 200px" src="<?=base_url()?>asset/img/ss.svg">
+    <span class="right" style="font-size: 0.8em"> : ADMIN</span>
 </header>
 
 <div class="container-fluid" >
@@ -128,7 +129,8 @@ function js($js){
                 <li><a class="AdminMenuButton" href="<?=base_url()?>admin/productmanage">จัดการรายการสินค้า</a></li>
                 <li><a class="AdminMenuButton" href="<?=base_url()?>admin/promotion">โปรโมชั่น</a></li>
                 <li><a class="AdminMenuButton" href="<?=base_url()?>admin/blog">เพิ่มข้อความหน้าเว็บ</a></li>
-                            <li><a class="AdminMenuButton" href="<?=base_url()?>admin/howtobuy">เพิ่มวิธีการสั่งซื้อ</a></li>
+                <li><a class="AdminMenuButton" href="<?=base_url()?>admin/howtobuy">เพิ่มวิธีการสั่งซื้อ</a></li>
+                <li><a class="AdminMenuButton" href="<?=base_url()?>admin/warranty">เคลมสินค้า</a></li>
                 <!--            <li><a class="AdminMenuButton" href="#">อัพโหลด</a></li>-->
                 <!--            <li><a class="AdminMenuButton" href="#">เกี่ยวกับร้านค้า</a></li>-->
             </ul>
