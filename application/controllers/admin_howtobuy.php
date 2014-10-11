@@ -5,7 +5,7 @@ class admin_howtobuy extends CI_Controller{
     function __construct(){
 
         parent::__construct();
-        $this->load->model("BlogModel");
+        $this->load->model("HowtobuyModel");
 
     }
 
@@ -23,7 +23,7 @@ class admin_howtobuy extends CI_Controller{
 
     function submitContent(){
 
-        $this->BlogModel->getData(array(
+        $this->HowtobuyModel->getData(array(
             'header' => $_POST['header'],
             'content' => $_POST['content'],
             'author' => $this->session->userdata('user_id'),

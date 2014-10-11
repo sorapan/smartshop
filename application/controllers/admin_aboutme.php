@@ -1,11 +1,11 @@
 <?php
 
-class admin_blog extends CI_Controller{
+class admin_aboutme extends CI_Controller{
 
     function __construct(){
 
         parent::__construct();
-        $this->load->model("BlogModel");
+        $this->load->model("AboutmeModel");
 
     }
 
@@ -13,16 +13,17 @@ class admin_blog extends CI_Controller{
 
         $data = array(
             'js' => array(
-                base_url().'asset/js/admin_blog.js'
+                base_url().'asset/js/admin_blog.js',
+                base_url().'asset/js/admin_aboutme.js'
             )
         );
-        $this->load->adminpage('addblog',$data);
+        $this->load->adminpage('aboutme',$data);
 
     }
 
     function submitContent(){
 
-        $this->BlogModel->getData(array(
+        $this->AboutmeModel->getData(array(
             'header' => $_POST['header'],
             'content' => $_POST['content'],
             'author' => $this->session->userdata('user_id'),
