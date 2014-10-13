@@ -27,13 +27,18 @@
                 <td><?php
 
                     if(floor((time() - $bval->date)/86400) > 7 && $bval->cash == null){ echo '<span style="color:red">';}
-
-                        echo  floor((time() - $bval->date)/86400).' วันที่แล้ว';
-
+                    echo  floor((time() - $bval->date)/86400).' วันที่แล้ว';
                     if(floor((time() - $bval->date)/86400) > 7 && $bval->cash == null){ echo '</span>';}
 
-                    ?></td>
-                <td><?=$bval->cash == null ? 'ยังไม่ได้โอน' : 'โอนแล้ว'?></td>
+                ?></td>
+                <td><?php
+
+                    if(floor((time() - $bval->date)/86400) > 7 && $bval->cash == null){ echo '<span style="color:red">';}
+                    echo $bval->cash == null ? 'ยังไม่ได้โอน' : 'โอนแล้ว';
+                    if(floor((time() - $bval->date)/86400) > 7 && $bval->cash == null){ echo '</span>';}
+
+
+                ?></td>
                 <td>
                 <?php
                 if(floor((time() - $bval->date)/86400) > 7 && $bval->cash == null){

@@ -108,6 +108,7 @@ $route['admin/aboutmesubmitContent'] = "admin_aboutme/submitContent";
 /////////////////////////////////////
 
 $route['admin/boughtchecker'] = "admin_boughtchecker/index";
+$route['admin/deleteboughtlist'] = "admin_boughtchecker/deleteboughtlist";
 
 /////////////////////////////////////
 

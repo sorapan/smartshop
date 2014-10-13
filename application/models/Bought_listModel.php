@@ -60,5 +60,12 @@ class Bought_listModel  extends CI_Model{
 
     }
 
+    function deleteByID($id){
+
+        $this->db->where('id',$id);
+        $this->db->delete('bought_list');
+
+    }
+
 
 }

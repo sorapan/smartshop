@@ -33,4 +33,11 @@ class admin_boughtchecker extends CI_Controller{
 
     }
 
+    function deleteboughtlist(){
+
+        $boughtlist_id = $_POST['boughtlist_id'];
+        $this->Bought_listModel->deleteByID($boughtlist_id);
+
+    }
+
 } 
