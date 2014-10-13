@@ -107,6 +107,10 @@ $route['admin/aboutmesubmitContent'] = "admin_aboutme/submitContent";
 
 /////////////////////////////////////
 
+$route['admin/boughtchecker'] = "admin_boughtchecker/index";
+
+/////////////////////////////////////
+
 $route['admin/warranty'] = "admin_warranty/index";
 $route['admin/addwarrantylist'] = "admin_warranty/addwarrantylist";
 $route['admin/updateStatus'] = "admin_warranty/updateStatus";

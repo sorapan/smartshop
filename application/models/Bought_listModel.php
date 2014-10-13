@@ -12,6 +12,14 @@ class Bought_listModel  extends CI_Model{
 
     }
 
+    function selectAllData(){
+
+        $this->db->select('*');
+        $this->db->Order_by('date','ASC');
+        return $this->db->get('bought_list')->result();
+
+    }
+
     function selectDataByUserID($userid){
 
         $this->db->select('*');

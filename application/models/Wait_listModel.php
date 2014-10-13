@@ -20,6 +20,14 @@ class Wait_listModel extends CI_Model{
         return $this->db->get("wait_list")->result();
     }
 
+    function selectAllDataByUserID($userid){
+
+        $this->db->select('*');
+        $this->db->where('user',$userid);
+        return $this->db->get('wait_list')->result();
+
+    }
+
     function selectDataByUserID($userid){
 
         $this->db->select('*');
@@ -95,6 +103,15 @@ class Wait_listModel extends CI_Model{
         $this->db->join('bought_list','bought_list.id = wait_list.bought_list_id');
         $this->db->where('bought_list.user',$userid);
         $this->db->where('bought_list.verified','Y');
+        return $this->db->get()->result();
+
+    }
+
+    function selectByWaitlistID($waitlistid){
+
+        $this->db->select('*');
+        $this->db->from('wait_list');
+        $this->db->where('id',$waitlistid);
         return $this->db->get()->result();
 
     }
