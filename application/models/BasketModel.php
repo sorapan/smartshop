@@ -45,6 +45,14 @@ class BasketModel extends CI_Model{
 
     }
 
+    function delBasketNoDataByUserid($userid){
+
+        $this->db->where('user',$userid);
+        $this->db->where('bought','N');
+        $this->db->delete('basket');
+
+    }
+
     function clearBasketDataByUserid($user){
 
         $this->db->where('user',$user);

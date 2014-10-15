@@ -139,7 +139,9 @@ $route['boughtlist/basketdetail'] = "boughtlist/basket_detail";
 
 
 $route['basket/basket'] = "basket/index";
+$route['basket/basketnonmember'] = "basket/basket_nonmember";
 $route['basket/inbasket'] = "basket/inbasket";
+$route['basket/inbasketnonmember'] = "basket/inbasket_nonmember";
 $route['basket/deleteiteminbasket'] = "basket/delete_item_in_basket";
 
 

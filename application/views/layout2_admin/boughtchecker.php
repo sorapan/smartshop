@@ -20,7 +20,8 @@
         ?>
             <tr>
                 <td class="boughtlist_id"><?=$bval->id?></td>
-                <td><?=$bval->user?></td>
+                <td><?=$bval->username?></td>
+                <td class="hidden user_id"><?=$bval->user?></td>
                 <td><?=$bval->price?></td>
                 <td><?=$bval->sendby == 'none'? 'รับด้วยตัวเอง' : 'อีเอ็มเอส' ?></td>
                 <td><?=$bval->verified == 'Y'? 'ใช่' : 'ไม่' ?></td>

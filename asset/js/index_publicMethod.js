@@ -89,6 +89,21 @@
                 }
             }
         });
+    };
+
+    $.fetch_inbasket_nonmember = function(){
+
+        $.ajax({
+            url:'',
+            type:'POST',
+            data:{
+
+            },
+            success:function(){
+
+            }
+        })
+
     }
 
 }(jQuery));

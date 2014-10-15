@@ -82,11 +82,19 @@ foreach($p_data as $p_val){
 
                         <div style="text-align: center" class="col-md-12">
                             <a href="#" class="btn btn-sm whitebutton" >ดูรายละเอียด</a>
-                            <?php if($this->session->userdata('class')!=='admin'){
-                            ?>
-                                <a href="#" data-toggle="modal" data-target="#myModal" class="btn btn-sm bluebutton getitem" >หยิบใส่ตะกร้า</a>
                             <?php
-                            }?>
+                            if($this->session->userdata('class')!=='admin'){
+                                if($this->session->userdata('buy_status') == 'none' ||
+                                   $this->session->userdata('buy_status') == null){
+                            ?>
+
+                                <a href="javascript:void(0)" data-toggle="modal" data-target="#myModal" class="btn btn-sm bluebutton getitem" >หยิบใส่ตะกร้า</a>
+
+                            <?php
+                                }
+                            }
+
+                            ?>
                         </div>
 
                 </div>
@@ -141,7 +149,27 @@ foreach($p_data as $p_val){
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn whitebutton" data-dismiss="modal">ปิด</button>
+                <?php
+
+                if($this->session->userdata('buy_status') != null){
+
+                ?>
+
                 <button type="button" id="addtobasket" class="btn bluebutton">ตกลง</button>
+
+                <?php
+
+                }else{
+
+                ?>
+
+                <button type="button" id="addtobasket_nonmember" class="btn bluebutton">qqqqqqq</button>
+
+                <?php
+
+                }
+
+                ?>
             </div>
 
         </div>

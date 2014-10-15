@@ -6,8 +6,10 @@ class admin_boughtchecker extends CI_Controller{
 
         parent::__construct();
         $this->load->model('Bought_listModel');
+        $this->load->model('BasketModel');
         $this->load->model('Wait_listModel');
         $this->load->model('UsersModel');
+        $this->load->model('ProductModel');
 
     }
 
@@ -19,7 +21,7 @@ class admin_boughtchecker extends CI_Controller{
 
             @$waitlistidcashchecked = $this->Wait_listModel->selectByWaitlistID($val->wait_list_id)[0]->id;
             $boughtlistdata[$key]->cash = isset($waitlistidcashchecked) ? $waitlistidcashchecked : null ;
-            $boughtlistdata[$key]->user = $this->UsersModel->fetchUserData($val->user)[0]->username;
+            $boughtlistdata[$key]->username = $this->UsersModel->fetchUserData($val->user)[0]->username;
 
         }
 
@@ -36,8 +38,16 @@ class admin_boughtchecker extends CI_Controller{
     function deleteboughtlist(){
 
         $boughtlist_id = $_POST['boughtlist_id'];
+        $user_id = $_POST['user_id'];
         $this->Bought_listModel->deleteByID($boughtlist_id);
+        foreach($this->BasketModel->fetchBasketDataByuserId($user_id) as $val){
 
+            $productmodel = $this->ProductModel->fetchproductdataByproductId($val->product);
+            $this->ProductModel->updateProductData($val->product,$productmodel[0]->unit+$val->unit);
+
+        }
+        $this->BasketModel->delBasketNoDataByUserid($user_id);
+        $this->UsersModel->updateBuyStatusToNone($user_id);
     }
 
 } 

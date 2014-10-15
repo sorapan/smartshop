@@ -81,6 +81,16 @@ class takeitem  extends CI_Controller{
 
         }
 
+        $basket_data = $this->BasketModel->fetchBasketDataByuserId($this->session->userdata('user_id'));
+        foreach($basket_data as $basket_val){
+
+            $productmodel = $this->ProductModel->fetchproductdataByproductId($basket_val->product);
+            $productunit = $productmodel[0]->unit;
+            $productid = $basket_val->product;
+            $this->ProductModel->updateProductData($productid, $productunit-$basket_val->unit );
+
+        }
+
         $this->Bought_listModel->insertData(array(
             'price' => $price,
             'address' => $address,
@@ -124,15 +134,16 @@ class takeitem  extends CI_Controller{
 
         $this->UsersModel->updateBuyStatusToNone($this->session->userdata('user_id'));
         $this->session->set_userdata('buy_status','none');
-        $basket_data = $this->BasketModel->fetchBasketDataByuserId($this->session->userdata('user_id'));
-        foreach($basket_data as $basket_val){
 
-            $productmodel = $this->ProductModel->fetchproductdataByproductId($basket_val->product);
-            $productunit = $productmodel[0]->unit;
-            $productid = $basket_val->product;
-            $this->ProductModel->updateProductData($productid, $productunit-$basket_val->unit );
-
-        }
+//        $basket_data = $this->BasketModel->fetchBasketDataByuserId($this->session->userdata('user_id'));
+//        foreach($basket_data as $basket_val){
+//
+//            $productmodel = $this->ProductModel->fetchproductdataByproductId($basket_val->product);
+//            $productunit = $productmodel[0]->unit;
+//            $productid = $basket_val->product;
+//            $this->ProductModel->updateProductData($productid, $productunit-$basket_val->unit );
+//
+//        }
 
         $this->BasketModel->updateBoughtDataToY($this->session->userdata('user_id'));
         $this->Wait_listModel->updateCartID(

@@ -13,7 +13,7 @@ class basket extends CI_Controller {
 
     function index(){
 
-        $user_session = $this->session->userdata('username');
+        $user_session = $this->session->userdata('class');
         if($user_session !== "user"){
             echo "แอดมินไม่สามารถซื้อสินค้าได้";
         }else{
@@ -47,6 +47,24 @@ class basket extends CI_Controller {
                 );
             }
         }
+    }
+
+    function basket_nonmember(){
+
+        $dt['productid'] = $_POST['productid'];
+        $dt['$want'] = $_POST['want'];
+
+        array_push($data,$dt);
+
+        $this->input->set_cookie(array(
+            'name' => 'boughtdata_nonmember',
+            'value' => $data,
+            'expire' => '86500*30',
+            'domain' => '.'.base_url(),
+            'path' => '/',
+            'secure' => TRUE
+        ));
+
     }
 
     function inbasket(){
@@ -83,6 +101,12 @@ class basket extends CI_Controller {
             $data[0] = "basket_empty";
             echo json_encode($data);
         }
+
+    }
+
+    function inbasket_nonmember(){
+
+        echo $this->input->cookie('boughtdata_nonmember');
 
     }
 

@@ -46,6 +46,24 @@ var data = [];
 
     });
 
+    $('#addtobasket_nonmember').click(function(e){
+
+        $.ajax({
+            url: $.autoFindDir('basket/basketnonmember').url,
+            type:'POST',
+            data:{
+                'productid' : data['productid'],
+                'want' : data['want']
+            },
+            success:function(data){
+
+                alert(data);
+
+            }
+        });
+
+    });
+
     $(document).on('click','.delete_basket_item',function(){
 
         var a = $(this).parent().find(".product_id_inbasket").html();
