@@ -65,7 +65,7 @@ function js($js){
             <li><a href="<?=base_url()?>warranty">สินค้าเคลม</a></li>
             <li><a href="<?=base_url()?>howtobuy">วิธีสั่งซื้อ</a></li>
             <li><a href="<?=base_url()?>aboutme">เกี่ยวกับเรา</a></li>
-            <li><a href="#">ดาวน์โหลด</a></li>
+            <li><a href="<?=base_url()?>download">ดาวน์โหลด</a></li>
         </ul>
     </div>
 </nav>

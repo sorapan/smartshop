@@ -51,19 +51,11 @@ class basket extends CI_Controller {
 
     function basket_nonmember(){
 
-        $dt['productid'] = $_POST['productid'];
-        $dt['$want'] = $_POST['want'];
+        $old_que_ans_session =  $this->session->userdata('que_ans_session');
+        array_push($old_que_ans_session, $_POST['productid']);
+        $this->session->set_userdata('que_ans_session', $old_que_ans_session);
 
-        array_push($data,$dt);
-
-        $this->input->set_cookie(array(
-            'name' => 'boughtdata_nonmember',
-            'value' => $data,
-            'expire' => '86500*30',
-            'domain' => '.'.base_url(),
-            'path' => '/',
-            'secure' => TRUE
-        ));
+        var_dump($this->session->userdata('que_ans_session'));
 
     }
 

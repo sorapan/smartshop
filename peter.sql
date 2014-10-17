@@ -2,7 +2,7 @@
 -- Host:                         127.0.0.1
 -- Server version:               5.6.16 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
--- HeidiSQL Version:             8.3.0.4823
+-- HeidiSQL Version:             8.3.0.4835
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -45,21 +45,20 @@ CREATE TABLE IF NOT EXISTS `basket` (
   `cartID` tinytext,
   `promotion_id` tinytext,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table smartshop.basket: ~-1 rows (approximately)
 DELETE FROM `basket`;
 /*!40000 ALTER TABLE `basket` DISABLE KEYS */;
 INSERT INTO `basket` (`id`, `user`, `product`, `unit`, `price`, `date`, `bought`, `cartID`, `promotion_id`) VALUES
-	(2, 2, '2', '2', '24', '1409125319', 'Y', '1413188142', NULL),
-	(3, 2, '3', '5', '1110', '1412147429', 'Y', '1413188142', NULL),
-	(4, 2, '3', '33', '7326', '1412148443', 'Y', '1413188142', NULL),
-	(5, 2, '2', '2', '24', '1412148446', 'Y', '1413188142', NULL),
-	(14, 2, '2', '1', '0', '1412157984', 'Y', '1413188142', '14'),
-	(15, 2, '3', '2', '0', '1412157984', 'Y', '1413188142', '14'),
-	(16, 2, '4', '1', '0', '1412157984', 'Y', '1413188142', '14'),
-	(17, 2, '3', '2', '444', '1412247723', 'Y', '1413188142', NULL),
-	(18, 2, '3', '2', '444', '1413188133', 'N', '1413188142', NULL);
+	(2, 2, '2', '2', '24', '1409125319', 'Y', '1413196201', NULL),
+	(3, 2, '3', '5', '1110', '1412147429', 'Y', '1413196201', NULL),
+	(4, 2, '3', '33', '7326', '1412148443', 'Y', '1413196201', NULL),
+	(5, 2, '2', '2', '24', '1412148446', 'Y', '1413196201', NULL),
+	(14, 2, '2', '1', '0', '1412157984', 'Y', '1413196201', '14'),
+	(15, 2, '3', '2', '0', '1412157984', 'Y', '1413196201', '14'),
+	(16, 2, '4', '1', '0', '1412157984', 'Y', '1413196201', '14'),
+	(17, 2, '3', '2', '444', '1412247723', 'Y', '1413196201', NULL);
 /*!40000 ALTER TABLE `basket` ENABLE KEYS */;
 
 
@@ -96,16 +95,33 @@ CREATE TABLE IF NOT EXISTS `bought_list` (
   `user` int(10) NOT NULL,
   `wait_list_id` tinytext,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table smartshop.bought_list: ~-1 rows (approximately)
 DELETE FROM `bought_list`;
 /*!40000 ALTER TABLE `bought_list` DISABLE KEYS */;
 INSERT INTO `bought_list` (`id`, `price`, `address`, `sendby`, `verified`, `date`, `user`, `wait_list_id`) VALUES
 	(1, '64', 'dsfsdf', 'none', 'Y', '1409130118', 2, '1'),
-	(7, '444', 'dsfsdf sdfdsf dfds dsfsdf', 'none', 'N', '1412263586', 2, '15'),
-	(8, '544', 'dsfsdf sdfdsf dfds dsfsdf', 'ems', 'N', '1412263586', 2, NULL);
+	(7, '444', 'dsfsdf sdfdsf dfds dsfsdf', 'none', 'N', '1412263586', 2, '15');
 /*!40000 ALTER TABLE `bought_list` ENABLE KEYS */;
+
+
+-- Dumping structure for table smartshop.download
+CREATE TABLE IF NOT EXISTS `download` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `file` tinytext,
+  `detail` longtext,
+  `user` tinytext,
+  `date` tinytext,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- Dumping data for table smartshop.download: ~-1 rows (approximately)
+DELETE FROM `download`;
+/*!40000 ALTER TABLE `download` DISABLE KEYS */;
+INSERT INTO `download` (`id`, `file`, `detail`, `user`, `date`) VALUES
+	(1, '6Dt0hjb.gif', 'wwwwwwwwwwwwwwwwwwwww', '1', '1413451835');
+/*!40000 ALTER TABLE `download` ENABLE KEYS */;
 
 
 -- Dumping structure for table smartshop.howtobuy_blog
@@ -136,7 +152,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   `maintype` int(10) NOT NULL,
   `subtype` int(10) NOT NULL,
   `price` tinytext,
-  `unit` tinytext NOT NULL,
+  `unit` int(10) NOT NULL,
   `unitnot` tinytext NOT NULL,
   `detail` longtext NOT NULL,
   `author` tinytext,
@@ -148,9 +164,9 @@ CREATE TABLE IF NOT EXISTS `product` (
 DELETE FROM `product`;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
 INSERT INTO `product` (`id`, `productid`, `img`, `name`, `maintype`, `subtype`, `price`, `unit`, `unitnot`, `detail`, `author`, `date`) VALUES
-	(2, '0000000002', '0000000002.jpg', 'mj', 2, 2, '12', '23', '2', 'dsccfgbhrgf;kenmvkjbkjf gnjkrng lknrgjnlkenkvfdblkvdfv', 'admin', '1406793114'),
-	(3, '0000000003', '0000000003.gif', 'dsfsdfdfsdfsdff', 3, 7, '222', '24', '2', 'dfgbg.kmfdjnm;ldfmbjdnflkndsfkjnlknsdkjfgnlkdfng', 'admin', '1410428249'),
-	(4, '0000000004', '0000000004.jpg', 'ดินสอ', 1, 1, '222', '221', '10', 'ดินสอ สีแดง เทพๆ', 'admin', '1410801960');
+	(2, '0000000002', '0000000002.jpg', 'mj', 2, 2, '12', 23, '2', 'dsccfgbhrgf;kenmvkjbkjf gnjkrng lknrgjnlkenkvfdblkvdfv', 'admin', '1406793114'),
+	(3, '0000000003', '0000000003.gif', 'dsfsdfdfsdfsdff', 3, 7, '222', 24, '2', 'dfgbg.kmfdjnm;ldfmbjdnflkndsfkjnlknsdkjfgnlkdfng', 'admin', '1410428249'),
+	(4, '0000000004', '0000000004.jpg', 'ดินสอ', 1, 1, '222', 200, '10', 'ดินสอ สีแดง เทพๆ', 'admin', '1410801960');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 
 
@@ -259,7 +275,7 @@ DELETE FROM `user`;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`id`, `username`, `password`, `realname`, `lastname`, `email`, `address`, `tel`, `province`, `zipcode`, `class`, `buy_status`) VALUES
 	(1, 'admin', '1', '', '', '', '', '', '', '', 'admin', 'none'),
-	(2, 'user', '1', 'จอร์จ', 'ดีนายด์', 'd9@gmail.com', 'dsfsdf sdfdsf dfds dsfsdf', '0742223333', 'เลย', '90110', 'user', 'wait'),
+	(2, 'user', '1', 'จอร์จ', 'ดีนายด์', 'd9@gmail.com', 'dsfsdf sdfdsf dfds dsfsdf', '0742223333', 'เลย', '90110', 'user', 'none'),
 	(3, 'rudeboy', '1', 'rudeboy', 'forplay', 'rudeboy@gmail.com', 'sdfdsf sdf sd sdfsd f', '074333222', 'กระบี่', '90110', 'user', 'none');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 

@@ -41,7 +41,8 @@
 $route['default_controller'] = "index";
 
 
-$route['admin'] = "admin";//a
+//$route['admin'] = "admin";//a
+$route['admin'] = "admin_boughtchecker/index";//a
 
 ///////////////////////////////////// admin_product
 
@@ -120,6 +121,12 @@ $route['admin/searchData'] = "admin_warranty/searchData";
 
 /////////////////////////////////////
 
+$route['admin/download'] = "admin_download/index";
+$route['admin/uploadfile'] = "admin_download/uploadfile";
+$route['admin/deletefile'] = "admin_download/deletefile";
+
+/////////////////////////////////////
+
 
 $route['product/menu/main'] = "product/fetchMain";
 $route['product/menu/sub/(:any)'] = "product/fetchsub/$1";
@@ -134,9 +141,7 @@ $route['promotion/buypromotion'] = "promotion/buy_promotion";
 
 //===========================================
 
-
 $route['boughtlist/basketdetail'] = "boughtlist/basket_detail";
-
 
 $route['basket/basket'] = "basket/index";
 $route['basket/basketnonmember'] = "basket/basket_nonmember";
@@ -165,6 +170,9 @@ $route['warranty/addwarrantylist'] = "warranty/addwarrantylist";
 $route['warranty/updateStatus'] = "warranty/updateStatus";
 $route['warranty/deleteList'] = "warranty/deleteList";
 $route['warranty/searchData'] = "warranty/searchData";
+
+$route['download'] = "download/index";
+$route['download/downloadfile/(:any)'] = "download/downloadfile/$1";
 
 $route['welcome'] = "welcome";
 $route['404_override'] = '';

@@ -133,7 +133,7 @@ function js($js){
                 <li><a class="AdminMenuButton" href="<?=base_url()?>admin/howtobuy">เพิ่มวิธีการสั่งซื้อ</a></li>
                 <li><a class="AdminMenuButton" href="<?=base_url()?>admin/aboutme">เพิ่มเกี่ยวกับร้านค้า</a></li>
                 <li><a class="AdminMenuButton" href="<?=base_url()?>admin/warranty">เคลมสินค้า</a></li>
-                <!--            <li><a class="AdminMenuButton" href="#">อัพโหลด</a></li>-->
+                <li><a class="AdminMenuButton" href="<?=base_url()?>admin/download">อัพโหลด</a></li>
 
             </ul>
 

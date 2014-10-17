@@ -53,7 +53,7 @@ var data = [];
             type:'POST',
             data:{
                 'productid' : data['productid'],
-                'want' : data['want']
+                'want' : $("#add_unit").val()
             },
             success:function(data){
 
