@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `basket` (
   `cartID` tinytext,
   `promotion_id` tinytext,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table smartshop.basket: ~-1 rows (approximately)
 DELETE FROM `basket`;
@@ -58,7 +58,8 @@ INSERT INTO `basket` (`id`, `user`, `product`, `unit`, `price`, `date`, `bought`
 	(14, 2, '2', '1', '0', '1412157984', 'Y', '1413196201', '14'),
 	(15, 2, '3', '2', '0', '1412157984', 'Y', '1413196201', '14'),
 	(16, 2, '4', '1', '0', '1412157984', 'Y', '1413196201', '14'),
-	(17, 2, '3', '2', '444', '1412247723', 'Y', '1413196201', NULL);
+	(17, 2, '3', '2', '444', '1412247723', 'Y', '1413196201', NULL),
+	(18, 2, '2', '1', '12', '1413543701', 'N', NULL, NULL);
 /*!40000 ALTER TABLE `basket` ENABLE KEYS */;
 
 

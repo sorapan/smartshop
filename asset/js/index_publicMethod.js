@@ -94,15 +94,43 @@
     $.fetch_inbasket_nonmember = function(){
 
         $.ajax({
-            url:'',
+            url: $.autoFindDir('basket/inbasketnonmember').url,
             type:'POST',
-            data:{
+            dataType:'JSON',
+            success:function(data){
 
-            },
-            success:function(){
+                var $in_basket = $('#in_basket');
+                if(data[0] !== "basket_empty"){
+                    $in_basket.html('');
+                    var close_button;
+                    !data[0]['non-close'] ? close_button = '<button class="close close-sm delete_basket_item"><span>&times;</span></button>' : close_button = '';
+
+                    if(data[0]['promotion_id'] == null){
+
+                        for(var q in data){
+                            $in_basket.append('<div class="col-md-12 basket_list"><div class="row">' +
+                                close_button+
+                                '<div class="col-md-6 text-overflow">'+data[q].name+'</div> : '+data[q].unit+' ชิ้น '+
+                                '<div class="product_id_inbasket hidden">'+data[q].id+'</div>'+
+                                '</div></div>');
+                        }
+
+                    }else{
+
+
+                        $in_basket.append('<div class="col-md-12 basket_list"><div class="row">' +
+                            close_button+
+                            '<div class="col-xs-10">ซื้อโปรโมชั่น : '+data[0]['promotion_name']+'</div>'+
+                            '</div></div>');
+
+                    }
+
+                }else{
+                    $in_basket.html('');
+                }
 
             }
-        })
+        });
 
     }
 

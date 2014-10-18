@@ -2,9 +2,12 @@ $(function(){
 
 var $getitem = $('.getitem');
 var data = [];
+var non_member_bought = [];
 
 
     $.fetch_inbasket();
+    $.fetch_inbasket_nonmember();
+    check_non_member_bought();
 
     $getitem.click(function(e){
 
@@ -48,16 +51,37 @@ var data = [];
 
     $('#addtobasket_nonmember').click(function(e){
 
+        var duplicate = true;
+
+        for(var i in non_member_bought){
+
+            if(non_member_bought[i]['productid'] == data['productid']){
+                non_member_bought[i]['want'] = parseInt(non_member_bought[i]['want'])+parseInt($("#add_unit").val());
+                duplicate = false;
+                break;
+            }else{
+                duplicate = true;
+            }
+
+        }
+
+        if(duplicate == true){
+            non_member_bought.push({
+                productid : data['productid'],
+                want : $("#add_unit").val()
+            });
+        }
+
         $.ajax({
             url: $.autoFindDir('basket/basketnonmember').url,
             type:'POST',
             data:{
-                'productid' : data['productid'],
-                'want' : $("#add_unit").val()
+                'non_member_bought' :  non_member_bought
             },
             success:function(data){
 
                 alert(data);
+                location.reload();
 
             }
         });
@@ -90,6 +114,7 @@ var data = [];
                 else $.fetch_inbasket();
             }
         });
+
     }
 
     function delete_item_inbasket(itemid){
@@ -106,6 +131,30 @@ var data = [];
                 if(location.pathname == "/peter/takeitem")location.reload();
             }
         });
+    }
+
+    function check_non_member_bought(){
+
+        $.ajax({
+            url: $.autoFindDir('basket/checknonmemberbought').url,
+            type:'POST',
+            dataType:'JSON',
+            success:function(data){
+
+                if(data != null){
+
+                    for(var i in data){
+
+                        non_member_bought.push(data[i]);
+
+                    }
+
+                }
+
+
+            }
+        });
+
     }
 
 });

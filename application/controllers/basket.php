@@ -33,7 +33,6 @@ class basket extends CI_Controller {
                 );
                 $this->BasketModel->addTobasket($data);
 
-
             }else{
 
                 $unit = $_POST['want']+$itemChecked[0]->unit;
@@ -51,11 +50,9 @@ class basket extends CI_Controller {
 
     function basket_nonmember(){
 
-        $old_que_ans_session =  $this->session->userdata('que_ans_session');
-        array_push($old_que_ans_session, $_POST['productid']);
-        $this->session->set_userdata('que_ans_session', $old_que_ans_session);
 
-        var_dump($this->session->userdata('que_ans_session'));
+        $this->session->set_userdata('non_member_bought',$_POST['non_member_bought']);
+        print_r($this->session->userdata('non_member_bought'));
 
     }
 
@@ -98,13 +95,37 @@ class basket extends CI_Controller {
 
     function inbasket_nonmember(){
 
-        echo $this->input->cookie('boughtdata_nonmember');
+        $data = array();
+        $non_member_bought_data = $this->session->userdata('non_member_bought');
+        foreach($non_member_bought_data as $key=>$val){
+
+            $product = $this->ProductModel->fetchproductdataByproductId($val['productid']);
+            $data[$key] = array(
+                'name' => $product[0]->name,
+                'id' => $product[0]->id,
+                'unit' => $val['want'],
+            );
+
+        }
+        echo json_encode($data);
+
 
     }
 
     function delete_item_in_basket(){
 
         $this->BasketModel->delBasketData($_POST['itemid'],$this->session->userdata('user_id'));
+
+    }
+
+    function check_non_member_bought(){
+
+        if(!$this->session->userdata('login')){
+
+//            $this->session->sess_destroy();
+            echo json_encode($this->session->userdata('non_member_bought'));
+
+        }
 
     }
 
