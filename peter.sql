@@ -45,21 +45,22 @@ CREATE TABLE IF NOT EXISTS `basket` (
   `cartID` tinytext,
   `promotion_id` tinytext,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table smartshop.basket: ~-1 rows (approximately)
 DELETE FROM `basket`;
 /*!40000 ALTER TABLE `basket` DISABLE KEYS */;
 INSERT INTO `basket` (`id`, `user`, `product`, `unit`, `price`, `date`, `bought`, `cartID`, `promotion_id`) VALUES
-	(2, 2, '2', '2', '24', '1409125319', 'Y', '1413196201', NULL),
+	(2, 2, '2', '4', '48', '1413705197', 'Y', '1413196201', NULL),
 	(3, 2, '3', '5', '1110', '1412147429', 'Y', '1413196201', NULL),
 	(4, 2, '3', '33', '7326', '1412148443', 'Y', '1413196201', NULL),
-	(5, 2, '2', '2', '24', '1412148446', 'Y', '1413196201', NULL),
-	(14, 2, '2', '1', '0', '1412157984', 'Y', '1413196201', '14'),
+	(5, 2, '2', '4', '48', '1413705197', 'Y', '1413196201', NULL),
+	(14, 2, '2', '4', '48', '1413705197', 'Y', '1413196201', '14'),
 	(15, 2, '3', '2', '0', '1412157984', 'Y', '1413196201', '14'),
 	(16, 2, '4', '1', '0', '1412157984', 'Y', '1413196201', '14'),
 	(17, 2, '3', '2', '444', '1412247723', 'Y', '1413196201', NULL),
-	(18, 2, '2', '1', '12', '1413543701', 'N', NULL, NULL);
+	(18, 2, '2', '4', '48', '1413705197', 'N', NULL, NULL),
+	(19, 2, '3', '2', '444', '1413703367', 'N', NULL, NULL);
 /*!40000 ALTER TABLE `basket` ENABLE KEYS */;
 
 
@@ -269,7 +270,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `class` enum('user','admin') DEFAULT 'user',
   `buy_status` enum('none','wait','verified') DEFAULT 'none',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table smartshop.user: ~-1 rows (approximately)
 DELETE FROM `user`;
@@ -277,7 +278,8 @@ DELETE FROM `user`;
 INSERT INTO `user` (`id`, `username`, `password`, `realname`, `lastname`, `email`, `address`, `tel`, `province`, `zipcode`, `class`, `buy_status`) VALUES
 	(1, 'admin', '1', '', '', '', '', '', '', '', 'admin', 'none'),
 	(2, 'user', '1', 'จอร์จ', 'ดีนายด์', 'd9@gmail.com', 'dsfsdf sdfdsf dfds dsfsdf', '0742223333', 'เลย', '90110', 'user', 'none'),
-	(3, 'rudeboy', '1', 'rudeboy', 'forplay', 'rudeboy@gmail.com', 'sdfdsf sdf sd sdfsd f', '074333222', 'กระบี่', '90110', 'user', 'none');
+	(3, 'rudeboy', '1', 'rudeboy', 'forplay', 'rudeboy@gmail.com', 'sdfdsf sdf sd sdfsd f', '074333222', 'กระบี่', '90110', 'user', 'none'),
+	(4, 'cereal', '1', 'cereal', 'cereal', 'cereal@cereal.com', 'cereal', '0823333333', 'ตรัง', '90110', 'user', 'none');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 

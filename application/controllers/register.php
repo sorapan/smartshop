@@ -6,6 +6,8 @@ class Register extends CI_Controller{
 
         parent::__construct();
         $this->load->model('UsersModel');
+        $this->load->model('BasketModel');
+        $this->load->model('ProductModel');
 
     }
 
@@ -51,6 +53,40 @@ class Register extends CI_Controller{
 
         $loginresult = $this->UsersModel->loginUser($_POST['userlogin'],$_POST['passlogin']);
         if(!empty($loginresult)){
+
+            $non_member_bought = $this->session->userdata('non_member_bought');
+
+            foreach($non_member_bought as $val){
+
+                $itemChecked = $this->BasketModel->chkItemByproductId($val['productid']);
+                $product = $this->ProductModel->fetchproductdataByproductId($val['productid']);
+                $product_price = $product[0]->price;
+
+                if(empty($itemChecked)){
+
+                    $data = array(
+                        'product' => $val['productid'],
+                        'unit' => $val['want'],
+                        'user' => $loginresult[0]->id,
+                        'price' => $val['want']*$product_price,
+                        'date' => time()
+                    );
+                    $this->BasketModel->addTobasket($data);
+
+                }else{
+
+                    $unit = $val['want']+$itemChecked[0]->unit;
+                    $price = ($val['want']*$product_price)+$itemChecked[0]->price;
+
+                    $this->BasketModel->updateTobasket(
+                        $val['productid'],
+                        $loginresult[0]->id,
+                        $unit,
+                        $price
+                    );
+                }
+            }
+
             foreach($loginresult as $logink=>$loginv){
                 $this->session->set_userdata('login',true);
                 $this->session->set_userdata('username',$loginv->username);
@@ -58,10 +94,10 @@ class Register extends CI_Controller{
                 $this->session->set_userdata('buy_status',$loginv->buy_status);
                 $this->session->set_userdata('class',$loginv->class);
             }
-            redirect("/");
+            header('Location: ' . $_SERVER['HTTP_REFERER']);
         }else{
             $this->session->set_flashdata('loginmessage','** ล็อกอินผิดพลาด **');
-            redirect("/");
+            header('Location: ' . $_SERVER['HTTP_REFERER']);
         }
     }
 
@@ -69,6 +105,20 @@ class Register extends CI_Controller{
 
         $this->session->sess_destroy();
         redirect("/");
+
+    }
+
+    function signin(){
+
+        if(!$this->session->userdata('login')){
+
+            $this->load->layout1('signin');
+
+        }else{
+
+            redirect('/');
+
+        }
 
     }
 

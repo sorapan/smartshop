@@ -165,4 +165,46 @@ class takeitem  extends CI_Controller{
 
     }
 
+    function takeitem_nonmember(){
+
+        if(!$this->session->userdata('login')){
+            if($this->session->userdata('non_member_bought') == true){
+
+                $dt = array();
+                $non_member_bought_data = $this->session->userdata('non_member_bought');
+                foreach($non_member_bought_data as $key=>$val){
+
+                    $product = $this->ProductModel->fetchproductdataByproductId($val['productid']);
+                    $dt[$key] = array(
+                        'name' => $product[0]->name,
+                        'id' => $product[0]->id,
+                        'want' => $val['want'],
+                        'price' => $product[0]->price
+                    );
+
+                }
+
+                $data['boughtdata'] = $dt;
+
+                foreach($dt as $v){
+
+                    @$data['all_price'] += $v['price'];
+
+                }
+
+                $this->load->layout1('takeitem_nonmember',$data);
+
+            }else{
+
+                $this->load->layout1('takeitem_nonmember');
+
+            }
+
+        }
+
+
+
+
+    }
+
 }

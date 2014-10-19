@@ -165,10 +165,18 @@ function js($js){
 
     <?php
             if($this->session->userdata('buy_status') == 'none' || $this->session->userdata('buy_status') == null ){
+                if($this->session->userdata('login')){
     ?>
             <a href="<?=base_url()?>takeitem" class="btn bluebutton">ดูรายการสั่งซื้อ</a>
 
     <?php
+                }else{
+                ?>
+
+            <a href="<?=base_url()?>takeitem/takeitem_nonmember" class="btn bluebutton">ดูรายการสั่งซื้อ</a>
+
+                <?php
+                }
             }else{
     ?>
             <a href="<?=base_url()?>takeitem" class="btn yellowbutton">ยืนยันการโอนเงิน</a>
@@ -195,7 +203,6 @@ function js($js){
 
     </div>
 </div>
-
 
 </div>
 

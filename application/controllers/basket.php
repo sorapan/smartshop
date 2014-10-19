@@ -95,19 +95,21 @@ class basket extends CI_Controller {
 
     function inbasket_nonmember(){
 
-        $data = array();
-        $non_member_bought_data = $this->session->userdata('non_member_bought');
-        foreach($non_member_bought_data as $key=>$val){
+        if(!$this->session->userdata('login')){
+            $data = array();
+            $non_member_bought_data = $this->session->userdata('non_member_bought');
+            foreach($non_member_bought_data as $key=>$val){
 
-            $product = $this->ProductModel->fetchproductdataByproductId($val['productid']);
-            $data[$key] = array(
-                'name' => $product[0]->name,
-                'id' => $product[0]->id,
-                'unit' => $val['want'],
-            );
+                $product = $this->ProductModel->fetchproductdataByproductId($val['productid']);
+                $data[$key] = array(
+                    'name' => $product[0]->name,
+                    'id' => $product[0]->id,
+                    'unit' => $val['want'],
+                );
 
+            }
+            echo json_encode($data);
         }
-        echo json_encode($data);
 
 
     }

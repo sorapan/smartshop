@@ -1,59 +1,60 @@
-<?php
 
-header("Content-Type: text/html;charset=UTF-8");
 
-?>
-<div class="col-md-offset-3" style="padding:20px 0 20px 0">
-    <h3>สมัครสมาชิก</h3>
-</div>
+<div class="bigheader">สมัครสมาชิก</div>
 
-<form  method="POST" action="<?=base_url()?>regis" class="form-horizontal col-md-6"  accept-charset="UTF-8"  style="margin: 0 0 30px 30px">
+<div class="card">
+
+    <div class="cardbrand marginbot">
+        แบบฟอร์มสมัครสมาชิก
+    </div>
+
+<form  method="POST" action="<?=base_url()?>regis" class="form-horizontal"  accept-charset="UTF-8">
 
     <div class="form-group">
         <label for="username" class="col-md-3 control-label">ชื่อผู้ใช้ :</label>
-        <div class="col-md-9">
+        <div class="col-md-8">
             <input type="text" class="form-control" id="username" name="username" placeholder="ชื่อผู้ใช้">
         </div>
     </div>
 
     <div class="form-group">
         <label for="password" class="col-md-3 control-label">รหัสผ่าน :</label>
-        <div class="col-md-9">
+        <div class="col-md-8">
             <input type="password" class="form-control" id="password" name="password"  placeholder="รหัสผ่าน">
         </div>
     </div>
 
     <div class="form-group">
         <label for="realname" class="col-md-3 control-label">ชื่อ :</label>
-        <div class="col-md-9">
+        <div class="col-md-8">
             <input type="text" class="form-control" id="realname" name="realname" placeholder="ชื่อ">
         </div>
     </div>
 
     <div class="form-group">
         <label for="lastname" class="col-md-3 control-label">นามสกุล :</label>
-        <div class="col-md-9">
+        <div class="col-md-8">
             <input type="text" class="form-control" id="lastname" name="lastname" placeholder="นามสกุล">
         </div>
     </div>
 
     <div class="form-group">
         <label for="address" class="col-md-3 control-label">ที่อยู่ :</label>
-        <div class="col-md-9">
-            <textarea class="form-control" id="address"  name="address" placeholder="ที่อยู่"></textarea>
+        <div class="col-md-8">
+            <textarea class="form-control" rows="4" id="address"  name="address" placeholder="ที่อยู่"></textarea>
         </div>
     </div>
 
     <div class="form-group">
         <label for="email" class="col-md-3 control-label">อีเมล :</label>
-        <div class="col-md-9">
+        <div class="col-md-8">
             <input type="Email" class="form-control" id="email" name="email" placeholder="อีเมล">
         </div>
     </div>
 
     <div class="form-group">
         <label for="province" class="col-md-3 control-label">จังหวัด :</label>
-        <div class="col-md-9">
+        <div class="col-md-8">
             <select id="province" name="province" class="form-control">
                 <option value="" selected>--------- เลือกจังหวัด ---------</option>
                 <option value="กรุงเทพมหานคร">กรุงเทพมหานคร</option>
@@ -139,23 +140,25 @@ header("Content-Type: text/html;charset=UTF-8");
 
     <div class="form-group">
         <label for="zipcode" class="col-md-3 control-label">รหัสไปรษณีย์ :</label>
-        <div class="col-md-9">
+        <div class="col-md-8">
             <input type="text" class="form-control" id="zipcode" name="zipcode" placeholder="รหัสไปรษณีย์">
         </div>
     </div>
 
     <div class="form-group">
         <label for="tel" class="col-md-3 control-label">เบอร์โทรศัพท์ :</label>
-        <div class="col-md-9">
+        <div class="col-md-8">
             <input type="tel" class="form-control" id="tel" name="tel" placeholder="เบอร์โทรที่ติดต่อได้">
         </div>
     </div>
 
     <div class="form-group">
         <label class="col-md-3 control-label"></label>
-        <div class="col-md-9">
-            <button type="submit" class="btn btn-default">ตกลง</button>
+        <div class="col-md-8">
+            <button type="submit" class="btn bluebutton margintop">ตกลง</button>
         </div>
     </div>
 
 </form>
+
+</div>

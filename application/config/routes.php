@@ -155,12 +155,14 @@ $route['takeitem'] = "takeitem/index";
 $route['takeitem/itemlist'] = "takeitem/itemlist";
 $route['takeitem/boughtit'] = "takeitem/bought_it";
 $route['takeitem/towaitinglist'] = "takeitem/to_waiting_list";
+$route['takeitem/takeitem_nonmember'] = "takeitem/takeitem_nonmember";
 
 
 $route['regisform'] = "register";
 $route['regis'] = "register/regis";//p
 $route['login'] = "register/login";//p
 $route['destroy'] = "register/destroysession";//p
+$route['signin'] = "register/signin";//p
 
 $route['howtobuy'] = "howtobuy/index";
 
