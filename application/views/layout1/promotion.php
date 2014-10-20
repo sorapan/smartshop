@@ -4,6 +4,9 @@
 
 
         <?php
+
+       //var_dump($promotionlist[0]->promotiondata[0]->unit);
+
         foreach($promotionlist as $promval){
         ?>
 
@@ -21,7 +24,7 @@
                 foreach($val->productdata as $pv){
         ?>
 
-                    <li class="list-group-item"><?=$pv->name?></li>
+                    <li class="list-group-item"><?=$pv->name.' จำนวน '.$val->unit.' ชิ้น '?></li>
 <!--                    echo base_url()."productImg/".$pv->img-->
 
 

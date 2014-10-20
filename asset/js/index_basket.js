@@ -1,6 +1,5 @@
 $(function(){
 
-var $getitem = $('.getitem');
 var data = [];
 var non_member_bought = [];
 
@@ -9,7 +8,7 @@ var non_member_bought = [];
     $.fetch_inbasket_nonmember();
     check_non_member_bought();
 
-    $getitem.click(function(e){
+    $('.getitem').click(function(e){
 
         e.preventDefault();
 
@@ -32,6 +31,41 @@ var non_member_bought = [];
         $("#addtobasket_name").html(name);
         $("#addtobasket_unit").html(price+" บาท");
         $("#addtobasket_price").html(unit+" ชิ้น");
+
+    });
+
+    $('.getdetail').click(function(){
+
+
+        var grandpa = $(this).parents().eq(3);
+        var productid = grandpa.find('.productid').html();
+        var name = grandpa.find('.product_name').html();
+        var price = grandpa.find('.product_price').html();
+        var unit = grandpa.find('.product_unit').html();
+        var img = $(this).parents().eq(3).find('img').attr('src');
+        var detail;
+
+
+        $.ajax({
+            url: $.autoFindDir('basket/productdetail').url,
+            type:'POST',
+            data:{
+                'productid':productid
+            },
+            dataType:'JSON',
+            success:function(data){
+
+                $("#detail_detail").html(data[0]['detail']);
+
+            }
+        });
+
+
+        $("#detail_img").html('<img class="img-responsive" style="width: 500px;" src="'+img+'">');
+        $("#detail_name").html(name);
+        $("#detail_unit").html(price+" บาท");
+        $("#detail_price").html(unit+" ชิ้น");
+        $("#detail_detail").html(detail);
 
     });
 
@@ -80,12 +114,11 @@ var non_member_bought = [];
             },
             success:function(data){
 
-                alert(data);
+//                alert(data);
                 location.reload();
 
             }
         });
-
     });
 
     $(document).on('click','.delete_basket_item',function(){

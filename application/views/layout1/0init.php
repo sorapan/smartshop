@@ -115,7 +115,7 @@ function js($js){
             <?php
                     if($this->session->userdata('class') == "admin"){
             ?>
-                        <li><a target="_blank" href="<?=base_url()?>admin">หน้าแอดมิน</a></li>
+                        <li><a href="<?=base_url()?>admin">หน้าแอดมิน</a></li>
             <?php
                     }
                     if($this->session->userdata('class') == "user"){

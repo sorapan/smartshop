@@ -38,7 +38,6 @@
                     echo $bval->cash == null ? 'ยังไม่ได้โอน' : 'โอนแล้ว';
                     if(floor((time() - $bval->date)/86400) > 7 && $bval->cash == null){ echo '</span>';}
 
-
                 ?></td>
                 <td>
                 <?php
@@ -47,7 +46,6 @@
                     echo '<button class="btn yellowbutton col-xs-12 delete_boughtlist">ลบ</button>';
 
                 }
-
                 ?>
                 </td>
             </tr>

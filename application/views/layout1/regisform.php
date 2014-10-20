@@ -10,6 +10,9 @@
 
 <form  method="POST" action="<?=base_url()?>regis" class="form-horizontal"  accept-charset="UTF-8">
 
+    <p class="col-xs-offset-3 text-info">* กรุณากรอกให้ครบทุกช่อง</p>
+    <p class="col-xs-offset-3 text-danger"><?=$this->session->flashdata('formERR')?></p>
+    <p class="col-xs-offset-3 text-danger"><?=$this->session->flashdata('usernameERR')?></p>
     <div class="form-group">
         <label for="username" class="col-md-3 control-label">ชื่อผู้ใช้ :</label>
         <div class="col-md-8">
@@ -17,6 +20,7 @@
         </div>
     </div>
 
+    <p class="col-xs-offset-3 text-danger"><?=$this->session->flashdata('passwordERR')?></p>
     <div class="form-group">
         <label for="password" class="col-md-3 control-label">รหัสผ่าน :</label>
         <div class="col-md-8">
@@ -39,6 +43,7 @@
     </div>
 
     <div class="form-group">
+        <p class="col-xs-offset-3 text-info">* กรอกที่อยู่ตามความเป็นจริง เพื่อประโยชน์ในการซื้อสินค้า</p>
         <label for="address" class="col-md-3 control-label">ที่อยู่ :</label>
         <div class="col-md-8">
             <textarea class="form-control" rows="4" id="address"  name="address" placeholder="ที่อยู่"></textarea>

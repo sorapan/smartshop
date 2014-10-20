@@ -89,4 +89,12 @@ class UsersModel extends CI_Model{
 
     }
 
+    function checkDuplicateUsername($username){
+
+        $this->db->select('*');
+        $this->db->where('username',$username);
+        return $this->db->get('user')->result();
+
+    }
+
 } 

@@ -52,7 +52,7 @@ class basket extends CI_Controller {
 
 
         $this->session->set_userdata('non_member_bought',$_POST['non_member_bought']);
-        print_r($this->session->userdata('non_member_bought'));
+//        print_r($this->session->userdata('non_member_bought'));
 
     }
 
@@ -128,6 +128,12 @@ class basket extends CI_Controller {
             echo json_encode($this->session->userdata('non_member_bought'));
 
         }
+
+    }
+
+    function product_detail(){
+
+       echo json_encode($this->ProductModel->fetchproductdataByproductId($_POST['productid']));
 
     }
 
