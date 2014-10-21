@@ -17,7 +17,7 @@
 
     <div class="cardbrand">รายการ</div>
     <table class="table ">
-        <thead style="background-color: #4cabda;color:white">
+        <thead class="bluethead">
         <tr>
             <th>#</th>
             <th>ชื่อ</th>

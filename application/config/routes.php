@@ -41,8 +41,8 @@
 $route['default_controller'] = "index";
 
 
-//$route['admin'] = "admin";//a
-$route['admin'] = "admin_boughtchecker/index";//a
+$route['admin'] = "admin";//a
+//$route['admin'] = "admin_boughtchecker/index";//a
 
 ///////////////////////////////////// admin_product
 

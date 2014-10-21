@@ -23,13 +23,14 @@ CREATE TABLE IF NOT EXISTS `aboutme_blog` (
   `author` tinytext,
   `date` tinytext,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table smartshop.aboutme_blog: ~-1 rows (approximately)
 DELETE FROM `aboutme_blog`;
 /*!40000 ALTER TABLE `aboutme_blog` DISABLE KEYS */;
 INSERT INTO `aboutme_blog` (`id`, `header`, `content`, `author`, `date`) VALUES
-	(1, 'เกี่ยวกับร้านค้า', '<span style="color: rgb(255, 255, 255); font-family: thaisans; font-size: 28px; line-height: 40px; text-indent: 22px; background-color: rgb(76, 172, 219);">เกี่ยวกับร้านค้า</span>\n        <div><span style="color: rgb(255, 255, 255); font-family: thaisans; font-size: 28px; line-height: 40px; text-indent: 22px; background-color: rgb(76, 172, 219);">เกี่ยวกับร้านค้า</span><span style="color: rgb(255, 255, 255); font-family: thaisans; font-size: 28px; line-height: 40px; text-indent: 22px; background-color: rgb(76, 172, 219);"><br></span></div><div><span style="color: rgb(255, 255, 255); font-family: thaisans; font-size: 28px; line-height: 40px; text-indent: 22px; background-color: rgb(76, 172, 219);">เกี่ยวกับร้านค้า</span><span style="color: rgb(255, 255, 255); font-family: thaisans; font-size: 28px; line-height: 40px; text-indent: 22px; background-color: rgb(76, 172, 219);"><br></span></div>', '1', '1412929976');
+	(1, 'เกี่ยวกับร้านค้า', '<span style="color: rgb(255, 255, 255); font-family: thaisans; font-size: 28px; line-height: 40px; text-indent: 22px; background-color: rgb(76, 172, 219);">เกี่ยวกับร้านค้า</span>\n        <div><span style="color: rgb(255, 255, 255); font-family: thaisans; font-size: 28px; line-height: 40px; text-indent: 22px; background-color: rgb(76, 172, 219);">เกี่ยวกับร้านค้า</span><span style="color: rgb(255, 255, 255); font-family: thaisans; font-size: 28px; line-height: 40px; text-indent: 22px; background-color: rgb(76, 172, 219);"><br></span></div><div><span style="color: rgb(255, 255, 255); font-family: thaisans; font-size: 28px; line-height: 40px; text-indent: 22px; background-color: rgb(76, 172, 219);">เกี่ยวกับร้านค้า</span><span style="color: rgb(255, 255, 255); font-family: thaisans; font-size: 28px; line-height: 40px; text-indent: 22px; background-color: rgb(76, 172, 219);"><br></span></div>', '1', '1412929976'),
+	(2, 'rockman', '<a imageanchor="1" href="http://4.bp.blogspot.com/-7bKgF3tkUmM/TllE4lDsK2I/AAAAAAAAAKA/rDwaisTPW2A/s1600/Megaman_retro_3D_by_cezkid.gif" style="font-family: \'Times New Roman\'; font-size: medium; line-height: normal; text-align: center; margin-left: 1em; margin-right: 1em;"><img src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F4.bp.blogspot.com%2F-7bKgF3tkUmM%2FTllE4lDsK2I%2FAAAAAAAAAKA%2FrDwaisTPW2A%2Fs1600%2FMegaman_retro_3D_by_cezkid.gif&amp;container=blogger&amp;gadget=a&amp;rewriteMime=image%2F*" border="0" data-orig-src="http://4.bp.blogspot.com/-7bKgF3tkUmM/TllE4lDsK2I/AAAAAAAAAKA/rDwaisTPW2A/s1600/Megaman_retro_3D_by_cezkid.gif" style="cursor: move;"></a>\n        ', '1', '1413887757');
 /*!40000 ALTER TABLE `aboutme_blog` ENABLE KEYS */;
 
 
@@ -225,7 +226,7 @@ CREATE TABLE IF NOT EXISTS `subtype_product` (
   `name` tinytext NOT NULL,
   `maintype` int(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table smartshop.subtype_product: ~-1 rows (approximately)
 DELETE FROM `subtype_product`;
@@ -234,8 +235,9 @@ INSERT INTO `subtype_product` (`id`, `name`, `maintype`) VALUES
 	(1, 'qqqqqqqqqqqq', 1),
 	(2, 'ไอโฟน', 2),
 	(5, 'กล้องกาก', 1),
-	(6, 'รถบรรทุก', 6),
-	(7, 'samsung', 3);
+	(7, 'samsung', 3),
+	(8, 'valvo', 7),
+	(9, 'เคสกากๆ', 2);
 /*!40000 ALTER TABLE `subtype_product` ENABLE KEYS */;
 
 
@@ -244,7 +246,7 @@ CREATE TABLE IF NOT EXISTS `type_product` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `name` tinytext NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table smartshop.type_product: ~-1 rows (approximately)
 DELETE FROM `type_product`;
@@ -253,8 +255,7 @@ INSERT INTO `type_product` (`id`, `name`) VALUES
 	(1, 'กล้อง'),
 	(2, 'เคสมือถือ'),
 	(3, 'มือถือ'),
-	(4, 'อุปกรณ์ต่างๆ'),
-	(6, 'รถยนต์');
+	(7, 'รถยนต์');
 /*!40000 ALTER TABLE `type_product` ENABLE KEYS */;
 
 

@@ -31,7 +31,7 @@
 
     <button class="btn bluebutton margintop add_list" data-toggle="modal" data-target="#add_list_modal">เพิ่มรายการ</button>
     <table class="table table-bordered table-c margintop">
-        <thead>
+        <thead class="bluethead">
             <tr>
                 <th>รหัสเคลม</th>
                 <th>ชื่อสินค้า</th>

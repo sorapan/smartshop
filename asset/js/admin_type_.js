@@ -95,7 +95,21 @@ $(function(){
                 typename:input
             },
             success:function(data){
-                init();
+
+                if(data == 'notnull'){
+
+                    alert('ยังมีสินค้าอยู่ในประเภทนี้ กรุณาลบสินค้าที่หน้า "จัดการรายการสินค้า" ก่อน ');
+
+                }else if(data == 'subnotnull'){
+
+                    alert('ยังมีประเภทย่อยอยู่ในประเภทนี้ กรุณาลบประเภทย่อยให้หมดก่อน ');
+
+                }else{
+
+                    init();
+
+                }
+
             }
         });
 
@@ -157,7 +171,15 @@ $(function(){
                 name:name
             },
             success:function(data){
-                init();
+                if(data == 'notnull'){
+
+                    alert('ยังมีสินค้าอยู่ในประเภทนี้ กรุณาลบสินค้าที่หน้า "จัดการรายการสินค้า" ก่อน ');
+
+                }else{
+
+                    init();
+
+                }
             }
         });
     }

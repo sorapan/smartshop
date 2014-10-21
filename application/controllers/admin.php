@@ -15,12 +15,14 @@ class admin extends CI_Controller {
 
     function index(){
 
-        $data = array(
-            'css' => array(
-                base_url().'asset/css/admin_style.css'
-            )
-        );
-        $this->load->adminpage('admin',$data);
+//        $data = array(
+//            'css' => array(
+//                base_url().'asset/css/admin_style.css'
+//            )
+//        );
+//        $this->load->adminpage('admin',$data);
+
+        redirect(base_url().'admin/boughtchecker');
 
     }
 

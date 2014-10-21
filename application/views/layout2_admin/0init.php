@@ -149,6 +149,7 @@ function js($js){
 <script src="<?=base_url()?>asset/js/jquery.js"></script>
 <script src="<?=base_url()?>asset/js/bootstrap.min.js"></script>
 <script src="<?=base_url()?>asset/js/index_publicMethod.js"></script>
+<script src="<?=base_url()?>asset/js/admin_index_menucontrol.js"></script>
 <?php
 if(isset($js)){
     if(!is_array($js))echo '<script src="'.$js.'"></script>';

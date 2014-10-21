@@ -24,7 +24,7 @@
         ไฟล์ที่อัพโหลดแล้ว
     </div>
     <table class="table table-bordered table-condensed">
-        <thead>
+        <thead class="bluethead">
             <tr>
                 <th>คำอธิบาย</th>
                 <th>ไฟล์</th>

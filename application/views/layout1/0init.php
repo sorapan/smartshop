@@ -96,11 +96,11 @@ function js($js){
                             <input id="passlogin" class="form-control"  name="passlogin" type="password">
                         </div>
 
-                        <br><input class="btn bluebutton" type="submit" value="Login" >
+                        <br><button class="btn bluebutton" type="submit" >เข้าสู่ระบบ</button>
                     </form>
                     <br>
                     <p class="text-danger"><?=$this->session->flashdata('loginmessage')?></p>
-                    <p>ถ้ายังไม่สมัครสมาชิก <a style="color:red" href="<?=base_url()?>regisform">คลิก</a></p>
+                    <p>ถ้ายังไม่สมัครสมาชิก <a href="<?=base_url()?>regisform">คลิก</a></p>
                 </div>
             </li>
 <?php

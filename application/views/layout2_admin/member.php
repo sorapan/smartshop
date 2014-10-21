@@ -2,7 +2,7 @@
 <div class="card">
     <div class="cardbrand">รายชื่อสมาชิก</div>
     <table class="table">
-        <thead>
+        <thead class="bluethead">
             <tr>
                 <th>#</th>
                 <th>ชื่อสมาชิก</th>

@@ -48,9 +48,45 @@ $(function(){
 
     });
 
+    $(' .insert_img_txt').click(function(){
+
+        document.execCommand('insertImage', false, "http://upload.wikimedia.org/wikipedia/commons/thumb/5/54/American_Broadcasting_Company_Logo.svg/220px-American_Broadcasting_Company_Logo.svg.png");
+
+    });
+
     $(' .submit').click(function(e){
 
         $.submitform($.autoFindDir('admin/submitContent').url);
+
+    });
+
+    $(document).on('change','.upload_img',function(e){
+
+        e.preventDefault();
+
+        for(var i in $(this)[0].files){
+
+            if(typeof $(this)[0].files[i].name != "undefined"  && $(this)[0].files[i].name != 'item'){
+
+                console.log($(this)[0].files[i]);
+
+            }
+
+        }
+
+//        var formdata = new FormData();
+//        formdata.append("img",$(this)[0].files[0]);
+
+//        $.ajax({
+//            url:'',
+//            type:'POST',
+//            data:formdata,
+//            success:function(data){
+//
+//
+//
+//            }
+//        });
 
     });
 

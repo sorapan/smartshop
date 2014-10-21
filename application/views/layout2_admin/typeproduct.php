@@ -5,7 +5,7 @@
 
     <div class="col-xs-12 card">
 
-        <div class="cardbrand margintop">เพิ่มประเภทหลัก</div>
+        <div class="cardbrand">เพิ่มประเภทหลัก</div>
         <div class="form-horizontal">
             <div class="form-group">
                 <label for="maintype" class="control-label col-md-2">ชื่อประเภท</label>
@@ -16,7 +16,7 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button id="addmaintype" type="submit" class="btn btn-primary">ตกลง</button>
+                    <button id="addmaintype" type="submit" class="btn bluebutton">ตกลง</button>
                 </div>
             </div>
         </div>
@@ -46,7 +46,7 @@
             <div class="col-md-10 col-md-offset-2" style="color:red"><p id="warnsubtype"></p></div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" id="addsubtype" class="btn btn-primary">ตกลง</button>
+                    <button type="submit" id="addsubtype" class="btn bluebutton">ตกลง</button>
                 </div>
             </div>
         </div>

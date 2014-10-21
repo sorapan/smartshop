@@ -4,7 +4,9 @@
     </div>
 
     <div class="col-xs-12 card">
-
+    <div class="cardbrand">
+        แบบฟอร์มเพิ่มสินค้า
+    </div>
     <div id="showimg" class="margintop">
         <div class="col-md-4 col-md-push-4 margintop" id="uploadimgbox">+</div>
         <input type="file" class="uploadbyclick hide">

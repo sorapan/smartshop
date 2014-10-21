@@ -15,9 +15,9 @@
 
         <table class="table">
 
-            <thead>
+            <thead class="bluethead">
                 <tr>
-                    <th>#</th>
+                    <th class="hidden">#</th>
                     <th>ผู้ซื้อ</th>
                     <th>วิธีส่ง</th>
                     <th>เงินที่ต้องจ่าย</th>
@@ -37,7 +37,7 @@
             ?>
 
             <tr>
-                <td><?=$b_val->id?></td>
+                <td class="hidden"><?=$b_val->id?></td>
                 <td><?=$b_val->username?></td>
                 <td class="hidden userid"><?=$b_val->userid?></td>
                 <td><?=$b_val->send=='none' ? 'รับด้วยตัวเอง' : 'ส่ง EMS' ?></td>
@@ -49,6 +49,10 @@
                 if($b_val->bill_dir !== NULL){
                     ?>
                     <td><a class="bill_img" data-toggle="modal" data-target="#modal_slip" www='../bill_img/<?=$b_val->bill_dir?>'>คลิ๊ก</a></td>
+                <?php
+                }else{
+                ?>
+                    <td> - </td>
                 <?php
                 }
                 ?>

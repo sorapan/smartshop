@@ -50,6 +50,22 @@ class ProductModel extends CI_Model{
 
     }
 
+    function fetchProductByMaintype($maintype){
+
+        $this->db->select('*');
+        $this->db->where('maintype',$maintype);
+        return $this->db->get('product')->result();
+
+    }
+
+    function fetchproductBySubTypeID($subtypeid){
+
+        $this->db->select('*');
+        $this->db->where('subtype',$subtypeid);
+        return $this->db->get('product')->result();
+
+    }
+
     function fetchproductBySubType($st,$mt){
 
         $this->db->select('*');

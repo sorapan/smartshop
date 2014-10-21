@@ -6,6 +6,7 @@ class admin_type extends CI_Controller{
 
         parent::__construct();
         $this->load->model("TypeModel");
+        $this->load->model("ProductModel");
 
     }
 
@@ -49,7 +50,27 @@ class admin_type extends CI_Controller{
 
     function deletemaintype(){
 
-        $this->TypeModel->deleteMainType($_POST['typename']);
+        $maintype_id = $this->TypeModel->fetchMainTypeByMainNameType($_POST['typename'])[0]->id;
+        $product = $this->ProductModel->fetchProductByMaintype($maintype_id);
+        if($product != null){
+
+            echo 'notnull';
+
+        }else{
+
+            $subtype = $this->TypeModel->fetchSubTypeByMainType($maintype_id);
+            if($subtype != null){
+
+                echo 'subnotnull';
+
+            }else{
+
+                echo 'null';
+                $this->TypeModel->deleteMainType($_POST['typename']);
+
+            }
+
+        }
 
     }
 
@@ -88,7 +109,20 @@ class admin_type extends CI_Controller{
 
     function deletesubtype(){
 
-        $this->TypeModel->deleteSubType($_POST['name']);
+        $subtype_id = $this->TypeModel->fetchSubTypeBySubNameType($_POST['name'])[0]->id;
+        $product = $this->ProductModel->fetchproductBySubTypeID($subtype_id);
+        if($product != null){
+
+            echo 'notnull';
+
+        }else{
+
+            echo 'null';
+            $this->TypeModel->deleteSubType($_POST['name']);
+
+        }
+
+//        $this->TypeModel->deleteSubType($_POST['name']);
 
     }
 

@@ -23,7 +23,7 @@
                 <td><?=$bval->username?></td>
                 <td class="hidden user_id"><?=$bval->user?></td>
                 <td><?=$bval->price?></td>
-                <td><?=$bval->sendby == 'none'? 'รับด้วยตัวเอง' : 'อีเอ็มเอส' ?></td>
+                <td><?=$bval->sendby == 'none'? 'รับด้วยตัวเอง' : 'ส่ง EMS' ?></td>
                 <td><?=$bval->verified == 'Y'? 'ใช่' : 'ไม่' ?></td>
                 <td><?php
 

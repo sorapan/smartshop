@@ -58,6 +58,12 @@ li{
     border-left: 4px solid #4cabda;
 }
 
+.navnav>li>a.active{
+    background-color: #dfe7ff;
+    /*border-left: 4px solid #4cabda;*/
+}
+
+
 .navnav>li>.navnav>li>a{
     background-color: transparent;
     border-left: 2px solid transparent;
@@ -74,6 +80,11 @@ li{
 
 .container {
     width: 970px !important;
+}
+
+.bluethead{
+    background-color: #4cabda;
+    color:white;
 }
 
 .bigheader{
