@@ -23,14 +23,19 @@ CREATE TABLE IF NOT EXISTS `aboutme_blog` (
   `author` tinytext,
   `date` tinytext,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table smartshop.aboutme_blog: ~-1 rows (approximately)
 DELETE FROM `aboutme_blog`;
 /*!40000 ALTER TABLE `aboutme_blog` DISABLE KEYS */;
 INSERT INTO `aboutme_blog` (`id`, `header`, `content`, `author`, `date`) VALUES
 	(1, 'เกี่ยวกับร้านค้า', '<span style="color: rgb(255, 255, 255); font-family: thaisans; font-size: 28px; line-height: 40px; text-indent: 22px; background-color: rgb(76, 172, 219);">เกี่ยวกับร้านค้า</span>\n        <div><span style="color: rgb(255, 255, 255); font-family: thaisans; font-size: 28px; line-height: 40px; text-indent: 22px; background-color: rgb(76, 172, 219);">เกี่ยวกับร้านค้า</span><span style="color: rgb(255, 255, 255); font-family: thaisans; font-size: 28px; line-height: 40px; text-indent: 22px; background-color: rgb(76, 172, 219);"><br></span></div><div><span style="color: rgb(255, 255, 255); font-family: thaisans; font-size: 28px; line-height: 40px; text-indent: 22px; background-color: rgb(76, 172, 219);">เกี่ยวกับร้านค้า</span><span style="color: rgb(255, 255, 255); font-family: thaisans; font-size: 28px; line-height: 40px; text-indent: 22px; background-color: rgb(76, 172, 219);"><br></span></div>', '1', '1412929976'),
-	(2, 'rockman', '<a imageanchor="1" href="http://4.bp.blogspot.com/-7bKgF3tkUmM/TllE4lDsK2I/AAAAAAAAAKA/rDwaisTPW2A/s1600/Megaman_retro_3D_by_cezkid.gif" style="font-family: \'Times New Roman\'; font-size: medium; line-height: normal; text-align: center; margin-left: 1em; margin-right: 1em;"><img src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F4.bp.blogspot.com%2F-7bKgF3tkUmM%2FTllE4lDsK2I%2FAAAAAAAAAKA%2FrDwaisTPW2A%2Fs1600%2FMegaman_retro_3D_by_cezkid.gif&amp;container=blogger&amp;gadget=a&amp;rewriteMime=image%2F*" border="0" data-orig-src="http://4.bp.blogspot.com/-7bKgF3tkUmM/TllE4lDsK2I/AAAAAAAAAKA/rDwaisTPW2A/s1600/Megaman_retro_3D_by_cezkid.gif" style="cursor: move;"></a>\n        ', '1', '1413887757');
+	(2, 'rockman', '<a imageanchor="1" href="http://4.bp.blogspot.com/-7bKgF3tkUmM/TllE4lDsK2I/AAAAAAAAAKA/rDwaisTPW2A/s1600/Megaman_retro_3D_by_cezkid.gif" style="font-family: \'Times New Roman\'; font-size: medium; line-height: normal; text-align: center; margin-left: 1em; margin-right: 1em;"><img src="https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F4.bp.blogspot.com%2F-7bKgF3tkUmM%2FTllE4lDsK2I%2FAAAAAAAAAKA%2FrDwaisTPW2A%2Fs1600%2FMegaman_retro_3D_by_cezkid.gif&amp;container=blogger&amp;gadget=a&amp;rewriteMime=image%2F*" border="0" data-orig-src="http://4.bp.blogspot.com/-7bKgF3tkUmM/TllE4lDsK2I/AAAAAAAAAKA/rDwaisTPW2A/s1600/Megaman_retro_3D_by_cezkid.gif" style="cursor: move;"></a>\n        ', '1', '1413887757'),
+	(3, 'etc', '<div style="text-align: center;"><img src="http://localhost/peter/blog_img/188anigif.gif"><br></div><div><br></div><div style="text-align: center;"><span style="font-size: 0.9em; line-height: 1.42857143;">mr bean</span></div><div style="text-align: center;"><span style="font-size: 0.9em; line-height: 1.42857143;"><br></span></div><div style="text-align: center;"><img src="http://localhost/peter/blog_img/6Dt0hjb.gif"><span style="font-size: 0.9em; line-height: 1.42857143;"><br></span></div><div style="text-align: center;"><span style="font-size: 0.9em; line-height: 1.42857143;"><br></span></div><div style="text-align: center;"><span style="font-size: 0.9em; line-height: 1.42857143;">yolo</span></div>', '1', '1413967851'),
+	(4, 'gabe newell', '<img src="http://localhost/peter/blog_img/7Ff8XM2.jpg">\n        ', '1', '1413971822'),
+	(5, 'YOLO', '<div style="text-align: center;"><font size="5">YOLOYOLOYOLOYOLOYOLOYOLOYOLOYOLOYOLO</font><br></div><div style="text-align: center;"><font size="5"><br></font></div><img src="http://localhost/peter/blog_img/6Dt0hjb.gif">\n        ', '1', '1413972206'),
+	(6, 'wwwwwwww', '<img src="http://localhost/peter/blog_img/Four_Seasons_by_mariusp.jpg">\n        ', '1', '1413973061'),
+	(7, 'ssssssssssssssssssssssss', 's<i>ssssss</i><a href="http://sss">sssssss</a>ss<b>sss</b>ssss<a href="http://google.com"><img src="http://localhost/peter/blog_img/2895_4cfc.gif"></a>', '1', '1413973693');
 /*!40000 ALTER TABLE `aboutme_blog` ENABLE KEYS */;
 
 
@@ -46,7 +51,7 @@ CREATE TABLE IF NOT EXISTS `basket` (
   `cartID` tinytext,
   `promotion_id` tinytext,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table smartshop.basket: ~-1 rows (approximately)
 DELETE FROM `basket`;
@@ -61,7 +66,8 @@ INSERT INTO `basket` (`id`, `user`, `product`, `unit`, `price`, `date`, `bought`
 	(16, 2, '4', '1', '0', '1412157984', 'Y', '1413713238', '14'),
 	(17, 2, '3', '2', '444', '1412247723', 'Y', '1413713238', NULL),
 	(18, 2, '2', '4', '48', '1413705197', 'N', '1413713238', NULL),
-	(19, 2, '3', '2', '444', '1413703367', 'N', '1413713238', NULL);
+	(19, 2, '3', '2', '444', '1413703367', 'N', '1413713238', NULL),
+	(20, 3, '2', '2', '24', '1413975167', 'N', NULL, NULL);
 /*!40000 ALTER TABLE `basket` ENABLE KEYS */;
 
 
@@ -85,6 +91,27 @@ INSERT INTO `blog` (`id`, `header`, `content`, `author`, `date`) VALUES
 	(4, 'สวัสดี ยินดีต้อนรับ', '<span style="line-height: 18.0000019073486px;"><b>เข้าไป</b> กูเกิ้ล&nbsp;</span><a href="http://google.com/" style="line-height: 18.0000019073486px; background-color: rgb(255, 255, 255);">คลิ๊ก</a><br style="line-height: 18.0000019073486px;"><span style="line-height: 18.0000019073486px;"><i>เข้าไป</i> ยูทูป&nbsp;</span><a href="http://youtube.com/" style="line-height: 18.0000019073486px; background-color: rgb(255, 255, 255);">คลิ๊ก</a><div style="line-height: 18.0000019073486px;">เข้าไป เฟซบุก&nbsp;<a href="http://facebook.com/" style="font-size: 0.9em; line-height: 1.42857143; background-color: white;">คลิ๊ก</a></div>\n        ', '1', '1412673702'),
 	(7, 'ยืนดีต้อนครับ', '<a target="_blank" href="http://www.google.com">google</a>', '1', '1412928972');
 /*!40000 ALTER TABLE `blog` ENABLE KEYS */;
+
+
+-- Dumping structure for table smartshop.blog_img
+CREATE TABLE IF NOT EXISTS `blog_img` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `name` tinytext,
+  `type` tinytext,
+  `date` tinytext,
+  `user` tinytext,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+-- Dumping data for table smartshop.blog_img: ~-1 rows (approximately)
+DELETE FROM `blog_img`;
+/*!40000 ALTER TABLE `blog_img` DISABLE KEYS */;
+INSERT INTO `blog_img` (`id`, `name`, `type`, `date`, `user`) VALUES
+	(1, '6Dt0hjb.gif', 'image/gif', '1413971289', '1'),
+	(2, '188anigif.gif', 'image/gif', '1413971320', '1'),
+	(4, '2895_4cfc.gif', 'image/gif', '1413971454', '1'),
+	(5, 'Four_Seasons_by_mariusp.jpg', 'image/jpeg', '1413971460', '1');
+/*!40000 ALTER TABLE `blog_img` ENABLE KEYS */;
 
 
 -- Dumping structure for table smartshop.bought_list

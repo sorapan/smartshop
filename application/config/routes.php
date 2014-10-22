@@ -107,6 +107,7 @@ $route['admin/aboutme'] = "admin_aboutme/index";
 $route['admin/aboutmesubmitContent'] = "admin_aboutme/submitContent";
 $route['admin/bloguploadimg'] = "admin_aboutme/bloguploadimg";
 $route['admin/fetchblogimg'] = "admin_aboutme/fetchBlogImg";
+$route['admin/deleteBlogImg'] = "admin_aboutme/deleteBlogImg";
 
 /////////////////////////////////////
 

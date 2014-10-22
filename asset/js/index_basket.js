@@ -143,6 +143,7 @@ var non_member_bought = [];
                 'want' : data['want']
             },
             success:function(data){
+                console.log(data);
                 if(data !== null && data !== "" && data.indexOf(' ')) alert(data);
                 else $.fetch_inbasket();
             }

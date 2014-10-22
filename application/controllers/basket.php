@@ -14,7 +14,7 @@ class basket extends CI_Controller {
     function index(){
 
         $user_session = $this->session->userdata('class');
-        if($user_session !== "user"){
+        if($user_session != "user"){
             echo "แอดมินไม่สามารถซื้อสินค้าได้";
         }else{
 
@@ -33,6 +33,7 @@ class basket extends CI_Controller {
                 );
                 $this->BasketModel->addTobasket($data);
 
+
             }else{
 
                 $unit = $_POST['want']+$itemChecked[0]->unit;
@@ -44,8 +45,10 @@ class basket extends CI_Controller {
                     $unit,
                     $price
                 );
+
             }
         }
+
     }
 
     function basket_nonmember(){

@@ -40,17 +40,13 @@ $(function(){
 
     });
 
+
     $(' .link_txt').click(function(){
 
         var linkURL = prompt('Enter a URL:', 'http://');
         var sText = document.getSelection();
         document.execCommand('insertHTML', false, '<a target="_blank" href="'+linkURL+'">'+sText+'</a>');
-
-    });
-
-    $(' .insert_img_txt').click(function(){
-
-        document.execCommand('insertImage', false, "http://upload.wikimedia.org/wikipedia/commons/thumb/5/54/American_Broadcasting_Company_Logo.svg/220px-American_Broadcasting_Company_Logo.svg.png");
+//        document.execCommand("CreateLink", false, linkURL);
 
     });
 
@@ -67,8 +63,16 @@ $(function(){
         var formdata = new FormData();
         formdata.append("img",$(this)[0].files[0]);
 
+        $('.uploading_modal').show();
         $.ajax({
             url: $.autoFindDir('admin/bloguploadimg').url,
+            xhr:function(){
+                var xhr = xhr = new XMLHttpRequest();
+                xhr.upload.addEventListener("progress",function(e){
+
+                },false);
+                return xhr;
+            },
             type:'POST',
             data:formdata,
             processData: false,
@@ -76,6 +80,7 @@ $(function(){
             success:function(data){
 
 //                console.log(data);
+                $('.uploading_modal').hide();
                 fetchBlogImg();
 
             }
@@ -88,6 +93,41 @@ $(function(){
         fetchBlogImg();
 
     });
+
+    $(document).on('click','.del_blog_img',function(){
+
+
+        if(confirm('คุณต้องการลบภาพนี้ใช่หรือไม่')){
+
+            $img_id = $(this).parent().find('.blog_img_id').html();
+            $.ajax({
+
+                url: $.autoFindDir('admin/deleteBlogImg').url,
+                type: 'POST',
+                data:{
+                    img_id : $img_id
+                },
+                success:function(data){
+
+                    console.log(data);
+                    fetchBlogImg();
+
+                }
+
+
+            });
+
+        }
+
+    });
+
+    $(document).on('click','.imginsertoblog',function(){
+
+        document.execCommand('insertImage', false, $(this).attr('src'));
+        $('#insert_img_modal').modal('hide');
+
+    });
+
 
     function fetchBlogImg(){
 
@@ -103,7 +143,11 @@ $(function(){
 
                 for(var i in data){
 
-                    $blogimggallery.append('<div class="blogpickimg"><span class="blog_img_id hidden">'+data[i]['id']+'</span><div class="del_blog_img">&times;</div><img class="imginsertoblog" src="http://'+location.hostname+'/peter/blog_img/'+data[i]['name']+'"></div>');
+                    $blogimggallery.append('<div class="blogpickimg">' +
+                        '<span class="blog_img_id hidden">'+data[i]['id']+'</span>' +
+                        '<div class="del_blog_img">&times;</div>' +
+                        '<img class="imginsertoblog" src="http://'+ $.autoFindDir('admin/fetchblogimg').baseurl +'/blog_img/'+data[i]['name']+'">' +
+                        '</div>');
 
                 }
 
@@ -112,21 +156,6 @@ $(function(){
 
 
     }
-
-    $(document).on('click','.del_blog_img',function(){
-
-
-        $img_id = $(this).parent().find('.blog_img_id').html();
-        alert($img_id);
-
-    });
-
-    $(document).on('click','.imginsertoblog',function(){
-
-        document.execCommand('insertImage', false, $(this).attr('src'));
-        $('#insert_img_modal').modal('hide');
-
-    });
 
 });
 

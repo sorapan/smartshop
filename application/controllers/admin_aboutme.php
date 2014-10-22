@@ -53,4 +53,12 @@ class admin_aboutme extends CI_Controller{
 
     }
 
+    function deleteBlogImg(){
+
+        $name = $this->Blog_ImgModel->fetchDataById($_POST['img_id'])[0]->name;
+        unlink('blog_img/'.$name);
+        $this->Blog_ImgModel->deleteDataById($_POST['img_id']);
+
+    }
+
 } 

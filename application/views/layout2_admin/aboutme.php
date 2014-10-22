@@ -23,7 +23,7 @@
 
 <div class="col-xs-12 margintop cardshadow" style="height: 300px;background-color: white">
     <div class="row">
-        <div contenteditable="true" style="outline: none;font-size:0.9em;height: 300px;overflow-y: scroll" class="col-xs-12 content">
+        <div contenteditable="true" style="outline: none;font-size:0.9em;height: 300px;overflow-y: scroll" class="col-xs-12 content blog_div_content">
         </div>
     </div>
 </div>
@@ -64,4 +64,8 @@
             </div>
         </div>
     </div>
+</div>
+
+<div class="uploading_modal" style="display: none;position: fixed;top: 0;left: 0;background-color: rgba(0, 0, 0, 0.7);height: 100%;width: 100%;z-index: 9000;text-align: center;">
+    <h2 style="color:white;margin-top: 270px">กำลังอัพโหลด...</h2>
 </div>

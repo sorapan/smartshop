@@ -21,4 +21,20 @@ class Blog_ImgModel extends CI_Model{
 
     }
 
+
+    function fetchDataById($id){
+
+        $this->db->select('*');
+        $this->db->where('id',$id);
+        return $this->db->get('blog_img')->result();
+
+    }
+
+    function deleteDataById($id){
+
+        $this->db->where('id',$id);
+        $this->db->delete('blog_img');
+
+    }
+
 } 
