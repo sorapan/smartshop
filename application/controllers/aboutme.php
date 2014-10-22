@@ -16,4 +16,5 @@ class aboutme extends CI_Controller{
         ));
 
     }
+
 } 

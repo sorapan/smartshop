@@ -19,7 +19,7 @@
 <button style="margin-left: 15px" class="col-xs-1 justify_left_txt">left</button>
 <button class="col-xs-1 justify_center_txt">Center</button>
 <button style="margin-left: 15px" class="col-xs-1 link_txt">ลิงค์</button>
-<button style="margin-left: 15px" class="col-xs-2" data-toggle="modal" data-target="#insert_img_modal">ใส่รูปภาพ</button>
+<button style="margin-left: 15px" class="col-xs-2 insert_img" data-toggle="modal" data-target="#insert_img_modal">ใส่รูปภาพ</button>
 
 <div class="col-xs-12 margintop cardshadow" style="height: 300px;background-color: white">
     <div class="row">
@@ -30,7 +30,7 @@
 
 <button class="col-xs-2 submit_aboutme margintop btn bluebutton">ตกลง</button>
 
-    <div class="modal" id="insert_img_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal" id="insert_img_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
 
         <div class="modal-content">
@@ -43,9 +43,15 @@
                 <div class="form-horizontal">
 
                     <div class="form-group">
-                        <label class="control-label col-xs-2">อัพโหลด</label>
+                        <label class="control-label col-xs-3">อัพโหลดรูปภาพ :</label>
                         <div class="col-xs-8">
-                            <input class="upload_img" type="file" multiple>
+                            <input class="upload_img form-control-static" type="file">
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 marginbot" style="height: 250px;border: 1px solid #4caad9;overflow-y: scroll">
+                        <div class="row blogimggallery">
+
                         </div>
                     </div>
 

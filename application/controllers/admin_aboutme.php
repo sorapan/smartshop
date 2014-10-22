@@ -6,6 +6,7 @@ class admin_aboutme extends CI_Controller{
 
         parent::__construct();
         $this->load->model("AboutmeModel");
+        $this->load->model("Blog_ImgModel");
 
     }
 
@@ -29,6 +30,26 @@ class admin_aboutme extends CI_Controller{
             'author' => $this->session->userdata('user_id'),
             'date' => time()
         ));
+
+    }
+
+    function bloguploadimg(){
+
+        move_uploaded_file($_FILES['img']['tmp_name'],'blog_img/'.$_FILES['img']['name']);
+        $this->Blog_ImgModel->insertData(array(
+
+            'name' => $_FILES['img']['name'],
+            'type' =>  $_FILES['img']['type'],
+            'date' =>  time(),
+            'user' => $this->session->userdata('user_id')
+
+        ));
+
+    }
+
+    function fetchBlogImg(){
+
+        echo json_encode($this->Blog_ImgModel->fetchAllData());
 
     }
 

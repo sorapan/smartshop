@@ -64,29 +64,67 @@ $(function(){
 
         e.preventDefault();
 
-        for(var i in $(this)[0].files){
+        var formdata = new FormData();
+        formdata.append("img",$(this)[0].files[0]);
 
-            if(typeof $(this)[0].files[i].name != "undefined"  && $(this)[0].files[i].name != 'item'){
+        $.ajax({
+            url: $.autoFindDir('admin/bloguploadimg').url,
+            type:'POST',
+            data:formdata,
+            processData: false,
+            contentType: false,
+            success:function(data){
 
-                console.log($(this)[0].files[i]);
+//                console.log(data);
+                fetchBlogImg();
 
             }
+        });
 
-        }
+    });
 
-//        var formdata = new FormData();
-//        formdata.append("img",$(this)[0].files[0]);
+    $('.insert_img').click(function(){
 
-//        $.ajax({
-//            url:'',
-//            type:'POST',
-//            data:formdata,
-//            success:function(data){
-//
-//
-//
-//            }
-//        });
+        fetchBlogImg();
+
+    });
+
+    function fetchBlogImg(){
+
+        var $blogimggallery =  $('.blogimggallery');
+
+        $blogimggallery.html('');
+
+        $.ajax({
+            url: $.autoFindDir('admin/fetchblogimg').url,
+            type:'POST',
+            dataType:'JSON',
+            success:function(data){
+
+                for(var i in data){
+
+                    $blogimggallery.append('<div class="blogpickimg"><span class="blog_img_id hidden">'+data[i]['id']+'</span><div class="del_blog_img">&times;</div><img class="imginsertoblog" src="http://'+location.hostname+'/peter/blog_img/'+data[i]['name']+'"></div>');
+
+                }
+
+            }
+        })
+
+
+    }
+
+    $(document).on('click','.del_blog_img',function(){
+
+
+        $img_id = $(this).parent().find('.blog_img_id').html();
+        alert($img_id);
+
+    });
+
+    $(document).on('click','.imginsertoblog',function(){
+
+        document.execCommand('insertImage', false, $(this).attr('src'));
+        $('#insert_img_modal').modal('hide');
 
     });
 
