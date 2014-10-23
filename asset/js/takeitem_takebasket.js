@@ -29,4 +29,27 @@ $(function(){
         for(var i=1;i<=num_day;i++)$payday.append('<option value="'+i+'">'+i+'</option>');
     }
 
+    $('.bought_cancel').click(function(){
+
+        if(confirm('ต้องการยกเลิกรายการซื้อนี้ ใช่หรือไม่?')){
+
+            var bought_id = $(this).parent().find('.bought_id').html();
+
+            $.ajax({
+                url: $.autoFindDir('takeitem/boughtcancel').url,
+                type:'POST',
+                data:{
+                    boughtlist_id:bought_id
+                },
+                success:function(data){
+
+                    location.href($.autoFindDir('takeitem/boughtcancel').baseurl);
+
+                }
+            });
+
+        }
+
+    });
+
 });

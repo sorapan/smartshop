@@ -75,8 +75,11 @@ class basket extends CI_Controller {
 
         }
 
-        $data[0]['promotion_id'] = $inbasket[0]->promotion_id;
-        $promotionlist_data = $this->PromotionModel->fetchPromotionlistByPromotionId($data[0]['promotion_id']);
+
+        if(!empty($inbasket)){
+            $data[0]['promotion_id'] = $inbasket[0]->promotion_id;
+            $promotionlist_data = $this->PromotionModel->fetchPromotionlistByPromotionId($data[0]['promotion_id']);
+        }
 
         if(isset($promotionlist_data[0]->promotion_name)){
 

@@ -95,6 +95,7 @@ class BasketModel extends CI_Model{
 
         $this->db->select_sum('price');
         $this->db->where('bought','N');
+        $this->db->where('user',$this->session->userdata('user_id'));
         return $this->db->get('basket')->result();
 
     }

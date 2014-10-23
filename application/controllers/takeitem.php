@@ -19,7 +19,7 @@ class takeitem  extends CI_Controller{
 
         $inbasket = $this->BasketModel->fetchdataJoinproductTable($this->session->userdata('user_id'));
 
-        if($inbasket[0]->promotion_id == null){
+        if(@$inbasket[0]->promotion_id == ""){
 
             $allPrice = $this->BasketModel->allPrice($this->session->userdata('user_id'));
             $allPrice = $allPrice[0]->price;
@@ -45,6 +45,10 @@ class takeitem  extends CI_Controller{
 
         }else if($this->session->userdata('buy_status') == 'wait'){
 
+//            $data['all_price'] = $this->Bought_listModel->selectDataByUserID($this->session->userdata('user_id'))[0]->price;
+            $data['all_price'] = $this->Bought_listModel->selectDataByUserID($this->session->userdata('user_id'))[0]->price;
+            $data['sendby'] = $this->Bought_listModel->selectDataByUserID($this->session->userdata('user_id'))[0]->sendby;
+            $data['boughtid'] = $this->Bought_listModel->selectDataByUserID($this->session->userdata('user_id'))[0]->id;
             $data['js'][1] = base_url().'asset/js/takeitem_takebasket.js';
             $this->load->layout1('takeitem_takebasket',$data);
 
@@ -202,9 +206,26 @@ class takeitem  extends CI_Controller{
 
         }
 
+    }
 
+    function bought_cancel(){
 
+        $boughtlist_id = $_POST['boughtlist_id'];
+        $user_id = $this->session->userdata('user_id');
+        $this->Bought_listModel->deleteByID($boughtlist_id);
+        foreach($this->BasketModel->fetchBasketDataByuserId($user_id) as $val){
+
+            $productmodel = $this->ProductModel->fetchproductdataByproductId($val->product);
+            $this->ProductModel->updateProductData($val->product,$productmodel[0]->unit+$val->unit);
+
+        }
+        $this->BasketModel->delBasketNoDataByUserid($user_id);
+        $this->UsersModel->updateBuyStatusToNone($user_id);
+
+        $this->session->set_userdata('buy_status','none');
 
     }
+
+
 
 }

@@ -20,7 +20,7 @@
 
 <div class="col-xs-12 margintop cardshadow" style="height: 300px;background-color: white">
     <div class="row">
-        <div contenteditable="true" style="outline: none;font-size:0.9em;height: 300px" class="col-xs-12 content">
+        <div contenteditable="true" style="outline: none;font-size:0.9em;height: 300px" class="col-xs-12 content blog_div_content">
         </div>
     </div>
 </div>

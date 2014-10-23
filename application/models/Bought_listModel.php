@@ -25,6 +25,7 @@ class Bought_listModel  extends CI_Model{
         $this->db->select('*');
         $this->db->where('user',$userid);
         $this->db->where('verified','N');
+//        $this->db->where('wait_list_id',null);
         $this->db->order_by('id','DESC');
         $this->db->limit(1);
         return $this->db->get('bought_list')->result();

@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS `basket` (
   `cartID` tinytext,
   `promotion_id` tinytext,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table smartshop.basket: ~-1 rows (approximately)
 DELETE FROM `basket`;
@@ -67,7 +67,7 @@ INSERT INTO `basket` (`id`, `user`, `product`, `unit`, `price`, `date`, `bought`
 	(17, 2, '3', '2', '444', '1412247723', 'Y', '1413713238', NULL),
 	(18, 2, '2', '4', '48', '1413705197', 'N', '1413713238', NULL),
 	(19, 2, '3', '2', '444', '1413703367', 'N', '1413713238', NULL),
-	(20, 3, '2', '2', '24', '1413975167', 'N', NULL, NULL);
+	(34, 3, '2', '2', '24', '1414054602', 'N', NULL, NULL);
 /*!40000 ALTER TABLE `basket` ENABLE KEYS */;
 
 
@@ -125,7 +125,7 @@ CREATE TABLE IF NOT EXISTS `bought_list` (
   `user` int(10) NOT NULL,
   `wait_list_id` tinytext,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table smartshop.bought_list: ~-1 rows (approximately)
 DELETE FROM `bought_list`;
@@ -195,7 +195,7 @@ CREATE TABLE IF NOT EXISTS `product` (
 DELETE FROM `product`;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
 INSERT INTO `product` (`id`, `productid`, `img`, `name`, `maintype`, `subtype`, `price`, `unit`, `unitnot`, `detail`, `author`, `date`) VALUES
-	(2, '0000000002', '0000000002.jpg', 'mj', 2, 2, '12', 19, '2', 'dsccfgbhrgf;kenmvkjbkjf gnjkrng lknrgjnlkenkvfdblkvdfv', 'admin', '1406793114'),
+	(2, '0000000002', '0000000002.jpg', 'mj', 2, 2, '12', 18, '2', 'dsccfgbhrgf;kenmvkjbkjf gnjkrng lknrgjnlkenkvfdblkvdfv', 'admin', '1406793114'),
 	(3, '0000000003', '0000000003.gif', 'dsfsdfdfsdfsdff', 3, 7, '222', 22, '2', 'dfgbg.kmfdjnm;ldfmbjdnflkndsfkjnlknsdkjfgnlkdfng', 'admin', '1410428249'),
 	(4, '0000000004', '0000000004.jpg', 'ดินสอ', 1, 1, '222', 200, '10', 'ดินสอ สีแดง เทพๆ', 'admin', '1410801960');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;

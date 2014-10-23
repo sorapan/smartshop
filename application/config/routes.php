@@ -160,6 +160,7 @@ $route['takeitem/itemlist'] = "takeitem/itemlist";
 $route['takeitem/boughtit'] = "takeitem/bought_it";
 $route['takeitem/towaitinglist'] = "takeitem/to_waiting_list";
 $route['takeitem/takeitem_nonmember'] = "takeitem/takeitem_nonmember";
+$route['takeitem/boughtcancel'] = "takeitem/bought_cancel";
 
 
 $route['regisform'] = "register";

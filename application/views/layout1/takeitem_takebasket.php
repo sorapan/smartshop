@@ -25,7 +25,11 @@
             ?>
         </ul>
 
-        <button class="col-xs-offset-5 col-xs-2 btn yellowbutton">ยกเลิกการซื้อ</button>
+        <div class="text-info margintop"><?= $sendby == 'none' ? 'รับด้วยตนเอง' : 'ส่งไปรษณีย์ EMS'?></div>
+        <div class="text-info bought_id hidden"><?= $boughtid ?></div>
+        <div class="text-info">ราคารวมทั้งหมด <?=$all_price?> บาท</div>
+
+        <button class="col-xs-offset-5 col-xs-2 btn yellowbutton bought_cancel">ยกเลิกการซื้อ</button>
 
     </div>
 
