@@ -26,6 +26,7 @@ class basket extends CI_Controller {
 
                 $data = array(
                     'product' => $_POST['productid'],
+                    'product_name' => $product[0]->name,
                     'unit' => $_POST['want'],
                     'user' => $this->session->userdata('user_id'),
                     'price' => $_POST['want']*$product_price,

@@ -85,5 +85,4 @@ class product extends CI_Controller {
         }
 
     }
-
 } 

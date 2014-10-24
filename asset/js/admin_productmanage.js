@@ -96,4 +96,53 @@ $(function(){
 
     });
 
+    $('.buying').click(function(e){
+
+        e.preventDefault();
+        var productid = $(this).parents().eq(2).find('.productid').html();
+        $.ajax({
+            url: $.autoFindDir('admin/buyingtoggle').url,
+            type:"POST",
+            data:{
+                productid : productid
+            },
+            success:function(){
+
+                location.reload();
+
+            }
+        });
+
+    });
+
+    $('.deleteproduct').click(function(e){
+
+        e.preventDefault();
+
+        if(confirm('ต้องการลบรายการสั่งซื้อนี้ใช่หรือไม่')){
+            var productid = $(this).parents().eq(2).find('.productid').html();
+            var img_url = $(this).parents().eq(2).find('img').attr('src');
+            $.ajax({
+               url: $.autoFindDir('admin/deleteproduct').url,
+                type:'POST',
+                data:{
+                    productid : productid,
+                    img_url:img_url
+                },
+                success:function(data){
+
+                    if(data == 'not'){
+                        alert('ยังมีผู้ใช้กำลังซื้อสินค้านี้อยู่ ไม่สามารถลบได้ ( คำแนะนำ : โปรดปิดการซื้อขายรายการนี้ก่อน )');
+                    }else{
+
+                        location.reload();
+
+                    }
+                }
+            });
+        }
+
+
+    });
+
 });

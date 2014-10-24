@@ -111,4 +111,31 @@ class ProductModel extends CI_Model{
 
     }
 
+    function getbuying($productid){
+
+        $this->db->select('*');
+        $this->db->where('id',$productid);
+        return $this->db->get('product')->result()[0]->sell;
+
+    }
+
+    function togglebuying($productid){
+
+        $sell = $this->getbuying($productid);
+        $this->db->where('id',$productid);
+        $update = $sell == 'true' ? 'false' : 'true';
+        $this->db->update('product',array(
+            'sell' => $update
+        ));
+
+    }
+
+    function deleteProduct($productid){
+
+        $this->db->delete('product',array(
+            'id' => $productid
+        ));
+
+    }
+
 }

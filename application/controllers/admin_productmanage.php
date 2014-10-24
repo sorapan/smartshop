@@ -97,6 +97,28 @@ class admin_productmanage extends CI_Controller {
 
     }
 
+    function buyingtoggle(){
+
+        $this->ProductModel->togglebuying($_POST['productid']);
+
+    }
+
+    function deleteproduct(){
+
+        $inbasket = $this->BasketModel->chkProductByProductid($_POST['productid']);
+        if($inbasket == null){
+
+            $this->ProductModel->deleteProduct($_POST['productid']);
+            $aa = explode("/",$_POST['img_url']);
+            $imgdir = "productImg/";
+            @unlink($imgdir.end($aa));
+
+        }else{
+            echo 'not';
+        }
+
+    }
+
     private function productID(){
 
         $productid = $this->ProductModel->productID();

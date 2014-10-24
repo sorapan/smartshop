@@ -31,7 +31,7 @@
 
                     ">
                 </div>
-                <div style="display:none" class="productid"><?=$p_val->id?></div>
+                <div class="hidden productid"><?=$p_val->id?></div>
                 <div class="caption">
                     <h4  class="product_name"><?=$p_val->name?></h4>
                     <p>ราคา : <span class="product_price"><?=$p_val->price?></span> บาท</p>
@@ -39,7 +39,18 @@
 
                     <div style="text-align: right" class="col-md-12">
                         <a href="#" data-toggle="modal" data-target="#myModal"  class="btn btn-sm bluebutton edit_btn" >แก้ไข</a>
-                        <a href="#" class="btn btn-sm yellowbutton" >ลบ</a>
+                        <?php
+                        if($p_val->sell == 'true'){
+                        ?>
+                        <a href="#" class="btn btn-sm whitebutton buying" >กำลังขาย..</a>
+                        <?php
+                        }else{
+                        ?>
+                        <a href="#" class="btn btn-sm whitebutton buying" >ปิดขาย</a>
+                        <?php
+                        }
+                        ?>
+                        <a href="#" class="btn btn-sm yellowbutton deleteproduct" >ลบ</a>
                     </div>
 
                 </div>

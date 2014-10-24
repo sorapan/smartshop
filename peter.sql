@@ -43,6 +43,7 @@ INSERT INTO `aboutme_blog` (`id`, `header`, `content`, `author`, `date`) VALUES
 CREATE TABLE IF NOT EXISTS `basket` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `user` int(10) NOT NULL,
+  `product_name` tinytext,
   `product` tinytext NOT NULL,
   `unit` tinytext,
   `price` tinytext,
@@ -51,16 +52,17 @@ CREATE TABLE IF NOT EXISTS `basket` (
   `cartID` tinytext,
   `promotion_id` tinytext,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table smartshop.basket: ~-1 rows (approximately)
 DELETE FROM `basket`;
 /*!40000 ALTER TABLE `basket` DISABLE KEYS */;
-INSERT INTO `basket` (`id`, `user`, `product`, `unit`, `price`, `date`, `bought`, `cartID`, `promotion_id`) VALUES
-	(1, 2, '3', '2', '444', '1414130690', 'Y', '1414130697', NULL),
-	(2, 2, '2', '1', '12', '1414130693', 'Y', '1414130697', NULL),
-	(3, 2, '4', '2', '444', '1414130722', 'Y', '1414130725', NULL),
-	(4, 3, '3', '1', '222', '1414130929', 'Y', '1414130935', NULL);
+INSERT INTO `basket` (`id`, `user`, `product_name`, `product`, `unit`, `price`, `date`, `bought`, `cartID`, `promotion_id`) VALUES
+	(1, 2, NULL, '3', '2', '444', '1414130690', 'Y', '1414130697', NULL),
+	(2, 2, NULL, '2', '1', '12', '1414130693', 'Y', '1414130697', NULL),
+	(3, 2, NULL, '4', '2', '444', '1414130722', 'Y', '1414130725', NULL),
+	(4, 3, NULL, '3', '1', '222', '1414130929', 'Y', '1414130935', NULL),
+	(5, 2, 'mj', '2', '1', '12', '1414165219', 'N', NULL, NULL);
 /*!40000 ALTER TABLE `basket` ENABLE KEYS */;
 
 
@@ -189,7 +191,7 @@ CREATE TABLE IF NOT EXISTS `product` (
 DELETE FROM `product`;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
 INSERT INTO `product` (`id`, `productid`, `img`, `name`, `maintype`, `subtype`, `price`, `unit`, `unitnot`, `detail`, `author`, `date`, `sell`) VALUES
-	(2, '0000000002', '0000000002.jpg', 'mj', 2, 2, '12', 7, '2', 'dsccfgbhrgf;kenmvkjbkjf gnjkrng lknrgjnlkenkvfdblkvdfv', 'admin', '1406793114', 'true'),
+	(2, '0000000002', '0000000002.jpg', 'mj', 1, 1, '444', 50, '3', 'cvxcvcvcvcvcvcvcv', 'admin', '1410428249', 'true'),
 	(3, '0000000003', '0000000003.gif', 'dsfsdfdfsdfsdff', 3, 7, '222', 17, '2', 'dfgbg.kmfdjnm;ldfmbjdnflkndsfkjnlknsdkjfgnlkdfng', 'admin', '1410428249', 'true'),
 	(4, '0000000004', '0000000004.jpg', 'ดินสอ', 1, 1, '222', 183, '10', 'ดินสอ สีแดง เทพๆ', 'admin', '1410801960', 'true');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;

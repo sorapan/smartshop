@@ -97,6 +97,8 @@ li{
 
 /*////////////////vvv MY LAYOUT vvv///////////////////*/
 
+
+
 .blog_div_content>img{
 
     max-height: 500px;
@@ -268,7 +270,8 @@ select:focus{
 
 .thumbnail>.limit_img>img{
     width: auto;
-    height: 300px;
+    min-height: 250px;
+    max-height: 340px;
     position: absolute;
 }
 

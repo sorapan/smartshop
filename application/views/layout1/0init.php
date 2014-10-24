@@ -32,7 +32,7 @@ function js($js){
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
     <link rel="icon" type="image/svg+xml" href="<?=base_url()?>asset/img/ss_new_fav.svg">
     <title><?=titleMessage()?></title>
     <!--Primary Color:-->
@@ -52,11 +52,11 @@ function js($js){
 </head>
 <body  data-spy="scroll" data-target="#basketbox">
 
-<header class="col-md-12 ">
+<header class="col-xs-12 ">
     <img style="margin-left:1%;width: 200px" src="<?=base_url()?>asset/img/ss.svg">
 </header>
 
-<nav id="menu" class="col-md-12 ">
+<nav id="menu" class="col-xs-12 ">
     <div class="row">
         <ul class="nav nav-justified" id="menubar">
             <li><a href="<?=base_url()?>">หน้าแรก</a></li>
@@ -72,7 +72,7 @@ function js($js){
 
 <div class="container-fluid">
 
-<nav class="col-md-2">
+<nav class="col-xs-2">
 
 <ul class="nav card margintop">
 <?php
@@ -142,12 +142,12 @@ function js($js){
 </nav>
 
 
-<div id="content" class="col-md-8">
+<div id="content" class="col-xs-8">
     <?php $this->load->view($include);?>
 </div>
 
 
-<div id="basketbox" class=" col-md-2" >
+<div id="basketbox" class=" col-xs-2" >
     <div style="width: 200px;background-color: white " class="cardshadow margintop nav" data-spy="affix" data-offset-top="125">
 
     <?php

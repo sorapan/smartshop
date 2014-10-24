@@ -121,4 +121,13 @@ class BasketModel extends CI_Model{
 
     }
 
+    function chkProductByProductid($productid){
+
+        $this->db->select('*');
+        $this->db->where('product',$productid);
+        $this->db->where('cartID',null);
+        return $this->db->get('basket')->result();
+
+    }
+
 } 
