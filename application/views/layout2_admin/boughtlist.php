@@ -13,7 +13,7 @@
 
         ?>
 
-        <table class="table">
+        <table class="table table-bordered table-condensed table-striped">
 
             <thead class="bluethead">
                 <tr>
@@ -40,6 +40,7 @@
                 <td class="hidden"><?=$b_val->id?></td>
                 <td><?=$b_val->username?></td>
                 <td class="hidden userid"><?=$b_val->userid?></td>
+                <td class="hidden cartid"><?=$b_val->cartID?></td>
                 <td><?=$b_val->send=='none' ? 'รับด้วยตัวเอง' : 'ส่ง EMS' ?></td>
                 <td><?=$b_val->price?> บาท</td>
                 <td><?=$b_val->money?> บาท </td>

@@ -26,7 +26,7 @@ class admin_boughtlist extends CI_Controller {
 
         foreach($waitingdata as $w_key=>$w_val){
 
-            $bought_list_data = $this->Bought_listModel->selectDataByUserID($data['wait_listdata'][$w_key]->user);
+            $bought_list_data = $this->Bought_listModel->selectDataByUserID($data['wait_listdata'][$w_key]->user,$data['wait_listdata'][$w_key]->id);
             if(isset($bought_list_data[0])){
                 $boughtdata = $bought_list_data[0];
                 $data['wait_listdata'][$w_key]->price = $boughtdata->price;
@@ -51,7 +51,7 @@ class admin_boughtlist extends CI_Controller {
 
     function basket_detail(){
 
-        $dataWasBought = $this->BasketModel->fetchBasketBoughtDataByuserId($_POST['userid']);
+        $dataWasBought = $this->BasketModel->fetchBasketBoughtDataByuserId($_POST['userid'],$_POST['cartid']);
         foreach($dataWasBought as $key => $val){
 
             $data[$key]['productname'] = $this->ProductModel->fetchproductdataByproductId($val->product)[0]->name;

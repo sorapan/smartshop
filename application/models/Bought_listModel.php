@@ -20,10 +20,11 @@ class Bought_listModel  extends CI_Model{
 
     }
 
-    function selectDataByUserID($userid){
+    function selectDataByUserID($userid,$wait_list_id = null){
 
         $this->db->select('*');
         $this->db->where('user',$userid);
+        if($wait_list_id != null)$this->db->where('wait_list_id',$wait_list_id);
         $this->db->where('verified','N');
 //        $this->db->where('wait_list_id',null);
         $this->db->order_by('id','DESC');

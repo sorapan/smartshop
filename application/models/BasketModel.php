@@ -71,10 +71,11 @@ class BasketModel extends CI_Model{
 
     }
 
-    function fetchBasketBoughtDataByuserId($userid){
+    function fetchBasketBoughtDataByuserId($userid,$cartID){
 
         $this->db->select('*');
         $this->db->where('user',$userid);
+        $this->db->where('cartID',$cartID);
         $this->db->where('bought','Y');
         return $this->db->get('basket')->result();
 
@@ -113,6 +114,7 @@ class BasketModel extends CI_Model{
     function updateCartID($userid,$cartID){
 
         $this->db->where('user',$userid);
+        $this->db->where('cartID',null);
         $this->db->update('basket',array(
             'cartID' => $cartID
         ));

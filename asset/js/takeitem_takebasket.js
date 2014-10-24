@@ -43,7 +43,7 @@ $(function(){
                 },
                 success:function(data){
 
-                    location.href($.autoFindDir('takeitem/boughtcancel').baseurl);
+                    location = 'http://'+$.autoFindDir('takeitem/boughtcancel').baseurl;
 
                 }
             });

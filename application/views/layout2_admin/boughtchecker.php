@@ -2,7 +2,7 @@
 <div class="card">
     <div class="cardbrand">รายการ</div>
     <table class="table table-bordered table-condensed table-striped">
-        <thead>
+        <thead class="bluethead">
             <tr>
                 <th>#</th>
                 <th>ชื่อผู้ซื้อ</th>

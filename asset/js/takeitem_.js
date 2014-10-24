@@ -75,6 +75,9 @@ $(function(){
 
                 location.reload();
 
+
+
+
             }
         });
 

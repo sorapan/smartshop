@@ -105,10 +105,13 @@ class takeitem  extends CI_Controller{
 
         $this->UsersModel->updateBuyStatusToWaiting($this->session->userdata('user_id'));
         $this->session->set_userdata('buy_status','wait');
-        $this->BasketModel->updateCartID(
-            $this->session->userdata('user_id'),
-            $this->Bought_listModel->selectDataByUserID($this->session->userdata('user_id'))[0]->date
-        );
+
+//        $this->BasketModel->updateCartID(
+//            $this->session->userdata('user_id'),
+//            $this->Bought_listModel->selectDataByUserID($this->session->userdata('user_id'))[0]->date
+//        );
+
+        $this->sendEmail('takeitem');
 
     }
 
@@ -150,7 +153,13 @@ class takeitem  extends CI_Controller{
 //        }
 
         $this->BasketModel->updateBoughtDataToY($this->session->userdata('user_id'));
+
         $this->Wait_listModel->updateCartID(
+            $this->session->userdata('user_id'),
+            $this->Bought_listModel->selectDataByUserID($this->session->userdata('user_id'))[0]->date
+        );
+
+        $this->BasketModel->updateCartID(
             $this->session->userdata('user_id'),
             $this->Bought_listModel->selectDataByUserID($this->session->userdata('user_id'))[0]->date
         );
@@ -165,6 +174,7 @@ class takeitem  extends CI_Controller{
             $this->Wait_listModel->selectDataByUserID($this->session->userdata('user_id'))[0]->id
         );
 
+        $this->sendEmail('boughtit');
         redirect(base_url());
 
     }
@@ -222,10 +232,56 @@ class takeitem  extends CI_Controller{
         $this->BasketModel->delBasketNoDataByUserid($user_id);
         $this->UsersModel->updateBuyStatusToNone($user_id);
 
+        $this->sendEmail('boughtcancel');
         $this->session->set_userdata('buy_status','none');
+
 
     }
 
+    private function sendEmail($status){
+
+        $mailtos = 'newuser@localhost';
+        $header  = 'MIME-Version: 1.0' . "\r\n";
+        $header .= "Content-type: text/html; charset=utf-8" . "\r\n";
+        $header .= "From: ระบบอีเมล Smartcom 2 <smartcom2@gmail.com>" . "\r\n";
+
+        switch($status){
+
+            case 'takeitem':
+                $subject = 'คุณ '.$this->session->userdata("username").' ได้สั่งซื้อสินค้าแล้ว';
+                $message = '
+                <p>
+                ตรวจสอบรายละเอียดที่
+                <a href="http://localhost/peter/admin/boughtchecker">http://localhost/peter/admin/boughtchecker</a>
+                </p>
+                ';
+                break;
+
+            case 'boughtit':
+                $subject = 'คุณ '.$this->session->userdata("username").' ได้โอนเงินแล้ว';
+                $message = '
+                <p>
+                ตรวจสอบรายละเอียดที่
+                <a href="http://localhost/peter/admin/boughtchecker">http://localhost/peter/admin/boughtchecker</a>
+                </p>
+                ';
+                break;
+
+            case 'boughtcancel':
+                $subject = 'คุณ '.$this->session->userdata("username").' ได้ยกเลิกการซื้อสินค้าแล้ว';
+                $message = '
+                <p>
+                ตรวจสอบรายละเอียดที่
+                <a href="http://localhost/peter/admin/boughtchecker">http://localhost/peter/admin/boughtchecker</a>
+                </p>
+                ';
+                break;
+
+        }
+
+        mail($mailtos, $subject, $message, $header);
+
+    }
 
 
 }

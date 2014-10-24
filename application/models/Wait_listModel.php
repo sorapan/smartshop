@@ -17,6 +17,8 @@ class Wait_listModel extends CI_Model{
 
     function fetchData(){
         $this->db->select("*");
+        $this->db->order_by('id','DESC');
+        $this->db->limit(1);
         return $this->db->get("wait_list")->result();
     }
 
@@ -33,6 +35,8 @@ class Wait_listModel extends CI_Model{
         $this->db->select('*');
         $this->db->where('user',$userid);
         $this->db->where('verified','N');
+        $this->db->order_by('id','DESC');
+        $this->db->limit(1);
         return $this->db->get('wait_list')->result();
 
     }
@@ -67,6 +71,7 @@ class Wait_listModel extends CI_Model{
 
         $this->db->where('user',$userid);
         $this->db->order_by('id','DESC');
+        $this->db->where('cartID',null);
         $this->db->limit(1);
         $this->db->update('wait_list',array(
             'cartID' => $cartID

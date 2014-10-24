@@ -48,7 +48,8 @@ $(function(){
             url:'basket_detail',
             type:'POST',
             data:{
-                'userid' : $(this).parents().eq(2).find('.userid').html()
+                'userid' : $(this).parents().eq(1).find('.userid').html(),
+                'cartid' : $(this).parents().eq(1).find('.cartid').html()
             },
             dataType:'JSON',
             success:function(data){
