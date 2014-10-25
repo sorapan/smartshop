@@ -121,7 +121,7 @@ function js($js){
                     if($this->session->userdata('class') == "user"){
             ?>
                     <li><a href="<?=base_url()?>boughtlist">ติดตามรายการสั่งซื้อ</a></li>
-                    <li><a href="<?=base_url()?>boughtlist">ส่งข้อความให้แอดมิน</a></li>
+                    <li><a href="<?=base_url()?>message">ส่งข้อความให้แอดมิน</a></li>
             <?php
                     }
             ?>

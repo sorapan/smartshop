@@ -128,6 +128,7 @@ function js($js){
                 <li><a class="AdminMenuButton" href="<?=base_url()?>admin/addproduct">เพิ่มข้อมูลสินค้า</a></li>
                 <li><a class="AdminMenuButton" href="<?=base_url()?>admin/typeproduct">จัดการประเภทสินค้า</a></li>
                 <li><a class="AdminMenuButton" href="<?=base_url()?>admin/productmanage">จัดการรายการสินค้า</a></li>
+                <li><a class="AdminMenuButton" href="<?=base_url()?>admin/message">ข้อความ</a></li>
                 <li><a class="AdminMenuButton" href="<?=base_url()?>admin/promotion">โปรโมชั่น</a></li>
                 <li><a class="AdminMenuButton" href="<?=base_url()?>admin/blog">เพิ่มข้อความหน้าเว็บ</a></li>
                 <li><a class="AdminMenuButton" href="<?=base_url()?>admin/howtobuy">เพิ่มวิธีการสั่งซื้อ</a></li>

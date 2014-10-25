@@ -52,17 +52,16 @@ CREATE TABLE IF NOT EXISTS `basket` (
   `cartID` tinytext,
   `promotion_id` tinytext,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table smartshop.basket: ~-1 rows (approximately)
 DELETE FROM `basket`;
 /*!40000 ALTER TABLE `basket` DISABLE KEYS */;
 INSERT INTO `basket` (`id`, `user`, `product_name`, `product`, `unit`, `price`, `date`, `bought`, `cartID`, `promotion_id`) VALUES
 	(1, 2, NULL, '3', '2', '444', '1414130690', 'Y', '1414130697', NULL),
-	(2, 2, NULL, '2', '1', '12', '1414130693', 'Y', '1414130697', NULL),
 	(3, 2, NULL, '4', '2', '444', '1414130722', 'Y', '1414130725', NULL),
 	(4, 3, NULL, '3', '1', '222', '1414130929', 'Y', '1414130935', NULL),
-	(5, 2, 'mj', '2', '1', '12', '1414165219', 'N', NULL, NULL);
+	(6, 2, 'mj', '2', '2', '888', '1414179598', 'N', NULL, NULL);
 /*!40000 ALTER TABLE `basket` ENABLE KEYS */;
 
 
@@ -167,6 +166,28 @@ INSERT INTO `howtobuy_blog` (`id`, `header`, `content`, `author`, `date`) VALUES
 	(1, 'วิธีการสั่งซื้อ', '<div style="text-align: center;"><span style="line-height: 1.42857143;"><font size="5">วิธีการสั่งซื้อ</font></span></div><div>วิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อ<br></div>', '1', '1412676155'),
 	(2, 'วิธีการสั่งซื้อครับ', '-&nbsp;วิธีการสั่งซื้อครับ<div><span style="line-height: 18.0000019073486px;">-&nbsp;วิธีการสั่งซื้อครับ</span><br></div><div><span style="line-height: 18.0000019073486px;">-&nbsp;วิธีการสั่งซื้อครับ</span><span style="line-height: 18.0000019073486px;"><br></span></div><div><span style="line-height: 18.0000019073486px;">-&nbsp;วิธีการสั่งซื้อครับ</span><span style="line-height: 18.0000019073486px;"><br></span></div><div><span style="line-height: 18.0000019073486px;">-&nbsp;วิธีการสั่งซื้อครับ</span><span style="line-height: 18.0000019073486px;"><br></span></div>', '1', '1412928828');
 /*!40000 ALTER TABLE `howtobuy_blog` ENABLE KEYS */;
+
+
+-- Dumping structure for table smartshop.message
+CREATE TABLE IF NOT EXISTS `message` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `message` longtext,
+  `user_name` tinytext,
+  `user_id` tinytext,
+  `date` tinytext,
+  `class` enum('non-admin','admin') DEFAULT 'non-admin',
+  `to` tinytext,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+-- Dumping data for table smartshop.message: ~-1 rows (approximately)
+DELETE FROM `message`;
+/*!40000 ALTER TABLE `message` DISABLE KEYS */;
+INSERT INTO `message` (`id`, `message`, `user_name`, `user_id`, `date`, `class`, `to`) VALUES
+	(1, 'msg', 'user', '2', '1414215338', 'non-admin', NULL),
+	(2, 'dddddd', 'user', '2', '1414215378', 'non-admin', NULL),
+	(3, '5555555', 'admin', '1', '1414219450', 'admin', '2');
+/*!40000 ALTER TABLE `message` ENABLE KEYS */;
 
 
 -- Dumping structure for table smartshop.product

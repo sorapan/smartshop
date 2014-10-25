@@ -132,6 +132,12 @@ $route['admin/deletefile'] = "admin_download/deletefile";
 
 /////////////////////////////////////
 
+$route['admin/message'] = "admin_message/index";
+$route['admin/fetchmessage'] = "admin_message/fetchmessage";
+$route['admin/adminreply'] = "admin_message/adminreply";
+
+/////////////////////////////////////
+
 
 $route['product/menu/main'] = "product/fetchMain";
 $route['product/menu/sub/(:any)'] = "product/fetchsub/$1";
@@ -183,6 +189,9 @@ $route['warranty/searchData'] = "warranty/searchData";
 
 $route['download'] = "download/index";
 $route['download/downloadfile/(:any)'] = "download/downloadfile/$1";
+
+$route['message'] = "message/index";
+$route['message/send'] = "message/sendmessage";
 
 $route['welcome'] = "welcome";
 $route['404_override'] = '';
