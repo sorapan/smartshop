@@ -5,7 +5,7 @@ var non_member_bought = [];
 
 
     $.fetch_inbasket();
-    $.fetch_inbasket_nonmember();
+//    $.fetch_inbasket_nonmember();
     check_non_member_bought();
 
     $('.getitem').click(function(e){
@@ -121,6 +121,30 @@ var non_member_bought = [];
         });
     });
 
+    $(document).on('click','.delete_basket_item_nonmember',function(){
+
+        var a = $(this).parent().find(".product_id_inbasket").html();
+        if(confirm('คุณต้องการลบออกจากตะกร้า?')){
+            return $.ajax({
+
+                url: $.autoFindDir('basket/deleteiteminbasketnonmember').url,
+                type:'POST',
+                data:{
+                    itemid : a
+                },
+                success:function(data){
+//                    console.log(data);
+                    location.reload();
+
+                }
+            });
+        }else{
+            return false;
+        }
+
+
+    });
+
     $(document).on('click','.delete_basket_item',function(){
 
         var a = $(this).parent().find(".product_id_inbasket").html();
@@ -129,7 +153,6 @@ var non_member_bought = [];
         }else{
             return false;
         }
-
 
     });
 

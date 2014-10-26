@@ -34,7 +34,6 @@ class basket extends CI_Controller {
                 );
                 $this->BasketModel->addTobasket($data);
 
-
             }else{
 
                 $unit = $_POST['want']+$itemChecked[0]->unit;
@@ -124,6 +123,25 @@ class basket extends CI_Controller {
     function delete_item_in_basket(){
 
         $this->BasketModel->delBasketData($_POST['itemid'],$this->session->userdata('user_id'));
+
+    }
+
+    function delete_item_in_basket_nonmember(){
+
+        $arr = $this->session->userdata('non_member_bought');
+
+        foreach($arr as $k=>$v){
+
+            if($v['productid'] == $_POST['itemid']){
+
+                unset($arr[$k]);
+
+            }
+
+        }
+
+        $arr = array_values($arr);
+        $this->session->set_userdata('non_member_bought',$arr);
 
     }
 

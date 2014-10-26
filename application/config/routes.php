@@ -138,6 +138,11 @@ $route['admin/adminreply'] = "admin_message/adminreply";
 
 /////////////////////////////////////
 
+$route['admin/profit'] = "admin_profit/index";
+$route['admin/selectdata'] = "admin_profit/selectdata";
+$route['admin/selectpromotiondata'] = "admin_profit/select_promotion_data";
+
+/////////////////////////////////////
 
 $route['product/menu/main'] = "product/fetchMain";
 $route['product/menu/sub/(:any)'] = "product/fetchsub/$1";
@@ -159,6 +164,7 @@ $route['basket/basketnonmember'] = "basket/basket_nonmember";
 $route['basket/inbasket'] = "basket/inbasket";
 $route['basket/inbasketnonmember'] = "basket/inbasket_nonmember";
 $route['basket/deleteiteminbasket'] = "basket/delete_item_in_basket";
+$route['basket/deleteiteminbasketnonmember'] = "basket/delete_item_in_basket_nonmember";
 $route['basket/checknonmemberbought'] = "basket/check_non_member_bought";
 $route['basket/productdetail'] = "basket/product_detail";
 

@@ -18,7 +18,7 @@
             <thead>
             <tr>
                 <th>วันที่</th>
-                <th>เวลา</th>
+                <th>โอนเงินเวลา</th>
                 <th>วิธีส่ง</th>
                 <th>เงินที่ต้องจ่าย</th>
                 <th>เงินที่โอน</th>
@@ -34,7 +34,7 @@
                 ?>
 
                 <tr>
-                    <td><?=date("d.m.Y",$b_val->date)?> </td>
+                    <td><?=date("d.m.Y/h:m:s น",$b_val->date)?> </td>
                     <td><?=$b_val->time?> </td>
                     <td class="hidden userid"><?=$b_val->user?> </td>
                     <td><?=$b_val->sendby=='none' ? 'รับด้วยตัวเอง' : 'ส่ง EMS' ?></td>
@@ -110,7 +110,7 @@
                 ?>
 
                 <tr>
-                    <td><?=date("d.m.Y",$b_val->date)?> </td>
+                    <td><?=date("d.m.Y/h:m:s น",$b_val->date)?> </td>
                     <td><?=$b_val->time?> </td>
                     <td class="hidden userid"><?=$b_val->user?> </td>
                     <td><?=$b_val->sendby=='none' ? 'รับด้วยตัวเอง' : 'ส่ง EMS' ?></td>

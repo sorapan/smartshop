@@ -97,6 +97,7 @@ class Wait_listModel extends CI_Model{
         $this->db->join('bought_list','bought_list.id = wait_list.bought_list_id');
         $this->db->where('bought_list.user',$userid);
         $this->db->where('bought_list.verified','N');
+        $this->db->order_by('wait_list.id','DESC');
         return $this->db->get()->result();
 
     }
@@ -108,6 +109,7 @@ class Wait_listModel extends CI_Model{
         $this->db->join('bought_list','bought_list.id = wait_list.bought_list_id');
         $this->db->where('bought_list.user',$userid);
         $this->db->where('bought_list.verified','Y');
+        $this->db->order_by('wait_list.id','DESC');
         return $this->db->get()->result();
 
     }

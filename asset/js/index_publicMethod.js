@@ -49,8 +49,10 @@
 
                 }else{
                     $in_basket.html('');
+                    $.fetch_inbasket_nonmember();
                 }
             }
+
         });
     };
 
@@ -103,7 +105,7 @@
                 if(data[0] !== "basket_empty"){
                     $in_basket.html('');
                     var close_button;
-                    !data[0]['non-close'] ? close_button = '<button class="close close-sm delete_basket_item"><span>&times;</span></button>' : close_button = '';
+                    !data[0]['non-close'] ? close_button = '<button class="close close-sm delete_basket_item_nonmember"><span>&times;</span></button>' : close_button = '';
 
                     if(data[0]['promotion_id'] == null){
 

@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS `basket` (
   `cartID` tinytext,
   `promotion_id` tinytext,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table smartshop.basket: ~-1 rows (approximately)
 DELETE FROM `basket`;
@@ -61,7 +61,12 @@ INSERT INTO `basket` (`id`, `user`, `product_name`, `product`, `unit`, `price`, 
 	(1, 2, NULL, '3', '2', '444', '1414130690', 'Y', '1414130697', NULL),
 	(3, 2, NULL, '4', '2', '444', '1414130722', 'Y', '1414130725', NULL),
 	(4, 3, NULL, '3', '1', '222', '1414130929', 'Y', '1414130935', NULL),
-	(6, 2, 'mj', '2', '2', '888', '1414179598', 'N', NULL, NULL);
+	(7, 2, NULL, '2', '1', '0', '1414225114', 'Y', '1414225133', '1'),
+	(8, 2, NULL, '4', '1', '0', '1414225114', 'Y', '1414225133', '1'),
+	(9, 2, NULL, '3', '1', '0', '1414225114', 'Y', '1414225133', '1'),
+	(10, 1, NULL, '2', '9', '3996', '1414300610', 'N', NULL, NULL),
+	(11, 1, NULL, '3', '2', '444', '1414300610', 'N', NULL, NULL),
+	(12, 1, NULL, '4', '2', '444', '1414300610', 'N', NULL, NULL);
 /*!40000 ALTER TABLE `basket` ENABLE KEYS */;
 
 
@@ -119,7 +124,7 @@ CREATE TABLE IF NOT EXISTS `bought_list` (
   `user` int(10) NOT NULL,
   `wait_list_id` tinytext,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table smartshop.bought_list: ~-1 rows (approximately)
 DELETE FROM `bought_list`;
@@ -127,7 +132,8 @@ DELETE FROM `bought_list`;
 INSERT INTO `bought_list` (`id`, `price`, `address`, `sendby`, `verified`, `date`, `user`, `wait_list_id`) VALUES
 	(1, '456', 'dsfsdf sdfdsf dfds dsfsdf', 'none', 'N', '1414130697', 2, '1'),
 	(2, '444', 'dsfsdf sdfdsf dfds dsfsdf', 'none', 'N', '1414130725', 2, '2'),
-	(3, '322', 'sdfdsf sdf sd sdfsd f', 'ems', 'N', '1414130935', 3, '3');
+	(3, '322', 'sdfdsf sdf sd sdfsd f', 'ems', 'N', '1414130935', 3, '3'),
+	(4, '300', 'dsfsdf sdfdsf dfds dsfsdf', 'ems', 'N', '1414225133', 2, '4');
 /*!40000 ALTER TABLE `bought_list` ENABLE KEYS */;
 
 
@@ -212,9 +218,9 @@ CREATE TABLE IF NOT EXISTS `product` (
 DELETE FROM `product`;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
 INSERT INTO `product` (`id`, `productid`, `img`, `name`, `maintype`, `subtype`, `price`, `unit`, `unitnot`, `detail`, `author`, `date`, `sell`) VALUES
-	(2, '0000000002', '0000000002.jpg', 'mj', 1, 1, '444', 50, '3', 'cvxcvcvcvcvcvcvcv', 'admin', '1410428249', 'true'),
-	(3, '0000000003', '0000000003.gif', 'dsfsdfdfsdfsdff', 3, 7, '222', 17, '2', 'dfgbg.kmfdjnm;ldfmbjdnflkndsfkjnlknsdkjfgnlkdfng', 'admin', '1410428249', 'true'),
-	(4, '0000000004', '0000000004.jpg', 'ดินสอ', 1, 1, '222', 183, '10', 'ดินสอ สีแดง เทพๆ', 'admin', '1410801960', 'true');
+	(2, '0000000002', '0000000002.jpg', 'mj', 1, 1, '444', 49, '3', 'cvxcvcvcvcvcvcvcv', 'admin', '1410428249', 'true'),
+	(3, '0000000003', '0000000003.gif', 'dsfsdfdfsdfsdff', 3, 7, '222', 16, '2', 'dfgbg.kmfdjnm;ldfmbjdnflkndsfkjnlknsdkjfgnlkdfng', 'admin', '1410428249', 'true'),
+	(4, '0000000004', '0000000004.jpg', 'ดินสอ', 1, 1, '222', 182, '10', 'ดินสอ สีแดง เทพๆ', 'admin', '1410801960', 'true');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 
 
@@ -344,7 +350,7 @@ CREATE TABLE IF NOT EXISTS `wait_list` (
   `verified` enum('Y','N') DEFAULT 'N',
   `bought_list_id` tinytext,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table smartshop.wait_list: ~-1 rows (approximately)
 DELETE FROM `wait_list`;
@@ -352,7 +358,8 @@ DELETE FROM `wait_list`;
 INSERT INTO `wait_list` (`id`, `money`, `date`, `time`, `bill_dir`, `user`, `cartID`, `verified`, `bought_list_id`) VALUES
 	(1, '500', '1414158433', '14.40 น', '1.gif', 2, '1414130697', 'N', '1'),
 	(2, '500', '1414158456', ' 2.40 น', NULL, 2, '1414130725', 'N', '2'),
-	(3, '400', '1414158673', '14.40 น', NULL, 3, '1414130935', 'N', '3');
+	(3, '400', '1414158673', '14.40 น', NULL, 3, '1414130935', 'N', '3'),
+	(4, '300', '1414252870', '14.40 น', NULL, 2, '1414225133', 'N', '4');
 /*!40000 ALTER TABLE `wait_list` ENABLE KEYS */;
 
 

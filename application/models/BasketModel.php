@@ -12,6 +12,60 @@ class BasketModel extends CI_Model{
 
     }
 
+    function selectAllData(){
+
+        $this->db->select('*');
+        $this->db->where('bought','Y');
+        return $this->db->get('basket')->result();
+
+
+    }
+
+    function selectDistintbyproductidOnlyproduct(){
+
+        $this->db->distinct();
+        $this->db->group_by('product');
+        $this->db->where('promotion_id',null);
+        return $this->db->get('basket')->result();
+
+    }
+
+    function selectDistintbyCartid(){
+
+        $this->db->distinct();
+        $this->db->group_by('cartID');
+        $this->db->where('promotion_id <>','null');
+        return $this->db->get('basket')->result();
+
+    }
+
+    function getsumprice($productid){
+
+        $this->db->select_sum('price');
+        $this->db->where('product',$productid);
+//        $this->db->where('promotionid',null);
+        return $this->db->get('basket')->result();
+
+    }
+
+
+    function getsumunit($productid){
+
+        $this->db->select_sum('unit');
+        $this->db->where('product',$productid);
+        $this->db->where('promotion_id',null);
+        return $this->db->get('basket')->result();
+
+    }
+
+    function getpromotionunit($cartid){
+
+        $this->db->select('*');
+        $this->db->where('cartID',$cartid);
+        return $this->db->get('basket')->result();
+
+    }
+
     function updateTobasket($productid,$userid,$unit,$price){
 
         $data = array(
@@ -129,5 +183,8 @@ class BasketModel extends CI_Model{
         return $this->db->get('basket')->result();
 
     }
+
+
+
 
 } 
