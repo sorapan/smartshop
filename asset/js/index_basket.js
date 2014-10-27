@@ -95,7 +95,7 @@ var non_member_bought = [];
         var unit_added_chk = false;
 
 //        alert(data.unit);
-        if(add_unit > data.unit){
+        if(parseInt(add_unit) > data.unit){
 
             alert('คุณใส่สินค้าเกิน');
 
