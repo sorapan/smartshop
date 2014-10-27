@@ -83,6 +83,24 @@ class ProductModel extends CI_Model{
 
     }
 
+    function fetchproductBySubType2($st,$mt){
+
+        $this->db->select('*');
+        $this->db->from('product');
+        if($mt==null){
+            //do nothing
+        }else if($st==null){
+            $this->db->join('type_product','product.maintype = type_product.id');
+            $this->db->where('type_product.id',$mt);
+        }else{
+            $this->db->join('subtype_product','product.subtype = subtype_product.id');
+            $this->db->where('subtype_product.id',$st);
+        }
+        $this->db->limit(6);
+        return $this->db->get()->result();
+
+    }
+
     function fetchproductByWord($word){
 
         $this->db->select('*');

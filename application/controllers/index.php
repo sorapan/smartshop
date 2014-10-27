@@ -10,9 +10,12 @@ class Index extends CI_Controller {
 
     function index(){
 
+        $productdata = $this->ProductModel->fetchproductBySubType2(null,null);
+
         $this->load->layout1('home',array(
 
-            'blogdata' => $this->BlogModel->selectLastBlogData()
+            'blogdata' => $this->BlogModel->selectLastBlogData(),
+            'p_data'=>$productdata,
 
         ));
 

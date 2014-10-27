@@ -162,7 +162,7 @@ foreach($p_data as $p_val){
 
                 ?>
 
-                <button type="button" id="addtobasket_nonmember" class="btn bluebutton">qqqqqqq</button>
+                <button type="button" id="addtobasket_nonmember" class="btn bluebutton">ตกลง</button>
 
                 <?php
 
