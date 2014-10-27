@@ -72,4 +72,16 @@ class PromotionModel extends CI_Model {
 
     }
 
+    function deletePromotionByID($id){
+
+        $this->db->delete('promotion_list',array(
+            'id' => $id
+        ));
+
+        $this->db->delete('promotion_product',array(
+            'promotionid' => $id
+        ));
+
+    }
+
 } 

@@ -24,8 +24,9 @@ class BasketModel extends CI_Model{
     function selectDistintbyproductidOnlyproduct(){
 
         $this->db->distinct();
-        $this->db->group_by('product');
+        $this->db->where('bought','Y');
         $this->db->where('promotion_id',null);
+        $this->db->group_by('product');
         return $this->db->get('basket')->result();
 
     }
@@ -33,8 +34,9 @@ class BasketModel extends CI_Model{
     function selectDistintbyCartid(){
 
         $this->db->distinct();
-        $this->db->group_by('cartID');
+        $this->db->where('bought','Y');
         $this->db->where('promotion_id <>','null');
+        $this->db->group_by('cartID');
         return $this->db->get('basket')->result();
 
     }
@@ -43,6 +45,7 @@ class BasketModel extends CI_Model{
 
         $this->db->select_sum('price');
         $this->db->where('product',$productid);
+        $this->db->where('bought','Y');
 //        $this->db->where('promotionid',null);
         return $this->db->get('basket')->result();
 
@@ -54,6 +57,7 @@ class BasketModel extends CI_Model{
         $this->db->select_sum('unit');
         $this->db->where('product',$productid);
         $this->db->where('promotion_id',null);
+        $this->db->where('bought','Y');
         return $this->db->get('basket')->result();
 
     }

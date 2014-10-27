@@ -73,7 +73,8 @@ var non_member_bought = [];
 
         e.preventDefault();
         var addunit = $("#add_unit").val();
-        if(addunit > data.unit){
+//        alert(addunit + ' = ' + data.unit);
+        if(parseInt(addunit) > data.unit){
             alert('คุณใส่สินค้าเกิน');
         }else{
             if(!isNaN(addunit) && addunit !== "" && addunit.indexOf(" ")){

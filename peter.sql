@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS `basket` (
   `cartID` tinytext,
   `promotion_id` tinytext,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table smartshop.basket: ~-1 rows (approximately)
 DELETE FROM `basket`;
@@ -61,12 +61,12 @@ INSERT INTO `basket` (`id`, `user`, `product_name`, `product`, `unit`, `price`, 
 	(1, 2, NULL, '3', '2', '444', '1414130690', 'Y', '1414130697', NULL),
 	(3, 2, NULL, '4', '2', '444', '1414130722', 'Y', '1414130725', NULL),
 	(4, 3, NULL, '3', '1', '222', '1414130929', 'Y', '1414130935', NULL),
-	(7, 2, NULL, '2', '1', '0', '1414225114', 'Y', '1414225133', '1'),
 	(8, 2, NULL, '4', '1', '0', '1414225114', 'Y', '1414225133', '1'),
 	(9, 2, NULL, '3', '1', '0', '1414225114', 'Y', '1414225133', '1'),
 	(10, 1, NULL, '2', '9', '3996', '1414300610', 'N', NULL, NULL),
 	(11, 1, NULL, '3', '2', '444', '1414300610', 'N', NULL, NULL),
-	(12, 1, NULL, '4', '2', '444', '1414300610', 'N', NULL, NULL);
+	(12, 1, NULL, '4', '2', '444', '1414300610', 'N', NULL, NULL),
+	(14, 2, 'mj', '2', '40', '17760', '1414401194', 'N', NULL, NULL);
 /*!40000 ALTER TABLE `basket` ENABLE KEYS */;
 
 
@@ -239,7 +239,6 @@ DELETE FROM `promotion_list`;
 INSERT INTO `promotion_list` (`id`, `promotion_name`, `price`, `detail`) VALUES
 	(1, 'โปรโมชั่นแรก', '200', 'dsfgf sdf sdf sdfdsfgfghrterfcb dsfgdsf,mdasnfjnskjafnskjnfkljdsnkjasnfkj nkjn sdakjfnkjanfk ak nkjfk ljhdsafn snfdkl nsdfhdb skjnksdnf hsafjknkj'),
 	(2, 'ปีใหม่ 2015', '400', '555555555555555555555555555555555555555555'),
-	(3, '444', '444', '444'),
 	(14, 'qwe', '222', 'qqweqwe'),
 	(15, 'mj triple pack', '200', 'mj triple packmj triple packmj triple pack');
 /*!40000 ALTER TABLE `promotion_list` ENABLE KEYS */;
@@ -263,7 +262,6 @@ INSERT INTO `promotion_product` (`id`, `productid`, `promotionid`, `unit`) VALUE
 	(3, '3', '1', 1),
 	(4, '2', '2', 1),
 	(5, '4', '2', 1),
-	(6, '2', '14', 1),
 	(7, '3', '14', 2),
 	(8, '4', '14', 1),
 	(9, '2', '15', 3);

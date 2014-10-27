@@ -63,23 +63,20 @@ class admin_profit extends CI_Controller{
         foreach($basket_data_distint as $distinitkey => $distint_val){
 
             if(date('n',$distint_val->date) == $_POST['month'] && date('Y',$distint_val->date) == $_POST['year']){
-                if($distint_val->promotion_id == null){
-                    $basket_data_distint[$distinitkey]->product_name = $this->ProductModel->fetchproductdataByproductId($distint_val->product)[0]->name;
-                    $basket_data_distint[$distinitkey]->price = $this->BasketModel->getsumprice($distint_val->product)[0]->price;
-                    $basket_data_distint[$distinitkey]->unit = $this->BasketModel->getsumunit($distint_val->product)[0]->unit == null ? 0 : $this->BasketModel->getsumunit($distint_val->product)[0]->unit;
-                }
-                else{
+
                     $basket_data_distint[$distinitkey]->product_name = 'โปรโมชั่น : ';
-                    $basket_data_distint[$distinitkey]->product_name .= $this->PromotionModel->fetchPromotionlistByPromotionId($distint_val->product)[0]->promotion_name;
-                    $basket_data_distint[$distinitkey]->price = $this->PromotionModel->fetchPromotionlistByPromotionId($distint_val->product)[0]->price;
+                    $basket_data_distint[$distinitkey]->product_name .= $this->PromotionModel->fetchPromotionlistByPromotionId($distint_val->promotion_id)[0]->promotion_name;
+                    $basket_data_distint[$distinitkey]->price = $this->PromotionModel->fetchPromotionlistByPromotionId($distint_val->promotion_id)[0]->price;
                     $basket_data_distint[$distinitkey]->unit = $this->BasketModel->getpromotionunit($distint_val->cartID)[0]->unit;
-                }
+
                 $send = true;
             }
         }
 
         if($send) echo json_encode($basket_data_distint);
         else echo json_encode($aa);
+
+//        echo json_encode($basket_data_distint);
 
     }
 

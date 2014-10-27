@@ -51,8 +51,8 @@
 
 <div class="col-xs-12 menuFromDown" style="height: 220px;bottom: -220px;border-top:1px solid #c1c1c1;padding:15px;z-index:999999;position: fixed;left:0;background-color: white">
 
-    <span class="hide_menu" style="font-size: 1.4em;margin-bottom: 10px">ซ่อน/แสดง</span>
-    <div class="row">
+    <span class="hide_menu" style="background-color: orange;position: absolute;top:0;right: 0;color:white;cursor: pointer;padding: 5px">ซ่อน/แสดง</span>
+    <div class="row margintop">
     <div class="col-xs-12">
         <div class="promotion_list col-xs-4" style="overflow-y:scroll;height: 120px;background-color: #bbd3da"></div>
 

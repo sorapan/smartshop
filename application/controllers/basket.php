@@ -39,12 +39,18 @@ class basket extends CI_Controller {
                 $unit = $_POST['want']+$itemChecked[0]->unit;
                 $price = ($_POST['want']*$product_price)+$itemChecked[0]->price;
 
-                $this->BasketModel->updateTobasket(
-                    $_POST['productid'],
-                    $this->session->userdata('user_id'),
-                    $unit,
-                    $price
-                );
+                if($unit < $product[0]->unit){
+                    $this->BasketModel->updateTobasket(
+                        $_POST['productid'],
+                        $this->session->userdata('user_id'),
+                        $unit,
+                        $price
+                    );
+                }else{
+
+                    echo 'สินค้าเกิน';
+
+                }
 
             }
         }
@@ -52,7 +58,6 @@ class basket extends CI_Controller {
     }
 
     function basket_nonmember(){
-
 
         $this->session->set_userdata('non_member_bought',$_POST['non_member_bought']);
 //        print_r($this->session->userdata('non_member_bought'));

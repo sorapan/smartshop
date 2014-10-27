@@ -144,6 +144,11 @@ $route['admin/selectpromotiondata'] = "admin_profit/select_promotion_data";
 
 /////////////////////////////////////
 
+$route['admin/managepromotion'] = "admin_managepromotion/index";
+$route['admin/deletepromotion'] = "admin_managepromotion/deletepromotion";
+
+/////////////////////////////////////
+
 $route['product/menu/main'] = "product/fetchMain";
 $route['product/menu/sub/(:any)'] = "product/fetchsub/$1";
 $route['product/(:any)'] = "product/index/$1";
