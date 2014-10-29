@@ -51,22 +51,18 @@ CREATE TABLE IF NOT EXISTS `basket` (
   `bought` enum('Y','N') NOT NULL DEFAULT 'N',
   `cartID` tinytext,
   `promotion_id` tinytext,
+  `promotion_unit` tinytext,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table smartshop.basket: ~-1 rows (approximately)
 DELETE FROM `basket`;
 /*!40000 ALTER TABLE `basket` DISABLE KEYS */;
-INSERT INTO `basket` (`id`, `user`, `product_name`, `product`, `unit`, `price`, `date`, `bought`, `cartID`, `promotion_id`) VALUES
-	(1, 2, NULL, '3', '2', '444', '1414130690', 'Y', '1414130697', NULL),
-	(3, 2, NULL, '4', '2', '444', '1414130722', 'Y', '1414130725', NULL),
-	(4, 3, NULL, '3', '1', '222', '1414130929', 'Y', '1414130935', NULL),
-	(8, 2, NULL, '4', '1', '0', '1414225114', 'Y', '1414225133', '1'),
-	(9, 2, NULL, '3', '1', '0', '1414225114', 'Y', '1414225133', '1'),
-	(10, 1, NULL, '2', '9', '3996', '1414300610', 'N', NULL, NULL),
-	(11, 1, NULL, '3', '2', '444', '1414300610', 'N', NULL, NULL),
-	(12, 1, NULL, '4', '2', '444', '1414300610', 'N', NULL, NULL),
-	(14, 2, 'mj', '2', '40', '17760', '1414401194', 'N', NULL, NULL);
+INSERT INTO `basket` (`id`, `user`, `product_name`, `product`, `unit`, `price`, `date`, `bought`, `cartID`, `promotion_id`, `promotion_unit`) VALUES
+	(24, 2, 'mj', '2', '5', '2220', '1414573146', 'N', NULL, NULL, NULL),
+	(25, 2, NULL, '2', '1', '0', '1414573442', 'N', NULL, '1', '1'),
+	(26, 2, NULL, '4', '1', '0', '1414573442', 'N', NULL, '1', '1'),
+	(27, 2, NULL, '3', '1', '0', '1414573442', 'N', NULL, '1', '1');
 /*!40000 ALTER TABLE `basket` ENABLE KEYS */;
 
 
@@ -78,7 +74,7 @@ CREATE TABLE IF NOT EXISTS `blog` (
   `author` tinytext,
   `date` tinytext,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table smartshop.blog: ~-1 rows (approximately)
 DELETE FROM `blog`;
@@ -88,7 +84,8 @@ INSERT INTO `blog` (`id`, `header`, `content`, `author`, `date`) VALUES
 	(2, 'สวัสดีครับ', '<div style="text-align: center;"><span style="line-height: 1.42857143;"><font size="5">สวัสดีครับ</font></span></div><div style="text-align: left;"><span style="line-height: 34.2857170104981px;"><font size="2">สวัสดี สวสัดี</font></span></div><div style="text-align: center;"><span style="line-height: 1.42857143;"><font size="5"><br></font></span></div>', '1', '1412592220'),
 	(3, 'สวัสดีครับ', '<div style="text-align: center;"><font size="5"><span style="line-height: 34.2857170104981px;"><b>สวัสดีครับ</b></span></font></div><div style="text-align: left;"><span style="line-height: 34.2857170104981px;"><font size="2">กกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกก</font></span></div><div style="text-align: left;"><span style="line-height: 34.2857170104981px;"><font size="2">กกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกก</font></span></div><div style="text-align: left;"><span style="line-height: 34.2857170104981px;"><font size="2">กกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกก</font></span></div><div style="text-align: left;"><span style="line-height: 34.2857170104981px;"><font size="2">กกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกก</font></span></div><div style="text-align: left;"><span style="line-height: 34.2857170104981px;"><font size="2">กกกกกกกกกกกกกกกกกกกกกกกกก</font></span></div><div style="text-align: left;"><span style="line-height: 34.2857170104981px;"><font size="2">กกกกกกกกกกกก</font></span></div><div style="text-align: left;"><span style="line-height: 34.2857170104981px;"><font size="2">กกกกกกก</font></span></div><div style="text-align: left;"><span style="line-height: 34.2857170104981px;"><font size="2">กกกก</font></span></div>', '1', '1412670947'),
 	(4, 'สวัสดี ยินดีต้อนรับ', '<span style="line-height: 18.0000019073486px;"><b>เข้าไป</b> กูเกิ้ล&nbsp;</span><a href="http://google.com/" style="line-height: 18.0000019073486px; background-color: rgb(255, 255, 255);">คลิ๊ก</a><br style="line-height: 18.0000019073486px;"><span style="line-height: 18.0000019073486px;"><i>เข้าไป</i> ยูทูป&nbsp;</span><a href="http://youtube.com/" style="line-height: 18.0000019073486px; background-color: rgb(255, 255, 255);">คลิ๊ก</a><div style="line-height: 18.0000019073486px;">เข้าไป เฟซบุก&nbsp;<a href="http://facebook.com/" style="font-size: 0.9em; line-height: 1.42857143; background-color: white;">คลิ๊ก</a></div>\n        ', '1', '1412673702'),
-	(7, 'ยืนดีต้อนครับ', '<a target="_blank" href="http://www.google.com">google</a>', '1', '1412928972');
+	(7, 'ยืนดีต้อนครับ', '<a target="_blank" href="http://www.google.com">google</a>', '1', '1412928972'),
+	(8, 'สวัสดีครับ', 'สวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับ<img src="http://localhost/peter/blog_img/2895_4cfc.gif">', '1', '1414483544');
 /*!40000 ALTER TABLE `blog` ENABLE KEYS */;
 
 

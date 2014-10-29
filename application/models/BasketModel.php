@@ -86,12 +86,13 @@ class BasketModel extends CI_Model{
 
     }
 
-    function chkItemByproductId($productId){
+    function chkItemByproductId($productId,$userid){
 
         $this->db->select('*');
         $this->db->where('product',$productId);
         $this->db->where('bought','N');
-        $this->db->where('user',$this->session->userdata('user_id'));
+        $this->db->where('user',$userid);
+        $this->db->where('promotion_id',null);
         return $this->db->get('basket')->result();
 
     }
@@ -100,6 +101,16 @@ class BasketModel extends CI_Model{
 
         $this->db->where('product',$product);
         $this->db->where('user',$user);
+        $this->db->where('promotion_id',null);
+        $this->db->delete('basket');
+
+    }
+
+    function delBasketDataPromotion($promotion,$user){
+
+        $this->db->where('promotion_id',$promotion);
+        $this->db->where('user',$user);
+        $this->db->where('bought','N');
         $this->db->delete('basket');
 
     }
@@ -125,6 +136,7 @@ class BasketModel extends CI_Model{
         $this->db->select('*');
         $this->db->where('user',$userid);
         $this->db->where('bought','N');
+        $this->db->group_by('date');
         return $this->db->get('basket')->result();
 
     }
@@ -150,11 +162,11 @@ class BasketModel extends CI_Model{
 
     }
 
-    function allPrice(){
+    function allPrice($userid){
 
         $this->db->select_sum('price');
         $this->db->where('bought','N');
-        $this->db->where('user',$this->session->userdata('user_id'));
+        $this->db->where('user',$userid);
         return $this->db->get('basket')->result();
 
     }

@@ -39,7 +39,7 @@ class promotion extends CI_Controller{
     function buy_promotion(){
 
         $userid = $this->session->userdata('user_id');
-        $this->BasketModel->clearBasketDataByUserid($userid);
+//        $this->BasketModel->clearBasketDataByUserid($userid);
         $promotion_data = $this->PromotionModel->fetchPromotiondataByPromotionID($_POST['promotion_id']);
 //        $promotion_count = $this->PromotionModel->countPromotiondataByPromotionID($_POST['promotion_id']);
         foreach($promotion_data as $val){
@@ -49,12 +49,25 @@ class promotion extends CI_Controller{
                 'unit' => $val->unit,
                 'price' => '0',
                 'date' => time(),
-                'promotion_id' => $val->promotionid
+                'promotion_id' => $val->promotionid,
+                'promotion_unit' => '1'
             ));
         }
+    }
 
+    function buy_promotion_nonmember(){
 
+        $non_member_bought = array();
+
+        array_push($non_member_bought,array(
+            'productid' => $_POST['productid'],
+            'want' => '1',
+            'promotionid' => $_POST['promotion_id']
+        ));
+
+        $this->session->set_userdata('non_member_bought',$non_member_bought);
 
     }
+
 
 } 

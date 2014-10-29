@@ -68,7 +68,7 @@ class Register extends CI_Controller{
 
             foreach($non_member_bought as $val){
 
-                $itemChecked = $this->BasketModel->chkItemByproductId($val['productid']);
+                $itemChecked = $this->BasketModel->chkItemByproductId($val['productid'],$loginresult[0]->id);
                 $product = $this->ProductModel->fetchproductdataByproductId($val['productid']);
                 $product_price = $product[0]->price;
 
@@ -104,10 +104,11 @@ class Register extends CI_Controller{
                 $this->session->set_userdata('buy_status',$loginv->buy_status);
                 $this->session->set_userdata('class',$loginv->class);
             }
-            header('Location: ' . $_SERVER['HTTP_REFERER']);
+
+            @header('Location: ' . $_SERVER['HTTP_REFERER']);
         }else{
             $this->session->set_flashdata('loginmessage','** ล็อกอินผิดพลาด **');
-            header('Location: ' . $_SERVER['HTTP_REFERER']);
+            @header('Location: ' . $_SERVER['HTTP_REFERER']);
         }
     }
 

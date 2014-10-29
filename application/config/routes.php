@@ -159,6 +159,7 @@ $route['product/search'] = "product/fetchProductWithWord";
 
 $route['promotion'] = "promotion/index";
 $route['promotion/buypromotion'] = "promotion/buy_promotion";
+$route['promotion/buypromotionnonmember'] = "promotion/buy_promotion_nonmember";
 
 //===========================================
 
@@ -169,6 +170,7 @@ $route['basket/basketnonmember'] = "basket/basket_nonmember";
 $route['basket/inbasket'] = "basket/inbasket";
 $route['basket/inbasketnonmember'] = "basket/inbasket_nonmember";
 $route['basket/deleteiteminbasket'] = "basket/delete_item_in_basket";
+$route['basket/deleteiteminbasketpromotion'] = "basket/delete_item_in_basket_promotion";
 $route['basket/deleteiteminbasketnonmember'] = "basket/delete_item_in_basket_nonmember";
 $route['basket/checknonmemberbought'] = "basket/check_non_member_bought";
 $route['basket/productdetail'] = "basket/product_detail";

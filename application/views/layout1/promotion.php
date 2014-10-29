@@ -65,7 +65,25 @@
             <hr>
 
             <div>
+                <?php
+
+                if($this->session->userdata('class') == 'user'){
+
+                ?>
                 <button class="btn bluebutton buy_promotion">ซื้อโปรโมชั่น</button>
+                <?php
+
+                }else if($this->session->userdata('class') != 'admin'){
+
+                ?>
+                <button class="btn bluebutton buy_promotion_nonmember">nonmember</button>
+                <?php
+                }else{
+                ?>
+
+                <?php
+                }
+                ?>
             </div>
 
         </div>

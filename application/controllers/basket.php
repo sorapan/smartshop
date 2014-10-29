@@ -18,7 +18,7 @@ class basket extends CI_Controller {
             echo "แอดมินไม่สามารถซื้อสินค้าได้";
         }else{
 
-            $itemChecked = $this->BasketModel->chkItemByproductId($_POST['productid']);
+            $itemChecked = $this->BasketModel->chkItemByproductId($_POST['productid'],$this->session->userdata('user_id'));
             $product = $this->ProductModel->fetchproductdataByproductId($_POST['productid']);
             $product_price = $product[0]->price;
 
@@ -71,30 +71,51 @@ class basket extends CI_Controller {
 
         foreach($inbasket as $k=>$inbasket_v){
 
-            $product = $this->ProductModel->fetchproductdataByproductId($inbasket_v->product);
-            $data[$k] = array(
-                'name' => $product[0]->name,
-                'id' => $product[0]->id,
-                'unit' => $inbasket_v->unit,
-            );
+//            $data[$k] = array(
+//                'name' => $product[0]->name,
+//                'id' => $product[0]->id,
+//                'unit' => $inbasket_v->unit,
+//            );
+
+            if($inbasket_v->promotion_id == null){
+
+                $product = $this->ProductModel->fetchproductdataByproductId($inbasket_v->product);
+                $data[$k] = array(
+                    'name' => $product[0]->name,
+                    'id' => $product[0]->id,
+                    'unit' => $inbasket_v->unit,
+                    'promotion' => false
+                );
+
+            }else{
+
+                $promotion = $this->PromotionModel->fetchPromotionlistByPromotionId($inbasket_v->promotion_id);
+                $data[$k] = array(
+                    'name' => $promotion[0]->promotion_name,
+                    'id' => $inbasket_v->promotion_id,
+                    'unit' => $inbasket_v->promotion_unit,
+                    'promotion' => true
+                );
+
+            }
+
 
         }
 
 
-        if(!empty($inbasket)){
-            $data[0]['promotion_id'] = $inbasket[0]->promotion_id;
-            $promotionlist_data = $this->PromotionModel->fetchPromotionlistByPromotionId($data[0]['promotion_id']);
-        }
+//        if(!empty($inbasket)){
+//            $data[0]['promotion_id'] = $inbasket[0]->promotion_id;
+//            $promotionlist_data = $this->PromotionModel->fetchPromotionlistByPromotionId($data[0]['promotion_id']);
+//        }
+//
+//        if(isset($promotionlist_data[0]->promotion_name)){
+//
+//            $data[0]['promotion_name'] = $promotionlist_data[0]->promotion_name;
+//            $data[0]['promotion_id'] = $promotionlist_data[0]->id;
+//
+//        }
 
-        if(isset($promotionlist_data[0]->promotion_name)){
-
-            $data[0]['promotion_name'] = $promotionlist_data[0]->promotion_name;
-
-        }
-
-        if($this->session->userdata('buy_status') == 'wait'){
-            $data[0]['non-close'] = true;
-        }
+        if($this->session->userdata('buy_status') == 'wait') $data[0]['non-close'] = true;
 
         if(!empty($data))echo json_encode($data);
         else{
@@ -111,14 +132,28 @@ class basket extends CI_Controller {
             $non_member_bought_data = $this->session->userdata('non_member_bought');
             foreach($non_member_bought_data as $key=>$val){
 
-                $product = $this->ProductModel->fetchproductdataByproductId($val['productid']);
-                $data[$key] = array(
-                    'name' => $product[0]->name,
-                    'id' => $product[0]->id,
-                    'unit' => $val['want'],
-                );
+                if($val['promotionid'] == null){
+
+                    $product = $this->ProductModel->fetchproductdataByproductId($val['productid']);
+                    $data[$key] = array(
+                        'name' => $product[0]->name,
+                        'id' => $product[0]->id,
+                        'unit' => $val['want'],
+                    );
+
+                }else{
+
+                    $promotion = $this->PromotionModel->fetchPromotionlistByPromotionId($val['promotionid']);
+                    $data[$key] = array(
+                        'name' => $promotion[0]->promotion_name,
+                        'id' => $promotion[0]->id,
+                        'unit' => $val['want'],
+                    );
+
+                }
 
             }
+//            $this->session->sess_destroy();
             echo json_encode($data);
         }
 
@@ -128,6 +163,12 @@ class basket extends CI_Controller {
     function delete_item_in_basket(){
 
         $this->BasketModel->delBasketData($_POST['itemid'],$this->session->userdata('user_id'));
+
+    }
+
+    function delete_item_in_basket_promotion(){
+
+        $this->BasketModel->delBasketDataPromotion($_POST['itemid'],$this->session->userdata('user_id'));
 
     }
 
