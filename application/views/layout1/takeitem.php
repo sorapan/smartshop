@@ -18,10 +18,42 @@
             <li class="list-group-item">
                 <div class="container-fluid">
                     <div class="col-xs-4"><?= $b_v->name?></div>
-                    <div style="display:none" class="item_id col-xs-4"><?= $b_v->id?></div>
+            <?php
+
+                if($b_v->promotion_id == null){
+
+            ?>
+                    <div class="item_id col-xs-4 hidden"><?= $b_v->id?></div>
                     <div class="col-xs-2"><?= $b_v->unit." ชิ้น"?></div>
+            <?php
+
+                }else{
+
+            ?>
+                    <div  class="item_id col-xs-4 hidden"><?= $b_v->promotion_id?></div>
+                    <div  class="item_date col-xs-4 hidden"><?= $b_v->date?></div>
+                    <div class="col-xs-2"><?= "1 ชิ้น"?></div>
+            <?php
+
+                }
+
+            ?>
                     <div class="col-xs-2"><?= $b_v->price." บาท"?></div>
+            <?php
+
+            if($b_v->promotion_id == null){
+
+            ?>
                     <button class="close delete_item_list"><span>&times;</span></button>
+            <?php
+
+            }else{
+
+            ?>
+                    <button class="close delete_item_list_promotion"><span>&times;</span></button>
+            <?php
+            }
+            ?>
                 </div>
             </li>
 

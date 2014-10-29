@@ -49,6 +49,32 @@ $(function(){
         }
     });
 
+    $(document).on('click',".delete_item_list_promotion",function(e){
+
+        var itemid = $(this).parent().find('.item_id').html();
+        var itemdate = $(this).parent().find('.item_date').html();
+
+        if(confirm('คุณต้องการลบออกจากรายการ?')){
+
+            $.ajax({
+                url:$.autoFindDir('basket/deleteiteminbasketpromotion').url,
+                type:'POST',
+                data:{
+                    'itemid':itemid,
+                    'itemdate':itemdate
+                },
+                success:function(){
+
+                    $.fetch_inbasket();
+                    $.fetchListData();
+                    location.reload();
+
+                }
+            });
+
+        }
+    });
+
 //===================================================================
 
     $(document).on('click','#buy_it_now',function(e){
@@ -69,10 +95,12 @@ $(function(){
                 'price':price,
                 'sendby':sendby
             },
+//            dataType:'JSON',
             success:function(data){
 
 //               location = $.autoFindDir('takeitem/takebasket').url;
 
+//                console.log(data);
                 location.reload();
 
 

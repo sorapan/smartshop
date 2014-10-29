@@ -50,6 +50,7 @@
                                 '<div class="col-md-12">โปรโมชั่น : '+data[q].name+'</div> ' +
                                 '<div class="col-md-12"> : '+data[q].unit+' ชิ้น </div> ' +
                                 '<div class="promotion_id_inbasket hidden">'+data[q].id+'</div>'+
+                                '<div class="promotion_date_inbasket hidden">'+data[q].date+'</div>'+
                                 '</div></div>');
 
 

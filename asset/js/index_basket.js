@@ -189,14 +189,17 @@ var non_member_bought = [];
     $(document).on('click','.delete_basket_item_promotion',function(){
 
         var a = $(this).parent().find(".promotion_id_inbasket").html();
+        var d = $(this).parent().find(".promotion_date_inbasket").html();
 //        alert(a);
+//        alert(d);
         if(confirm('คุณต้องการลบออกจากตะกร้า?')){
             return $.ajax({
 
                 url: $.autoFindDir('basket/deleteiteminbasketpromotion').url,
                 type:'POST',
                 data:{
-                    itemid:a
+                    itemid:a,
+                    itemdate:d
                 },
                 success:function(data){
 

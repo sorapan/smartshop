@@ -19,17 +19,34 @@ class takeitem  extends CI_Controller{
 
         $inbasket = $this->BasketModel->fetchdataJoinproductTable($this->session->userdata('user_id'));
 
-        if(@$inbasket[0]->promotion_id == ""){
+//        if(@$inbasket[0]->promotion_id == ""){
+//
+//            $allPrice = $this->BasketModel->allPrice($this->session->userdata('user_id'));
+//            $allPrice = $allPrice[0]->price;
+//
+//        }else{
+//
+//            $promotionlist_data = $this->PromotionModel->fetchPromotionlistByPromotionId($inbasket[0]->promotion_id);
+//            $allPrice = $promotionlist_data[0]->price;
+//
+//        }
 
-            $allPrice = $this->BasketModel->allPrice($this->session->userdata('user_id'));
-            $allPrice = $allPrice[0]->price;
 
-        }else{
+        foreach($inbasket as $key=>$val){
 
-            $promotionlist_data = $this->PromotionModel->fetchPromotionlistByPromotionId($inbasket[0]->promotion_id);
-            $allPrice = $promotionlist_data[0]->price;
+            if($val->promotion_id != null){
+
+                $promotion = $this->PromotionModel->fetchPromotionlistByPromotionId($val->promotion_id);
+                $inbasket[$key]->name = 'โปรโมชั่น:'.$promotion[0]->promotion_name;
+                $inbasket[$key]->price = $promotion[0]->price;
+                $inbasket[$key]->unit = $promotion[0]->price;
+
+            }
 
         }
+
+        $allPrice = 0;
+        foreach($inbasket as $val)$allPrice += $val->price;
 
             $data = array(
                 'basket_data' => $inbasket,
@@ -85,7 +102,7 @@ class takeitem  extends CI_Controller{
 
         }
 
-        $basket_data = $this->BasketModel->fetchBasketDataByuserId($this->session->userdata('user_id'));
+        $basket_data = $this->BasketModel->fetchBasketDataByuserId2($this->session->userdata('user_id'));
         foreach($basket_data as $basket_val){
 
             $productmodel = $this->ProductModel->fetchproductdataByproductId($basket_val->product);

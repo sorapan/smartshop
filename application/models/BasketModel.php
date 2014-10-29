@@ -106,9 +106,10 @@ class BasketModel extends CI_Model{
 
     }
 
-    function delBasketDataPromotion($promotion,$user){
+    function delBasketDataPromotion($promotion,$date,$user){
 
         $this->db->where('promotion_id',$promotion);
+        $this->db->where('date',$date);
         $this->db->where('user',$user);
         $this->db->where('bought','N');
         $this->db->delete('basket');
@@ -141,6 +142,15 @@ class BasketModel extends CI_Model{
 
     }
 
+    function fetchBasketDataByuserId2($userid){
+
+        $this->db->select('*');
+        $this->db->where('user',$userid);
+        $this->db->where('bought','N');
+        return $this->db->get('basket')->result();
+
+    }
+
     function fetchBasketBoughtDataByuserId($userid,$cartID){
 
         $this->db->select('*');
@@ -153,11 +163,12 @@ class BasketModel extends CI_Model{
 
     function fetchdataJoinproductTable($userid){
 
-        $this->db->select('product.id,basket.user,product.name,basket.unit,basket.price,basket.promotion_id');
+        $this->db->select('product.id,basket.user,product.name,basket.unit,basket.price,basket.promotion_id,basket.date');
         $this->db->from('basket');
         $this->db->join('product', 'product.id = basket.product');
         $this->db->where('user',$userid);
         $this->db->where('bought','N');
+        $this->db->group_by('basket.date');
         return $this->db->get()->result();
 
     }

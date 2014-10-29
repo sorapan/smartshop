@@ -54,6 +54,16 @@ class PromotionModel extends CI_Model {
 
     }
 
+    function fetchPromotiondataByPromotionIDAndProductID($promotion_id,$product_id){
+
+    $this->db->select('*');
+    $this->db->from('promotion_product');
+    $this->db->where('promotionid',$promotion_id);
+    $this->db->where('productid',$product_id);
+    return $this->db->get()->result();
+
+}
+
     function countPromotiondataByPromotionID($promotion_id){
 
 

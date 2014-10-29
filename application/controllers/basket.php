@@ -94,6 +94,7 @@ class basket extends CI_Controller {
                     'name' => $promotion[0]->promotion_name,
                     'id' => $inbasket_v->promotion_id,
                     'unit' => $inbasket_v->promotion_unit,
+                    'date' => $inbasket_v->date,
                     'promotion' => true
                 );
 
@@ -168,7 +169,7 @@ class basket extends CI_Controller {
 
     function delete_item_in_basket_promotion(){
 
-        $this->BasketModel->delBasketDataPromotion($_POST['itemid'],$this->session->userdata('user_id'));
+        $this->BasketModel->delBasketDataPromotion($_POST['itemid'],$_POST['itemdate'],$this->session->userdata('user_id'));
 
     }
 
