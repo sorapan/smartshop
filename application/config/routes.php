@@ -149,6 +149,10 @@ $route['admin/deletepromotion'] = "admin_managepromotion/deletepromotion";
 
 /////////////////////////////////////
 
+$route['admin/productwarn'] = "admin_productwarn/index";
+
+/////////////////////////////////////
+
 $route['product/menu/main'] = "product/fetchMain";
 $route['product/menu/sub/(:any)'] = "product/fetchsub/$1";
 $route['product/(:any)'] = "product/index/$1";

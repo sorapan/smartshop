@@ -22,7 +22,8 @@ class admin extends CI_Controller {
 //        );
 //        $this->load->adminpage('admin',$data);
 
-        redirect(base_url().'admin/boughtchecker');
+//        redirect(base_url().'admin/boughtchecker');
+        redirect(base_url().'admin/productwarn');
 
     }
 

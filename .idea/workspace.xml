@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be7b91bc-05d1-4566-bfcf-12fbe6c918e6" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/admin_productwarn.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/layout2_admin/productwarn.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bill_img/1.gif" afterPath="$PROJECT_DIR$/bill_img/1.gif" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/layout1/0init.php" afterPath="$PROJECT_DIR$/application/views/layout1/0init.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/layout2_admin/0init.php" afterPath="$PROJECT_DIR$/application/views/layout2_admin/0init.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/ProductModel.php" afterPath="$PROJECT_DIR$/application/models/ProductModel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin.php" afterPath="$PROJECT_DIR$/application/controllers/admin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/routes.php" afterPath="$PROJECT_DIR$/application/config/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="peter.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,9 +45,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/application/views/layout1/howtobuy.php" />
-        <option value="$PROJECT_DIR$/application/views/layout1/takeitem_takebasket.php" />
-        <option value="$PROJECT_DIR$/asset/js/takeitem_takebasket.js" />
         <option value="$PROJECT_DIR$/application/controllers/msgtoadmin.php" />
         <option value="$PROJECT_DIR$/application/views/layout2_admin/boughtchecker.php" />
         <option value="$PROJECT_DIR$/application/views/layout2_admin/boughtlist.php" />
@@ -67,9 +71,7 @@
         <option value="$PROJECT_DIR$/application/views/layout1/home.php" />
         <option value="$PROJECT_DIR$/application/views/layout1/product.php" />
         <option value="$PROJECT_DIR$/application/controllers/index.php" />
-        <option value="$PROJECT_DIR$/application/models/ProductModel.php" />
         <option value="$PROJECT_DIR$/asset/css/product_.css" />
-        <option value="$PROJECT_DIR$/application/views/layout2_admin/0init.php" />
         <option value="$PROJECT_DIR$/application/views/layout2_admin/createpromotion.php" />
         <option value="$PROJECT_DIR$/application/views/layout2_admin/managepromotion.php" />
         <option value="$PROJECT_DIR$/application/controllers/admin_managepromotion.php" />
@@ -80,7 +82,6 @@
         <option value="$PROJECT_DIR$/application/models/BasketModel.php" />
         <option value="$PROJECT_DIR$/asset/js/takeitem_.js" />
         <option value="$PROJECT_DIR$/application/views/layout1/promotion.php" />
-        <option value="$PROJECT_DIR$/application/config/routes.php" />
         <option value="$PROJECT_DIR$/asset/js/index_basket.js" />
         <option value="$PROJECT_DIR$/application/controllers/basket.php" />
         <option value="$PROJECT_DIR$/asset/js/index_publicMethod.js" />
@@ -88,6 +89,12 @@
         <option value="$PROJECT_DIR$/application/controllers/promotion.php" />
         <option value="$PROJECT_DIR$/asset/js/promotion.js" />
         <option value="$PROJECT_DIR$/application/controllers/register.php" />
+        <option value="$PROJECT_DIR$/application/config/routes.php" />
+        <option value="$PROJECT_DIR$/application/views/layout2_admin/0init.php" />
+        <option value="$PROJECT_DIR$/application/controllers/admin_productwarn.php" />
+        <option value="$PROJECT_DIR$/application/models/ProductModel.php" />
+        <option value="$PROJECT_DIR$/application/views/layout2_admin/productwarn.php" />
+        <option value="$PROJECT_DIR$/application/controllers/admin.php" />
         <option value="$PROJECT_DIR$/application/views/layout1/0init.php" />
       </list>
     </option>
@@ -220,6 +227,60 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="peter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="peter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="peter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="peter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="peter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="peter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -315,21 +376,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/asset/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1413" column="18" selection-start="22970" selection-end="22970" vertical-scroll-proportion="0.74659866" vertical-offset="24995" max-vertical-offset="111762" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asset/css/Layout1.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="1" selection-start="636" selection-end="636" vertical-scroll-proportion="0.55074877" vertical-offset="479" max-vertical-offset="8100" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/layout2_admin/productmanage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="34" selection-start="2629" selection-end="2629" vertical-scroll-proportion="-4.8076925" vertical-offset="1279" max-vertical-offset="2880" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/productImg/0000000002.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -507,13 +553,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="174" column="51" selection-start="7029" selection-end="7072" vertical-scroll-proportion="0.74956524" vertical-offset="2701" max-vertical-offset="3960">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/asset/js/index_publicMethod.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="144" column="75" selection-start="5991" selection-end="5991" vertical-scroll-proportion="0.64285713" vertical-offset="2214" max-vertical-offset="3024">
@@ -528,13 +567,6 @@
     <entry file="file://$PROJECT_DIR$/application/models/PromotionModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="38" column="44" selection-start="667" selection-end="698" vertical-scroll-proportion="0.2504348" vertical-offset="540" max-vertical-offset="1836">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/ProductModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="13" selection-start="970" selection-end="970" vertical-scroll-proportion="0.36462092" vertical-offset="590" max-vertical-offset="2952">
           <folding />
         </state>
       </provider>
@@ -595,16 +627,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/admin_productwarn.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="59" selection-start="249" selection-end="249" vertical-scroll-proportion="0.40695652" vertical-offset="0" max-vertical-offset="575">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/ProductModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="32" selection-start="1058" selection-end="1058" vertical-scroll-proportion="0.81391305" vertical-offset="378" max-vertical-offset="3096">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/layout2_admin/productwarn.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="37" selection-start="306" selection-end="306" vertical-scroll-proportion="0.28" vertical-offset="73" max-vertical-offset="720">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="151" column="25" selection-start="5946" selection-end="5963" vertical-scroll-proportion="-88.57692" vertical-offset="415" max-vertical-offset="4032">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="46" selection-start="610" selection-end="610" vertical-scroll-proportion="0.7826087" vertical-offset="0" max-vertical-offset="666">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/layout2_admin/0init.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="140" column="17" selection-start="4144" selection-end="5835" vertical-scroll-proportion="0.7513043" vertical-offset="2088" max-vertical-offset="3060">
+        <state line="124" column="0" selection-start="4169" selection-end="5929" vertical-scroll-proportion="-5.5384617" vertical-offset="2088" max-vertical-offset="3078">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/layout1/0init.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="193" column="38" selection-start="6226" selection-end="6226" vertical-scroll-proportion="0.15478261" vertical-offset="3385" max-vertical-offset="4554">
+        <state line="194" column="68" selection-start="6297" selection-end="6297" vertical-scroll-proportion="0.31130436" vertical-offset="3313" max-vertical-offset="4554">
           <folding />
         </state>
       </provider>

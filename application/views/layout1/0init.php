@@ -192,8 +192,9 @@ function js($js){
     ?>
 
             <div class="col-xs-12 card">
-                <div class="cardbrand">เมนูแอดมิน</div>
+                <div class="cardbrand"><a href="<?=base_url()?>admin">เมนูแอดมิน</a></div>
                 <ul class="nav navnav">
+                    <li><a class="AdminMenuButton" href="<?=base_url()?>admin/productwarn">สินค้าที่ใกล้หมด</a></li>
                     <li><a class="AdminMenuButton" href="<?=base_url()?>admin/boughtchecker">ตรวจสอบการซื้อสินค้า</a></li>
                     <li><a class="AdminMenuButton" href="<?=base_url()?>admin/boughtlist">ยืนยันข้อมูลการซื้อ</a></li>
                     <li><a class="AdminMenuButton" href="<?=base_url()?>admin/member">จัดการสมาชิก</a></li>
@@ -209,7 +210,6 @@ function js($js){
                     <li><a class="AdminMenuButton" href="<?=base_url()?>admin/warranty">เคลมสินค้า</a></li>
                     <li><a class="AdminMenuButton" href="<?=base_url()?>admin/download">อัพโหลด</a></li>
                     <li><a class="AdminMenuButton" href="<?=base_url()?>admin/profit">สรุปยอดขาย</a></li>
-
                 </ul>
             </div>
             <div>

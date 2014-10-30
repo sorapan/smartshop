@@ -42,6 +42,14 @@ class ProductModel extends CI_Model{
 
     }
 
+    function fetchnotproductdata(){
+
+        $this->db->select("*");
+        $this->db->where("unit <= unitnot");
+        return $this->db->get('product')->result();
+
+    }
+
     function fetchproductdataByproductId($id){
 
         $this->db->select("*");
