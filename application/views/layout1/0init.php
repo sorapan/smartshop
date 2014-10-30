@@ -191,8 +191,26 @@ function js($js){
         }else{
     ?>
 
-            <div class="col-xs-12">
-                <div class="cardbrand">ADMIN</div>
+            <div class="col-xs-12 card">
+                <div class="cardbrand">เมนูแอดมิน</div>
+                <ul class="nav navnav">
+                    <li><a class="AdminMenuButton" href="<?=base_url()?>admin/boughtchecker">ตรวจสอบการซื้อสินค้า</a></li>
+                    <li><a class="AdminMenuButton" href="<?=base_url()?>admin/boughtlist">ยืนยันข้อมูลการซื้อ</a></li>
+                    <li><a class="AdminMenuButton" href="<?=base_url()?>admin/member">จัดการสมาชิก</a></li>
+                    <li><a class="AdminMenuButton" href="<?=base_url()?>admin/addproduct">เพิ่มข้อมูลสินค้า</a></li>
+                    <li><a class="AdminMenuButton" href="<?=base_url()?>admin/typeproduct">จัดการประเภทสินค้า</a></li>
+                    <li><a class="AdminMenuButton" href="<?=base_url()?>admin/productmanage">จัดการรายการสินค้า</a></li>
+                    <li><a class="AdminMenuButton" href="<?=base_url()?>admin/message">ข้อความ</a></li>
+                    <li><a class="AdminMenuButton" href="<?=base_url()?>admin/promotion">โปรโมชั่น</a></li>
+                    <li><a class="AdminMenuButton" href="<?=base_url()?>admin/managepromotion">จัดการโปรโมชั่น</a></li>
+                    <li><a class="AdminMenuButton" href="<?=base_url()?>admin/blog">เพิ่มข้อความหน้าเว็บ</a></li>
+                    <li><a class="AdminMenuButton" href="<?=base_url()?>admin/howtobuy">เพิ่มวิธีการสั่งซื้อ</a></li>
+                    <li><a class="AdminMenuButton" href="<?=base_url()?>admin/aboutme">เพิ่มเกี่ยวกับร้านค้า</a></li>
+                    <li><a class="AdminMenuButton" href="<?=base_url()?>admin/warranty">เคลมสินค้า</a></li>
+                    <li><a class="AdminMenuButton" href="<?=base_url()?>admin/download">อัพโหลด</a></li>
+                    <li><a class="AdminMenuButton" href="<?=base_url()?>admin/profit">สรุปยอดขาย</a></li>
+
+                </ul>
             </div>
             <div>
 
