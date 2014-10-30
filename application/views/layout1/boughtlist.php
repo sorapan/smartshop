@@ -15,7 +15,7 @@
 
         <table class="table">
 
-            <thead>
+            <thead class="bluethead">
             <tr>
                 <th>วันที่</th>
                 <th>โอนเงินเวลา</th>
@@ -36,6 +36,7 @@
                 <tr>
                     <td><?=date("d.m.Y/h:m:s น",$b_val->date)?> </td>
                     <td><?=$b_val->time?> </td>
+                    <td class="hidden cartid"><?=$b_val->cartID?> </td>
                     <td class="hidden userid"><?=$b_val->user?> </td>
                     <td><?=$b_val->sendby=='none' ? 'รับด้วยตัวเอง' : 'ส่ง EMS' ?></td>
                     <td><?=$b_val->price?> บาท</td>
@@ -92,7 +93,7 @@
 
         <table class="table">
 
-            <thead>
+            <thead class="bluethead">
             <tr>
                 <th>วันที่</th>
                 <th>เวลา</th>

@@ -74,6 +74,23 @@ class ProductModel extends CI_Model{
 
     }
 
+    function fetchproductBySubTypeAllSell($st,$mt){
+
+        $this->db->select('*');
+        $this->db->from('product');
+        if($mt==null){
+            //do nothing
+        }else if($st==null){
+            $this->db->join('type_product','product.maintype = type_product.id');
+            $this->db->where('type_product.id',$mt);
+        }else{
+            $this->db->join('subtype_product','product.subtype = subtype_product.id');
+            $this->db->where('subtype_product.id',$st);
+        }
+        return $this->db->get()->result();
+
+    }
+
     function fetchproductBySubType($st,$mt){
 
         $this->db->select('*');
@@ -87,6 +104,7 @@ class ProductModel extends CI_Model{
             $this->db->join('subtype_product','product.subtype = subtype_product.id');
             $this->db->where('subtype_product.id',$st);
         }
+        $this->db->where('product.sell',true);
         return $this->db->get()->result();
 
     }
@@ -105,6 +123,7 @@ class ProductModel extends CI_Model{
             $this->db->where('subtype_product.id',$st);
         }
         $this->db->limit(6);
+        $this->db->where('product.sell',true);
         return $this->db->get()->result();
 
     }

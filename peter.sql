@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS `basket` (
   `promotion_id` tinytext,
   `promotion_unit` tinytext,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=90 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=91 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table smartshop.basket: ~-1 rows (approximately)
 DELETE FROM `basket`;
@@ -77,7 +77,7 @@ CREATE TABLE IF NOT EXISTS `blog` (
   `author` tinytext,
   `date` tinytext,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table smartshop.blog: ~-1 rows (approximately)
 DELETE FROM `blog`;
@@ -88,7 +88,8 @@ INSERT INTO `blog` (`id`, `header`, `content`, `author`, `date`) VALUES
 	(3, 'สวัสดีครับ', '<div style="text-align: center;"><font size="5"><span style="line-height: 34.2857170104981px;"><b>สวัสดีครับ</b></span></font></div><div style="text-align: left;"><span style="line-height: 34.2857170104981px;"><font size="2">กกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกก</font></span></div><div style="text-align: left;"><span style="line-height: 34.2857170104981px;"><font size="2">กกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกก</font></span></div><div style="text-align: left;"><span style="line-height: 34.2857170104981px;"><font size="2">กกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกก</font></span></div><div style="text-align: left;"><span style="line-height: 34.2857170104981px;"><font size="2">กกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกก</font></span></div><div style="text-align: left;"><span style="line-height: 34.2857170104981px;"><font size="2">กกกกกกกกกกกกกกกกกกกกกกกกก</font></span></div><div style="text-align: left;"><span style="line-height: 34.2857170104981px;"><font size="2">กกกกกกกกกกกก</font></span></div><div style="text-align: left;"><span style="line-height: 34.2857170104981px;"><font size="2">กกกกกกก</font></span></div><div style="text-align: left;"><span style="line-height: 34.2857170104981px;"><font size="2">กกกก</font></span></div>', '1', '1412670947'),
 	(4, 'สวัสดี ยินดีต้อนรับ', '<span style="line-height: 18.0000019073486px;"><b>เข้าไป</b> กูเกิ้ล&nbsp;</span><a href="http://google.com/" style="line-height: 18.0000019073486px; background-color: rgb(255, 255, 255);">คลิ๊ก</a><br style="line-height: 18.0000019073486px;"><span style="line-height: 18.0000019073486px;"><i>เข้าไป</i> ยูทูป&nbsp;</span><a href="http://youtube.com/" style="line-height: 18.0000019073486px; background-color: rgb(255, 255, 255);">คลิ๊ก</a><div style="line-height: 18.0000019073486px;">เข้าไป เฟซบุก&nbsp;<a href="http://facebook.com/" style="font-size: 0.9em; line-height: 1.42857143; background-color: white;">คลิ๊ก</a></div>\n        ', '1', '1412673702'),
 	(7, 'ยืนดีต้อนครับ', '<a target="_blank" href="http://www.google.com">google</a>', '1', '1412928972'),
-	(8, 'สวัสดีครับ', 'สวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับ<img src="http://localhost/peter/blog_img/2895_4cfc.gif">', '1', '1414483544');
+	(8, 'สวัสดีครับ', 'สวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับ<img src="http://localhost/peter/blog_img/2895_4cfc.gif">', '1', '1414483544'),
+	(9, 'สวัสดีครับ', 'สวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับ\n        ', '1', '1414663269');
 /*!40000 ALTER TABLE `blog` ENABLE KEYS */;
 
 
@@ -203,7 +204,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   `subtype` int(10) NOT NULL,
   `price` tinytext,
   `unit` int(10) NOT NULL,
-  `unitnot` tinytext NOT NULL,
+  `unitnot` int(10) NOT NULL,
   `detail` longtext NOT NULL,
   `author` tinytext,
   `date` tinytext,
@@ -215,9 +216,9 @@ CREATE TABLE IF NOT EXISTS `product` (
 DELETE FROM `product`;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
 INSERT INTO `product` (`id`, `productid`, `img`, `name`, `maintype`, `subtype`, `price`, `unit`, `unitnot`, `detail`, `author`, `date`, `sell`) VALUES
-	(2, '0000000002', '0000000002.jpg', 'mj', 1, 1, '444', 42, '3', 'cvxcvcvcvcvcvcvcv', 'admin', '1410428249', 'true'),
-	(3, '0000000003', '0000000003.gif', 'dsfsdfdfsdfsdff', 3, 7, '222', 15, '2', 'dfgbg.kmfdjnm;ldfmbjdnflkndsfkjnlknsdkjfgnlkdfng', 'admin', '1410428249', 'true'),
-	(4, '0000000004', '0000000004.jpg', 'ดินสอ', 1, 1, '222', 181, '10', 'ดินสอ สีแดง เทพๆ', 'admin', '1410801960', 'true');
+	(2, '0000000002', '0000000002.jpg', 'mj', 1, 1, '444', 42, 3, 'cvxcvcvcvcvcvcvcv', 'admin', '1410428249', 'true'),
+	(3, '0000000003', '0000000003.gif', 'dsfsdfdfsdfsdff', 3, 7, '222', 2, 2, 'dfgbg.kmfdjnm;ldfmbjdnflkndsfkjnlknsdkjfgnlkdfng', 'admin', '1410428249', 'true'),
+	(4, '0000000004', '0000000004.jpg', 'ดินสอ', 1, 1, '222', 181, 10, 'ดินสอ สีแดง เทพๆ', 'admin', '1410801960', 'true');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 
 

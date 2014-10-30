@@ -14,7 +14,7 @@ class admin_productmanage extends CI_Controller {
     function index($main=null,$sub=null){
 
         $mt = $this->TypeModel->fetchMainType();
-        $productdata = $this->ProductModel->fetchproductBySubType($sub,$main);
+        $productdata = $this->ProductModel->fetchproductBySubTypeAllSell($sub,$main);
 
         $data = array(
             'p_data'=>$productdata,
