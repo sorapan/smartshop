@@ -6,7 +6,7 @@ $(function(){
         var promotion_id = $(this).parents().eq(1).find('.promotion_id').html();
         var promotion_price = $(this).parents().eq(1).find('.promotion_price').html();
 
-        if(confirm('การซื้อสินค้าแบบโปรโมชั่นจะทำให้สินค้าภายฝนตะกร้าหายไปหมด ต้องการดำเนินการต่อ ใช่หรือไม่?')){
+//        if(confirm('การซื้อสินค้าแบบโปรโมชั่นจะทำให้สินค้าภายฝนตะกร้าหายไปหมด ต้องการดำเนินการต่อ ใช่หรือไม่?')){
 
             $.ajax({
 
@@ -23,7 +23,7 @@ $(function(){
 
             });
 
-        }
+//        }
 
     });
 
@@ -33,8 +33,9 @@ $(function(){
         var promotion_id = $(this).parents().eq(1).find('.promotion_id').html();
         var promotion_price = $(this).parents().eq(1).find('.promotion_price').html();
 
-        if(confirm('การซื้อสินค้าแบบโปรโมชั่นจะทำให้สินค้าภายฝนตะกร้าหายไปหมด ต้องการดำเนินการต่อ ใช่หรือไม่?')){
 
+//        if(confirm('การซื้อสินค้าแบบโปรโมชั่นจะทำให้สินค้าภายฝนตะกร้าหายไปหมด ต้องการดำเนินการต่อ ใช่หรือไม่?')){
+//
             $.ajax({
 
                 url:$.autoFindDir('promotion/buypromotionnonmember').url,
@@ -50,7 +51,7 @@ $(function(){
 
             });
 
-        }
+//        }
 
     });
 

@@ -57,12 +57,18 @@ class promotion extends CI_Controller{
 
     function buy_promotion_nonmember(){
 
-        $non_member_bought = array();
+        if($this->session->userdata('non_member_bought') == null){
+
+            $this->session->set_userdata('non_member_bought',array());
+
+        }
+        $non_member_bought = $this->session->userdata('non_member_bought');
 
         array_push($non_member_bought,array(
-            'productid' => $_POST['productid'],
+            'productid' => null,
             'want' => '1',
-            'promotionid' => $_POST['promotion_id']
+            'promotionid' => $_POST['promotion_id'],
+            'date' => time()
         ));
 
         $this->session->set_userdata('non_member_bought',$non_member_bought);

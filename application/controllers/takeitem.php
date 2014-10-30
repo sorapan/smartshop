@@ -205,13 +205,29 @@ class takeitem  extends CI_Controller{
                 $non_member_bought_data = $this->session->userdata('non_member_bought');
                 foreach($non_member_bought_data as $key=>$val){
 
-                    $product = $this->ProductModel->fetchproductdataByproductId($val['productid']);
-                    $dt[$key] = array(
-                        'name' => $product[0]->name,
-                        'id' => $product[0]->id,
-                        'want' => $val['want'],
-                        'price' => $product[0]->price
-                    );
+                    if($val['promotionid'] == null){
+
+                        $product = $this->ProductModel->fetchproductdataByproductId($val['productid']);
+                        $dt[$key] = array(
+                            'name' => $product[0]->name,
+                            'id' => $product[0]->id,
+                            'want' => $val['want'],
+                            'price' => $product[0]->price,
+                            'promotion' => false
+                        );
+
+                    }else{
+
+                        $promotion_data = $this->PromotionModel->fetchPromotionlistByPromotionId($val['promotionid']);
+                        $dt[$key] = array(
+                            'name' => 'โปรโมชั่น : '.$promotion_data[0]->promotion_name,
+                            'id' => $promotion_data[0]->id,
+                            'want' => $val['want'],
+                            'price' => $promotion_data[0]->price,
+                            'promotion' => true
+                        );
+
+                    }
 
                 }
 

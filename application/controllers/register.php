@@ -8,6 +8,7 @@ class Register extends CI_Controller{
         $this->load->model('UsersModel');
         $this->load->model('BasketModel');
         $this->load->model('ProductModel');
+        $this->load->model('PromotionModel');
 
     }
 
@@ -68,33 +69,62 @@ class Register extends CI_Controller{
 
             foreach($non_member_bought as $val){
 
-                $itemChecked = $this->BasketModel->chkItemByproductId($val['productid'],$loginresult[0]->id);
-                $product = $this->ProductModel->fetchproductdataByproductId($val['productid']);
-                $product_price = $product[0]->price;
+                if($loginresult[0]->buy_status == 'none'){
 
-                if(empty($itemChecked)){
+                    $itemChecked = $this->BasketModel->chkItemByproductId($val['productid'],$loginresult[0]->id);
 
-                    $data = array(
-                        'product' => $val['productid'],
-                        'unit' => $val['want'],
-                        'user' => $loginresult[0]->id,
-                        'price' => $val['want']*$product_price,
-                        'date' => time()
-                    );
-                    $this->BasketModel->addTobasket($data);
+                    if($val['promotionid'] == null){
 
-                }else{
+                        $product = $this->ProductModel->fetchproductdataByproductId($val['productid']);
+                        $product_price = $product[0]->price;
 
-                    $unit = $val['want']+$itemChecked[0]->unit;
-                    $price = ($val['want']*$product_price)+$itemChecked[0]->price;
+                        if(empty($itemChecked)){
 
-                    $this->BasketModel->updateTobasket(
-                        $val['productid'],
-                        $loginresult[0]->id,
-                        $unit,
-                        $price
-                    );
+                            $data = array(
+                                'product' => $val['productid'],
+                                'unit' => $val['want'],
+                                'user' => $loginresult[0]->id,
+                                'price' => $val['want']*$product_price,
+                                'date' => time()
+                            );
+                            $this->BasketModel->addTobasket($data);
+
+                        }else{
+
+                            $unit = $val['want']+$itemChecked[0]->unit;
+                            $price = ($val['want']*$product_price)+$itemChecked[0]->price;
+
+                            $this->BasketModel->updateTobasket(
+                                $val['productid'],
+                                $loginresult[0]->id,
+                                $unit,
+                                $price
+                            );
+
+                        }
+
+                    }else{
+
+
+                        $promotion_data  = $this->PromotionModel->fetchPromotiondataByPromotionID($val['promotionid']);
+                        foreach($promotion_data as $k => $v){
+
+                            $data = array(
+                                'product' => $v->productid,
+                                'unit' => $v->unit,
+                                'user' => $loginresult[0]->id,
+                                'price' => 0,
+                                'date' => $val['date'],
+                                'promotion_id' => $v->promotionid,
+                                'promotion_unit' => 1,
+                            );
+                            $this->BasketModel->addTobasket($data);
+
+                        }
+
+                    }
                 }
+
             }
 
             foreach($loginresult as $logink=>$loginv){

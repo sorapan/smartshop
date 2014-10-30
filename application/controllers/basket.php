@@ -140,6 +140,7 @@ class basket extends CI_Controller {
                         'name' => $product[0]->name,
                         'id' => $product[0]->id,
                         'unit' => $val['want'],
+                        'promotion' => false
                     );
 
                 }else{
@@ -149,6 +150,8 @@ class basket extends CI_Controller {
                         'name' => $promotion[0]->promotion_name,
                         'id' => $promotion[0]->id,
                         'unit' => $val['want'],
+                        'promotion' => true,
+                        'date' => $val['date'],
                     );
 
                 }
@@ -170,6 +173,23 @@ class basket extends CI_Controller {
     function delete_item_in_basket_promotion(){
 
         $this->BasketModel->delBasketDataPromotion($_POST['itemid'],$_POST['itemdate'],$this->session->userdata('user_id'));
+
+    }
+
+    function delete_item_in_basket_promotion_nonmember(){
+
+        $nonmemberbought = $this->session->userdata('non_member_bought');
+        foreach($nonmemberbought as $key=>$val){
+
+            if($nonmemberbought[$key]['promotionid'] == $_POST['itemid'] && $nonmemberbought[$key]['date'] == $_POST['itemdate']){
+
+                unset($nonmemberbought[$key]);
+
+            }
+
+        }
+        $nonmemberbought = array_values($nonmemberbought);
+        $this->session->set_userdata('non_member_bought',$nonmemberbought);
 
     }
 

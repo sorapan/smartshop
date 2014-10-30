@@ -123,7 +123,9 @@ var non_member_bought = [];
             if(duplicate == true){
                 non_member_bought.push({
                     productid : data['productid'],
-                    want : add_unit
+                    want : add_unit,
+                    promotionid : null,
+                    date : null
                 });
             }
 
@@ -215,6 +217,34 @@ var non_member_bought = [];
 
     });
 
+    $(document).on('click','.delete_basket_item_promotion_nonmember',function(){
+
+        var a = $(this).parent().find(".promotion_id_inbasket").html();
+        var d = $(this).parent().find(".promotion_date_inbasket").html();
+//        alert(a);
+//        alert(d);
+        if(confirm('คุณต้องการลบออกจากตะกร้า?')){
+            return $.ajax({
+
+                url: $.autoFindDir('basket/deleteiteminbasketpromotionnonmember').url,
+                type:'POST',
+                data:{
+                    itemid:a,
+                    itemdate:d
+                },
+                success:function(data){
+
+                    location.reload();
+
+                }
+
+            });
+        }else{
+            return false;
+        }
+
+    });
+
     function sendData(data){
 
         $.ajax({
@@ -266,7 +296,6 @@ var non_member_bought = [];
                     }
 
                 }
-
 
             }
         });
