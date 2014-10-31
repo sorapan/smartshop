@@ -69,7 +69,7 @@ class admin_productmanage extends CI_Controller {
         $file = $this->session->userdata('imguploadfile');
         $typefile = strchr($file,".");
 
-        $newfilename = $this->productID().$typefile;
+        $newfilename =  sprintf("%010d", $_POST['productid']).$typefile;;
         @copy($imgdirtemp.$file, $imgdir.$newfilename);
         @unlink($imgdirtemp.$file);
 

@@ -63,8 +63,8 @@ var non_member_bought = [];
 
         $("#detail_img").html('<img class="img-responsive" style="width: 500px;" src="'+img+'">');
         $("#detail_name").html(name);
-        $("#detail_unit").html(price+" บาท");
-        $("#detail_price").html(unit+" ชิ้น");
+        $("#detail_price").html(price+" บาท");
+        $("#detail_unit").html(unit+" ชิ้น");
         $("#detail_detail").html(detail);
 
     });

@@ -153,7 +153,7 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label">รายละเอียด</label>
                             <div class="col-md-8">
-                                <p class="form-control-static" id="detail_detail"></p>
+                                <div style="max-height: 250px;overflow-y: scroll;padding: 5px;word-break:break-all; border:1px solid #4cabda; line-height: 18px" class="form-control-static" id="detail_detail"></div>
                             </div>
                         </div>
 

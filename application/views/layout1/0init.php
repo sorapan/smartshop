@@ -192,7 +192,7 @@ function js($js){
     ?>
 
             <div class="col-xs-12 card">
-                <div class="cardbrand"><a href="<?=base_url()?>admin">เมนูแอดมิน</a></div>
+                <div class="cardbrand"><a href="<?=base_url()?>admin">หน้าแอดมิน</a></div>
                 <ul class="nav navnav">
                     <li><a class="AdminMenuButton" href="<?=base_url()?>admin/productwarn">สินค้าที่ใกล้หมด</a></li>
                     <li><a class="AdminMenuButton" href="<?=base_url()?>admin/boughtchecker">ตรวจสอบการซื้อสินค้า</a></li>

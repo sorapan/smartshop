@@ -141,9 +141,7 @@ class ProductModel extends CI_Model{
     function updateProductData($productid,$unit){
 
         $this->db->where('id',$productid);
-        $this->db->update('product',array(
-            'unit' => $unit
-        ));
+        $this->db->update('product',$unit);
 
     }
 
