@@ -20,7 +20,7 @@ a{
     cursor: pointer;
 }
 
-.cardheader, .bigheader , .medheader , .mheader , .cardbrand , #menubar li>a ,h1 ,h2 ,h3 ,h4 ,h5, .tilemenu{
+.cardheader, .bigheader , .medheader , .mheader , .cardbrand , #menubar a ,h1 ,h2 ,h3 ,h4 ,h5, .tilemenu{
     font-family: 'thaisans';
 }
 
@@ -97,7 +97,27 @@ li{
 
 /*////////////////vvv MY LAYOUT vvv///////////////////*/
 
+.container{
+    width: 1350px !important;
+    min-width: 1350px !important;
+    max-width: 1350px !important;
+}
 
+@media (min-width: 769px) {
+    .container {
+        width: 1350px !important;
+    }
+}
+@media (min-width: 992px) {
+    .container {
+        width: 1350px !important;
+    }
+}
+@media (min-width: 1200px) {
+    .container {
+        width: 1350px !important;
+    }
+}
 
 .blog_div_content>img{
 
@@ -357,6 +377,9 @@ select:focus{
 
 /*////////////////^^^ MY LAYOUT ^^^///////////////////*/
 
+.min1300{
+    min-width: 1350px !important;
+}
 
 header{
     /*background-color: #086FA1;*/
@@ -376,21 +399,29 @@ header{
 #menubar{
     background-color: #086FA1;
     color:white;
+    text-align: center;
+    height: 50px;
 }
 
-#menubar li>a{
+#menubar a{
     background-color: #4cacdb;
     font-size: 1.6em;
     color:white;
     transition: all 0.3s ease;
+    float: left;
+    width: 14.28%;
+    height: 50px;
+    line-height: 50px;
+
 }
 
-#menubar li>a:hover{
+#menubar a:hover{
     background-color: #4788b7;
+    text-decoration: none;
     color:white;
 }
 
-#menubar>.active>a, #menubar>.active>a:hover{
+#menubar a.active, #menubar a.active:hover{
     background-color:#e7e7e7;
     color:#000000;
     transition: all .5s ease-in-out;

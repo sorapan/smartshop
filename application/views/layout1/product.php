@@ -1,11 +1,11 @@
 
 
-<div class="col-md-12 bigheader">สินค้า</div>
+<div class="col-xs-12 bigheader">สินค้า</div>
 
-<div class="col-md-12 card"  >
+<div class="col-xs-12 card"  >
 
-        <div class="col-md-12 cardbrand">รายการ</div>
-        <div class="col-md-12 marginbot">
+        <div class="col-xs-12 cardbrand">รายการ</div>
+        <div class="col-xs-12 marginbot">
             <h4>ประเภทหลัก</h4>
             <div>
                 <a class="tilemenu col-xs-3" href="<?=base_url()?>product">ทั้งหมด</a>
@@ -18,7 +18,7 @@
                 ?>
             </div>
         </div>
-        <div class="col-md-12 marginbot">
+        <div class="col-xs-12 marginbot">
             <h4 class="subtype_header"><?=isset($mt_name)?$mt_name!=='ทั้งหมด'?'ประเภทย่อยของ > '.$mt_name:'':''?></h4>
             <div class="subtype_menu" style="list-style-type: none;">
 
@@ -54,7 +54,7 @@
 <?php
 if(isset($mt_name)){
 ?>
-<div class=" col-md-12 margintop medheader">
+<div class=" col-xs-12 margintop medheader">
 <?php
     echo 'แสดง : '.$mt_name;
     if(isset($st_name))echo " > ".$st_name;
@@ -64,12 +64,12 @@ if(isset($mt_name)){
 }
 ?>
 
-    <div class="col-md-12 margintop">
+    <div class="col-xs-12 margintop">
 <?php
 //for($z=0;$z<10;$z++){
 foreach($p_data as $p_val){
 ?>
-        <div class="col-md-4 col-xs-6">
+        <div class="col-xs-4 col-xs-6">
             <div class="thumbnail cardshadow">
                 <div style="position: relative" class="limit_img">
                     <img src="<?=base_url()?>productImg/<?=$p_val->img?>">
@@ -80,7 +80,7 @@ foreach($p_data as $p_val){
                     <p>ราคา : <span class="product_price"><?=$p_val->price?></span> บาท</p>
                     <p>จำนวน : <span class="product_unit"><?=$p_val->unit?></span> ชิ้น</p>
 
-                        <div style="text-align: center" class="col-md-12">
+                        <div style="text-align: center" class="col-xs-12">
                             <a href="#" class="btn btn-sm whitebutton getdetail"  data-toggle="modal" data-target="#detailmodal" >ดูรายละเอียด</a>
                             <?php
                             if($this->session->userdata('class')!=='admin'){
@@ -120,26 +120,26 @@ foreach($p_data as $p_val){
             <div class="modal-body">
 
 
-                <div class="col-md-12 marginbot">
-                    <div id="addtobasket_img" class="col-md-10 col-md-offset-1"></div>
+                <div class="col-xs-12 marginbot">
+                    <div id="addtobasket_img" class="col-xs-10 col-xs-offset-1"></div>
                 </div>
 
                 <form class="form-horizontal form-in-modal">
                     <div class="form-group">
-                        <label class="col-md-4 control-label">มีอยู่จำนวน</label>
-                        <div class="col-md-8">
+                        <label class="col-xs-4 control-label">มีอยู่จำนวน</label>
+                        <div class="col-xs-8">
                             <p class="form-control-static" id="addtobasket_unit"></p>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-4 control-label">ราคา</label>
-                        <div class="col-md-8">
+                        <label class="col-xs-4 control-label">ราคา</label>
+                        <div class="col-xs-8">
                             <p class="form-control-static" id="addtobasket_price"></p>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="add_unit" >จำนวน </label>
-                        <div class="col-md-4">
+                        <label class="col-xs-4 control-label" for="add_unit" >จำนวน </label>
+                        <div class="col-xs-4">
                             <input maxlength="5" type="text" class=" form-control" id="add_unit">
                         </div>
                     </div>
@@ -187,27 +187,27 @@ foreach($p_data as $p_val){
             </div>
             <div class="modal-body">
 
-                <div class="col-md-12 marginbot">
-                    <div id="detail_img" class="col-md-10 col-md-offset-1"></div>
+                <div class="col-xs-12 marginbot">
+                    <div id="detail_img" class="col-xs-10 col-xs-offset-1"></div>
                 </div>
 
                 <form class="form-horizontal form-in-modal">
                     <div class="form-group">
-                        <label class="col-md-4 control-label">มีอยู่จำนวน</label>
-                        <div class="col-md-8">
+                        <label class="col-xs-4 control-label">มีอยู่จำนวน</label>
+                        <div class="col-xs-8">
                             <p class="form-control-static" id="detail_unit"></p>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-4 control-label">ราคา</label>
-                        <div class="col-md-8">
+                        <label class="col-xs-4 control-label">ราคา</label>
+                        <div class="col-xs-8">
                             <p class="form-control-static" id="detail_price"></p>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-4 control-label">รายละเอียด</label>
-                        <div class="col-md-8">
-                            <p class="form-control-static" id="detail_detail"></p>
+                        <label class="col-xs-4 control-label">รายละเอียด</label>
+                        <div class="col-xs-8">
+                            <p style="max-height: 250px;overflow-y: scroll;padding: 5px;word-break:break-all; border:1px solid #4cabda; line-height: 18px"  class="form-control-static" id="detail_detail"></p>
                         </div>
                     </div>
 

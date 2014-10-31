@@ -52,25 +52,27 @@ function js($js){
 </head>
 <body  data-spy="scroll" data-target="#basketbox">
 
-<header class="col-xs-12 ">
+<header class="col-xs-12 min1300">
     <img style="margin-left:1%;width: 200px" src="<?=base_url()?>asset/img/ss.svg">
 </header>
 
-<nav id="menu" class="col-xs-12 ">
-    <div class="row">
-        <ul class="nav nav-justified" id="menubar">
-            <li><a href="<?=base_url()?>">หน้าแรก</a></li>
-            <li><a href="<?=base_url()?>product">สินค้า</a></li>
-            <li><a href="<?=base_url()?>promotion">โปรโมชั่น</a></li>
-            <li><a href="<?=base_url()?>warranty">สินค้าเคลม</a></li>
-            <li><a href="<?=base_url()?>howtobuy">วิธีสั่งซื้อ</a></li>
-            <li><a href="<?=base_url()?>aboutme">เกี่ยวกับเรา</a></li>
-            <li><a href="<?=base_url()?>download">ดาวน์โหลด</a></li>
-        </ul>
-    </div>
-</nav>
 
-<div class="container-fluid">
+<div id="menu" class="col-xs-12 min1300">
+    <div class="row">
+        <div id="menubar">
+            <a href="<?=base_url()?>">หน้าแรก</a>
+            <a href="<?=base_url()?>product">สินค้า</a>
+            <a href="<?=base_url()?>promotion">โปรโมชั่น</a>
+            <a href="<?=base_url()?>warranty">สินค้าเคลม</a>
+            <a href="<?=base_url()?>howtobuy">วิธีสั่งซื้อ</a>
+            <a href="<?=base_url()?>aboutme">เกี่ยวกับเรา</a>
+            <a href="<?=base_url()?>download">ดาวน์โหลด</a>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
 
 <nav class="col-xs-2">
 
@@ -148,7 +150,7 @@ function js($js){
 
 
 <div id="basketbox" class=" col-xs-2" >
-    <div style="width: 200px;background-color: white " class="cardshadow margintop nav" data-spy="affix" data-offset-top="125">
+    <div style="width: 200px;background-color: white " class="cardshadow margintop" data-spy="affix" data-offset-top="125">
 
     <?php
 
@@ -156,13 +158,13 @@ function js($js){
 
     ?>
 
-        <div class="col-md-12"><h4>ตะกร้าสินค้า</h4></div>
-        <div class="col-md-12" style="background-color: #bbbbbb;height: 200px;overflow-y: scroll">
+        <div class="col-xs-12"><h4>ตะกร้าสินค้า</h4></div>
+        <div class="col-xs-12" style="background-color: #bbbbbb;height: 200px;overflow-y: scroll">
             <div class="row" id="in_basket">
-<!--                <div class="col-md-12 basket_list">aaaa</div>-->
+<!--                <div class="col-xs-12 basket_list">aaaa</div>-->
             </div>
         </div>
-        <div class="col-md-12" style="background-color: white;height: auto;line-height: 50px;text-align: center">
+        <div class="col-xs-12" style="background-color: white;height: auto;line-height: 50px;text-align: center">
 
     <?php
             if($this->session->userdata('buy_status') == 'none' || $this->session->userdata('buy_status') == null ){
@@ -225,7 +227,7 @@ function js($js){
 
 </div>
 
-<footer class=" col-md-12">
+<footer class=" col-xs-12 min1300">
 </footer>
 
 <script src="<?=base_url()?>asset/js/jquery.js"></script>

@@ -2,14 +2,19 @@ $(function(){
 
     var current_url = currenturl();
 
-//    alert(current_url);
 
-    $("#menubar").find("li").each(function(num){
-        $(this).removeClass();
-        if($(this).find("a").attr("href") == current_url){
+    $("#menubar a").each(function(num){
+
+//        $(this).find("a").removeClass();
+
+
+
+        if($(this).attr("href") == current_url){
             $(this).addClass("active");
+
 //            alert($('.active').html());
         }
+
     });
 
     function currenturl(){

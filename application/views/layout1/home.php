@@ -16,7 +16,7 @@
         //for($z=0;$z<10;$z++){
         foreach($p_data as $p_val){
             ?>
-            <div class="col-md-4 col-xs-6">
+            <div class="col-xs-4">
                 <div class="thumbnail cardshadow">
                     <div style="position: relative" class="limit_img">
                         <img src="<?=base_url()?>productImg/<?=$p_val->img?>">
@@ -27,7 +27,7 @@
                         <p>ราคา : <span class="product_price"><?=$p_val->price?></span> บาท</p>
                         <p>จำนวน : <span class="product_unit"><?=$p_val->unit?></span> ชิ้น</p>
 
-                        <div style="text-align: center" class="col-md-12">
+                        <div style="text-align: center" class="col-xs-12">
                             <a href="#" class="btn btn-sm whitebutton getdetail"  data-toggle="modal" data-target="#detailmodal" >ดูรายละเอียด</a>
                             <?php
                             if($this->session->userdata('class')!=='admin'){
@@ -66,26 +66,26 @@
                 <div class="modal-body">
 
 
-                    <div class="col-md-12 marginbot">
-                        <div id="addtobasket_img" class="col-md-10 col-md-offset-1"></div>
+                    <div class="col-xs-12 marginbot">
+                        <div id="addtobasket_img" class="col-xs-10 col-xs-offset-1"></div>
                     </div>
 
                     <form class="form-horizontal form-in-modal">
                         <div class="form-group">
-                            <label class="col-md-4 control-label">มีอยู่จำนวน</label>
-                            <div class="col-md-8">
+                            <label class="col-xs-4 control-label">มีอยู่จำนวน</label>
+                            <div class="col-xs-8">
                                 <p class="form-control-static" id="addtobasket_unit"></p>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-4 control-label">ราคา</label>
-                            <div class="col-md-8">
+                            <label class="col-xs-4 control-label">ราคา</label>
+                            <div class="col-xs-8">
                                 <p class="form-control-static" id="addtobasket_price"></p>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="add_unit" >จำนวน </label>
-                            <div class="col-md-4">
+                            <label class="col-xs-4 control-label" for="add_unit" >จำนวน </label>
+                            <div class="col-xs-4">
                                 <input maxlength="5" type="text" class=" form-control" id="add_unit">
                             </div>
                         </div>
@@ -133,26 +133,26 @@
                 </div>
                 <div class="modal-body">
 
-                    <div class="col-md-12 marginbot">
-                        <div id="detail_img" class="col-md-10 col-md-offset-1"></div>
+                    <div class="col-xs-12 marginbot">
+                        <div id="detail_img" class="col-xs-10 col-xs-offset-1"></div>
                     </div>
 
                     <form class="form-horizontal form-in-modal">
                         <div class="form-group">
-                            <label class="col-md-4 control-label">มีอยู่จำนวน</label>
-                            <div class="col-md-8">
+                            <label class="col-xs-4 control-label">มีอยู่จำนวน</label>
+                            <div class="col-xs-8">
                                 <p class="form-control-static" id="detail_unit"></p>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-4 control-label">ราคา</label>
-                            <div class="col-md-8">
+                            <label class="col-xs-4 control-label">ราคา</label>
+                            <div class="col-xs-8">
                                 <p class="form-control-static" id="detail_price"></p>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-4 control-label">รายละเอียด</label>
-                            <div class="col-md-8">
+                            <label class="col-xs-4 control-label">รายละเอียด</label>
+                            <div class="col-xs-8">
                                 <div style="max-height: 250px;overflow-y: scroll;padding: 5px;word-break:break-all; border:1px solid #4cabda; line-height: 18px" class="form-control-static" id="detail_detail"></div>
                             </div>
                         </div>

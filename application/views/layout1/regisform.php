@@ -14,52 +14,52 @@
     <p class="col-xs-offset-3 text-danger"><?=$this->session->flashdata('formERR')?></p>
     <p class="col-xs-offset-3 text-danger"><?=$this->session->flashdata('usernameERR')?></p>
     <div class="form-group">
-        <label for="username" class="col-md-3 control-label">ชื่อผู้ใช้ :</label>
-        <div class="col-md-8">
+        <label for="username" class="col-xs-3 control-label">ชื่อผู้ใช้ :</label>
+        <div class="col-xs-8">
             <input type="text" class="form-control" id="username" name="username" placeholder="ชื่อผู้ใช้">
         </div>
     </div>
 
     <p class="col-xs-offset-3 text-danger"><?=$this->session->flashdata('passwordERR')?></p>
     <div class="form-group">
-        <label for="password" class="col-md-3 control-label">รหัสผ่าน :</label>
-        <div class="col-md-8">
+        <label for="password" class="col-xs-3 control-label">รหัสผ่าน :</label>
+        <div class="col-xs-8">
             <input type="password" class="form-control" id="password" name="password"  placeholder="รหัสผ่าน">
         </div>
     </div>
 
     <div class="form-group">
-        <label for="realname" class="col-md-3 control-label">ชื่อ :</label>
-        <div class="col-md-8">
+        <label for="realname" class="col-xs-3 control-label">ชื่อ :</label>
+        <div class="col-xs-8">
             <input type="text" class="form-control" id="realname" name="realname" placeholder="ชื่อ">
         </div>
     </div>
 
     <div class="form-group">
-        <label for="lastname" class="col-md-3 control-label">นามสกุล :</label>
-        <div class="col-md-8">
+        <label for="lastname" class="col-xs-3 control-label">นามสกุล :</label>
+        <div class="col-xs-8">
             <input type="text" class="form-control" id="lastname" name="lastname" placeholder="นามสกุล">
         </div>
     </div>
 
     <div class="form-group">
         <p class="col-xs-offset-3 text-info">* กรอกที่อยู่ตามความเป็นจริง เพื่อประโยชน์ในการซื้อสินค้า</p>
-        <label for="address" class="col-md-3 control-label">ที่อยู่ :</label>
-        <div class="col-md-8">
+        <label for="address" class="col-xs-3 control-label">ที่อยู่ :</label>
+        <div class="col-xs-8">
             <textarea class="form-control" rows="4" id="address"  name="address" placeholder="ที่อยู่"></textarea>
         </div>
     </div>
 
     <div class="form-group">
-        <label for="email" class="col-md-3 control-label">อีเมล :</label>
-        <div class="col-md-8">
+        <label for="email" class="col-xs-3 control-label">อีเมล :</label>
+        <div class="col-xs-8">
             <input type="Email" class="form-control" id="email" name="email" placeholder="อีเมล">
         </div>
     </div>
 
     <div class="form-group">
-        <label for="province" class="col-md-3 control-label">จังหวัด :</label>
-        <div class="col-md-8">
+        <label for="province" class="col-xs-3 control-label">จังหวัด :</label>
+        <div class="col-xs-8">
             <select id="province" name="province" class="form-control">
                 <option value="" selected>--------- เลือกจังหวัด ---------</option>
                 <option value="กรุงเทพมหานคร">กรุงเทพมหานคร</option>
@@ -144,22 +144,22 @@
     </div>
 
     <div class="form-group">
-        <label for="zipcode" class="col-md-3 control-label">รหัสไปรษณีย์ :</label>
-        <div class="col-md-8">
+        <label for="zipcode" class="col-xs-3 control-label">รหัสไปรษณีย์ :</label>
+        <div class="col-xs-8">
             <input type="text" class="form-control" id="zipcode" name="zipcode" placeholder="รหัสไปรษณีย์">
         </div>
     </div>
 
     <div class="form-group">
-        <label for="tel" class="col-md-3 control-label">เบอร์โทรศัพท์ :</label>
-        <div class="col-md-8">
+        <label for="tel" class="col-xs-3 control-label">เบอร์โทรศัพท์ :</label>
+        <div class="col-xs-8">
             <input type="tel" class="form-control" id="tel" name="tel" placeholder="เบอร์โทรที่ติดต่อได้">
         </div>
     </div>
 
     <div class="form-group">
-        <label class="col-md-3 control-label"></label>
-        <div class="col-md-8">
+        <label class="col-xs-3 control-label"></label>
+        <div class="col-xs-8">
             <button type="submit" class="btn bluebutton margintop">ตกลง</button>
         </div>
     </div>

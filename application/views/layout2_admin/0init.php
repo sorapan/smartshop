@@ -48,14 +48,14 @@ function js($js){
 </head>
 <body>
 
-<header class="col-md-12">
+<header class="col-xs-12 min1300">
     <img style="margin-left:1%;width: 200px" src="<?=base_url()?>asset/img/ss.svg">
     <span class="right" style="font-size: 0.8em"> : ADMIN</span>
 </header>
 
-<div class="container-fluid" >
+<div class="container" >
 
-    <nav class="col-md-2">
+    <nav class="col-xs-2">
         <ul class="nav card margintop">
             <?php
             /////////////////////// login false
@@ -113,11 +113,11 @@ function js($js){
 
     </nav>
 
-    <div id="content" class="col-md-8">
+    <div id="content" class="col-xs-8">
         <?php $this->load->view($include);?>
     </div>
 
-    <div class="col-md-2 margintop">
+    <div class="col-xs-2 margintop">
         <div class="card">
 
             <div class="cardbrand">เมนูแอดมิน</div>
@@ -147,7 +147,7 @@ function js($js){
 </div>
 
 
-<footer class="col-md-12">
+<footer class="col-xs-12 min1300">
 </footer>
 
 <script src="<?=base_url()?>asset/js/jquery.js"></script>
