@@ -6,6 +6,7 @@ class admin_boughtlist extends CI_Controller {
 
         parent::__construct();
         $this->load->model("ProductModel");
+        $this->load->model("PromotionModel");
         $this->load->model("TypeModel");
         $this->load->model("Wait_listModel");
         $this->load->model("Bought_listModel");
@@ -44,8 +45,8 @@ class admin_boughtlist extends CI_Controller {
 
     function bought_verify(){
 
-        $this->Bought_listModel->bought_verify($_POST['userid']);
-        $this->Wait_listModel->bought_verify($_POST['userid']);
+        $this->Bought_listModel->bought_verify($_POST['userid'],$_POST['cartid']);
+        $this->Wait_listModel->bought_verify($_POST['userid'],$_POST['cartid']);
 
     }
 
@@ -56,7 +57,8 @@ class admin_boughtlist extends CI_Controller {
 
             $data[$key]['productname'] = $this->ProductModel->fetchproductdataByproductId($val->product)[0]->name;
             $data[$key]['unit'] = $val->unit;
-            $data[$key]['price'] = $val->price;
+            if($val->price != 0) $data[$key]['price'] = $val->price;
+            else @$data[$key]['price'] = 'ราคาโปรโมชั่น : '.$this->PromotionModel->fetchPromotionlistByPromotionId($val->promotion_id)[0]->price;
 
         }
         echo json_encode($data);

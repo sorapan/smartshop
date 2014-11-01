@@ -28,24 +28,32 @@
                 <td><?php
 
                     if(floor((time() - $bval->date)/86400) > 7 && $bval->cash == null){ echo '<span style="color:red">';}
+                    else if($bval->cash != null && $bval->verified != 'Y'){echo '<span style="color:orange">';}
+                    else{echo '<span style="color:green">'; }
                     echo  floor((time() - $bval->date)/86400).' วันที่แล้ว';
-                    if(floor((time() - $bval->date)/86400) > 7 && $bval->cash == null){ echo '</span>';}
+                    if(floor((time() - $bval->date)/86400) > 7 && $bval->cash == null || $bval->cash != null && $bval->verified != 'Y'){ echo '</span>';}
 
                 ?></td>
                 <td><?php
 
                     if(floor((time() - $bval->date)/86400) > 7 && $bval->cash == null){ echo '<span style="color:red">';}
+                    else if($bval->cash != null && $bval->verified != 'Y'){echo '<span style="color:orange">';}
+                    else{echo '<span style="color:green">'; }
                     echo $bval->cash == null ? 'ยังไม่ได้โอน' : 'โอนแล้ว';
-                    if(floor((time() - $bval->date)/86400) > 7 && $bval->cash == null){ echo '</span>';}
+                    if(floor((time() - $bval->date)/86400) > 7 && $bval->cash == null || $bval->cash != null && $bval->verified != 'Y'){ echo '</span>';}
 
                 ?></td>
                 <td>
                 <?php
-                if(floor((time() - $bval->date)/86400) > 7 && $bval->cash == null){
+                    if(floor((time() - $bval->date)/86400) > 7 && $bval->cash == null){
 
-                    echo '<button class="btn yellowbutton col-xs-12 delete_boughtlist">ลบ</button>';
+                        echo '<button class="btn yellowbutton col-xs-12 delete_boughtlist">ลบ</button>';
 
-                }
+                    }else if($bval->cash != null && $bval->verified != 'Y'){
+
+                        echo '<button class="btn yellowbutton col-xs-12 delete_boughtlist">ลบ</button>';
+
+                    }
                 ?>
                 </td>
             </tr>

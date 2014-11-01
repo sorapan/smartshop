@@ -36,12 +36,14 @@
     <div class="col-md-12">
         <hr>
 
-        <form class="form-horizontal" enctype="multipart/form-data"  method="post" action="takeitem/towaitinglist" >
+        <span class="col-xs-offset-4 text-warning"> ** จำเป็นต้องกรอก</span>
+
+        <form class="form-horizontal margintop" enctype="multipart/form-data"  method="post" action="takeitem/towaitinglist" >
 
             <div class="form-group">
                 <label class="col-xs-4 control-label">จำนวนเงินที่โอน </label>
                 <div class="form-inline col-xs-4">
-                    <input type="text" class="form-control" name="money"><span style="margin: 0 0 0 10px">บาท</span>
+                    <input type="text" class="form-control" name="money"><span style="margin: 0 0 0 10px">บาท<span class="text-warning"> **</span></span>
                 </div>
             </div>
 
@@ -74,11 +76,11 @@
             <div class="form-group">
 
                 <label class="col-xs-4 control-label">เวลา </label>
-                <div class="col-xs-4">
+                <div class="col-xs-5">
 
                     <input name="time" type="text" class="form-control">
                     <span class="text-info">
-                        ** การกรอกเวลาสามารถทำได้อย่างอิสระ เช่น 2.40 น, 14.40 น, บ่ายสองโมงสี่สิบนาที เป็นต้น **
+                        ** (การกรอกเวลาสามารถทำได้อย่างอิสระ เช่น 2.40 น, 14.40 น, บ่ายสองโมงสี่สิบนาที เป็นต้น)
                     </span>
 
                 </div>
@@ -96,6 +98,9 @@
             </div>
 
         </form>
+
+        <h4 class="text-danger col-xs-offset-4 margintop"><?=$this->session->flashdata('towaitinglistwarn')?></h4>
+
     </div>
 
 </div>

@@ -42,9 +42,10 @@ class Bought_listModel  extends CI_Model{
 
     }
 
-    function bought_verify($userid){
+    function bought_verify($userid,$date){
 
         $this->db->where('user',$userid);
+        $this->db->where('date',$date);
         $this->db->update('bought_list',array(
            'verified' => 'Y'
         ));

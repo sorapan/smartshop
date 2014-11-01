@@ -108,7 +108,7 @@ class takeitem  extends CI_Controller{
             $productmodel = $this->ProductModel->fetchproductdataByproductId($basket_val->product);
             $productunit = $productmodel[0]->unit;
             $productid = $basket_val->product;
-            $this->ProductModel->updateProductData($productid, $productunit-$basket_val->unit );
+            $this->ProductModel->updateProductData2($productid, $productunit-$basket_val->unit );
 
         }
 
@@ -134,65 +134,64 @@ class takeitem  extends CI_Controller{
 
     function to_waiting_list(){
 
-        $this->Wait_listModel->insertWaitList(array(
-            'money' => $_POST['money'],
-            'date' => strtotime($_POST['day']." ".$_POST['mon']." ".$_POST['year']-543),
-            'time' => $_POST['time'],
-            'user' => $this->session->userdata('user_id')
-        ));
+        if(empty($_POST['money']) && empty($_POST['time']) ){
 
-        if(isset($_FILES['bill_file'])){
+            $this->session->set_flashdata('towaitinglistwarn','** กรอกข้อมูลไม่สมบูรณ์ **');
+            redirect(base_url().'takeitem');
 
-            $temp = explode(".", $_FILES["bill_file"]["name"]);
-            $extension = end($temp);
+        }else{
 
-            $basket = $this->Wait_listModel->fetchData()[0]->id;
+            $this->Wait_listModel->insertWaitList(array(
+                'money' => $_POST['money'],
+                'date' => strtotime($_POST['day']." ".$_POST['mon']." ".$_POST['year']-543),
+                'time' => $_POST['time'],
+                'user' => $this->session->userdata('user_id')
+            ));
 
-            $img_name = $basket.".".$extension;
-            move_uploaded_file($_FILES['bill_file']['tmp_name'],"../peter/bill_img/".$img_name);
-            $this->Wait_listModel->updateWaitList(array(
-                'bill_dir' => $basket.".".$extension
-            ),$basket);
+            if(!empty($_FILES['bill_file']['size'])){
+
+                $temp = explode(".", $_FILES["bill_file"]["name"]);
+                $extension = end($temp);
+
+                $basket = $this->Wait_listModel->fetchData()[0]->id;
+
+                $img_name = $basket.".".$extension;
+                move_uploaded_file($_FILES['bill_file']['tmp_name'],"../peter/bill_img/".$img_name);
+                $this->Wait_listModel->updateWaitList(array(
+                    'bill_dir' => $basket.".".$extension
+                ),$basket);
+
+            }
+
+            $this->UsersModel->updateBuyStatusToNone($this->session->userdata('user_id'));
+            $this->session->set_userdata('buy_status','none');
+
+            $this->BasketModel->updateBoughtDataToY($this->session->userdata('user_id'));
+
+            $this->Wait_listModel->updateCartID(
+                $this->session->userdata('user_id'),
+                $this->Bought_listModel->selectDataByUserID($this->session->userdata('user_id'))[0]->date
+            );
+
+            $this->BasketModel->updateCartID(
+                $this->session->userdata('user_id'),
+                $this->Bought_listModel->selectDataByUserID($this->session->userdata('user_id'))[0]->date
+            );
+
+            $this->Wait_listModel->updateBoughtlistID(
+                $this->session->userdata('user_id'),
+                $this->Bought_listModel->selectDataByUserID($this->session->userdata('user_id'))[0]->id
+            );
+
+            $this->Bought_listModel->updateWaitlistID(
+                $this->session->userdata('user_id'),
+                $this->Wait_listModel->selectDataByUserID($this->session->userdata('user_id'))[0]->id
+            );
+
+            $this->sendEmail('boughtit');
+            redirect(base_url());
 
         }
-
-        $this->UsersModel->updateBuyStatusToNone($this->session->userdata('user_id'));
-        $this->session->set_userdata('buy_status','none');
-
-//        $basket_data = $this->BasketModel->fetchBasketDataByuserId($this->session->userdata('user_id'));
-//        foreach($basket_data as $basket_val){
-//
-//            $productmodel = $this->ProductModel->fetchproductdataByproductId($basket_val->product);
-//            $productunit = $productmodel[0]->unit;
-//            $productid = $basket_val->product;
-//            $this->ProductModel->updateProductData($productid, $productunit-$basket_val->unit );
-//
-//        }
-
-        $this->BasketModel->updateBoughtDataToY($this->session->userdata('user_id'));
-
-        $this->Wait_listModel->updateCartID(
-            $this->session->userdata('user_id'),
-            $this->Bought_listModel->selectDataByUserID($this->session->userdata('user_id'))[0]->date
-        );
-
-        $this->BasketModel->updateCartID(
-            $this->session->userdata('user_id'),
-            $this->Bought_listModel->selectDataByUserID($this->session->userdata('user_id'))[0]->date
-        );
-
-        $this->Wait_listModel->updateBoughtlistID(
-            $this->session->userdata('user_id'),
-            $this->Bought_listModel->selectDataByUserID($this->session->userdata('user_id'))[0]->id
-        );
-
-        $this->Bought_listModel->updateWaitlistID(
-            $this->session->userdata('user_id'),
-            $this->Wait_listModel->selectDataByUserID($this->session->userdata('user_id'))[0]->id
-        );
-
-        $this->sendEmail('boughtit');
-        redirect(base_url());
 
     }
 

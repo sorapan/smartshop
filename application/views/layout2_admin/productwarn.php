@@ -22,7 +22,7 @@
         ?>
             <tr>
                 <td><?=$val->name?></td>
-                <td><?=$val->unit?></td>
+                <td><?=$val->unit == 0 ? 'สินค้าหมด' : $val->unit ?></td>
             </tr>
         <?php
 

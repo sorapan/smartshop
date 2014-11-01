@@ -58,9 +58,10 @@ class Wait_listModel extends CI_Model{
     }
 
 
-    function bought_verify($userid){
+    function bought_verify($userid,$cartid){
 
         $this->db->where('user',$userid);
+        $this->db->where('cartID',$cartid);
         $this->db->update('wait_list',array(
             'verified' => 'Y'
         ));

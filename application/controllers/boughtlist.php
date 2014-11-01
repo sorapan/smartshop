@@ -39,8 +39,9 @@ class boughtlist extends CI_Controller {
 
             $data[$key]['productname'] = $this->ProductModel->fetchproductdataByproductId($val->product)[0]->name;
             $data[$key]['unit'] = $val->unit;
-            if($val->price != 0) $data[$key]['price'] = $val->price;
-            else $data[$key]['price'] = 'ราคาโปรโมชั่น : '.$this->PromotionModel->fetchPromotionlistByPromotionId($val->promotion_id)[0]->price;
+            if($val->price != 0){
+                $data[$key]['price'] = $val->price;
+            }else $data[$key]['price'] = 'ราคาโปรโมชั่น : '.$this->PromotionModel->fetchPromotionlistByPromotionId($val->promotion_id)[0]->price;
 
         }
         echo json_encode($data);

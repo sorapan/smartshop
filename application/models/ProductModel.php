@@ -145,6 +145,15 @@ class ProductModel extends CI_Model{
 
     }
 
+    function updateProductData2($productid,$unit){
+
+        $this->db->where('id',$productid);
+        $this->db->update('product',array(
+            'unit' => $unit
+        ));
+
+    }
+
     function delProductImg($productid){
 
         $this->db->where('id',$productid);

@@ -19,11 +19,12 @@ $(function(){
                 url:'boughtverify',
                 type:'POST',
                 data:{
-                    'userid' :  $(this).parents().eq(1).find('.userid').html()
+                    'userid' :  $(this).parents().eq(1).find('.userid').html(),
+                    'cartid' :  $(this).parents().eq(1).find('.cartid').html()
                 },
                 success:function(data,res,xhr){
 
-
+                    location.reload();
 
                 }
             });
@@ -46,6 +47,7 @@ $(function(){
 
         $.ajax({
             url:'basket_detail',
+//            url: $.autoFindDir('boughtlist/basketdetail').url,
             type:'POST',
             data:{
                 'userid' : $(this).parents().eq(1).find('.userid').html(),

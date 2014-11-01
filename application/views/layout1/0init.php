@@ -150,7 +150,7 @@ function js($js){
 
 
 <div id="basketbox" class=" col-xs-2" >
-    <div style="width: 200px;background-color: white " class="cardshadow margintop" data-spy="affix" data-offset-top="125">
+    <div style="width: 200px;background-color: white " class="cardshadow margintop nav" data-spy="affix" data-offset-top="125">
 
     <?php
 

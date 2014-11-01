@@ -69,14 +69,13 @@ class admin_productmanage extends CI_Controller {
         $file = $this->session->userdata('imguploadfile');
         $typefile = strchr($file,".");
 
-        $newfilename =  sprintf("%010d", $_POST['productid']).$typefile;;
+        $newfilename = $typefile!="" ? sprintf("%010d", $_POST['productid']).$typefile : null;
         @copy($imgdirtemp.$file, $imgdir.$newfilename);
         @unlink($imgdirtemp.$file);
 
         $maintype = $this->TypeModel->ChkmaintypeFromsubtype($_POST['subtype'])[0]->id;
 
         $this->ProductModel->updateProductData($_POST['productid'],array(
-            'img' => $newfilename,
             'maintype' =>  $maintype,
             'subtype' =>  $_POST['subtype'],
             'price' =>  $_POST['price'],
@@ -86,6 +85,11 @@ class admin_productmanage extends CI_Controller {
             'date' => time()
         ));
 
+        if($newfilename != null){
+            $this->ProductModel->updateProductData($_POST['productid'],array(
+                'img' => $newfilename
+            ));
+        }
     }
 
     function deleteImgInStore(){
