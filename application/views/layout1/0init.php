@@ -52,6 +52,8 @@ function js($js){
 </head>
 <body  data-spy="scroll" data-target="#basketbox">
 
+<div style="background-color: #e7e7e7">
+
 <header class="col-xs-12 min1300">
     <img style="margin-left:1%;width: 200px" src="<?=base_url()?>asset/img/ss.svg">
 </header>
@@ -72,7 +74,7 @@ function js($js){
 </div>
 
 
-<div class="container">
+<div class="container" style="padding-bottom: 140px">
 
 <nav class="col-xs-2">
 
@@ -227,8 +229,12 @@ function js($js){
 
 </div>
 
-<footer class=" col-xs-12 min1300">
+
+<footer class="col-xs-12">
+    sss
 </footer>
+
+</div>
 
 <script src="<?=base_url()?>asset/js/jquery.js"></script>
 <script src="<?=base_url()?>asset/js/bootstrap.min.js"></script>

@@ -48,12 +48,14 @@ function js($js){
 </head>
 <body>
 
+<div style="background-color: #e7e7e7;margin: 0;padding: 0">
+
 <header class="col-xs-12 min1300">
     <img style="margin-left:1%;width: 200px" src="<?=base_url()?>asset/img/ss.svg">
     <span class="right" style="font-size: 0.8em"> : ADMIN</span>
 </header>
 
-<div class="container" >
+<div class="container" style="padding-bottom: 140px">
 
     <nav class="col-xs-2">
         <ul class="nav card margintop">
@@ -149,6 +151,8 @@ function js($js){
 
 <footer class="col-xs-12 min1300">
 </footer>
+
+</div>
 
 <script src="<?=base_url()?>asset/js/jquery.js"></script>
 <script src="<?=base_url()?>asset/js/bootstrap.min.js"></script>

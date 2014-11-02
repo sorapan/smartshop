@@ -33,7 +33,7 @@
                 </div>
                 <div class="hidden productid"><?=$p_val->id?></div>
                 <div class="caption">
-                    <h4  class="product_name"><?=$p_val->name?></h4>
+                    <h4  class="product_name text-overflow"><?=$p_val->name?></h4>
                     <p>ราคา : <span class="product_price"><?=$p_val->price?></span> บาท</p>
                     <p>จำนวน : <span class="product_unit"><?=$p_val->unit?></span> ชิ้น</p>
 
