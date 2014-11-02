@@ -288,15 +288,18 @@ select:focus{
 }
 
 .thumbnail>.limit_img{
-    height: 60%;
+    height: 240px;
     overflow: hidden;
     position: relative;
+    background-color: #e6e6e6s;
 }
 
 .thumbnail>.limit_img>img{
-    width: auto;
-    min-height: 250px;
-    max-height: 340px;
+    /*width: auto;*/
+    /*min-height: 100%;*/
+    width: 100%;
+    max-height:  100%;
+    max-width:  100%;
     position: absolute;
 }
 
@@ -446,6 +449,25 @@ footer{
     width:100%;
 
 }
+
+.footer-content{
+    color:white;
+    margin-bottom: 20px;
+}
+
+.footer-content a {
+    color:white;
+}
+
+.footer-content ul {
+    list-style-type: disc;
+}
+
+.footer-content li {
+    display: list-item;
+}
+
+
 
 .basket_list{
     height: 40px;

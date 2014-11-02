@@ -10,6 +10,10 @@ class admin_promotion extends CI_Controller{
         $this->load->model('BasketModel');
         $this->load->model('PromotionModel');
 
+        if(!$this->session->userdata("login") or $this->session->userdata("class")!="admin"){
+            redirect(base_url());
+        }
+
     }
 
     function index($main=null,$sub=null){

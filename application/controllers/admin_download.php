@@ -7,6 +7,10 @@ class admin_download extends CI_Controller{
         parent::__construct();
         $this->load->model('DownloadModel');
 
+        if(!$this->session->userdata("login") or $this->session->userdata("class")!="admin"){
+            redirect(base_url());
+        }
+
     }
 
     function index(){

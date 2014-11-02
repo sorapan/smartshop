@@ -7,6 +7,10 @@ class admin_message extends CI_Controller{
         parent::__construct();
         $this->load->model('MessageModel');
 
+        if(!$this->session->userdata("login") or $this->session->userdata("class")!="admin"){
+            redirect(base_url());
+        }
+
     }
 
     function index(){

@@ -9,6 +9,10 @@ class admin_profit extends CI_Controller{
         $this->load->model('ProductModel');
         $this->load->model('PromotionModel');
 
+        if(!$this->session->userdata("login") or $this->session->userdata("class")!="admin"){
+            redirect(base_url());
+        }
+
     }
 
     function index(){

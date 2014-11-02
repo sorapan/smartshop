@@ -9,6 +9,10 @@ class admin_productmanage extends CI_Controller {
         $this->load->model('TypeModel');
         $this->load->model('BasketModel');
 
+        if(!$this->session->userdata("login") or $this->session->userdata("class")!="admin"){
+            redirect(base_url());
+        }
+
     }
 
     function index($main=null,$sub=null){

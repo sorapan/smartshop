@@ -8,6 +8,10 @@ class admin_aboutme extends CI_Controller{
         $this->load->model("AboutmeModel");
         $this->load->model("Blog_ImgModel");
 
+        if(!$this->session->userdata("login") or $this->session->userdata("class")!="admin"){
+            redirect(base_url());
+        }
+
     }
 
     function index(){

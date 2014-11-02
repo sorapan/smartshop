@@ -231,7 +231,27 @@ function js($js){
 
 
     <footer class="col-xs-12">
-        sss
+        <div class="col-xs-3 col-xs-offset-2 footer-content">
+            <h3>เว็บไซต์ร้าน SMARTCOM2</h3>
+            <ul>
+                <li><a href="<?=base_url()?>">หน้าแรก</a></li>
+                <li><a href="<?=base_url()?>product">สินค้า</a></li>
+                <li><a href="<?=base_url()?>promotion">โปรโมชั่น</a></li>
+                <li><a href="<?=base_url()?>warranty">สินค้าเคลม</a></li>
+                <li><a href="<?=base_url()?>howtobuy">วิธีสั่งซื้อ</a></li>
+                <li><a href="<?=base_url()?>aboutme">เกี่ยวกับเรา</a></li>
+                <li><a href="<?=base_url()?>download">ดาวน์โหลด</a></li>
+            </ul>
+        </div>
+        <div class="col-xs-3 footer-content">
+            <h3>ติดต่อเรา</h3>
+            <address>
+                <strong>ร้านสมาร์ทคอม 2</strong><br>
+                795 Folsom Ave, Suite 600<br>
+                หาดใหญ่, สงขลา 94107<br>
+                <abbr title="Phone">โทร:</abbr> (074) 456-7890
+            </address>
+        </div>
     </footer>
 
 </div>

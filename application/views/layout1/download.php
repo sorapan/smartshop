@@ -6,7 +6,7 @@
     รายการไฟล์
 </div>
     <table class="table-bordered table table-condensed margintop">
-        <thead>
+        <thead class="bluethead">
             <tr>
                 <th>รายละเอียด</th>
                 <th>ดาวน์โหลด</th>
