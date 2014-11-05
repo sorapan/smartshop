@@ -37,11 +37,15 @@ class boughtlist extends CI_Controller {
         $dataWasBought = $this->BasketModel->fetchBasketBoughtDataByuserId($_POST['userid'],$_POST['cartid']);
         foreach($dataWasBought as $key => $val){
 
-            $data[$key]['productname'] = $this->ProductModel->fetchproductdataByproductId($val->product)[0]->name;
-            $data[$key]['unit'] = $val->unit;
             if($val->price != 0){
+                $data[$key]['productname'] = $this->ProductModel->fetchproductdataByproductId($val->product)[0]->name;
+                $data[$key]['unit'] = $val->unit;
                 $data[$key]['price'] = $val->price;
-            }else $data[$key]['price'] = 'ราคาโปรโมชั่น : '.$this->PromotionModel->fetchPromotionlistByPromotionId($val->promotion_id)[0]->price;
+            }else{
+                $data[$key]['productname'] = 'โปรโมชั่น : '.$this->PromotionModel->fetchPromotionlistByPromotionId($val->promotion_id)[0]->promotion_name;
+                $data[$key]['unit'] = $val->unit;
+                $data[$key]['price'] = $this->PromotionModel->fetchPromotionlistByPromotionId($val->promotion_id)[0]->price;
+            }
 
         }
         echo json_encode($data);

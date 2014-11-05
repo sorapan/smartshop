@@ -120,7 +120,7 @@ function js($js){
     </div>
 
     <div class="col-xs-2 margintop">
-        <div class="card">
+        <div class="  card" style="width: 200px">
 
             <div class="cardbrand">เมนูแอดมิน</div>
             <ul class="nav navnav">

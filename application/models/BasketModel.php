@@ -157,6 +157,7 @@ class BasketModel extends CI_Model{
         $this->db->where('user',$userid);
         $this->db->where('cartID',$cartID);
         $this->db->where('bought','Y');
+        $this->db->group_by('date');
         return $this->db->get('basket')->result();
 
     }

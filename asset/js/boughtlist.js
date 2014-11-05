@@ -25,7 +25,7 @@ $(function(){
             type:'POST',
             data:{
                 'userid' : $(this).parents().eq(2).find('.userid').html(),
-                'cartid' : $(this).parents().eq(2).find('.cartid').html(),
+                'cartid' : $(this).parents().eq(1).find('.cartid').html(),
                 'bought' : 'N'
             },
             dataType:'JSON',
@@ -38,8 +38,6 @@ $(function(){
                         "<td>"+data[qwe]['price']+"</td>"+
                         "</tr>");
                 }
-
-
 
             }
         });
