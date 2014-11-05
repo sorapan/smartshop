@@ -38,7 +38,7 @@ $(function(){
                 $('#price').val(data[0]['price']);
                 $('#unit').val(data[0]['unit']);
                 $('#unitnot').val(data[0]['unitnot']);
-                $('#detail').val(data[0]['detail']);
+                $('#detail').html(data[0]['detail']);
 
             }
 
@@ -85,7 +85,7 @@ $(function(){
                 'price' : $('#price').val(),
                 'unit' : $('#unit').val(),
                 'unitnot' : $('#unitnot').val(),
-                'detail' : $('#detail').val()
+                'detail' : $('#detail').html()
             },
             success: function(data){
 

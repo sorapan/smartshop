@@ -44,40 +44,33 @@ class admin_product extends CI_Controller {
 
     function addproductsubmit(){
 
-        if(
-            $_POST['name']&&
-            $_POST['subtype']&&
-            $_POST['price']&&
-            $_POST['unit']&&
-            $_POST['unitnot']&&
-            $_POST['detail']
-        ){
+        $file = $this->session->userdata('imguploadfile');
+        $typefile = strchr($file,".");
 
-            $file = $this->session->userdata('imguploadfile');
-            $typefile = strchr($file,".");
+        $newfilename = $this->productID().$typefile;
+        @copy($this->imgdirtemp.$file, $this->imgdir.$newfilename);
+        @unlink($this->imgdirtemp.$file);
 
-            $newfilename = $this->productID().$typefile;
-            @copy($this->imgdirtemp.$file, $this->imgdir.$newfilename);
-            @unlink($this->imgdirtemp.$file);
+        $maintype = $this->TypeModel->ChkmaintypeFromsubtype($_POST['subtype'])[0]->id;
 
-            $maintype = $this->TypeModel->ChkmaintypeFromsubtype($_POST['subtype'])[0]->id;
+        $uptodb = array(
 
-            $uptodb = array(
+            'productid' => $this->productID(),
+            'img' => $newfilename,
+            'name' =>  $_POST['name'],
+            'maintype' =>  $maintype,
+            'subtype' =>  $_POST['subtype'],
+            'price' =>  $_POST['price'],
+            'unit' =>  $_POST['unit'],
+            'unitnot' =>  $_POST['unitnot'],
+            'detail' => $_POST['detail'],
+            'date' => time()
 
-                'productid' => $this->productID(),
-                'img' => $newfilename,
-                'name' =>  $_POST['name'],
-                'maintype' =>  $maintype,
-                'subtype' =>  $_POST['subtype'],
-                'price' =>  $_POST['price'],
-                'unit' =>  $_POST['unit'],
-                'unitnot' =>  $_POST['unitnot'],
-                'detail' =>  $_POST['detail'],
-                'date' => time()
+        );
+        $this->ProductModel->getproductdata($uptodb);
 
-            );
-            $this->ProductModel->getproductdata($uptodb);
-        }
+        $this->session->set_userdata('imguploadfile',null);
+
         redirect(base_url()."admin");
     }
 
@@ -98,6 +91,12 @@ class admin_product extends CI_Controller {
 
     }
 
+    function updateDetailProduct(){
+
+        $this->ProductModel->updateProductData($this->LastproductID(),$_POST['detail']);
+
+    }
+
     function deleteTempImg(){
 
         unlink($_POST['tempimg']);
@@ -108,6 +107,13 @@ class admin_product extends CI_Controller {
 
         $productid = $this->ProductModel->productID();
         return sprintf("%010d", $productid[0]->id+1);
+
+    }
+
+    private function LastproductID(){
+
+        $productid = $this->ProductModel->productID();
+        return  $productid[0]->id;
 
     }
 

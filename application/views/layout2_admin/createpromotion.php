@@ -70,7 +70,7 @@
         <div class="form-group col-xs-5">
             <label class="control-label col-xs-3">รายละเอียด :</label>
             <div class="col-xs-9">
-                <textarea rows="5" class="form-control promotion_detail"></textarea>
+                <div contenteditable="true" style="height: 100px;overflow-y: scroll" class="form-control promotion_detail"></div>
             </div>
         </div>
 

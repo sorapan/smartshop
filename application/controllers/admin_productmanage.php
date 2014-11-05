@@ -32,7 +32,7 @@ class admin_productmanage extends CI_Controller {
 
         foreach($productdata as $key => $val){
 
-            if($val->img == ""){
+            if($val->img == null){
                 $data['p_data'][2]->img = "http://www.parentcenterhub.org/wp-content/uploads/2014/03/No-Image-.jpg";
             }
         }
@@ -73,7 +73,7 @@ class admin_productmanage extends CI_Controller {
         $file = $this->session->userdata('imguploadfile');
         $typefile = strchr($file,".");
 
-        $newfilename = $typefile!="" ? sprintf("%010d", $_POST['productid']).$typefile : null;
+        $newfilename = $file != null ? sprintf("%010d", $_POST['productid']).$typefile : null;
         @copy($imgdirtemp.$file, $imgdir.$newfilename);
         @unlink($imgdirtemp.$file);
 
@@ -94,6 +94,9 @@ class admin_productmanage extends CI_Controller {
                 'img' => $newfilename
             ));
         }
+
+        $this->session->set_userdata('imguploadfile',null);
+
     }
 
     function deleteImgInStore(){

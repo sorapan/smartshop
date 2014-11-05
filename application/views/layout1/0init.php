@@ -55,7 +55,7 @@ function js($js){
 <div style="background-color: #e7e7e7">
 
     <header class="col-xs-12 min1300">
-        <img style="margin-left:1%;width: 200px" src="<?=base_url()?>asset/img/ss.svg">
+        <img style="margin-left:1%;width: 200px" src="<?=base_url()?>asset/img/sc1.svg">
     </header>
 
 

@@ -115,7 +115,7 @@ $(function(){
             dataType:'JSON',
             success:function(data){
 
-                $('tbody').html('');
+                $(' tbody').html('');
                 for(var q in data){
 
                     $('tbody').append('<tr>'+
@@ -136,21 +136,25 @@ $(function(){
 
     $(document).on('click','.takepromotion',function(){
 
-        $.ajax({
-            url : $.autoFindDir('admin/addpromotion').url,
-            type :'POST',
-            data :{
-                'promotion_list' : promotion_list,
-                'name' : $('.promotion_name').val(),
-                'price' : $('.promotion_price').val(),
-                'detail' : $('.promotion_detail').val()
-            },
-            success :function(data){
+        if(confirm('แน่ใจแล้วใช่หรือไม่?')){
+
+            $.ajax({
+                url : $.autoFindDir('admin/addpromotion').url,
+                type :'POST',
+                data :{
+                    'promotion_list' : promotion_list,
+                    'name' : $('.promotion_name').val(),
+                    'price' : $('.promotion_price').val(),
+                    'detail' : $('.promotion_detail').html()
+                },
+                success :function(data){
 
 //                alert(data);
-                location.reload();
+                    location.reload();
 
-            }
-        });
+                }
+            });
+
+        }
     });
 });

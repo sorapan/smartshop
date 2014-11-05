@@ -51,6 +51,7 @@ $route['admin/uploadProuctImg'] = "admin_product/uploadProuctImg";//p
 $route['admin/addproductsubmit'] = "admin_product/addproductsubmit";//p
 $route['admin/fetchproductType'] = "admin_product/fetchproductType";//p
 $route['admin/deleteTempImg'] = "admin_product/deleteTempImg";//p
+$route['admin/updateDetailProduct'] = "admin_product/updateDetailProduct";//p
 
 ///////////////////////////////////// admin_type
 

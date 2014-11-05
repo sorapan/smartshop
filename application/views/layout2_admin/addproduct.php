@@ -13,7 +13,6 @@
     </div>
 
 <!--        <img  class="col-xs-4 col-xs-push-4" src="--><?//=base_url()?><!--asset/img/qq.jpg">-->
-    <form method="post" action="<?=base_url()?>admin/addproductsubmit">
         <div id="uploadproductform" class="form-horizontal col-xs-12">
             <div class="form-group">
                 <label for="name" class="col-xs-3 control-label">ชื่อ :</label>
@@ -57,18 +56,17 @@
             <div class="form-group">
                 <label for="detail" class="col-xs-3 control-label">รายละเอียด :</label>
                 <div class="col-xs-8">
-                    <textarea style="height: 150px" class="form-control" id="detail" name="detail" placeholder=""></textarea>
+                    <div contenteditable="true" style="height: 150px;overflow-y: scroll" class="form-control" id="detail"></div>
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="detail" class="col-xs-3 control-label"></label>
-                <div class="col-xs-3">
+                <div class="col-xs-3 col-xs-offset-3">
                     <button class=" btn bluebutton" id="addproduct_ok">ตกลง</button>
                 </div>
             </div>
         </div>
-    </form>
+
 
     </div>
 

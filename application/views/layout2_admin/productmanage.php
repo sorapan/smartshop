@@ -129,7 +129,7 @@
                     <div class="form-group">
                         <label for="detail" class="col-md-3 control-label">รายละเอียด :</label>
                         <div class="col-md-8">
-                            <textarea style="height: 150px" class="form-control" id="detail" name="detail" placeholder=""></textarea>
+                            <div contenteditable="true" style="height: 150px;overflow-y: scroll" class="form-control" id="detail" name="detail" placeholder=""></div>
                         </div>
                     </div>
 

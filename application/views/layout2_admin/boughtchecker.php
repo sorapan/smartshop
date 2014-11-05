@@ -25,24 +25,30 @@
                 <td><?=$bval->price?></td>
                 <td><?=$bval->sendby == 'none'? 'รับด้วยตัวเอง' : 'ส่ง EMS' ?></td>
                 <td><?=$bval->verified == 'Y'? 'ใช่' : 'ไม่' ?></td>
-                <td><?php
+                <td>
+                <?php
 
                     if(floor((time() - $bval->date)/86400) > 7 && $bval->cash == null){ echo '<span style="color:red">';}
                     else if($bval->cash != null && $bval->verified != 'Y'){echo '<span style="color:orange">';}
-                    else{echo '<span style="color:green">'; }
+                    else if($bval->cash != null && $bval->verified == 'Y'){echo '<span style="color:green">'; }
+                    else{echo '<span style="color:black">'; }
                     echo  floor((time() - $bval->date)/86400).' วันที่แล้ว';
                     if(floor((time() - $bval->date)/86400) > 7 && $bval->cash == null || $bval->cash != null && $bval->verified != 'Y'){ echo '</span>';}
 
-                ?></td>
-                <td><?php
+                ?>
+                </td>
+                <td>
+                <?php
 
                     if(floor((time() - $bval->date)/86400) > 7 && $bval->cash == null){ echo '<span style="color:red">';}
                     else if($bval->cash != null && $bval->verified != 'Y'){echo '<span style="color:orange">';}
-                    else{echo '<span style="color:green">'; }
+                    else if($bval->cash != null && $bval->verified == 'Y'){echo '<span style="color:green">'; }
+                    else{echo '<span style="color:black">'; }
                     echo $bval->cash == null ? 'ยังไม่ได้โอน' : 'โอนแล้ว';
                     if(floor((time() - $bval->date)/86400) > 7 && $bval->cash == null || $bval->cash != null && $bval->verified != 'Y'){ echo '</span>';}
 
-                ?></td>
+                ?>
+                </td>
                 <td>
                 <?php
                     if(floor((time() - $bval->date)/86400) > 7 && $bval->cash == null){

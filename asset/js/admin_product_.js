@@ -29,4 +29,41 @@ $(function(){
             }
         });
     }
+
+    $(' #addproduct_ok').click(function(){
+
+        if(confirm('ต้องการเพิ่มข้อมูลใช่หรือไม่')){
+
+            var name = $(this).parents().eq(3).find(' #name').val();
+            var subtype = $(this).parents().eq(3).find(' #subtype').val();
+            var price = $(this).parents().eq(3).find(' #price').val();
+            var unit = $(this).parents().eq(3).find(' #unit').val();
+            var unitnot = $(this).parents().eq(3).find(' #unitnot').val();
+            var detail = $(this).parents().eq(3).find(' #detail').html();
+
+            $.ajax({
+
+                url: $.autoFindDir('admin/addproductsubmit').url,
+                type:'POST',
+                data:{
+                    'name' : name,
+                    'subtype' : subtype,
+                    'price' : price,
+                    'unit' : unit,
+                    'unitnot' : unitnot,
+                    'detail' : detail
+                },
+                success:function(data){
+
+                    alert('เพิ่มข้อมูลสำเร็จ');
+                    location.reload();
+
+                }
+
+            });
+
+        }
+
+    });
+
 });
