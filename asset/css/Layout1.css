@@ -291,32 +291,19 @@ select:focus{
     height: 240px;
     overflow: hidden;
     position: relative;
-    background-color: #4cabda;
-    white-space: nowrap;
+    background-color: #c6dfff;
+    /*white-space: nowrap;*/
 }
 
-.thumbnail>.limit_img>.helper{
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-}
 
 .thumbnail>.limit_img>img{
-    /*width: auto;*/
-    /*min-height: 100%;*/
-    width: 100%;
-    /*position: absolute;*/
-}
 
-@media (min-height: 100%) {
-
-    .thumbnail>.limit_img>img{
-        /*width: auto;*/
-        /*min-height: 100%;*/
-        width: 200%;
-        /*position: absolute;*/
-    }
-
+    max-width: 100%;
+    height: auto;
+    max-height: 240px;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
 
 }
 

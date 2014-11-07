@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="be7b91bc-05d1-4566-bfcf-12fbe6c918e6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asset/css/Layout1.css" afterPath="$PROJECT_DIR$/asset/css/Layout1.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/layout2_admin/boughtchecker.php" afterPath="$PROJECT_DIR$/application/views/layout2_admin/boughtchecker.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/layout1/home.php" afterPath="$PROJECT_DIR$/application/views/layout1/home.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/takeitem.php" afterPath="$PROJECT_DIR$/application/controllers/takeitem.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="peter.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,7 +29,7 @@
       <file leaf-file-name="home.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/layout1/home.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="56" selection-start="789" selection-end="789" vertical-scroll-proportion="-11.076923" vertical-offset="108" max-vertical-offset="3168">
+            <state line="20" column="70" selection-start="672" selection-end="672" vertical-scroll-proportion="-10.384615" vertical-offset="90" max-vertical-offset="3150">
               <folding />
             </state>
           </provider>
@@ -41,7 +38,7 @@
       <file leaf-file-name="Layout1.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/asset/css/Layout1.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="315" column="16" selection-start="4951" selection-end="4951" vertical-scroll-proportion="0.6905158" vertical-offset="5255" max-vertical-offset="9522">
+            <state line="295" column="1" selection-start="4593" selection-end="4593" vertical-scroll-proportion="0.5108153" vertical-offset="5003" max-vertical-offset="9288">
               <folding />
             </state>
           </provider>
@@ -707,14 +704,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/layout1/home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="56" selection-start="789" selection-end="789" vertical-scroll-proportion="-11.076923" vertical-offset="108" max-vertical-offset="3168">
+        <state line="20" column="70" selection-start="672" selection-end="672" vertical-scroll-proportion="-10.384615" vertical-offset="90" max-vertical-offset="3150">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/asset/css/Layout1.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="315" column="16" selection-start="4951" selection-end="4951" vertical-scroll-proportion="0.6905158" vertical-offset="5255" max-vertical-offset="9522">
+        <state line="295" column="1" selection-start="4593" selection-end="4593" vertical-scroll-proportion="0.5108153" vertical-offset="5003" max-vertical-offset="9288">
           <folding />
         </state>
       </provider>
