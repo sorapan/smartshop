@@ -24,16 +24,24 @@
                 <td class="hidden user_id"><?=$bval->user?></td>
                 <td><?=$bval->price?></td>
                 <td><?=$bval->sendby == 'none'? 'รับด้วยตัวเอง' : 'ส่ง EMS' ?></td>
-                <td><?=$bval->verified == 'Y'? 'ใช่' : 'ไม่' ?></td>
-                <td>
-                <?php
-
+                <td><?php
                     if(floor((time() - $bval->date)/86400) > 7 && $bval->cash == null){ echo '<span style="color:red">';}
                     else if($bval->cash != null && $bval->verified != 'Y'){echo '<span style="color:orange">';}
                     else if($bval->cash != null && $bval->verified == 'Y'){echo '<span style="color:green">'; }
                     else{echo '<span style="color:black">'; }
+                        echo $bval->verified == 'Y'? 'ใช่' : 'ไม่';
+                    if(floor((time() - $bval->date)/86400) > 7 && $bval->cash == null || $bval->cash != null && $bval->verified != 'Y' || $bval->cash != null && $bval->verified == 'Y'){ echo '</span>';}
+                    ?>
+                </td>
+                <td>
+                <?php
+
+                if(floor((time() - $bval->date)/86400) > 7 && $bval->cash == null){ echo '<span style="color:red">';}
+                else if($bval->cash != null && $bval->verified != 'Y'){echo '<span style="color:orange">';}
+                else if($bval->cash != null && $bval->verified == 'Y'){echo '<span style="color:green">'; }
+                else{echo '<span style="color:black">'; }
                     echo  floor((time() - $bval->date)/86400).' วันที่แล้ว';
-                    if(floor((time() - $bval->date)/86400) > 7 && $bval->cash == null || $bval->cash != null && $bval->verified != 'Y'){ echo '</span>';}
+                if(floor((time() - $bval->date)/86400) > 7 && $bval->cash == null || $bval->cash != null && $bval->verified != 'Y' || $bval->cash != null && $bval->verified == 'Y'){ echo '</span>';}
 
                 ?>
                 </td>
@@ -45,7 +53,7 @@
                     else if($bval->cash != null && $bval->verified == 'Y'){echo '<span style="color:green">'; }
                     else{echo '<span style="color:black">'; }
                     echo $bval->cash == null ? 'ยังไม่ได้โอน' : 'โอนแล้ว';
-                    if(floor((time() - $bval->date)/86400) > 7 && $bval->cash == null || $bval->cash != null && $bval->verified != 'Y'){ echo '</span>';}
+                    if(floor((time() - $bval->date)/86400) > 7 && $bval->cash == null || $bval->cash != null && $bval->verified != 'Y' || $bval->cash != null && $bval->verified == 'Y'){ echo '</span>';}
 
                 ?>
                 </td>
@@ -56,6 +64,10 @@
                         echo '<button class="btn yellowbutton col-xs-12 delete_boughtlist">ลบ</button>';
 
                     }else if($bval->cash != null && $bval->verified != 'Y'){
+
+                        echo '<button class="btn yellowbutton col-xs-12 delete_boughtlist">ลบ</button>';
+
+                    }else if($bval->cash != null && $bval->verified == 'Y'){
 
                         echo '<button class="btn yellowbutton col-xs-12 delete_boughtlist">ลบ</button>';
 

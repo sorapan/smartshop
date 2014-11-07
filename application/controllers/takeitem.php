@@ -258,7 +258,9 @@ class takeitem  extends CI_Controller{
         foreach($this->BasketModel->fetchBasketDataByuserId($user_id) as $val){
 
             $productmodel = $this->ProductModel->fetchproductdataByproductId($val->product);
-            $this->ProductModel->updateProductData($val->product,$productmodel[0]->unit+$val->unit);
+            $this->ProductModel->updateProductData($val->product,array(
+                'unit' => $productmodel[0]->unit+$val->unit
+            ));
 
         }
         $this->BasketModel->delBasketNoDataByUserid($user_id);

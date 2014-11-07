@@ -19,6 +19,7 @@
             <div class="col-xs-4">
                 <div class="thumbnail cardshadow">
                     <div style="position: relative" class="limit_img">
+<!--                        <span class="helper"></span>-->
                         <img src="<?=base_url()?>productImg/<?=$p_val->img?>">
                     </div>
                     <div style="display:none" class="productid"><?=$p_val->id?></div>
