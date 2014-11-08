@@ -20,6 +20,7 @@ class Register extends CI_Controller{
 
     function regis(){
 
+        echo '<meta charset="UTF8">';
 
         if($this->UsersModel->checkDuplicateUsername($_POST['username']) != null){
 
@@ -51,11 +52,13 @@ class Register extends CI_Controller{
                     'zipcode' => $_POST['zipcode'],
                 );
                 $this->UsersModel->insertUser($datatransfer);
-                redirect("/");
+                echo '<script>alert("สมัครสมาชิกสำเร็จ")</script>';
+                echo 'สมัครสมาชิกสำเร็จ';
+                echo '<meta http-equiv="refresh" content="2; url='.base_url().'">';
 
             }else{
                 $this->session->set_flashdata('formERR','*** กรอกให้ครบทุกช่อง ***');
-                redirect("regisform");
+                redirect(base_url().'regisform');
             }
         }
     }
@@ -63,9 +66,12 @@ class Register extends CI_Controller{
     function login(){
 
         $loginresult = $this->UsersModel->loginUser($_POST['userlogin'],$_POST['passlogin']);
+        $prevent_dub_date = time();
         if(!empty($loginresult)){
 
             $non_member_bought = $this->session->userdata('non_member_bought');
+
+//            var_dump($non_member_bought);
 
             foreach($non_member_bought as $val){
 
@@ -80,14 +86,15 @@ class Register extends CI_Controller{
 
                         if(empty($itemChecked)){
 
-                            $data = array(
+                            $this->BasketModel->addTobasket(array(
+                                'product_name' => $product[0]->name,
                                 'product' => $val['productid'],
                                 'unit' => $val['want'],
                                 'user' => $loginresult[0]->id,
                                 'price' => $val['want']*$product_price,
-                                'date' => time()
-                            );
-                            $this->BasketModel->addTobasket($data);
+                                'date' => $prevent_dub_date
+                            ));
+                            $prevent_dub_date++;
 
                         }else{
 
@@ -114,10 +121,11 @@ class Register extends CI_Controller{
                                 'unit' => $v->unit,
                                 'user' => $loginresult[0]->id,
                                 'price' => 0,
-                                'date' => $val['date'],
+                                'date' => $prevent_dub_date,
                                 'promotion_id' => $v->promotionid,
                                 'promotion_unit' => 1,
                             );
+                            $prevent_dub_date++;
                             $this->BasketModel->addTobasket($data);
 
                         }

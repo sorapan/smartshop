@@ -11,8 +11,8 @@
 <form  method="POST" action="<?=base_url()?>regis" class="form-horizontal"  accept-charset="UTF-8">
 
     <p class="col-xs-offset-3 text-info">* กรุณากรอกให้ครบทุกช่อง</p>
-    <p class="col-xs-offset-3 text-danger"><?=$this->session->flashdata('formERR')?></p>
-    <p class="col-xs-offset-3 text-danger"><?=$this->session->flashdata('usernameERR')?></p>
+    <h4 class="col-xs-offset-3 text-danger marginbot"><?=$this->session->flashdata('formERR')?></h4>
+    <h4 class="col-xs-offset-3 text-danger marginbot"><?=$this->session->flashdata('usernameERR')?></h4>
     <div class="form-group">
         <label for="username" class="col-xs-3 control-label">ชื่อผู้ใช้ :</label>
         <div class="col-xs-8">

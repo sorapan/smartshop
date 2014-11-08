@@ -291,7 +291,7 @@ select:focus{
     height: 240px;
     overflow: hidden;
     position: relative;
-    background-color: #c6dfff;
+    /*background-color: #c6dfff;*/
     /*white-space: nowrap;*/
 }
 

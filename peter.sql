@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS `basket` (
   `promotion_id` tinytext,
   `promotion_unit` tinytext,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=84 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table smartshop.basket: ~-1 rows (approximately)
 DELETE FROM `basket`;
@@ -122,15 +122,13 @@ CREATE TABLE IF NOT EXISTS `bought_list` (
   `user` int(10) NOT NULL,
   `wait_list_id` tinytext,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table smartshop.bought_list: ~-1 rows (approximately)
 DELETE FROM `bought_list`;
 /*!40000 ALTER TABLE `bought_list` DISABLE KEYS */;
 INSERT INTO `bought_list` (`id`, `price`, `address`, `sendby`, `verified`, `date`, `user`, `wait_list_id`) VALUES
-	(16, '200', 'dsfsdf sdfdsf dfds dsfsdf', 'none', 'Y', '1414618171', 2, '1'),
-	(17, '222', 'dsfsdf sdfdsf dfds dsfsdf', 'none', 'N', '1414827703', 2, '2'),
-	(19, '111', 'dsfsdf sdfdsf dfds dsfsdf', 'none', 'N', '1414831541', 2, '4');
+	(16, '200', 'dsfsdf sdfdsf dfds dsfsdf', 'none', 'Y', '1414618171', 2, '1');
 /*!40000 ALTER TABLE `bought_list` ENABLE KEYS */;
 
 
@@ -209,14 +207,15 @@ CREATE TABLE IF NOT EXISTS `product` (
   `date` tinytext,
   `sell` enum('true','false') DEFAULT 'true',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table smartshop.product: ~-1 rows (approximately)
 DELETE FROM `product`;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
 INSERT INTO `product` (`id`, `productid`, `img`, `name`, `maintype`, `subtype`, `price`, `unit`, `unitnot`, `detail`, `author`, `date`, `sell`) VALUES
-	(2, '0000000002', '0000000002.gif', 'mj', 1, 1, '222', 40, 3, 'cvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcvcvxcvcvcvcvcvcvcv', 'admin', '1414745568', 'true'),
-	(4, '0000000004', '0000000004.jpg', 'ดินสอ', 1, 1, '111', 180, 10, 'ดินสอ สีแดง เทพๆ', 'admin', '1414837399', 'true');
+	(2, '0000000002', '0000000002.gif', 'mj', 1, 1, '222', 40, 3, 'dkfmsdf<div>sdf</div><div>sdf</div><div>sd</div><div>f</div><div>sdfsdfsdfsdfsdf</div>', 'admin', '1415465572', 'true'),
+	(4, '0000000004', '0000000004.jpg', 'ดินสอ', 1, 1, '111', 180, 10, 'ดินสอ สีแดง เทพๆ', 'admin', '1415184766', 'true'),
+	(5, '0000000005', '0000000005.jpg', 'บ้องตะลุยอวกาศ', 1, 1, '2000', 200, 5, 'sadsad<div>asd</div><div>as</div><div>das</div><div>d</div><div>asdsadsad</div><div>sad</div>', 'admin', '1415183185', 'true');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 
 
@@ -233,7 +232,7 @@ CREATE TABLE IF NOT EXISTS `promotion_list` (
 DELETE FROM `promotion_list`;
 /*!40000 ALTER TABLE `promotion_list` DISABLE KEYS */;
 INSERT INTO `promotion_list` (`id`, `promotion_name`, `price`, `detail`) VALUES
-	(16, 'mj triple pack', '500', 'mj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple pack');
+	(16, 'mj triple pack', '200', 'mj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple pack');
 /*!40000 ALTER TABLE `promotion_list` ENABLE KEYS */;
 
 
@@ -308,7 +307,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `class` enum('user','admin') DEFAULT 'user',
   `buy_status` enum('none','wait','verified') DEFAULT 'none',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table smartshop.user: ~-1 rows (approximately)
 DELETE FROM `user`;
@@ -318,7 +317,8 @@ INSERT INTO `user` (`id`, `username`, `password`, `realname`, `lastname`, `email
 	(2, 'user', '1', 'จอร์จ', 'ดีนายด์', 'd9@gmail.com', 'dsfsdf sdfdsf dfds dsfsdf', '0742223333', 'เลย', '90110', 'user', 'none'),
 	(3, 'rudeboy', '1', 'rudeboy', 'forplay', 'rudeboy@gmail.com', 'sdfdsf sdf sd sdfsd f', '074333222', 'กระบี่', '90110', 'user', 'none'),
 	(4, 'cereal', '1', 'cereal', 'cereal', 'cereal@cereal.com', 'cereal', '0823333333', 'ตรัง', '90110', 'user', 'none'),
-	(5, 'aa', '11', 'aa', 'aa', 'aa@aa.com', 'aa', '8799999999', 'นครนายก', '90000', 'user', 'none');
+	(5, 'aa', '11', 'aa', 'aa', 'aa@aa.com', 'aa', '8799999999', 'นครนายก', '90000', 'user', 'none'),
+	(6, 'soso', '1', 'soso', 'soso', 'soso@soso.com', 'sosososososo', '0303939393', 'ตราด', '90111', 'user', 'none');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 
@@ -363,7 +363,7 @@ DELETE FROM `warranty`;
 /*!40000 ALTER TABLE `warranty` DISABLE KEYS */;
 INSERT INTO `warranty` (`id`, `crame_code`, `product_name`, `status`, `customer_name`, `date`, `detail`) VALUES
 	(1, '141284447300001', 'เครื่องซักผ้า', 'waiting', 'จอร์จ ดีนายด์', '1412844473', 'ซักผ้าไม่ได้'),
-	(2, '141233337300002', 'ราวตากผ้า', 'inprogress', 'ไไไไ', '1412844473', 'ตากผ้าไม่ได้');
+	(2, '141233337300002', 'ราวตากผ้า', 'finished', 'ไไไไ', '1412844473', 'ตากผ้าไม่ได้');
 /*!40000 ALTER TABLE `warranty` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
