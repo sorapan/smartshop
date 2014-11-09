@@ -286,7 +286,7 @@ class takeitem  extends CI_Controller{
                 $message = '
                 <p>
                 ตรวจสอบรายละเอียดที่
-                <a href="http://localhost/peter/admin/boughtchecker">http://localhost/peter/admin/boughtchecker</a>
+                <a href="http://localhost/peter/admin/boughtchecker">'.base_url().'admin/boughtchecker</a>
                 </p>
                 ';
                 break;
@@ -296,7 +296,7 @@ class takeitem  extends CI_Controller{
                 $message = '
                 <p>
                 ตรวจสอบรายละเอียดที่
-                <a href="http://localhost/peter/admin/boughtchecker">http://localhost/peter/admin/boughtchecker</a>
+                <a href="http://localhost/peter/admin/boughtchecker">'.base_url().'admin/boughtchecker</a>
                 </p>
                 ';
                 break;
@@ -306,7 +306,7 @@ class takeitem  extends CI_Controller{
                 $message = '
                 <p>
                 ตรวจสอบรายละเอียดที่
-                <a href="http://localhost/peter/admin/boughtchecker">http://localhost/peter/admin/boughtchecker</a>
+                <a href="http://localhost/peter/admin/boughtchecker">'.base_url().'admin/boughtchecker</a>
                 </p>
                 ';
                 break;
