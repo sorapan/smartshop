@@ -11,6 +11,8 @@ class product extends CI_Controller {
 
     function index($main=null,$sub=null){
 
+
+
         $mt = $this->TypeModel->fetchMainType();
         $productdata = $this->ProductModel->fetchproductBySubType($sub,$main);
 
