@@ -105,6 +105,7 @@ class ProductModel extends CI_Model{
             $this->db->where('subtype_product.id',$st);
         }
         $this->db->where('product.sell',true);
+        $this->db->order_by('id','DESC');
         return $this->db->get()->result();
 
     }
@@ -124,6 +125,7 @@ class ProductModel extends CI_Model{
         }
         $this->db->limit(6);
         $this->db->where('product.sell',true);
+        $this->db->order_by('id','DESC');
         return $this->db->get()->result();
 
     }

@@ -22,12 +22,28 @@
 
             <?php
             }
+
+            if($sendby != 'none'){
             ?>
+
+
+            <li class="list-group-item">
+                <div class="container-fluid">
+                    <div class=" col-xs-4">ส่งไปรษณีย์ EMS</div>
+                    <div class="col-xs-offset-4 col-xs-4">100 บาท</div>
+                </div>
+            </li>
+
+            <?php
+
+            }
+            ?>
+
         </ul>
 
-        <div class="text-info margintop"><?= $sendby == 'none' ? 'รับด้วยตนเอง' : 'ส่งไปรษณีย์ EMS'?></div>
+<!--        <div class="text-info margintop">--><?//= $sendby == 'none' ? 'รับด้วยตนเอง' : 'ส่งไปรษณีย์ EMS'?><!--</div>-->
         <div class="text-info bought_id hidden"><?= $boughtid ?></div>
-        <div class="text-info">ราคารวมทั้งหมด <?=$all_price?> บาท</div>
+        <div style='text-align: right;' class=" col-xs-12 marginbot"><h4>ราคารวมทั้งหมด <span style="text-decoration: underline;color:red"><?=$all_price?></span> บาท</h4></div>
 
         <button class="col-xs-offset-5 col-xs-2 btn yellowbutton bought_cancel">ยกเลิกการซื้อ</button>
 
