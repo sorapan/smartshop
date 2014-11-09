@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be7b91bc-05d1-4566-bfcf-12fbe6c918e6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/takeitem.php" afterPath="$PROJECT_DIR$/application/controllers/takeitem.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin_promotion.php" afterPath="$PROJECT_DIR$/application/controllers/admin_promotion.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/layout2_admin/createpromotion.php" afterPath="$PROJECT_DIR$/application/views/layout2_admin/createpromotion.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/layout1/takeitem_takebasket.php" afterPath="$PROJECT_DIR$/application/views/layout1/takeitem_takebasket.php" />
     </list>
     <ignored path="peter.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,16 +27,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="takeitem.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/controllers/takeitem.php">
+      <file leaf-file-name="admin_promotion.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/admin_promotion.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="312" column="0" selection-start="10797" selection-end="10797" vertical-scroll-proportion="0.93594307" vertical-offset="5090" max-vertical-offset="5868">
-              <folding>
-                <marker date="1415522673570" expanded="true" signature="9820:9985" placeholder="..." />
-                <marker date="1415522673570" expanded="true" signature="9820:9927" placeholder="..." />
-                <marker date="1415522673570" expanded="true" signature="10196:10361" placeholder="..." />
-                <marker date="1415522673570" expanded="true" signature="10588:10753" placeholder="..." />
-              </folding>
+            <state line="18" column="39" selection-start="473" selection-end="473" vertical-scroll-proportion="-8.307693" vertical-offset="108" max-vertical-offset="2160">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="createpromotion.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/layout2_admin/createpromotion.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="135" column="57" selection-start="5253" selection-end="5253" vertical-scroll-proportion="0.5304348" vertical-offset="2125" max-vertical-offset="3024">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -74,7 +80,6 @@
         <option value="$PROJECT_DIR$/application/controllers/admin_message.php" />
         <option value="$PROJECT_DIR$/application/controllers/admin_productwarn.php" />
         <option value="$PROJECT_DIR$/application/controllers/admin_profit.php" />
-        <option value="$PROJECT_DIR$/application/controllers/admin_promotion.php" />
         <option value="$PROJECT_DIR$/application/controllers/admin_type.php" />
         <option value="$PROJECT_DIR$/application/controllers/admin_warranty.php" />
         <option value="$PROJECT_DIR$/application/views/layout1/download.php" />
@@ -93,7 +98,6 @@
         <option value="$PROJECT_DIR$/asset/js/admin_productmanage.js" />
         <option value="$PROJECT_DIR$/application/controllers/admin_product.php" />
         <option value="$PROJECT_DIR$/application/controllers/admin_productmanage.php" />
-        <option value="$PROJECT_DIR$/application/views/layout2_admin/createpromotion.php" />
         <option value="$PROJECT_DIR$/asset/js/admin_promotion.js" />
         <option value="$PROJECT_DIR$/application/views/layout2_admin/boughtchecker.php" />
         <option value="$PROJECT_DIR$/asset/css/Layout1.css" />
@@ -101,8 +105,10 @@
         <option value="$PROJECT_DIR$/application/views/layout1/regisform.php" />
         <option value="$PROJECT_DIR$/application/controllers/register.php" />
         <option value="$PROJECT_DIR$/application/models/ProductModel.php" />
-        <option value="$PROJECT_DIR$/application/views/layout1/takeitem_takebasket.php" />
         <option value="$PROJECT_DIR$/application/controllers/takeitem.php" />
+        <option value="$PROJECT_DIR$/application/views/layout1/takeitem_takebasket.php" />
+        <option value="$PROJECT_DIR$/application/controllers/admin_promotion.php" />
+        <option value="$PROJECT_DIR$/application/views/layout2_admin/createpromotion.php" />
       </list>
     </option>
   </component>
@@ -221,6 +227,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="layout2_admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="peter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="peter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="layout1" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -299,7 +327,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -499,16 +527,6 @@
         <state line="155" column="15" selection-start="4587" selection-end="4587" vertical-scroll-proportion="0.8469388" vertical-offset="2292" max-vertical-offset="2988" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/layout2_admin/createpromotion.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="127" selection-start="2556" selection-end="2578" vertical-scroll-proportion="0.4466192" vertical-offset="1045" max-vertical-offset="3024" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/admin_promotion.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="9" selection-start="425" selection-end="425" vertical-scroll-proportion="-0.0" vertical-offset="252" max-vertical-offset="2160" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/admin_boughtchecker.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="9" selection-start="478" selection-end="478" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1116" />
@@ -526,7 +544,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/asset/css/Layout1.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="294" column="28" selection-start="4595" selection-end="4595" vertical-scroll-proportion="0.0" vertical-offset="5292" max-vertical-offset="9288" />
+        <state line="294" column="28" selection-start="4595" selection-end="4595" vertical-scroll-proportion="0.0" vertical-offset="5292" max-vertical-offset="9288">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/layout1/home.php">
@@ -584,22 +604,38 @@
         <state line="127" column="41" selection-start="3485" selection-end="3485" vertical-scroll-proportion="0.8643478" vertical-offset="1789" max-vertical-offset="3600" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/takeitem.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="312" column="0" selection-start="10797" selection-end="10797" vertical-scroll-proportion="-47.23077" vertical-offset="4388" max-vertical-offset="5868">
+          <folding>
+            <marker date="1415522673570" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1415522673570" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1415522673570" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1415522673570" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/layout1/takeitem_takebasket.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="127" selection-start="1542" selection-end="1542" vertical-scroll-proportion="0.702847" vertical-offset="415" max-vertical-offset="2304">
+        <state line="39" column="0" selection-start="1203" selection-end="1203" vertical-scroll-proportion="0.21913044" vertical-offset="576" max-vertical-offset="2286">
+          <folding>
+            <element signature="n#style#0;n#span#0;n#h4#0;n#div#1;n#div#1;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/admin_promotion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="39" selection-start="473" selection-end="473" vertical-scroll-proportion="-8.307693" vertical-offset="108" max-vertical-offset="2160">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/takeitem.php">
+    <entry file="file://$PROJECT_DIR$/application/views/layout2_admin/createpromotion.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="312" column="0" selection-start="10797" selection-end="10797" vertical-scroll-proportion="0.93594307" vertical-offset="5090" max-vertical-offset="5868">
-          <folding>
-            <marker date="1415522673570" expanded="true" signature="9820:9985" placeholder="..." />
-            <marker date="1415522673570" expanded="true" signature="9820:9927" placeholder="..." />
-            <marker date="1415522673570" expanded="true" signature="10196:10361" placeholder="..." />
-            <marker date="1415522673570" expanded="true" signature="10588:10753" placeholder="..." />
-          </folding>
+        <state line="135" column="57" selection-start="5253" selection-end="5253" vertical-scroll-proportion="0.5304348" vertical-offset="2125" max-vertical-offset="3024">
+          <folding />
         </state>
       </provider>
     </entry>

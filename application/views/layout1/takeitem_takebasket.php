@@ -26,7 +26,6 @@
             if($sendby != 'none'){
             ?>
 
-
             <li class="list-group-item">
                 <div class="container-fluid">
                     <div class=" col-xs-4">ส่งไปรษณีย์ EMS</div>

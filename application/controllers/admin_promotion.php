@@ -63,7 +63,7 @@ class admin_promotion extends CI_Controller{
 
         $productid = $_POST['productid'];
         $data = $this->ProductModel->fetchproductdataByproductId($productid);
-        $maintype = $this->TypeModel->MainTypeFromId($data[0]->subtype);
+        $maintype = $this->TypeModel->MainTypeFromId($data[0]->maintype);
         $subtype = $this->TypeModel->SubTypeFromId($data[0]->subtype);
         $data[0]->maintype = $maintype->name;
         $data[0]->subtype = $subtype->name;

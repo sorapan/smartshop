@@ -133,7 +133,7 @@
                     <div class="form-group">
                         <label for="unit" class="col-xs-4 control-label">จำนวน :</label>
                         <div class="col-xs-8">
-                            <p class="form-control-staticol" id="unit"></p>
+                            <p class="form-control-static" id="unit"></p>
                         </div>
                     </div>
 
