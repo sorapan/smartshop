@@ -91,7 +91,9 @@ class ProductModel extends CI_Model{
 
     }
 
-    function fetchproductBySubType($st,$mt){
+    private $limitpage = 2;
+
+    function fetchproductBySubType($st,$mt,$offset){
 
         $this->db->select('*');
         $this->db->from('product');
@@ -105,6 +107,9 @@ class ProductModel extends CI_Model{
             $this->db->where('subtype_product.id',$st);
         }
         $this->db->where('product.sell',true);
+//        $this->db->offset($offset%2==0?$offset:$offset+1);
+        $this->db->offset($offset*$this->limitpage);
+        $this->db->limit($this->limitpage);
         $this->db->order_by('product.id','DESC');
         return $this->db->get()->result();
 
@@ -190,6 +195,10 @@ class ProductModel extends CI_Model{
             'id' => $productid
         ));
 
+    }
+
+    function DYpage(){
+        return $this->db->count_all('product')/$this->limitpage;
     }
 
 }

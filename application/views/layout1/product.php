@@ -102,8 +102,40 @@ foreach($p_data as $p_val){
         </div>
 <?php
 }
+
 ?>
     </div>
+
+
+<nav class="col-xs-12">
+    <ul class="pagination cardshadow">
+        <?php
+            $getpage = isset($_GET['page']) ? $_GET['page'] : 1;
+            if($getpage > 1){
+        ?>
+        <li><a href="<?= strtok($_SERVER["REQUEST_URI"],'?').'?page='.($getpage-1)?>">&laquo;</a></li>
+        <?php
+            }
+            for($i=1;$i<=$dypage;$i++){
+        ?>
+        <li <?php
+            if(strtok($_SERVER["REQUEST_URI"],'?').'?page='.$i==$_SERVER["REQUEST_URI"]){
+                echo'class="active"';
+            }else if($getpage == 1)if($i == 1)echo 'class="active"';
+            else echo'';
+        ?>>
+            <a href="<?=strtok($_SERVER["REQUEST_URI"],'?').'?page='.$i?>"><?=$i?></a>
+        </li>
+        <?php
+            }
+            if($getpage<$dypage){
+        ?>
+        <li><a href="<?=strtok($_SERVER["REQUEST_URI"],'?').'?page='.($getpage+1)?>">&raquo;</a></li>
+        <?php
+            }
+        ?>
+    </ul>
+</nav>
 
 
 

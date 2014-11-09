@@ -11,19 +11,22 @@ class product extends CI_Controller {
 
     function index($main=null,$sub=null){
 
-
+        $offset = isset($_GET['page']) ? $_GET['page']-1 : 0;
 
         $mt = $this->TypeModel->fetchMainType();
-        $productdata = $this->ProductModel->fetchproductBySubType($sub,$main);
+        $productdata = $this->ProductModel->fetchproductBySubType($sub,$main,$offset);
 
         //index_basket.js
+
+        $dypage = $this->ProductModel->DYpage();
 
         $data = array(
             'css' => array(
                 base_url().'asset/css/product_.css'
             ),
-            'p_data'=>$productdata,
-            'mt_data'=>$mt,
+            'dypage' => is_float($dypage) ? number_format($dypage)+1 : number_format($dypage),
+            'p_data'=> $productdata,
+            'mt_data'=> $mt,
         );
 
         if($main==null){
