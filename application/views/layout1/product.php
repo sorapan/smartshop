@@ -42,7 +42,7 @@
 
     <form action="<?=base_url()?>product/search" method="GET">
     <div class="col-xs-8 col-xs-offset-2 input-group">
-        <input type="text" name="word" class="form-control search_product_textbox">
+        <input type="text" name="word" class="form-control search_product_textbox" value="<?=isset($_GET['word'])?$_GET['word']:''?>">
         <div class="input-group-btn">
             <button type="submit" class="search_product_btn btn bluebutton">ค้นหา</button>
         </div>
@@ -69,7 +69,7 @@ if(isset($mt_name)){
 //for($z=0;$z<10;$z++){
 foreach($p_data as $p_val){
 ?>
-        <div class="col-xs-4 col-xs-6">
+        <div class="col-xs-4">
             <div class="thumbnail cardshadow">
                 <div style="position: relative" class="limit_img">
                     <img src="<?=base_url()?>productImg/<?=$p_val->img?>">
@@ -110,27 +110,31 @@ foreach($p_data as $p_val){
 <nav class="col-xs-12">
     <ul class="pagination cardshadow">
         <?php
+
+            $word = isset($_GET['word']) ? '&word='.$_GET['word'] : '';
             $getpage = isset($_GET['page']) ? $_GET['page'] : 1;
+
             if($getpage > 1){
         ?>
-        <li><a href="<?= strtok($_SERVER["REQUEST_URI"],'?').'?page='.($getpage-1)?>">&laquo;</a></li>
+        <li><a href="<?= strtok($_SERVER["REQUEST_URI"],'?').'?page='.($getpage-1).$word?>">&laquo;</a></li>
         <?php
             }
             for($i=1;$i<=$dypage;$i++){
         ?>
         <li <?php
-            if(strtok($_SERVER["REQUEST_URI"],'?').'?page='.$i==$_SERVER["REQUEST_URI"]){
+
+            if(strtok($_SERVER["REQUEST_URI"],'?').'?page='.$i.$word==$_SERVER["REQUEST_URI"]){
                 echo'class="active"';
-            }else if($getpage == 1)if($i == 1)echo 'class="active"';
+            }else if($getpage == 1)if($i==1)echo'class="active"';
             else echo'';
         ?>>
-            <a href="<?=strtok($_SERVER["REQUEST_URI"],'?').'?page='.$i?>"><?=$i?></a>
+            <a href="<?=strtok($_SERVER["REQUEST_URI"],'?').'?page='.$i.$word?>"><?=$i?></a>
         </li>
         <?php
             }
             if($getpage<$dypage){
         ?>
-        <li><a href="<?=strtok($_SERVER["REQUEST_URI"],'?').'?page='.($getpage+1)?>">&raquo;</a></li>
+        <li><a href="<?=strtok($_SERVER["REQUEST_URI"],'?').'?page='.($getpage+1).$word?>">&raquo;</a></li>
         <?php
             }
         ?>

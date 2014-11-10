@@ -91,7 +91,7 @@ class ProductModel extends CI_Model{
 
     }
 
-    private $limitpage = 2;
+    private $limitpage = 1;
 
     function fetchproductBySubType($st,$mt,$offset){
 
@@ -107,7 +107,6 @@ class ProductModel extends CI_Model{
             $this->db->where('subtype_product.id',$st);
         }
         $this->db->where('product.sell',true);
-//        $this->db->offset($offset%2==0?$offset:$offset+1);
         $this->db->offset($offset*$this->limitpage);
         $this->db->limit($this->limitpage);
         $this->db->order_by('product.id','DESC');
@@ -135,12 +134,14 @@ class ProductModel extends CI_Model{
 
     }
 
-    function fetchproductByWord($word){
+    function fetchproductByWord($word,$offset){
 
         $this->db->select('*');
         $this->db->from('type_product');
         $this->db->join('product','product.maintype = type_product.id');
         if($word !== "")$this->db->like('product.name',$word);
+        $this->db->offset($offset*$this->limitpage);
+        $this->db->limit($this->limitpage);
         return $this->db->get()->result();
 
     }
@@ -197,8 +198,13 @@ class ProductModel extends CI_Model{
 
     }
 
-    function DYpage(){
-        return $this->db->count_all('product')/$this->limitpage;
+    function DYpage($mt = null,$st = null,$word = null){
+
+        if($mt!=null)$this->db->where('maintype',$mt);
+        if($st!=null)$this->db->where('subtype',$st);
+        if($word!=null)$this->db->like('name',$word);
+        $this->db->from('product');
+        return $this->db->count_all_results()/$this->limitpage;
     }
 
 }

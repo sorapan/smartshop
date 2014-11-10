@@ -16,18 +16,24 @@ class product extends CI_Controller {
         $mt = $this->TypeModel->fetchMainType();
         $productdata = $this->ProductModel->fetchproductBySubType($sub,$main,$offset);
 
-        //index_basket.js
+//        index_basket.js
 
-        $dypage = $this->ProductModel->DYpage();
+        $dypage = $this->ProductModel->DYpage($main,$sub);
+
+//        $dypage = count($productdata);
+//        echo $dypage;
+
+        $dypage = $dypage<=1 ? 0 : $dypage;
 
         $data = array(
             'css' => array(
                 base_url().'asset/css/product_.css'
             ),
-            'dypage' => is_float($dypage) ? number_format($dypage)+1 : number_format($dypage),
+            'dypage' => is_float($dypage)? number_format($dypage)+1 : number_format($dypage),
             'p_data'=> $productdata,
             'mt_data'=> $mt,
         );
+
 
         if($main==null){
             $data['mt_name']="ทั้งหมด";
@@ -73,15 +79,23 @@ class product extends CI_Controller {
 
     function fetchProductWithWord(){
 
+        $offset = isset($_GET['page']) ? $_GET['page']-1 : 0;
+
         if(isset($_GET['word'])){
 
+
             $mt = $this->TypeModel->fetchMainType();
-            $productdata = $this->ProductModel->fetchproductByWord($_GET['word']);
+            $productdata = $this->ProductModel->fetchproductByWord($_GET['word'],$offset);
+
+            $dypage = $this->ProductModel->DYpage(null,null,$_GET['word']);
+            $dypage = $dypage<=1 ? 0 : $dypage;
+
             $data = array(
                 'css' => array(
                     base_url().'asset/css/product_.css'
                 ),
                 'p_data'=>$productdata,
+                'dypage' => is_float($dypage)? number_format($dypage)+1 : number_format($dypage),
                 'mt_data'=>$mt,
             );
 
