@@ -113,28 +113,28 @@ foreach($p_data as $p_val){
 
             $word = isset($_GET['word']) ? '&word='.$_GET['word'] : '';
             $getpage = isset($_GET['page']) ? $_GET['page'] : 1;
-
+            $url_non_param = strtok($_SERVER["REQUEST_URI"],'?');
             if($getpage > 1){
         ?>
-        <li><a href="<?= strtok($_SERVER["REQUEST_URI"],'?').'?page='.($getpage-1).$word?>">&laquo;</a></li>
+        <li><a href="<?=$url_non_param.'?page='.($getpage-1).$word?>">&laquo;</a></li>
         <?php
             }
             for($i=1;$i<=$dypage;$i++){
         ?>
         <li <?php
-
-            if(strtok($_SERVER["REQUEST_URI"],'?').'?page='.$i.$word==$_SERVER["REQUEST_URI"]){
+//            if(strtok($_SERVER["REQUEST_URI"],'?').'?page='.$i.$word==$_SERVER["REQUEST_URI"]){
+            if($getpage == $i){
                 echo'class="active"';
             }else if($getpage == 1)if($i==1)echo'class="active"';
             else echo'';
         ?>>
-            <a href="<?=strtok($_SERVER["REQUEST_URI"],'?').'?page='.$i.$word?>"><?=$i?></a>
+            <a href="<?=$url_non_param.'?page='.$i.$word?>"><?=$i?></a>
         </li>
         <?php
             }
             if($getpage<$dypage){
         ?>
-        <li><a href="<?=strtok($_SERVER["REQUEST_URI"],'?').'?page='.($getpage+1).$word?>">&raquo;</a></li>
+        <li><a href="<?=$url_non_param.'?page='.($getpage+1).$word?>">&raquo;</a></li>
         <?php
             }
         ?>
