@@ -19,7 +19,7 @@ class admin_promotion extends CI_Controller{
     function index($main=null,$sub=null){
 
         $mt = $this->TypeModel->fetchMainType();
-        $productdata = $this->ProductModel->fetchproductBySubType($sub,$main);
+        $productdata = $this->ProductModel->fetchproductBySubType($sub,$main,null);
 
         $data = array(
             'p_data'=>$productdata,

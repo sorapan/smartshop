@@ -41,6 +41,7 @@ class promotion extends CI_Controller{
         $userid = $this->session->userdata('user_id');
 //        $this->BasketModel->clearBasketDataByUserid($userid);
         $promotion_data = $this->PromotionModel->fetchPromotiondataByPromotionID($_POST['promotion_id']);
+        $promotion_list = $this->PromotionModel->fetchPromotionlistByPromotionId($_POST['promotion_id']);
 //        $promotion_count = $this->PromotionModel->countPromotiondataByPromotionID($_POST['promotion_id']);
         foreach($promotion_data as $val){
             $this->BasketModel->addTobasket(array(
@@ -50,7 +51,8 @@ class promotion extends CI_Controller{
                 'price' => '0',
                 'date' => time(),
                 'promotion_id' => $val->promotionid,
-                'promotion_unit' => '1'
+                'promotion_unit' => '1',
+                'promotion_name' => $promotion_list[0]->promotion_name
             ));
         }
     }

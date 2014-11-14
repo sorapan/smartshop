@@ -91,7 +91,7 @@ class ProductModel extends CI_Model{
 
     }
 
-    private $limitpage = 6;
+    private $limitpage = 2;
 
     function fetchproductBySubType($st,$mt,$offset){
 

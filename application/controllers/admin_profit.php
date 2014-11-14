@@ -69,9 +69,11 @@ class admin_profit extends CI_Controller{
             if(date('n',$distint_val->date) == $_POST['month'] && date('Y',$distint_val->date) == $_POST['year']){
 
                     $basket_data_distint[$distinitkey]->product_name = 'โปรโมชั่น : ';
-                    $basket_data_distint[$distinitkey]->product_name .= $this->PromotionModel->fetchPromotionlistByPromotionId($distint_val->promotion_id)[0]->promotion_name;
+//                    $basket_data_distint[$distinitkey]->product_name .= $this->PromotionModel->fetchPromotionlistByPromotionId($distint_val->promotion_id)[0]->promotion_name;
+                    $basket_data_distint[$distinitkey]->product_name .= $basket_data_distint[$distinitkey]->promotion_name;
                     $basket_data_distint[$distinitkey]->price = $this->PromotionModel->fetchPromotionlistByPromotionId($distint_val->promotion_id)[0]->price;
-                    $basket_data_distint[$distinitkey]->unit = $this->BasketModel->getpromotionunit($distint_val->cartID)[0]->unit;
+//                    $basket_data_distint[$distinitkey]->unit = $this->BasketModel->getpromotionunit($distint_val->cartID)[0]->unit;
+                    $basket_data_distint[$distinitkey]->unit = $basket_data_distint[$distinitkey]->promotion_unit;
 
                 $send = true;
             }
