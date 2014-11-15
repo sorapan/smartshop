@@ -52,17 +52,17 @@ CREATE TABLE IF NOT EXISTS `basket` (
   `cartID` tinytext,
   `promotion_id` tinytext,
   `promotion_unit` tinytext,
+  `promotion_name` tinytext,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=84 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table smartshop.basket: ~-1 rows (approximately)
 DELETE FROM `basket`;
 /*!40000 ALTER TABLE `basket` DISABLE KEYS */;
-INSERT INTO `basket` (`id`, `user`, `product_name`, `product`, `unit`, `price`, `date`, `bought`, `cartID`, `promotion_id`, `promotion_unit`) VALUES
-	(78, 2, NULL, '2', '1', '0', '1414618164', 'Y', '1414618171', '16', '1'),
-	(79, 2, NULL, '4', '1', '0', '1414618164', 'Y', '1414618171', '16', '1'),
-	(82, 2, 'mj', '2', '1', '222', '1414831135', 'Y', '1414827703', NULL, NULL),
-	(83, 2, 'ดินสอ', '4', '1', '111', '1414831538', 'Y', '1414831541', NULL, NULL);
+INSERT INTO `basket` (`id`, `user`, `product_name`, `product`, `unit`, `price`, `date`, `bought`, `cartID`, `promotion_id`, `promotion_unit`, `promotion_name`) VALUES
+	(78, 2, NULL, '2', '2', '444', '1415519781', 'Y', '1414618171', '16', '1', 'mj triple pack'),
+	(79, 2, NULL, '4', '1', '0', '1414618164', 'Y', '1414618171', '16', '1', 'mj triple pack'),
+	(83, 2, 'ดินสอ', '4', '1', '111', '1414831538', 'Y', '1414831541', NULL, NULL, NULL);
 /*!40000 ALTER TABLE `basket` ENABLE KEYS */;
 
 
@@ -179,7 +179,7 @@ CREATE TABLE IF NOT EXISTS `message` (
   `class` enum('non-admin','admin') DEFAULT 'non-admin',
   `to` tinytext,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table smartshop.message: ~-1 rows (approximately)
 DELETE FROM `message`;
@@ -207,15 +207,16 @@ CREATE TABLE IF NOT EXISTS `product` (
   `date` tinytext,
   `sell` enum('true','false') DEFAULT 'true',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table smartshop.product: ~-1 rows (approximately)
 DELETE FROM `product`;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
 INSERT INTO `product` (`id`, `productid`, `img`, `name`, `maintype`, `subtype`, `price`, `unit`, `unitnot`, `detail`, `author`, `date`, `sell`) VALUES
-	(2, '0000000002', '0000000002.gif', 'mj', 1, 1, '222', 40, 3, 'dkfmsdf<div>sdf</div><div>sdf</div><div>sd</div><div>f</div><div>sdfsdfsdfsdfsdf</div>', 'admin', '1415465572', 'true'),
+	(2, '0000000002', '0000000002.gif', 'mj', 2, 9, '222', 40, 3, 'dkfmsdf<div>sdf</div><div>sdf</div><div>sd</div><div>f</div><div>sdfsdfsdfsdfsdf</div>', 'admin', '1415526058', 'true'),
 	(4, '0000000004', '0000000004.jpg', 'ดินสอ', 1, 1, '111', 180, 10, 'ดินสอ สีแดง เทพๆ', 'admin', '1415184766', 'true'),
-	(5, '0000000005', '0000000005.jpg', 'บ้องตะลุยอวกาศ', 1, 1, '2000', 200, 5, 'sadsad<div>asd</div><div>as</div><div>das</div><div>d</div><div>asdsadsad</div><div>sad</div>', 'admin', '1415183185', 'true');
+	(5, '0000000005', '0000000005.jpg', 'บ้องตะลุยอวกาศ', 1, 1, '2000', 200, 5, 'sadsad<div>asd</div><div>as</div><div>das</div><div>d</div><div>asdsadsad</div><div>sad</div>', 'admin', '1415183185', 'true'),
+	(6, '0000000006', '0000000006.jpg', 'ดินสอสีเหลือง', 3, 7, '50', 1000, 2, 'ดินสอสีเหลืองเมพๆ<div>ดินสอสีเหลืองเมพๆ<br></div><div>ดินสอสีเหลืองเมพๆ<br></div>', 'admin', '1415545385', 'true');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 
 
@@ -226,13 +227,14 @@ CREATE TABLE IF NOT EXISTS `promotion_list` (
   `price` tinytext NOT NULL,
   `detail` longtext NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table smartshop.promotion_list: ~-1 rows (approximately)
 DELETE FROM `promotion_list`;
 /*!40000 ALTER TABLE `promotion_list` DISABLE KEYS */;
 INSERT INTO `promotion_list` (`id`, `promotion_name`, `price`, `detail`) VALUES
-	(16, 'mj triple pack', '200', 'mj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple packmj triple pack');
+	(16, 'mj triple pack', '200', 'aaaaaaaaaaaaas<div>asdas</div><div>da</div><div>sd</div><div>deeee</div>'),
+	(17, 'qwe', '200', 'qweqweqweqweqweqwe');
 /*!40000 ALTER TABLE `promotion_list` ENABLE KEYS */;
 
 
@@ -243,13 +245,15 @@ CREATE TABLE IF NOT EXISTS `promotion_product` (
   `promotionid` tinytext NOT NULL,
   `unit` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table smartshop.promotion_product: ~-1 rows (approximately)
 DELETE FROM `promotion_product`;
 /*!40000 ALTER TABLE `promotion_product` DISABLE KEYS */;
 INSERT INTO `promotion_product` (`id`, `productid`, `promotionid`, `unit`) VALUES
-	(10, '2', '16', 3);
+	(10, '2', '16', 3),
+	(11, '6', '17', 1),
+	(12, '5', '17', 1);
 /*!40000 ALTER TABLE `promotion_product` ENABLE KEYS */;
 
 
@@ -269,7 +273,6 @@ INSERT INTO `subtype_product` (`id`, `name`, `maintype`) VALUES
 	(2, 'ไอโฟน', 2),
 	(5, 'กล้องกาก', 1),
 	(7, 'samsung', 3),
-	(8, 'valvo', 7),
 	(9, 'เคสกากๆ', 2);
 /*!40000 ALTER TABLE `subtype_product` ENABLE KEYS */;
 
@@ -287,8 +290,7 @@ DELETE FROM `type_product`;
 INSERT INTO `type_product` (`id`, `name`) VALUES
 	(1, 'กล้อง'),
 	(2, 'เคสมือถือ'),
-	(3, 'มือถือ'),
-	(7, 'รถยนต์');
+	(3, 'มือถือ');
 /*!40000 ALTER TABLE `type_product` ENABLE KEYS */;
 
 
@@ -356,7 +358,7 @@ CREATE TABLE IF NOT EXISTS `warranty` (
   `date` tinytext NOT NULL,
   `detail` longtext,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table smartshop.warranty: ~-1 rows (approximately)
 DELETE FROM `warranty`;

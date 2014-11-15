@@ -93,7 +93,7 @@ class ProductModel extends CI_Model{
 
     private $limitpage = 2;
 
-    function fetchproductBySubType($st,$mt,$offset){
+    function fetchproductBySubType($st,$mt,$offset,$all=false){
 
         $this->db->select('*');
         $this->db->from('product');
@@ -108,7 +108,7 @@ class ProductModel extends CI_Model{
         }
         $this->db->where('product.sell',true);
         $this->db->offset($offset*$this->limitpage);
-        $this->db->limit($this->limitpage);
+        if($all==false)$this->db->limit($this->limitpage);
         $this->db->order_by('product.id','DESC');
         return $this->db->get()->result();
 
