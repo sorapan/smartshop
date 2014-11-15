@@ -94,4 +94,15 @@ class PromotionModel extends CI_Model {
 
     }
 
+    /**
+     * @param $promotionid = string of promotion's id;
+     * @param $updates = array only;
+     */
+    function updatePromotionListByPromotionID($promotionid,$updates){
+
+        $this->db->where('id',$promotionid);
+        $this->db->update('promotion_list',$updates);
+
+    }
+
 } 

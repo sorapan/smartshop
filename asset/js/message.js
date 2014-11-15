@@ -1,10 +1,12 @@
 $(function(){
 
-    $(' .sendmessage').click(function(){
+    $(' .sendmessage').click(function(e){
 
+        e.preventDefault();
         var msg = $(this).parent(1).find('.message').val();
         var ind = msg.indexOf(' ');
-        if( ind !== -1){
+
+        if( msg !== ""){
 
             $.ajax({
                 url: $.autoFindDir('message/send').url,
@@ -15,13 +17,20 @@ $(function(){
                 success:function(data){
 
                     alert('ส่งข้อความสำเร็จ');
+
+
+                },
+                complete:function(){
+
                     location.reload();
 
                 }
             });
 
         }else{
-            alert('ข้อความว่างเปล่า');
+
+            alert('ข้อความว่างเปล่า')
+            ;
         }
 
     });

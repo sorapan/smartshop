@@ -84,6 +84,8 @@ $route['admin/deleteImgInStore'] = "admin_productmanage/deleteImgInStore";//p
 $route['admin/updateproduct'] = "admin_productmanage/updateproduct";//p
 $route['admin/buyingtoggle'] = "admin_productmanage/buyingtoggle";//p
 $route['admin/deleteproduct'] = "admin_productmanage/deleteproduct";//p
+$route['admin/fetchpromotiondata'] = "admin_productmanage/fetchpromotion_data";//p
+$route['admin/editproduct'] = "admin_productmanage/edit_product";//p
 
 ///////////////////////////////////// admin_promotion
 

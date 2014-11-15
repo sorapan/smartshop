@@ -27,7 +27,7 @@
                 <td><?=$val->price?></td>
                 <td><?=$val->detail?></td>
                 <td>
-                    <button class="btn bluebutton col-xs-12" data-toggle="modal" data-target="#editpromotion_modal">แก้ไข</button>
+                    <button class="btn bluebutton editpromotion col-xs-12" data-toggle="modal" data-target="#editpromotion_modal">แก้ไข</button>
                     <button class="btn yellowbutton deletepromotion col-xs-12">ลบ</button>
                 </td>
             </tr>
@@ -50,11 +50,35 @@
                 <h4 class="modal-title" id="myModalLabel">แก้ไขโปรโมชั่น</h4>
             </div>
             <div class="modal-body">
-                ...
+
+                <div class="form-horizontal">
+
+                    <div class="form-group">
+                        <div class="col-xs-7 col-md-offset-3">
+                            <p class="hidden editpromotionid"></p>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="form-horizontal">
+
+                    <div class="form-group">
+                        <label class="control-label col-xs-3">รายละเอียด</label>
+                        <div class="col-xs-7">
+                            <div contenteditable="true" class="editdetail form-control" style="height: 120px;overflow-y: scroll"></div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn whitebutton" data-dismiss="modal">Close</button>
-                <button type="button" class="btn bluebutton">Save changes</button>
+                <button type="button" class="btn whitebutton" data-dismiss="modal">ยกเลิก</button>
+                <button type="button" class="btn bluebutton editthispromotion">แก้ไข</button>
             </div>
         </div>
     </div>

@@ -8,6 +8,7 @@ class admin_productmanage extends CI_Controller {
         $this->load->model('ProductModel');
         $this->load->model('TypeModel');
         $this->load->model('BasketModel');
+        $this->load->model('PromotionModel');
 
         if(!$this->session->userdata("login") or $this->session->userdata("class")!="admin"){
             redirect(base_url());
@@ -127,6 +128,20 @@ class admin_productmanage extends CI_Controller {
         }else{
             echo 'not';
         }
+
+    }
+
+    function fetchpromotion_data(){
+
+        echo json_encode($this->PromotionModel->fetchPromotionlistByPromotionId($_POST['promotionid']));
+
+    }
+
+    function edit_product(){
+
+        $this->PromotionModel->updatePromotionListByPromotionID($_POST['id'],array(
+            'detail' => $_POST['detail']
+        ));
 
     }
 

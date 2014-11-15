@@ -29,7 +29,8 @@ class warranty extends CI_Controller{
             'crame_code' => time().$lastid,
             'product_name' => $_POST['productname'],
             'detail' => $_POST['productdetail'],
-            'date' => time()
+            'date' => time(),
+            'customer_name' => $_POST['customername']
         ));
 
     }
