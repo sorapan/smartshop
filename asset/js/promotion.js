@@ -55,4 +55,39 @@ $(function(){
 
     });
 
+    $('.getdetail_inpromotion').click(function(){
+
+
+        var grandpa = $(this).parent();
+        var productid = grandpa.find('.productid').html();
+        var name = grandpa.find('.product_name').html();
+        var price = grandpa.find('.product_price').html();
+        var unit = grandpa.find('.product_unit').html();
+        var img = $(this).parents().eq(1).find('img').attr('src');
+        var detail;
+
+
+        $.ajax({
+            url: $.autoFindDir('basket/productdetail').url,
+            type:'POST',
+            data:{
+                'productid':productid
+            },
+            dataType:'JSON',
+            success:function(data){
+
+                $("#detail_detail").html(data[0]['detail']);
+
+            }
+        });
+
+
+        $("#detail_img").html('<img class="img-responsive" style="width: 500px;" src="'+img+'">');
+        $("#detail_name").html(name);
+        $("#detail_price").html(price+" บาท");
+        $("#detail_unit").html(unit+" ชิ้น");
+//        $("#detail_detail").html(detail);
+
+    });
+
 });
