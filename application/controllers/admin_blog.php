@@ -15,6 +15,8 @@ class admin_blog extends CI_Controller{
 
     function index(){
 
+        $lastdata = $this->BlogModel->selectLastBlogData();
+
         $data = array(
             'js' => array(
                 base_url().'asset/js/admin_blog.js'

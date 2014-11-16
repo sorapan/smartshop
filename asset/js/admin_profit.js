@@ -86,7 +86,8 @@ $(function(){
                             $profitdata.html('');
                             $allsum.html('');
                         }
-                    },complete:function(){
+                    },
+                    complete:function(){
                         $allsum.html(allsumprice+' บาท');
                     }
                 });

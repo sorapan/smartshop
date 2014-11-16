@@ -48,6 +48,10 @@ class admin_profit extends CI_Controller{
 //                        $basket_data_distint[$distinitkey]->unit = $this->BasketModel->getpromotionunit($distint_val->cartID)[0]->unit;
 //                    }
                     $send = true;
+                }else{
+
+                    unset($basket_data_distint[$distinitkey]);
+
                 }
         }
 
@@ -76,6 +80,10 @@ class admin_profit extends CI_Controller{
                     $basket_data_distint[$distinitkey]->unit = $basket_data_distint[$distinitkey]->promotion_unit;
 
                 $send = true;
+            }else{
+
+                unset($basket_data_distint[$distinitkey]);
+
             }
         }
 
