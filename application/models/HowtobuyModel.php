@@ -14,6 +14,14 @@ class HowtobuyModel extends CI_Model{
 
     }
 
+    function updateData($data,$id){
+
+        $this->db->where('id',$id);
+        $this->db->update('howtobuy_blog',$data);
+
+    }
+
+
     function selectAllBlogData(){
 
         $this->db->select('*');

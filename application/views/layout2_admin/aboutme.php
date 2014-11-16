@@ -7,7 +7,7 @@
     <div class="form-group">
         <label class="col-xs-2 control-label">หัวข้อ</label>
         <div class="col-xs-8">
-            <input type="text" class="form-control header">
+            <input type="text" class="form-control header" value="<?=isset($lastdata)?$lastdata[0]->header:''?>">
         </div>
     </div>
 </div>
@@ -24,6 +24,7 @@
 <div class="col-xs-12 margintop cardshadow" style="height: 300px;background-color: white">
     <div class="row">
         <div contenteditable="true" style="outline: none;font-size:0.9em;height: 300px;overflow-y: scroll" class="col-xs-12 content blog_div_content">
+            <?=isset($lastdata)!=null?$lastdata[0]->content:''?>
         </div>
     </div>
 </div>

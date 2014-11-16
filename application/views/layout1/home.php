@@ -1,9 +1,9 @@
 
     <div class="col-xs-12 bigheader">ยินดีต้อนรับ</div>
     <div class="col-xs-12 card">
-            <div class="cardbrand" style="font-size: 3em"><?=$blogdata[0]->header?></div>
+            <div class="cardbrand" style="font-size: 3em"><?=!empty($blogdata)?$blogdata[0]->header:'ยินดีต้อนรับ'?></div>
             <div class="blog_div_content">
-                <?=$blogdata[0]->content?>
+                <?=!empty($blogdata)?$blogdata[0]->content:'ข้อมูลว่างเปล่า'?>
             </div>
     </div>
 

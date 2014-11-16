@@ -16,24 +16,45 @@ class admin_aboutme extends CI_Controller{
 
     function index(){
 
+        $lastdata = $this->AboutmeModel->selectLastBlogData();
+
         $data = array(
             'js' => array(
                 base_url().'asset/js/admin_blog.js',
                 base_url().'asset/js/admin_aboutme.js'
             )
         );
+
+        if(!empty($lastdata))$data['lastdata'] = $lastdata;
+
         $this->load->adminpage('aboutme',$data);
 
     }
 
     function submitContent(){
 
-        $this->AboutmeModel->getData(array(
-            'header' => $_POST['header'],
-            'content' => $_POST['content'],
-            'author' => $this->session->userdata('user_id'),
-            'date' => time()
-        ));
+
+        $lastdata = $this->AboutmeModel->selectLastBlogData();
+
+        if(empty($lastdata)){
+
+            $this->AboutmeModel->getData(array(
+                'header' => $_POST['header'],
+                'content' => $_POST['content'],
+                'author' => $this->session->userdata('user_id'),
+                'date' => time()
+            ));
+
+        }else{
+
+            $this->AboutmeModel->updateData(array(
+                'header' => $_POST['header'],
+                'content' => $_POST['content'],
+                'author' => $this->session->userdata('user_id'),
+                'date' => time()
+            ),$lastdata[0]->id);
+
+        }
 
     }
 

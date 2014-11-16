@@ -14,6 +14,13 @@ class BlogModel extends CI_Model{
 
     }
 
+    function updateData($data,$id){
+
+        $this->db->where('id',$id);
+        $this->db->update('blog',$data);
+
+    }
+
     function selectAllBlogData(){
 
         $this->db->select('*');

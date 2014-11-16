@@ -1,7 +1,7 @@
 <div class="bigheader">วิธีการสั่งซื้อ</div>
 <div class="card">
 
-    <div class="cardbrand"><?=$blogdata[0]->header?></div>
-    <div class="blog_div_content"><?=$blogdata[0]->content?></div>
+    <div class="cardbrand"><?=!empty($blogdata)?$blogdata[0]->header:'ยินดีต้อนรับ'?></div>
+    <div class="blog_div_content"><?=!empty($blogdata)?$blogdata[0]->content:'ข้อมูลว่างเปล่า'?></div>
 
 </div>

@@ -14,6 +14,13 @@ class AboutmeModel extends CI_Model{
 
     }
 
+    function updateData($data,$id){
+
+        $this->db->where('id',$id);
+        $this->db->update('aboutme_blog',$data);
+
+    }
+
     function selectAllBlogData(){
 
         $this->db->select('*');
