@@ -79,13 +79,15 @@ $(function(){
                                     '</tr>');
 
                                 allsumprice += parseInt(data[i]['price']);
-                                $allsum.html(allsumprice+' บาท');
+
 
                             }
                         }else{
                             $profitdata.html('');
                             $allsum.html('');
                         }
+                    },complete:function(){
+                        $allsum.html(allsumprice+' บาท');
                     }
                 });
             }
