@@ -36,6 +36,7 @@ class admin_boughtlist extends CI_Controller {
                 $boughtdata = $bought_list_data[0];
                 $data['wait_listdata'][$w_key]->price = $boughtdata->price;
                 $data['wait_listdata'][$w_key]->send = $boughtdata->sendby;
+                $data['wait_listdata'][$w_key]->address = $boughtdata->address;
             }
 
             $user = $this->UsersModel->fetchUserData($w_val->user)[0];
@@ -62,7 +63,11 @@ class admin_boughtlist extends CI_Controller {
             $data[$key]['productname'] = $this->ProductModel->fetchproductdataByproductId($val->product)[0]->name;
             $data[$key]['unit'] = $val->unit;
             if($val->price != 0) $data[$key]['price'] = $val->price;
-            else @$data[$key]['price'] = 'ราคาโปรโมชั่น : '.$this->PromotionModel->fetchPromotionlistByPromotionId($val->promotion_id)[0]->price;
+            else{
+                @$data[$key]['productname'] = 'โปรโมชั่น : '.$this->PromotionModel->fetchPromotionlistByPromotionId($val->promotion_id)[0]->promotion_name;
+                @$data[$key]['unit'] = '1';
+                @$data[$key]['price'] = 'ราคาโปรโมชั่น : '.$this->PromotionModel->fetchPromotionlistByPromotionId($val->promotion_id)[0]->price;
+            }
 
         }
         echo json_encode($data);

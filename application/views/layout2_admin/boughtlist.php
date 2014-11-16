@@ -13,17 +13,17 @@
 
         ?>
 
-        <table class="table table-bordered table-condensed table-striped">
+        <table  style="font-size: 12px" class="table table-bordered table-striped">
 
             <thead class="bluethead">
                 <tr>
                     <th class="hidden">#</th>
                     <th>ผู้ซื้อ</th>
                     <th>วิธีส่ง</th>
-                    <th>เงินที่ต้องจ่าย</th>
-                    <th>เงินที่ลูกค้าจ่าย</th>
-                    <th>วันที่</th>
-                    <th>เวลา</th>
+                    <th>เงินที่ต้องจ่าย(บาท)</th>
+                    <th>เงินที่ลูกค้าจ่าย(บาท)</th>
+                    <th>ที่อยู่</th>
+                    <th>เวลาโอนเงิน</th>
                     <th>ภาพสลิป</th>
                     <th>การกระทำ</th>
                 </tr>
@@ -43,9 +43,10 @@
                 <td class="hidden userid"><?=$b_val->userid?></td>
                 <td class="hidden cartid"><?=$b_val->cartID?></td>
                 <td><?=$b_val->send=='none' ? 'รับด้วยตัวเอง' : 'ส่ง EMS' ?></td>
-                <td><?=$b_val->price?> บาท</td>
-                <td><?=$b_val->money?> บาท </td>
-                <td><?=date("d.m.Y",$b_val->date)?> </td>
+                <td><?=$b_val->price?></td>
+                <td><?=$b_val->money?></td>
+<!--                <td>date("d.m.Y",$b_val->date)</td>-->
+                <td><?=$b_val->address?></td>
                 <td><?=$b_val->time?> </td>
                 <?php
                 if($b_val->bill_dir !== NULL){
@@ -59,8 +60,8 @@
                 }
                 ?>
                 <td>
-                    <a class="bought_verify badge badge-red">ยืนยันการซื้อ</a>
-                    <a class="basket_detail badge" data-toggle="modal" data-target="#modal_basketdata">รายละเอียด</a>
+                    <a class="bought_verify btn btn-sm bluebutton col-xs-7">ยืนยันการซื้อ</a>
+                    <a class="basket_detail btn btn-sm whitebutton  col-xs-7" data-toggle="modal" data-target="#modal_basketdata">รายละเอียด</a>
                 </td>
             </tr>
 

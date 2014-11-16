@@ -84,13 +84,13 @@
                 if($this->session->userdata('class') == 'user'){
 
                 ?>
-                <button class="btn bluebutton buy_promotion">ซื้อโปรโมชั่น</button>
+                <button class="btn bluebutton buy_promotion">หยิบใส่ตะกร้า</button>
                 <?php
 
                 }else if($this->session->userdata('class') != 'admin'){
 
                 ?>
-                <button class="btn bluebutton buy_promotion_nonmember">ซื้อโปรโมชั่น</button>
+                <button class="btn bluebutton buy_promotion_nonmember">หยิบใส่ตะกร้า</button>
                 <?php
                 }else{
                 ?>

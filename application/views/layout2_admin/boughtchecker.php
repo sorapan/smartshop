@@ -67,7 +67,7 @@
 
                         echo '<button class="btn yellowbutton col-xs-12 delete_boughtlist">ลบ</button>';
 
-                    }else if($bval->cash != null && $bval->verified == 'Y'){
+                    }else if($bval->cash == null && $bval->verified != 'Y'){
 
                         echo '<button class="btn yellowbutton col-xs-12 delete_boughtlist">ลบ</button>';
 
