@@ -128,9 +128,9 @@
 
                 <form class="form-horizontal form-in-modal">
                     <div class="form-group">
-                        <label class="col-xs-4 control-label">มีอยู่จำนวน</label>
+<!--                        <label class="col-xs-4 control-label">มีอยู่จำนวน</label>-->
                         <div class="col-xs-8">
-                            <p class="form-control-static" id="detail_unit"></p>
+<!--                            <p class="form-control-static" id="detail_unit"></p>-->
                         </div>
                     </div>
                     <div class="form-group">

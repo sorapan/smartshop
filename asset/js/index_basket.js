@@ -29,8 +29,8 @@ var non_member_bought = [];
         $("#add_unit").val('1');
         $("#addtobasket_img").html('<img class="img-responsive" style="width: 500px;" src="'+img+'">');
         $("#addtobasket_name").html(name);
-        $("#addtobasket_unit").html(price+" บาท");
-        $("#addtobasket_price").html(unit+" ชิ้น");
+        $("#addtobasket_price").html(price+" บาท");
+//        $("#addtobasket_unit").html(unit+" ชิ้น");
 
     });
 
@@ -64,7 +64,7 @@ var non_member_bought = [];
         $("#detail_img").html('<img class="img-responsive" style="width: 500px;" src="'+img+'">');
         $("#detail_name").html(name);
         $("#detail_price").html(price+" บาท");
-        $("#detail_unit").html(unit+" ชิ้น");
+//        $("#detail_unit").html(unit+" ชิ้น");
 //        $("#detail_detail").html(detail);
 
     });

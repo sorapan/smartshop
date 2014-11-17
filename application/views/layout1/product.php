@@ -78,7 +78,9 @@ foreach($p_data as $p_val){
                 <div class="caption">
                     <h4  class="product_name text-overflow"><?=$p_val->name?></h4>
                     <p>ราคา : <span class="product_price"><?=$p_val->price?></span> บาท</p>
-                    <p>จำนวน : <span class="product_unit"><?=$p_val->unit?></span> ชิ้น</p>
+<!--                    <p>จำนวน : <span class="product_unit">-->
+<!--                    $p_val->unit -->
+                    <!--</span> ชิ้น</p>-->
 
                         <div style="text-align: center" class="col-xs-12">
                             <a href="#" class="btn btn-sm whitebutton getdetail"  data-toggle="modal" data-target="#detailmodal" >ดูรายละเอียด</a>
@@ -162,7 +164,7 @@ foreach($p_data as $p_val){
 
                 <form class="form-horizontal form-in-modal">
                     <div class="form-group">
-                        <label class="col-xs-4 control-label">มีอยู่จำนวน</label>
+<!--                        <label class="col-xs-4 control-label">มีอยู่จำนวน</label>-->
                         <div class="col-xs-8">
                             <p class="form-control-static" id="addtobasket_unit"></p>
                         </div>
@@ -229,7 +231,7 @@ foreach($p_data as $p_val){
 
                 <form class="form-horizontal form-in-modal">
                     <div class="form-group">
-                        <label class="col-xs-4 control-label">มีอยู่จำนวน</label>
+<!--                        <label class="col-xs-4 control-label">มีอยู่จำนวน</label>-->
                         <div class="col-xs-8">
                             <p class="form-control-static" id="detail_unit"></p>
                         </div>
