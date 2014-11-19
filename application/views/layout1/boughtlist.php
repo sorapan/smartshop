@@ -120,15 +120,21 @@
                     <td><?=$b_val->money?> บาท </td>
                     <td>
                     <?php
+
                     if($b_val->bill_dir !== NULL){
-                        ?>
+
+                    ?>
                         <a class="bill_img" data-toggle="modal" data-target="#myModal" www='bill_img/<?=$b_val->bill_dir?>'>คลิ๊ก</a>
                     <?php
+
                     }else{
+
                     ?>
                         <p>ไม่มีข้อมูล</p>
                     <?php
+
                     }
+
                     ?>
                     </td>
                     <td>

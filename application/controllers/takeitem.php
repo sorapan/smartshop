@@ -156,7 +156,7 @@ class takeitem  extends CI_Controller{
                 $basket = $this->Wait_listModel->fetchData()[0]->id;
 
                 $img_name = $basket.".".$extension;
-                move_uploaded_file($_FILES['bill_file']['tmp_name'],"../peter/bill_img/".$img_name);
+                move_uploaded_file($_FILES['bill_file']['tmp_name'],"bill_img/".$img_name);
                 $this->Wait_listModel->updateWaitList(array(
                     'bill_dir' => $basket.".".$extension
                 ),$basket);
