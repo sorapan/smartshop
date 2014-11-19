@@ -91,17 +91,30 @@ class takeitem  extends CI_Controller{
 
     function bought_it(){
 
+        echo 'fuck';
+
         $type_address = $_POST['type_address'];
+
         $address = $_POST['address'];
         $price = $_POST['price'];
         $sendby = $_POST['sendby'];
+        $user_realname = $_POST['user_realname'];
+        $tel = $_POST['tel'];
+        $province = $_POST['province'];
+        $zipcode =  $_POST['zipcode'];
 
         if($type_address == 'profile_address'){
 
-            $address = $this->UsersModel->fetchUserData($this->session->userdata('user_id'))[0]->address;
+            $userdata = $this->UsersModel->fetchUserData($this->session->userdata('user_id'));
+            $user_realname = $userdata[0]->realname."  ".$userdata[0]->lastname;
+            $tel = $userdata[0]->tel;
+            $province = $userdata[0]->province;
+            $zipcode = $userdata[0]->zipcode;
+            $address = $userdata[0]->address;
 
         }
 
+        // minus product unit
         $basket_data = $this->BasketModel->fetchBasketDataByuserId2($this->session->userdata('user_id'));
         foreach($basket_data as $basket_val){
 
@@ -112,8 +125,13 @@ class takeitem  extends CI_Controller{
 
         }
 
+
         $this->Bought_listModel->insertData(array(
             'price' => $price,
+            'user_realname' => $user_realname,
+            'province' => $province,
+            'zipcode' => $zipcode,
+            'tel' => $tel,
             'address' => $address,
             'sendby' => $sendby,
             'date' => time(),
@@ -122,11 +140,6 @@ class takeitem  extends CI_Controller{
 
         $this->UsersModel->updateBuyStatusToWaiting($this->session->userdata('user_id'));
         $this->session->set_userdata('buy_status','wait');
-
-//        $this->BasketModel->updateCartID(
-//            $this->session->userdata('user_id'),
-//            $this->Bought_listModel->selectDataByUserID($this->session->userdata('user_id'))[0]->date
-//        );
 
         $this->sendEmail('takeitem');
 

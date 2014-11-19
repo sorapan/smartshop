@@ -1,6 +1,6 @@
 $(function(){
 
-    var $all_price = $('#all_price');
+    var $all_price = $('.all_price');
     var $itemprice = $('#item_price');
     var radio_val = parseInt($('input[name=howtosend]:checked').val());
 
@@ -14,7 +14,7 @@ $(function(){
 //===================================================================
 
     $(document).on('click','input[name=address]',function(){
-        var $newaddress = $('#new_address');
+        var $newaddress = $('.lockinput');
         $newaddress.val('');
         if($(this).val() == 'new_addresss'){
             $newaddress.prop("disabled",false);
@@ -80,34 +80,76 @@ $(function(){
     $(document).on('click','#buy_it_now',function(e){
 
         e.preventDefault();
+        var user_realname = $('.user_realname').val();
+        var tel = $('.tel').val();
+        var province = $('.province').val();
+        var zipcode = $('.zipcode').val();
         var type_address = $('input[name=address]:checked').val();
-        var address = $('#new_address').val();
-        var price = $('#all_price').html();
+        var address = $('.new_address').val();
+        var price = $('.all_price').html();
         var sendby = $('input[name=howtosend]:checked').val();
-        sendby == 100 ? sendby = 'ems' : sendby = 'none';
+        sendby = sendby == 100 ? 'ems' : 'none' ;
 
-        $.ajax({
-            url:$.autoFindDir('takeitem/boughtit').url,
-            type:'POST',
-            data:{
-                'type_address':type_address,
-                'address':address,
-                'price':price,
-                'sendby':sendby
-            },
-//            dataType:'JSON',
-            success:function(data){
+            if(
+                type_address == "new_addresss" &&
+                user_realname != "" &&
+                tel != "" &&
+                province != "" &&
+                zipcode != "" &&
+                address != "" &&
+                price != ""
+            ){
 
-//               location = $.autoFindDir('takeitem/takebasket').url;
+                $.ajax({
+                    url:$.autoFindDir('takeitem/boughtit').url,
+                    type:'POST',
+                    data:{
+                        type_address:type_address,
+                        user_realname:user_realname,
+                        tel:tel,
+                        province:province,
+                        zipcode:zipcode,
+                        address:address,
+                        price:price,
+                        sendby:sendby
+                    },
+                    success:function(data){
 
-//                console.log(data);
-                location.reload();
+        //               location = $.autoFindDir('takeitem/takebasket').url;
+        //               console.log(data);
 
+                        location.reload();
 
+                    }
+                });
 
+            }else if( type_address == "profile_address"){
+
+                $.ajax({
+                    url:$.autoFindDir('takeitem/boughtit').url,
+                    type:'POST',
+                    data:{
+                        type_address:type_address,
+                        user_realname:user_realname,
+                        tel:tel,
+                        province:province,
+                        zipcode:zipcode,
+                        address:address,
+                        price:price,
+                        sendby:sendby
+                    },
+                    success:function(data){
+
+                        location.reload();
+
+                    }
+                });
+
+            }else{
+
+                alert('กรอกข้อมูลไม่ครบถ้วน');
 
             }
-        });
 
 
     });
