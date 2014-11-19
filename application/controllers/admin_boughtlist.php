@@ -58,6 +58,12 @@ class admin_boughtlist extends CI_Controller {
     function basket_detail(){
 
         $dataWasBought = $this->BasketModel->fetchBasketBoughtDataByuserId($_POST['userid'],$_POST['cartid']);
+
+        $data['user_realname'] = $this->Bought_listModel->selectDataByUserID($_POST['userid'])[0]->user_realname;
+        $data['province'] = $this->Bought_listModel->selectDataByUserID($_POST['userid'])[0]->province;
+        $data['address'] = $this->Bought_listModel->selectDataByUserID($_POST['userid'])[0]->address;
+        $data['zipcode'] = $this->Bought_listModel->selectDataByUserID($_POST['userid'])[0]->zipcode;
+        $data['tel'] = $this->Bought_listModel->selectDataByUserID($_POST['userid'])[0]->tel;
         foreach($dataWasBought as $key => $val){
 
             $data[$key]['productname'] = $this->ProductModel->fetchproductdataByproductId($val->product)[0]->name;

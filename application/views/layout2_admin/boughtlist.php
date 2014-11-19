@@ -22,7 +22,7 @@
                     <th>วิธีส่ง</th>
                     <th>เงินที่ต้องจ่าย(บาท)</th>
                     <th>เงินที่ลูกค้าจ่าย(บาท)</th>
-                    <th>ที่อยู่</th>
+<!--                    <th>ที่อยู่</th>-->
                     <th>เวลาโอนเงิน</th>
                     <th>ภาพสลิป</th>
                     <th>การกระทำ</th>
@@ -46,7 +46,7 @@
                 <td><?=$b_val->price?></td>
                 <td><?=$b_val->money?></td>
 <!--                <td>date("d.m.Y",$b_val->date)</td>-->
-                <td><?=$b_val->address?></td>
+<!--                <td>$b_val->address</td>-->
                 <td><?=$b_val->time?> </td>
                 <?php
                 if($b_val->bill_dir !== NULL){
@@ -60,8 +60,8 @@
                 }
                 ?>
                 <td>
-                    <a class="bought_verify btn btn-sm bluebutton col-xs-7">ยืนยันการซื้อ</a>
-                    <a class="basket_detail btn btn-sm whitebutton  col-xs-7" data-toggle="modal" data-target="#modal_basketdata">รายละเอียด</a>
+                    <a class="bought_verify btn btn-sm bluebutton col-xs-12">ยืนยันการซื้อ</a>
+                    <a class="basket_detail btn btn-sm whitebutton  col-xs-12" data-toggle="modal" data-target="#modal_basketdata">รายละเอียด</a>
                 </td>
             </tr>
 
