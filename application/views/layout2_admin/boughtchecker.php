@@ -22,6 +22,7 @@
                 <td class="boughtlist_id"><?=$bval->id?></td>
                 <td><?=$bval->username?></td>
                 <td class="hidden user_id"><?=$bval->user?></td>
+                <td class="hidden cart_id"><?=$bval->date?></td>
                 <td><?=$bval->price?></td>
                 <td><?=$bval->sendby == 'none'? 'รับด้วยตัวเอง' : 'ส่ง EMS' ?></td>
                 <td><?php
@@ -73,6 +74,9 @@
 
                     }
                 ?>
+
+                    <button class="btn bluebutton col-xs-12 basket_detail" data-toggle="modal" data-target="#modal_basketdata">ดูรายละเอียด</button>
+
                 </td>
             </tr>
         <?php
@@ -80,4 +84,25 @@
         ?>
         </tbody>
     </table>
+</div>
+
+<!--===============================-->
+
+<div class="modal" id="modal_basketdata" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="addtobasket_name">รายชื่อสินค้า</h4>
+            </div>
+
+            <div class="modal-body">
+            </div>
+
+            <!--            <div class="modal-footer"></div>-->
+
+        </div>
+    </div>
 </div>
