@@ -167,6 +167,7 @@ class BasketModel extends CI_Model{
         $this->db->select('*');
         $this->db->where('user',$userid);
         $this->db->group_by('date');
+        $this->db->where('bought','N');
         return $this->db->get('basket')->result();
 
     }
