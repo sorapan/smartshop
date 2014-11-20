@@ -73,7 +73,7 @@ class admin_promotion extends CI_Controller{
 
     function fetchproductbyword(){
 
-        echo json_encode($this->ProductModel->fetchproductByWord($_POST['word']));
+        echo json_encode($this->ProductModel->fetchproductByWord2($_POST['word']));
 
     }
 

@@ -146,6 +146,18 @@ class ProductModel extends CI_Model{
 
     }
 
+    function fetchproductByWord2($word,$offset=null){
+
+        $this->db->select('*');
+        $this->db->from('type_product');
+        $this->db->join('product','product.maintype = type_product.id');
+        if($word !== "")$this->db->like('product.name',$word);
+        if($offset!=null)$this->db->offset($offset*$this->limitpage);
+        if($offset!=null)$this->db->limit($this->limitpage);
+        return $this->db->get()->result();
+
+    }
+
     function updateProductData($productid,$unit){
 
         $this->db->where('id',$productid);
