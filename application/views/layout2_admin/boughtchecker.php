@@ -23,6 +23,7 @@
                 <td><?=$bval->username?></td>
                 <td class="hidden user_id"><?=$bval->user?></td>
                 <td class="hidden cart_id"><?=$bval->date?></td>
+                <td class="hidden bill_img"><?=$bval->cash_img?></td>
                 <td><?=$bval->price?></td>
                 <td><?=$bval->sendby == 'none'? 'รับด้วยตัวเอง' : 'ส่ง EMS' ?></td>
                 <td><?php

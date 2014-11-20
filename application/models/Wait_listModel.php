@@ -10,6 +10,12 @@ class Wait_listModel extends CI_Model{
         $this->db->insert('wait_list',$data);
     }
 
+    function deleteBycartid($cartid){
+        $this->db->delete('wait_list',array(
+            'cartID' => $cartid
+        ));
+    }
+
     function updateWaitList($data,$wait_list_id){
         $this->db->where('id',$wait_list_id);
         $this->db->update('wait_list',$data);

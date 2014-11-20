@@ -24,7 +24,9 @@ class admin_boughtchecker extends CI_Controller{
         foreach($boughtlistdata as $key=>$val){
 
             @$waitlistidcashchecked = $this->Wait_listModel->selectByWaitlistID($val->wait_list_id)[0]->id;
+            @$waitlistidcashchecked_img = $this->Wait_listModel->selectByWaitlistID($val->wait_list_id)[0]->bill_dir;
             $boughtlistdata[$key]->cash = isset($waitlistidcashchecked) ? $waitlistidcashchecked : null ;
+            $boughtlistdata[$key]->cash_img = isset($waitlistidcashchecked_img) ? $waitlistidcashchecked_img : null ;
             $boughtlistdata[$key]->username = $this->UsersModel->fetchUserData($val->user)[0]->username;
 
         }
@@ -35,6 +37,7 @@ class admin_boughtchecker extends CI_Controller{
                 base_url().'asset/js/admin_boughtchecker.js'
             )
         );
+
         $this->load->adminpage('boughtchecker',$data);
 
     }
@@ -43,7 +46,10 @@ class admin_boughtchecker extends CI_Controller{
 
         $boughtlist_id = $_POST['boughtlist_id'];
         $user_id = $_POST['user_id'];
+        $cart_id = $_POST['cart_id'];
         $this->Bought_listModel->deleteByID($boughtlist_id);
+        $this->Wait_listModel->deleteBycartid($cart_id);
+        @unlink('bill_img/'.$_POST['bill_img']);
         foreach($this->BasketModel->fetchBasketDataByuserId($user_id) as $val){
 
             $productmodel = $this->ProductModel->fetchproductdataByproductId($val->product);

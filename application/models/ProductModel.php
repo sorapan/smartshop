@@ -95,7 +95,7 @@ class ProductModel extends CI_Model{
 
     function fetchproductBySubType($st,$mt,$offset,$all=false){
 
-        $this->db->select('product.name,product.price,product.id,product.img');
+        $this->db->select('product.name,product.price,product.id,product.img,product.unit');
         $this->db->from('product');
         if($mt==null){
             //do nothing

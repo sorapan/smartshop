@@ -6,17 +6,21 @@ $(function(){
 
             var boughtlist_id = $(this).parents().eq(1).find('.boughtlist_id').html();
             var user_id = $(this).parents().eq(1).find('.user_id').html();
+            var cart_id = $(this).parents().eq(1).find('.cart_id').html();
+            var bill_img = $(this).parents().eq(1).find('.bill_img').html();
 
             $.ajax({
                 url: $.autoFindDir('admin/deleteboughtlist').url,
                 type:'POST',
                 data:{
                     boughtlist_id:boughtlist_id,
-                    user_id:user_id
+                    user_id:user_id,
+                    cart_id:cart_id,
+                    bill_img:bill_img
                 },
                 success:function(data){
 
-                    location.reload();
+//                    location.reload();
 
                 }
             });
