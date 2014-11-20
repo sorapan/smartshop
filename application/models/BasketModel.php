@@ -162,6 +162,17 @@ class BasketModel extends CI_Model{
 
     }
 
+    function fetchBasketBoughtDataByuserId2($userid,$cartID){
+
+        $this->db->select('*');
+        $this->db->where('user',$userid);
+        $this->db->where('cartID',$cartID);
+        $this->db->where('bought','Y');
+        $this->db->group_by('date');
+        return $this->db->get('basket')->result();
+
+    }
+
     function fetchdataJoinproductTable($userid){
 
         $this->db->select('product.id,basket.user,product.name,basket.unit,basket.price,basket.promotion_id,basket.date');

@@ -33,6 +33,19 @@ class Bought_listModel  extends CI_Model{
 
     }
 
+    function selectDataByUserID2($userid,$date,$wait_list_id = null){
+
+        $this->db->select('*');
+        $this->db->where('user',$userid);
+        $this->db->where('date',$date);
+        if($wait_list_id != null)$this->db->where('wait_list_id',$wait_list_id);
+//        $this->db->where('wait_list_id',null);
+        $this->db->order_by('id','DESC');
+        $this->db->limit(1);
+        return $this->db->get('bought_list')->result();
+
+    }
+
     function selectLastDataByUserID($userid){
 
         $this->db->select('*');

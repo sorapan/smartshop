@@ -91,7 +91,7 @@ class takeitem  extends CI_Controller{
 
     function bought_it(){
 
-        echo 'fuck';
+//        echo 'fuck';
 
         $type_address = $_POST['type_address'];
 
@@ -124,7 +124,6 @@ class takeitem  extends CI_Controller{
             $this->ProductModel->updateProductData2($productid, $productunit-$basket_val->unit );
 
         }
-
 
         $this->Bought_listModel->insertData(array(
             'price' => $price,
