@@ -28,7 +28,7 @@ var non_member_bought = [];
 
         $("#add_unit").val('1');
         $("#addtobasket_img").html('<img class="img-responsive" style="width:auto;margin:0 auto" src="'+img+'">');
-        $("#addtobasket_name").html(name);
+        $("#addtobasket_name").html('หยิบสินค้า : '+name);
         $("#addtobasket_name2").html(name);
         $("#addtobasket_price").html(price+" บาท");
 //        $("#addtobasket_unit").html(unit+" ชิ้น");

@@ -73,12 +73,12 @@
 
                     <form class="form-horizontal">
 
-                        <div class="form-group">
+<!--                        <div class="form-group">-->
 <!--                            <label class="col-xs-4 control-label">มีอยู่จำนวน</label>-->
-                            <div class="col-xs-8">
-                                <p class="form-control-static" id="addtobasket_unit"></p>
-                            </div>
-                        </div>
+<!--                            <div class="col-xs-8">-->
+<!--                                <p class="form-control-static" id="addtobasket_unit"></p>-->
+<!--                            </div>-->
+<!--                        </div>-->
 
                         <div class="form-group">
                             <label class="col-xs-4 control-label">ชื่อสินค้า</label>
@@ -103,6 +103,7 @@
 
                 </div>
                 <div class="modal-footer">
+                    <hr>
                     <button type="button" class="btn whitebutton" data-dismiss="modal">ปิด</button>
                     <?php
 

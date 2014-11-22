@@ -163,12 +163,12 @@ foreach($p_data as $p_val){
 <!--                </div>-->
 
                 <form class="form-horizontal form-in-modal">
-                    <div class="form-group">
+<!--                    <div class="form-group">-->
 <!--                        <label class="col-xs-4 control-label">มีอยู่จำนวน</label>-->
-                        <div class="col-xs-8">
-                            <p class="form-control-static" id="addtobasket_unit"></p>
-                        </div>
-                    </div>
+<!--                        <div class="col-xs-8">-->
+<!--                            <p class="form-control-static" id="addtobasket_unit"></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
 
                     <div class="form-group">
                         <label class="col-xs-4 control-label">ชื่อสินค้า</label>
@@ -193,6 +193,7 @@ foreach($p_data as $p_val){
 
             </div>
             <div class="modal-footer">
+                <hr>
                 <button type="button" class="btn whitebutton" data-dismiss="modal">ปิด</button>
                 <?php
 

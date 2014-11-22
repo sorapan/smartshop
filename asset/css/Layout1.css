@@ -117,6 +117,19 @@ li{
 
 /*////////////////vvv MY LAYOUT vvv///////////////////*/
 
+.breadcrumb.arrow>li{
+    color: #BABABA;
+    font-weight: bold;
+}
+
+.breadcrumb.arrow>li + li:before {
+    content:'  >> ';
+ }
+
+.breadcrumb.arrow>li.active{
+    color:#4cabda;
+}
+
 .container{
     /*width: 100% !important;*/
     min-width: 1280px !important;

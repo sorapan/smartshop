@@ -1,9 +1,20 @@
 
 <div class="col-md-12 bigheader">รายการที่สั่งซื้อแล้ว</div>
+
+<div class="col-xs-12 card marginbot">
+    <div class="cardbrand">ขั้นตอน</div>
+    <ol class="breadcrumb arrow">
+        <li>หยิบสินค้าใส่ตะกร้า</li>
+        <li>ยืนยันการซื้อ</li>
+        <li class="active">ยืนยันการโอนเงิน</li>
+        <li>รอการตรวจสอบจากแอดมิน</li>
+    </ol>
+</div>
+
 <div class="col-md-12 card">
 
     <div class="cardbrand">
-        <center>รายการ</center>
+        รายการ
     </div>
 
     <div class="col-md-10 col-md-offset-1 margintop">
@@ -16,7 +27,7 @@
                         <div class="col-xs-4"><?= $b_v->name?></div>
                         <div style="display:none" class="item_id col-xs-4"><?= $b_v->id?></div>
                         <div class="col-xs-4"><?= $b_v->unit." ชิ้น"?></div>
-                        <div class="col-xs-4"><?= $b_v->price." บาท"?></div>
+                        <div class="col-xs-4"><?= number_format($b_v->price)." บาท"?></div>
                     </div>
                 </li>
 
@@ -42,9 +53,10 @@
 
 <!--        <div class="text-info margintop">--><?//= $sendby == 'none' ? 'รับด้วยตนเอง' : 'ส่งไปรษณีย์ EMS'?><!--</div>-->
         <div class="text-info bought_id hidden"><?= $boughtid ?></div>
-        <div style='text-align: right;' class=" col-xs-12 marginbot"><h4>ราคารวมทั้งหมด <span style="text-decoration: underline;color:red"><?=$all_price?></span> บาท</h4></div>
+        <div style='text-align: right;' class=" col-xs-12 marginbot"><h4>ราคารวมทั้งหมด <span style="text-decoration: underline;color:red"><?=number_format($all_price)?></span> บาท</h4></div>
 
-        <button class="col-xs-offset-5 col-xs-2 btn yellowbutton bought_cancel">ยกเลิกการซื้อ</button>
+        <button class="col-xs-offset-2 col-xs-4 btn bought_back whitebutton" style="margin-right: 5px">ย้อนไปหน้ายืนยันการซื้อ</button>
+        <button class="col-xs-4 btn yellowbutton bought_cancel">ยกเลิกการซื้อ</button>
 
     </div>
 

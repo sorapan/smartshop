@@ -1,14 +1,25 @@
 
 
-<div class="col-md-12 bigheader">รายการสั่งซื้อ</div>
-<div class="col-md-12 card">
+<div class="col-xs-12 bigheader">รายการสั่งซื้อ</div>
+
+<div class="col-xs-12 card marginbot">
+    <div class="cardbrand">ขั้นตอน</div>
+    <ol class="breadcrumb arrow">
+        <li>หยิบสินค้าใส่ตะกร้า</li>
+        <li class="active">ยืนยันการซื้อ</li>
+        <li>ยืนยันการโอนเงิน</li>
+        <li>รอการตรวจสอบจากแอดมิน</li>
+    </ol>
+</div>
+
+<div class="col-xs-12 card ">
 
     <?php
     if(!empty($basket_data)){
     ?>
 
     <div class="cardbrand">รายการ</div>
-    <div class="col-md-10 col-md-offset-1">
+    <div class="col-xs-10 col-xs-offset-1">
         <ul class="list-group list_data">
 
             <?php
@@ -67,21 +78,21 @@
     <div class="form-horizontal">
 
         <div class="form-group">
-            <label class="col-md-4 control-label">สินค้าราคารวม : </label>
-            <div class="col-md-4">
+            <label class="col-xs-4 control-label">สินค้าราคารวม : </label>
+            <div class="col-xs-4">
                 <p class="form-control-static"><span id="item_price"><?=$all_price?></span> บาท</p>
             </div>
         </div>
 
         <div class="form-group">
-            <label class="col-md-4 control-label">เลือกวิธีรับสินค้า : </label>
-            <div style="text-align: left" class="col-md-8 control-label">
+            <label class="col-xs-4 control-label">เลือกวิธีรับสินค้า : </label>
+            <div style="text-align: left" class="col-xs-8 control-label">
                 <label>
                     <input type="radio" name="howtosend" value="0" checked>
                     <span class="howtosend_message">รับสินค้าด้วยตนเอง ( ไม่มีค่าใช้จ่ายเพิ่มเติม )</span>
                 </label>
             </div>
-            <div style="text-align: left" class="col-md-8 col-md-offset-4 control-label">
+            <div style="text-align: left" class="col-xs-8 col-xs-offset-4 control-label">
                 <label>
                     <input type="radio" name="howtosend" value="100">
                     <span class="howtosend_message">ส่งทางไปรษณีย์ EMS ( ค่าบริการ 100 บาททุกกรณี )</span>
@@ -90,14 +101,14 @@
         </div>
 
         <div class="form-group">
-            <label class="col-md-4 control-label">ที่อยู่ : </label>
-            <div style="text-align: left" class="col-md-8 control-label">
+            <label class="col-xs-4 control-label">ที่อยู่ : </label>
+            <div style="text-align: left" class="col-xs-8 control-label">
                 <label>
                     <input type="radio" name="address" value="profile_address" checked>
                     <span>ที่อยู่ตามที่กรอกไว้ใน Profile</span>
                 </label>
             </div>
-            <div style="text-align: left" class="col-md-8 col-md-offset-4 control-label">
+            <div style="text-align: left" class="col-xs-8 col-xs-offset-4 control-label">
                 <label>
                     <input type="radio" name="address" value="new_addresss">
                     <span>ที่อยู่ใหม่</span>
@@ -225,15 +236,15 @@
         <hr>
 
         <div class="form-group">
-            <label class="col-md-4 control-label">ราคารวมทั้งหมด : </label>
-            <div class="col-md-4">
+            <label class="col-xs-4 control-label">ราคารวมทั้งหมด : </label>
+            <div class="col-xs-4">
                 <p class="form-control-static"><span class="all_price"></span> บาท</p>
             </div>
         </div>
 
     </div>
-<!--    <a href="--><?//=base_url()?><!--takeitem/takebasket" style="width: 150px" class="col-md-offset-9 btn bluebutton margintop">สั่งซื้อ</a>-->
-    <a id="buy_it_now" style="width: 150px" class="col-md-offset-9 btn bluebutton margintop">สั่งซื้อ</a>
+<!--    <a href="--><?//=base_url()?><!--takeitem/takebasket" style="width: 150px" class="col-xs-offset-9 btn bluebutton margintop">สั่งซื้อ</a>-->
+    <a id="buy_it_now" style="width: 150px" class="col-xs-offset-9 btn bluebutton margintop">สั่งซื้อ</a>
 
     <?php
     }else{
