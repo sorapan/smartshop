@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be7b91bc-05d1-4566-bfcf-12fbe6c918e6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/BasketModel.php" afterPath="$PROJECT_DIR$/application/models/BasketModel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asset/js/admin_boughtchecker.js" afterPath="$PROJECT_DIR$/asset/js/admin_boughtchecker.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asset/css/Layout1.css" afterPath="$PROJECT_DIR$/asset/css/Layout1.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/layout1/home.php" afterPath="$PROJECT_DIR$/application/views/layout1/home.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asset/js/index_basket.js" afterPath="$PROJECT_DIR$/asset/js/index_basket.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/layout1/product.php" afterPath="$PROJECT_DIR$/application/views/layout1/product.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="peter.iws" />
@@ -27,33 +29,45 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="admin_boughtlist.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/admin_boughtlist.php">
+      <file leaf-file-name="Layout1.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/asset/css/Layout1.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="74" selection-start="1926" selection-end="1955" vertical-scroll-proportion="-5.0" vertical-offset="932" max-vertical-offset="1602">
+            <state line="112" column="14" selection-start="1771" selection-end="1771" vertical-scroll-proportion="0.0" vertical-offset="1692" max-vertical-offset="9522">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin_boughtchecker.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/asset/js/admin_boughtchecker.js">
+      <file leaf-file-name="home.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/layout1/home.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="0" selection-start="832" selection-end="832" vertical-scroll-proportion="0.41930115" vertical-offset="162" max-vertical-offset="1620">
+            <state line="82" column="12" selection-start="3530" selection-end="3859" vertical-scroll-proportion="-13.115385" vertical-offset="1135" max-vertical-offset="3330">
               <folding>
-                <marker date="1416508750076" expanded="false" signature="1799:1829" placeholder="..." />
-                <marker date="1416508750076" expanded="false" signature="2139:2156" placeholder="..." />
-                <marker date="1416508750076" expanded="false" signature="2268:2290" placeholder="..." />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BasketModel.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/models/BasketModel.php">
+      <file leaf-file-name="product.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/layout1/product.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="169" column="36" selection-start="4112" selection-end="4112" vertical-scroll-proportion="-14.076923" vertical-offset="2676" max-vertical-offset="4194">
-              <folding />
+            <state line="160" column="0" selection-start="5302" selection-end="5475" vertical-scroll-proportion="0.28" vertical-offset="2719" max-vertical-offset="4950">
+              <folding>
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#div#6;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index_basket.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/asset/js/index_basket.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="31" column="29" selection-start="909" selection-end="926" vertical-scroll-proportion="0.0" vertical-offset="756" max-vertical-offset="5616">
+              <folding>
+                <marker date="1416646931738" expanded="true" signature="810:834" placeholder="..." />
+                <marker date="1416646931738" expanded="true" signature="1860:1884" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -73,7 +87,6 @@
       <list>
         <option value="$PROJECT_DIR$/application/controllers/admin_product.php" />
         <option value="$PROJECT_DIR$/asset/js/admin_promotion.js" />
-        <option value="$PROJECT_DIR$/asset/css/Layout1.css" />
         <option value="$PROJECT_DIR$/application/views/layout1/regisform.php" />
         <option value="$PROJECT_DIR$/application/controllers/register.php" />
         <option value="$PROJECT_DIR$/application/views/layout1/takeitem_takebasket.php" />
@@ -103,15 +116,12 @@
         <option value="$PROJECT_DIR$/application/controllers/admin_howtobuy.php" />
         <option value="$PROJECT_DIR$/application/views/layout1/howtobuy.php" />
         <option value="$PROJECT_DIR$/application/views/layout1/aboutme.php" />
-        <option value="$PROJECT_DIR$/asset/js/index_basket.js" />
-        <option value="$PROJECT_DIR$/application/views/layout1/home.php" />
         <option value="$PROJECT_DIR$/application/views/layout1/promotion.php" />
         <option value="$PROJECT_DIR$/application/views/layout1/boughtlist.php" />
         <option value="$PROJECT_DIR$/asset/js/takeitem_.js" />
         <option value="$PROJECT_DIR$/application/views/layout1/takeitem.php" />
         <option value="$PROJECT_DIR$/application/views/layout2_admin/boughtlist.php" />
         <option value="$PROJECT_DIR$/asset/js/admin_boughtlist.js" />
-        <option value="$PROJECT_DIR$/application/views/layout1/product.php" />
         <option value="$PROJECT_DIR$/application/controllers/takeitem.php" />
         <option value="$PROJECT_DIR$/application/models/Bought_listModel.php" />
         <option value="$PROJECT_DIR$/application/controllers/admin_boughtlist.php" />
@@ -122,6 +132,10 @@
         <option value="$PROJECT_DIR$/application/controllers/admin_promotion.php" />
         <option value="$PROJECT_DIR$/application/models/BasketModel.php" />
         <option value="$PROJECT_DIR$/asset/js/admin_boughtchecker.js" />
+        <option value="$PROJECT_DIR$/asset/js/index_basket.js" />
+        <option value="$PROJECT_DIR$/asset/css/Layout1.css" />
+        <option value="$PROJECT_DIR$/application/views/layout1/home.php" />
+        <option value="$PROJECT_DIR$/application/views/layout1/product.php" />
       </list>
     </option>
   </component>
@@ -129,7 +143,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1378" />
+    <option name="width" value="1382" />
     <option name="height" value="754" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -158,7 +172,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -219,6 +232,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="asset" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="peter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="peter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="application" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -259,7 +290,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="layout2_admin" />
+              <option name="myItemId" value="layout1" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -319,6 +350,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -372,7 +404,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1378" height="754" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -380,7 +412,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21666667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22280967" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -412,16 +444,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/controllers/admin_productmanage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="153" column="0" selection-start="4418" selection-end="4418" vertical-scroll-proportion="0.83985764" vertical-offset="2282" max-vertical-offset="2880" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/layout1/0init.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="81" selection-start="1764" selection-end="1764" vertical-scroll-proportion="-0.7513043" vertical-offset="1458" max-vertical-offset="5256" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/asset/js/promotion.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="63" column="48" selection-start="1802" selection-end="1815" vertical-scroll-proportion="0.34109816" vertical-offset="929" max-vertical-offset="1764" />
@@ -542,16 +564,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="575" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/asset/js/index_basket.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="30" selection-start="968" selection-end="968" vertical-scroll-proportion="0.8685524" vertical-offset="54" max-vertical-offset="5598" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/layout1/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="144" column="50" selection-start="5990" selection-end="5990" vertical-scroll-proportion="0.6573913" vertical-offset="2214" max-vertical-offset="3186" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/boughtlist.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.8647687" vertical-offset="486" max-vertical-offset="1080" />
@@ -602,11 +614,6 @@
         <state line="16" column="65" selection-start="439" selection-end="460" vertical-scroll-proportion="0.0" vertical-offset="288" max-vertical-offset="2016" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/layout1/product.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="71" selection-start="2459" selection-end="2459" vertical-scroll-proportion="0.0" vertical-offset="1117" max-vertical-offset="4806" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/takeitem.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="125" column="9" selection-start="4265" selection-end="4265" vertical-scroll-proportion="0.29537368" vertical-offset="2084" max-vertical-offset="6084" />
@@ -619,74 +626,96 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/layout2_admin/boughtchecker.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="42" selection-start="910" selection-end="918" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="2052">
-          <folding />
-        </state>
+        <state line="25" column="42" selection-start="910" selection-end="918" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="2052" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/models/Wait_listModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="43" selection-start="379" selection-end="379" vertical-scroll-proportion="0.55516016" vertical-offset="12" max-vertical-offset="2484">
-          <folding />
-        </state>
+        <state line="18" column="43" selection-start="379" selection-end="379" vertical-scroll-proportion="0.55516016" vertical-offset="12" max-vertical-offset="2484" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/models/ProductModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="148" column="32" selection-start="4193" selection-end="4212" vertical-scroll-proportion="0.43652174" vertical-offset="2413" max-vertical-offset="4086">
-          <folding />
-        </state>
+        <state line="148" column="32" selection-start="4193" selection-end="4212" vertical-scroll-proportion="0.43652174" vertical-offset="2413" max-vertical-offset="4086" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/config/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="8" selection-start="3890" selection-end="3890" vertical-scroll-proportion="0.36347827" vertical-offset="1465" max-vertical-offset="4086">
-          <folding />
-        </state>
+        <state line="93" column="8" selection-start="3890" selection-end="3890" vertical-scroll-proportion="0.36347827" vertical-offset="1465" max-vertical-offset="4086" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/admin_promotion.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="65" selection-start="2551" selection-end="2551" vertical-scroll-proportion="0.37565216" vertical-offset="1134" max-vertical-offset="2160">
-          <folding />
-        </state>
+        <state line="75" column="65" selection-start="2551" selection-end="2551" vertical-scroll-proportion="0.37565216" vertical-offset="1134" max-vertical-offset="2160" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/layout2_admin/createpromotion.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="30" selection-start="1047" selection-end="1047" vertical-scroll-proportion="0.37565216" vertical-offset="486" max-vertical-offset="3024">
-          <folding />
-        </state>
+        <state line="39" column="30" selection-start="1047" selection-end="1047" vertical-scroll-proportion="0.37565216" vertical-offset="486" max-vertical-offset="3024" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/admin_boughtchecker.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="45" selection-start="1697" selection-end="1711" vertical-scroll-proportion="-20.076923" vertical-offset="378" max-vertical-offset="1224">
-          <folding />
-        </state>
+        <state line="50" column="45" selection-start="1697" selection-end="1711" vertical-scroll-proportion="-20.076923" vertical-offset="378" max-vertical-offset="1224" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/admin_boughtlist.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="74" selection-start="1926" selection-end="1955" vertical-scroll-proportion="-5.0" vertical-offset="932" max-vertical-offset="1602">
-          <folding />
-        </state>
+        <state line="59" column="74" selection-start="1926" selection-end="1955" vertical-scroll-proportion="-5.0" vertical-offset="932" max-vertical-offset="1602" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/models/BasketModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="169" column="36" selection-start="4112" selection-end="4112" vertical-scroll-proportion="-14.076923" vertical-offset="2676" max-vertical-offset="4194">
-          <folding />
-        </state>
+        <state line="169" column="36" selection-start="4112" selection-end="4112" vertical-scroll-proportion="0.65124553" vertical-offset="2676" max-vertical-offset="4194" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/asset/js/admin_boughtchecker.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="832" selection-end="832" vertical-scroll-proportion="0.41930115" vertical-offset="162" max-vertical-offset="1620">
+        <state line="23" column="0" selection-start="832" selection-end="832" vertical-scroll-proportion="0.41930115" vertical-offset="162" max-vertical-offset="1620" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/js/index_publicMethod.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3024">
           <folding>
-            <marker date="1416508750076" expanded="false" signature="1799:1829" placeholder="..." />
-            <marker date="1416508750076" expanded="false" signature="2139:2156" placeholder="..." />
-            <marker date="1416508750076" expanded="false" signature="2268:2290" placeholder="..." />
+            <marker date="1414656629119" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1414656629119" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1414656629119" expanded="false" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/js/index_basket.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="29" selection-start="909" selection-end="926" vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="5616">
+          <folding>
+            <marker date="1416646931738" expanded="true" signature="810:834" placeholder="..." />
+            <marker date="1416646931738" expanded="true" signature="1860:1884" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/css/Layout1.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="112" column="14" selection-start="1771" selection-end="1771" vertical-scroll-proportion="0.0" vertical-offset="1692" max-vertical-offset="9522">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/layout1/home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="12" selection-start="3530" selection-end="3859" vertical-scroll-proportion="-13.115385" vertical-offset="1135" max-vertical-offset="3330">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/layout1/product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="160" column="0" selection-start="5302" selection-end="5475" vertical-scroll-proportion="0.28" vertical-offset="2719" max-vertical-offset="4950">
+          <folding>
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#div#6;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

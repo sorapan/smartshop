@@ -158,9 +158,9 @@ foreach($p_data as $p_val){
             <div class="modal-body">
 
 
-                <div class="col-xs-12 marginbot">
-                    <div id="addtobasket_img" class="col-xs-10 col-xs-offset-1"></div>
-                </div>
+<!--                <div class="col-xs-12 marginbot">-->
+<!--                    <div id="addtobasket_img" class="col-xs-10 col-xs-offset-1"></div>-->
+<!--                </div>-->
 
                 <form class="form-horizontal form-in-modal">
                     <div class="form-group">
@@ -169,6 +169,14 @@ foreach($p_data as $p_val){
                             <p class="form-control-static" id="addtobasket_unit"></p>
                         </div>
                     </div>
+
+                    <div class="form-group">
+                        <label class="col-xs-4 control-label">ชื่อสินค้า</label>
+                        <div class="col-xs-8">
+                            <p class="form-control-static" id="addtobasket_name2"></p>
+                        </div>
+                    </div>
+
                     <div class="form-group">
                         <label class="col-xs-4 control-label">ราคา</label>
                         <div class="col-xs-8">
@@ -244,8 +252,8 @@ foreach($p_data as $p_val){
                     </div>
                     <div class="form-group">
                         <label class="col-xs-4 control-label">รายละเอียด</label>
-                        <div class="col-xs-8">
-                            <p style="max-height: 250px;overflow-y: scroll;padding: 5px;word-break:break-all; border:1px solid #4cabda; line-height: 18px"  class="form-control-static" id="detail_detail"></p>
+                        <div class="col-xs-8 col-xs-offset-3 margintop">
+                            <p style="min-height: 150px;padding: 5px;word-break:break-all; border:1px solid #4cabda; line-height: 18px"  class="form-control-static" id="detail_detail"></p>
                         </div>
                     </div>
 

@@ -101,6 +101,19 @@ li{
     color:white;
 }
 
+#addtobasket_img, #addtobasket_img>img{
+    height: 300px;
+}
+
+#addtobasket_img>img{
+    width: auto;
+}
+
+#detail_img, #detail_img>img{
+    height: 320px;
+}
+
+
 
 /*////////////////vvv MY LAYOUT vvv///////////////////*/
 
