@@ -21,6 +21,17 @@ class BasketModel extends CI_Model{
 
     }
 
+    function selectProductDataByUserid($productid,$userid){
+
+        $this->db->select('*');
+        $this->db->where('product',$productid);
+        $this->db->where('user',$userid);
+        $this->db->where('bought','N');
+        return $this->db->get('basket')->result();
+
+
+    }
+
     function selectDistintbyproductidOnlyproduct(){
 
         $this->db->distinct();

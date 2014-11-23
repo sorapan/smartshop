@@ -182,6 +182,7 @@ $route['basket/deleteiteminbasketnonmember'] = "basket/delete_item_in_basket_non
 $route['basket/deleteiteminbasketpromotionnonmember'] = "basket/delete_item_in_basket_promotion_nonmember";
 $route['basket/checknonmemberbought'] = "basket/check_non_member_bought";
 $route['basket/productdetail'] = "basket/product_detail";
+$route['basket/productinbasketdetail'] = "basket/product_inbasket_detail";
 
 
 $route['takeitem'] = "takeitem/index";

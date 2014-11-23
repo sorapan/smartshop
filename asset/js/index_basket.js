@@ -14,6 +14,7 @@ var non_member_bought = [];
 
         var grandpa = $(this).parents().eq(2);
         var productid = grandpa.find('.productid').html();
+        var userid = grandpa.find('.userid').html();
         var name = grandpa.find('.product_name').html();
         var price = grandpa.find('.product_price').html();
         var unit = grandpa.find('.product_unit').html();
@@ -26,11 +27,27 @@ var non_member_bought = [];
           'unit' : unit
         };
 
+        $.ajax({
+            url: $.autoFindDir('basket/productinbasketdetail').url,
+            type:'POST',
+            data:{
+                productid:productid,
+                userid:userid
+            },
+            dataType:'JSON',
+            success:function(data){
+
+                var inbasketunit = data.length>0?data[0]['unit']:0;
+                $("#init_unit").html(inbasketunit);
+
+            }
+        });
+
         $("#add_unit").val('1');
         $("#addtobasket_img").html('<img class="img-responsive" style="width:auto;margin:0 auto" src="'+img+'">');
         $("#addtobasket_name").html('หยิบสินค้า : '+name);
         $("#addtobasket_name2").html(name);
-        $("#addtobasket_price").html(price+" บาท");
+        $("#addtobasket_price").html($.addcommas_number(price)+" บาท");
 //        $("#addtobasket_unit").html(unit+" ชิ้น");
 
     });
@@ -64,7 +81,7 @@ var non_member_bought = [];
 
         $("#detail_img").html('<img class="img-responsive" style="width:auto;margin:0 auto" src="'+img+'">');
         $("#detail_name").html(name);
-        $("#detail_price").html(price+" บาท");
+        $("#detail_price").html($.addcommas_number(price)+" บาท");
 //        $("#detail_unit").html(unit+" ชิ้น");
 //        $("#detail_detail").html(detail);
 

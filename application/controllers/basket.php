@@ -229,4 +229,10 @@ class basket extends CI_Controller {
 
     }
 
+    function product_inbasket_detail(){
+
+        echo json_encode($this->BasketModel->selectProductDataByUserid($_POST['productid'],$_POST['userid']));
+
+    }
+
 } 

@@ -33,7 +33,7 @@
                             <h4 class="media-heading"><?=$pv->name.' จำนวน <span style="color:red;">'.$val->unit.'</span> ชิ้น '?></h4>
                             <p class="hidden productid"><?=$pv->id?></p>
                             <p class="hidden product_name"><?=$pv->name?></p>
-                            <p class="hidden product_price"><?=$pv->price?></p>
+                            <p class="hidden product_price"><?=number_format($pv->price)?></p>
                             <p class="hidden product_unit"><?=$pv->unit?></p>
                             <a class="getdetail_inpromotion" data-toggle="modal" data-target="#detailmodal" >ดูรายละเอียด</a>
                         </div>

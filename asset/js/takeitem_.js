@@ -4,11 +4,11 @@ $(function(){
     var $itemprice = $('#item_price');
     var radio_val = parseInt($('input[name=howtosend]:checked').val());
 
-    $all_price.html(radio_val+ parseInt($itemprice.html()));
+    $all_price.html($.addcommas_number(radio_val+ parseInt($itemprice.html())));
     $(document).on('click','input[name=howtosend]',function(){
         var $item_price = parseInt($('#item_price').html());
         radio_val = parseInt($(this).val());
-        $all_price.html($item_price+radio_val);
+        $all_price.html($.addcommas_number($item_price+radio_val));
     });
 
 //===================================================================
