@@ -49,7 +49,7 @@
                 }
 
             ?>
-                    <div class="col-xs-2"><?= $b_v->price." บาท"?></div>
+                    <div class="col-xs-3"><?=number_format($b_v->price)." บาท"?></div>
             <?php
 
             if($b_v->promotion_id == null){
@@ -80,7 +80,8 @@
         <div class="form-group">
             <label class="col-xs-4 control-label">สินค้าราคารวม : </label>
             <div class="col-xs-4">
-                <p class="form-control-static"><span id="item_price"><?=$all_price?></span> บาท</p>
+                <p class="form-control-static"><span><?=number_format($all_price)?></span> บาท</p>
+                <span class="hidden" id="item_price"><?=$all_price?></span>
             </div>
         </div>
 

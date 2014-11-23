@@ -52,4 +52,27 @@ $(function(){
 
     });
 
+    $('.bought_back').click(function(){
+
+        if(confirm('ต้องการย้อนกลับ ใช่หรือไม่?')){
+
+            var bought_id = $(this).parent().find('.bought_id').html();
+
+            $.ajax({
+                url: $.autoFindDir('takeitem/boughtback').url,
+                type:'POST',
+                data:{
+                    boughtlist_id:bought_id
+                },
+                success:function(data){
+
+                    location = 'http://'+$.autoFindDir('takeitem/boughtcancel').baseurl;
+
+                }
+            });
+
+        }
+
+    });
+
 });

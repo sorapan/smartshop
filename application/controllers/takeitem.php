@@ -281,6 +281,17 @@ class takeitem  extends CI_Controller{
         $this->sendEmail('boughtcancel');
         $this->session->set_userdata('buy_status','none');
 
+    }
+
+    function bought_back(){
+
+        $boughtlist_id = $_POST['boughtlist_id'];
+        $user_id = $this->session->userdata('user_id');
+        $this->Bought_listModel->deleteByID($boughtlist_id);
+        $this->UsersModel->updateBuyStatusToNone($user_id);
+
+        $this->sendEmail('boughtcancel');
+        $this->session->set_userdata('buy_status','none');
 
     }
 
@@ -315,6 +326,16 @@ class takeitem  extends CI_Controller{
 
             case 'boughtcancel':
                 $subject = 'คุณ '.$this->session->userdata("username").' ได้ยกเลิกการซื้อสินค้าแล้ว';
+                $message = '
+                <p>
+                ตรวจสอบรายละเอียดที่
+                <a href="http://localhost/peter/admin/boughtchecker">'.base_url().'admin/boughtchecker</a>
+                </p>
+                ';
+                break;
+
+            case 'boughtback':
+                $subject = 'คุณ '.$this->session->userdata("username").' ได้ยกเลิกเพื่อแก้ไขการซื้อสินค้า';
                 $message = '
                 <p>
                 ตรวจสอบรายละเอียดที่
