@@ -53,7 +53,7 @@
 
 <!--        <div class="text-info margintop">--><?//= $sendby == 'none' ? 'รับด้วยตนเอง' : 'ส่งไปรษณีย์ EMS'?><!--</div>-->
         <div class="text-info bought_id hidden"><?= $boughtid ?></div>
-        <div style='text-align: right;' class=" col-xs-12 marginbot"><h4>ราคารวมทั้งหมด <span style="text-decoration: underline;color:red"><?=number_format($all_price)?></span> บาท</h4></div>
+        <div style='text-align: right;' class=" col-xs-12 marginbot"><h4>ราคารวมทั้งหมด <span style="text-decoration: underline;color:red"><?=$all_price?></span> บาท</h4></div>
 
         <button class="col-xs-offset-2 col-xs-4 btn bought_back whitebutton" style="margin-right: 5px">ย้อนไปหน้ายืนยันการซื้อ</button>
         <button class="col-xs-4 btn yellowbutton bought_cancel">ยกเลิกการซื้อ</button>

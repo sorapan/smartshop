@@ -39,7 +39,7 @@ class takeitem  extends CI_Controller{
                 $promotion = $this->PromotionModel->fetchPromotionlistByPromotionId($val->promotion_id);
                 $inbasket[$key]->name = 'โปรโมชั่น:'.$promotion[0]->promotion_name;
                 $inbasket[$key]->price = $promotion[0]->price;
-                $inbasket[$key]->unit = $promotion[0]->price;
+                $inbasket[$key]->unit = '1';
 
             }
 

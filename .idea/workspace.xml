@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be7b91bc-05d1-4566-bfcf-12fbe6c918e6" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\xampp\htdocs\peter\asset\img\qq.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\peter\asset\img\soong.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\peter\asset\img\ss-old.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\peter\asset\img\ss.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\peter\asset\img\ss2_full4.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\peter\asset\img\ss_new_fav.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\peter\asset\img\sslogo.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/layout1/0init.php" afterPath="$PROJECT_DIR$/application/views/layout1/0init.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/layout2_admin/0init.php" afterPath="$PROJECT_DIR$/application/views/layout2_admin/0init.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/layout1/message.php" afterPath="$PROJECT_DIR$/application/views/layout1/message.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asset/img/sc1.svg" afterPath="$PROJECT_DIR$/asset/img/sc1.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/takeitem.php" afterPath="$PROJECT_DIR$/application/controllers/takeitem.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/layout1/takeitem_takebasket.php" afterPath="$PROJECT_DIR$/application/views/layout1/takeitem_takebasket.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="peter.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,21 +26,7 @@
     <favorites_list name="peter" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="0init.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/views/layout2_admin/0init.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="0" selection-start="1640" selection-end="1640" vertical-scroll-proportion="0.43826088" vertical-offset="756" max-vertical-offset="3150">
-              <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -95,8 +73,6 @@
         <option value="$PROJECT_DIR$/application/controllers/admin_promotion.php" />
         <option value="$PROJECT_DIR$/asset/js/admin_boughtchecker.js" />
         <option value="$PROJECT_DIR$/asset/css/Layout1.css" />
-        <option value="$PROJECT_DIR$/application/views/layout1/takeitem_takebasket.php" />
-        <option value="$PROJECT_DIR$/application/controllers/takeitem.php" />
         <option value="$PROJECT_DIR$/asset/js/takeitem_takebasket.js" />
         <option value="$PROJECT_DIR$/application/views/layout1/takeitem.php" />
         <option value="$PROJECT_DIR$/asset/js/index_publicMethod.js" />
@@ -112,6 +88,8 @@
         <option value="$PROJECT_DIR$/application/views/layout1/0init.php" />
         <option value="$PROJECT_DIR$/application/views/layout1/message.php" />
         <option value="$PROJECT_DIR$/application/views/layout2_admin/0init.php" />
+        <option value="$PROJECT_DIR$/application/controllers/takeitem.php" />
+        <option value="$PROJECT_DIR$/application/views/layout1/takeitem_takebasket.php" />
       </list>
     </option>
   </component>
@@ -177,56 +155,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="asset" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="peter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="peter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asset" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="peter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="peter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asset" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="peter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="peter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="application" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -246,28 +174,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="peter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="peter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout2_admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -307,43 +213,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="peter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="peter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="peter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="peter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -402,15 +272,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22885196" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22885196" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -606,11 +476,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/takeitem.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="337" column="105" selection-start="11685" selection-end="11685" vertical-scroll-proportion="-14.0" vertical-offset="5702" max-vertical-offset="6462" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/asset/js/takeitem_takebasket.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="56" column="35" selection-start="1592" selection-end="1592" vertical-scroll-proportion="0.0" vertical-offset="731" max-vertical-offset="1494" />
@@ -619,11 +484,6 @@
     <entry file="file://$PROJECT_DIR$/application/views/layout1/takeitem.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="83" column="35" selection-start="2244" selection-end="2244" vertical-scroll-proportion="0.6869565" vertical-offset="1099" max-vertical-offset="4770" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/layout1/takeitem_takebasket.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="63" selection-start="1946" selection-end="1957" vertical-scroll-proportion="0.56347823" vertical-offset="702" max-vertical-offset="2502" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/asset/js/takeitem_.js">
@@ -738,6 +598,22 @@
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/takeitem.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="124" selection-start="2074" selection-end="2125" vertical-scroll-proportion="0.8327402" vertical-offset="702" max-vertical-offset="6462">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/layout1/takeitem_takebasket.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="135" selection-start="2014" selection-end="2014" vertical-scroll-proportion="0.76868325" vertical-offset="594" max-vertical-offset="2502">
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#2;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
