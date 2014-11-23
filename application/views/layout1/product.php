@@ -262,8 +262,8 @@ foreach($p_data as $p_val){
                     </div>
                     <div class="form-group">
                         <label class="col-xs-4 control-label">รายละเอียด</label>
-                        <div class="col-xs-8 col-xs-offset-3 margintop">
-                            <p style="min-height: 150px;padding: 5px;word-break:break-all; border:1px solid #4cabda; line-height: 18px"  class="form-control-static" id="detail_detail"></p>
+                        <div class="col-xs-10 col-xs-offset-1 margintop">
+                            <p style="min-height: 150px;padding: 5px;word-break:break-all; background-color: #e0e0e0; line-height: 18px"  class="form-control-static" id="detail_detail"></p>
                         </div>
                     </div>
 

@@ -112,7 +112,7 @@
 <!--modal-->
 
 
-<div class="modal fade" id="detailmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal" id="detailmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
 
@@ -128,7 +128,7 @@
 
                 <form class="form-horizontal form-in-modal">
                     <div class="form-group">
-<!--                        <label class="col-xs-4 control-label">มีอยู่จำนวน</label>-->
+                        <!--                        <label class="col-xs-4 control-label">มีอยู่จำนวน</label>-->
                         <div class="col-xs-8">
 <!--                            <p class="form-control-static" id="detail_unit"></p>-->
                         </div>
@@ -141,8 +141,8 @@
                     </div>
                     <div class="form-group">
                         <label class="col-xs-4 control-label">รายละเอียด</label>
-                        <div class="col-xs-8">
-                            <p style="max-height: 250px;overflow-y: scroll;padding: 5px;word-break:break-all; border:1px solid #4cabda; line-height: 18px"  class="form-control-static" id="detail_detail"></p>
+                        <div class="col-xs-10 col-xs-offset-1 margintop">
+                            <p style="min-height: 150px;padding: 5px;word-break:break-all; background-color: #e0e0e0; line-height: 18px"  class="form-control-static" id="detail_detail"></p>
                         </div>
                     </div>
 
