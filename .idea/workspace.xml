@@ -2,11 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be7b91bc-05d1-4566-bfcf-12fbe6c918e6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/layout1/home.php" afterPath="$PROJECT_DIR$/application/views/layout1/home.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/layout1/product.php" afterPath="$PROJECT_DIR$/application/views/layout1/product.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asset/js/promotion.js" afterPath="$PROJECT_DIR$/asset/js/promotion.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/layout1/promotion.php" afterPath="$PROJECT_DIR$/application/views/layout1/promotion.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\peter\asset\img\qq.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\peter\asset\img\soong.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\peter\asset\img\ss-old.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\peter\asset\img\ss.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\peter\asset\img\ss2_full4.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\peter\asset\img\ss_new_fav.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\peter\asset\img\sslogo.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/layout1/0init.php" afterPath="$PROJECT_DIR$/application/views/layout1/0init.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/layout2_admin/0init.php" afterPath="$PROJECT_DIR$/application/views/layout2_admin/0init.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/layout1/message.php" afterPath="$PROJECT_DIR$/application/views/layout1/message.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asset/img/sc1.svg" afterPath="$PROJECT_DIR$/asset/img/sc1.svg" />
     </list>
     <ignored path="peter.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,7 +34,21 @@
     <favorites_list name="peter" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="0init.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/layout2_admin/0init.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="56" column="0" selection-start="1640" selection-end="1640" vertical-scroll-proportion="0.43826088" vertical-offset="756" max-vertical-offset="3150">
+              <folding>
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -41,9 +61,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/application/views/layout1/regisform.php" />
-        <option value="$PROJECT_DIR$/application/controllers/register.php" />
-        <option value="$PROJECT_DIR$/application/views/layout2_admin/createpromotion.php" />
         <option value="$PROJECT_DIR$/application/controllers/product.php" />
         <option value="$PROJECT_DIR$/application/controllers/promotion.php" />
         <option value="$PROJECT_DIR$/application/controllers/warranty.php" />
@@ -92,6 +109,9 @@
         <option value="$PROJECT_DIR$/application/views/layout1/home.php" />
         <option value="$PROJECT_DIR$/application/views/layout1/promotion.php" />
         <option value="$PROJECT_DIR$/asset/js/promotion.js" />
+        <option value="$PROJECT_DIR$/application/views/layout1/0init.php" />
+        <option value="$PROJECT_DIR$/application/views/layout1/message.php" />
+        <option value="$PROJECT_DIR$/application/views/layout2_admin/0init.php" />
       </list>
     </option>
   </component>
@@ -247,6 +267,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="layout2_admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="peter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="peter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="layout1" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -361,14 +403,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22885196" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22885196" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -400,31 +442,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/asset/js/admin_blog.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="187" column="0" selection-start="4064" selection-end="4064" vertical-scroll-proportion="0.0" vertical-offset="1739" max-vertical-offset="3474" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asset/js/admin_profit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="23" selection-start="539" selection-end="544" vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="1908" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/layout2_admin/profit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="22" selection-start="1215" selection-end="1215" vertical-scroll-proportion="-18.692308" vertical-offset="0" max-vertical-offset="1170" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/admin_profit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="9" selection-start="2365" selection-end="2365" vertical-scroll-proportion="0.5124555" vertical-offset="702" max-vertical-offset="1854" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/howtobuy.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="601" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/asset/js/admin_aboutme.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="62" selection-start="95" selection-end="121" vertical-scroll-proportion="0.11980033" vertical-offset="0" max-vertical-offset="601" />
@@ -682,6 +699,45 @@
         <state line="88" column="43" selection-start="2608" selection-end="2608" vertical-scroll-proportion="0.8202995" vertical-offset="1091" max-vertical-offset="1764">
           <folding>
             <marker date="1416741211269" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/layout1/0init.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="127" column="74" selection-start="4848" selection-end="4848" vertical-scroll-proportion="0.5947826" vertical-offset="1944" max-vertical-offset="5256">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/layout2_admin/message.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.8452174" vertical-offset="486" max-vertical-offset="2142">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/layout1/sendmsgtoadmin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="575">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/layout1/message.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="0" selection-start="1255" selection-end="1255" vertical-scroll-proportion="0.49913043" vertical-offset="523" max-vertical-offset="1098">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/layout2_admin/0init.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="0" selection-start="1640" selection-end="1640" vertical-scroll-proportion="0.43826088" vertical-offset="756" max-vertical-offset="3150">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

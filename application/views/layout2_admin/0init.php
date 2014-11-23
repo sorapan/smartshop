@@ -52,7 +52,7 @@ function js($js){
 
 <header class="col-xs-12 min1300">
     <img style="margin-left:1%;width: 200px" src="<?=base_url()?>asset/img/sc1.svg">
-    <span class="right" style="font-size: 0.8em"> : ADMIN</span>
+    <span class="right" style="font-size: 0.7em"> : ADMIN</span>
 </header>
 
 <div class="container" style="padding-bottom: 140px">
