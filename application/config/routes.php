@@ -215,6 +215,8 @@ $route['download/downloadfile/(:any)'] = "download/downloadfile/$1";
 
 $route['message'] = "message/index";
 $route['message/send'] = "message/sendmessage";
+$route['message/checkunread'] = "message/checkmessageunread";
+$route['message/readtrigger'] = "message/readedTrigger";
 
 $route['welcome'] = "welcome";
 $route['404_override'] = '';

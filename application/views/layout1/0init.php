@@ -113,6 +113,7 @@ function js($js){
                     ?>
 
                     <li class="cardbrand">คุณ <?=$this->session->userdata('username')?></li>
+                    <li class="hidden username"><?=$this->session->userdata('username')?></li>
                     <li>
                         <p>ระดับ : <?=$this->session->userdata('class')?></p>
                         <ul class="nav navnav">
@@ -127,7 +128,7 @@ function js($js){
                                 <li><a href="<?=base_url()?>boughtlist">ติดตามรายการสั่งซื้อ</a></li>
                                 <li>
                                     <a href="<?=base_url()?>message">
-                                        ข้อความ <span class="badge badge-alrt">4</span>
+                                        ข้อความ <span class="msgbox_button"></span>
                                     </a>
                                 </li>
                             <?php

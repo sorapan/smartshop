@@ -95,12 +95,12 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label class="col-xs-4 control-label" for="add_unit" >จำนวนที่อยู่ในตะกร้า </label>
-                            <div class="col-xs-4">
-                                <p  class=" form-control-static" id="init_unit"></p>
-                            </div>
-                        </div>
+<!--                        <div class="form-group">-->
+<!--                            <label class="col-xs-4 control-label" for="add_unit" >จำนวนที่อยู่ในตะกร้า </label>-->
+<!--                            <div class="col-xs-4">-->
+<!--                                <p  class=" form-control-static" id="init_unit"></p>-->
+<!--                            </div>-->
+<!--                        </div>-->
 
                         <div class="form-group">
                             <label class="col-xs-4 control-label" for="add_unit" >จำนวน </label>

@@ -25,4 +25,7 @@ $(function(){
         return url;
     }
 
+    $.unreadMessageChecker();
+
+
 });

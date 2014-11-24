@@ -6,6 +6,7 @@ class message extends CI_Controller{
 
         parent::__construct();
         $this->load->model('MessageModel');
+        $this->load->model('UsersModel');
 
     }
 
@@ -48,6 +49,20 @@ class message extends CI_Controller{
                 ';
 
         mail($mailtos, $subject, $message, $header);
+
+    }
+
+    function checkmessageunread(){
+
+        $userdata = $this->UsersModel->fetchUSerDataByUsername($_POST['username'])[0];
+        echo $this->MessageModel->fetchmessageUnreadByUserid($userdata->id);
+
+    }
+
+    function readedTrigger(){
+
+        $userdata = $this->UsersModel->fetchUSerDataByUsername($_POST['username'])[0];
+        $this->MessageModel->updateReaded($userdata->id);
 
     }
 

@@ -161,6 +161,35 @@
 
     $.addcommas_number = function(x){
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    }
+    };
+
+    var username = $('.username').html();
+
+    $.unreadMessageChecker = function(){
+
+        $.ajax({
+
+            url:$.autoFindDir('message/checkunread').url,
+            type:'POST',
+            data:{
+                username : username
+            },
+            success:function(data){
+
+                $('.msgbox_button').html('');
+                if(data>0&&data<10)$('.msgbox_button').html('<span class="badge badge-alrt">'+data+'</span>');
+                else if(data>=10&&data<50){
+                    data = data%10;
+                    data = data+'0';
+                    $('.msgbox_button').html('<span class="badge badge-alrt">'+data+'+</span>');
+                }else if(data>=50){
+                    $('.msgbox_button').html('<span class="badge badge-alrt">50+</span>');
+                }
+
+            }
+
+        });
+
+    };
 
 }(jQuery));

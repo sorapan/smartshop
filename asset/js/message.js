@@ -29,10 +29,30 @@ $(function(){
 
         }else{
 
-            alert('ข้อความว่างเปล่า')
-            ;
+            alert('ข้อความว่างเปล่า');
+
         }
 
     });
+
+    var username = $('.username').html();
+    readedTrigger();
+
+    function readedTrigger(){
+
+        $.ajax({
+            url: $.autoFindDir('message/readtrigger').url,
+            type:'POST',
+            data:{
+                username:username
+            },
+            success:function(){
+
+                $.unreadMessageChecker();
+
+            }
+        });
+
+    }
 
 });
