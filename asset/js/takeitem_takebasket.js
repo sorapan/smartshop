@@ -66,7 +66,7 @@ $(function(){
                 },
                 success:function(data){
 
-                    location = 'http://'+$.autoFindDir('takeitem/boughtcancel').baseurl;
+                    location.reload();
 
                 }
             });

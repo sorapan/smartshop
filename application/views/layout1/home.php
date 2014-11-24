@@ -25,7 +25,7 @@
                     <div style="display:none" class="userid"><?=$this->session->userdata('user_id')?></div>
                     <div class="caption">
                         <h4  class="product_name text-overflow"><?=$p_val->name?></h4>
-                        <p>ราคา : <span class="product_price"><?=number_format($p_val->price)?></span> บาท</p>
+                        <p>ราคา : <span  style="font-size:20px;color:red" class="product_price"><?=number_format($p_val->price)?></span> บาท</p>
 <!--                        <p>จำนวน : <span class="product_unit">-->
 <!--                                $p_val->unit-->
 <!--                            </span> ชิ้น</p>-->
@@ -91,7 +91,7 @@
                         <div class="form-group">
                             <label class="col-xs-4 control-label">ราคา</label>
                             <div class="col-xs-8">
-                                <p class="form-control-static" id="addtobasket_price"></p>
+                                <p style="font-size:20px;color:red" class="form-control-static" id="addtobasket_price"></p>
                             </div>
                         </div>
 
@@ -166,7 +166,7 @@
                         <div class="form-group">
                             <label class="col-xs-4 control-label">ราคา</label>
                             <div class="col-xs-8">
-                                <p class="form-control-static" id="detail_price"></p>
+                                <p style="font-size:20px;color:red" class="form-control-static" id="detail_price"></p>
                             </div>
                         </div>
                         <div class="form-group">

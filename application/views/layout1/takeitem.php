@@ -80,8 +80,8 @@
         <div class="form-group">
             <label class="col-xs-4 control-label">สินค้าราคารวม : </label>
             <div class="col-xs-4">
-                <p class="form-control-static"><span><?=number_format($all_price)?></span> บาท</p>
-                <span class="hidden" id="item_price"><?=$all_price?></span>
+                <p class="form-control-static"><span class="all_price"><?=number_format($all_price)?></span> บาท <span class="ems_msg"></span></p>
+                <span class="hidden " id="item_price"><?=$all_price?></span>
             </div>
         </div>
 
@@ -236,12 +236,12 @@
 
         <hr>
 
-        <div class="form-group">
-            <label class="col-xs-4 control-label">ราคารวมทั้งหมด : </label>
-            <div class="col-xs-4">
-                <p class="form-control-static"><span class="all_price"></span> บาท</p>
-            </div>
-        </div>
+<!--        <div class="form-group">-->
+<!--            <label class="col-xs-4 control-label">ราคารวมทั้งหมด : </label>-->
+<!--            <div class="col-xs-4">-->
+<!--                <p class="form-control-static"><span class="all_price"></span> บาท</p>-->
+<!--            </div>-->
+<!--        </div>-->
 
     </div>
 <!--    <a href="--><?//=base_url()?><!--takeitem/takebasket" style="width: 150px" class="col-xs-offset-9 btn bluebutton margintop">สั่งซื้อ</a>-->

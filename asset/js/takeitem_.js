@@ -1,6 +1,7 @@
 $(function(){
 
     var $all_price = $('.all_price');
+    var $ems_msg = $('.ems_msg');
     var $itemprice = $('#item_price');
     var radio_val = parseInt($('input[name=howtosend]:checked').val());
 
@@ -9,6 +10,8 @@ $(function(){
         var $item_price = parseInt($('#item_price').html());
         radio_val = parseInt($(this).val());
         $all_price.html($.addcommas_number($item_price+radio_val));
+        if(radio_val == "100")$ems_msg.html('( + ค่าส่ง EMS)');
+        else $ems_msg.html('');
     });
 
 //===================================================================

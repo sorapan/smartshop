@@ -246,7 +246,7 @@ class takeitem  extends CI_Controller{
 
                 foreach($dt as $v){
 
-                    @$data['all_price'] += $v['price'];
+                    @$data['all_price'] += $v['price']*$v['want'];
 
                 }
 

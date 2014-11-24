@@ -63,7 +63,8 @@
                 <div class="form-group">
                     <label class="control-label col-xs-3">ราคา</label>
                     <div class="col-xs-8">
-                        <p class="form-control-static promotion_price"><?=$promval->price." บาท"?></p>
+                        <p style="font-size:20px;color:red" class="form-control-static promotion_price"><?=$promval->price?> บาท</p>
+
                     </div>
                 </div>
 
@@ -136,7 +137,7 @@
                     <div class="form-group">
                         <label class="col-xs-4 control-label">ราคา</label>
                         <div class="col-xs-8">
-                            <p class="form-control-static" id="detail_price"></p>
+                            <p style="font-size:20px;color:red" class="form-control-static" id="detail_price"></p>
                         </div>
                     </div>
                     <div class="form-group">

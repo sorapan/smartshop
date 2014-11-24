@@ -13,10 +13,11 @@
 
         ?>
 
-        <table class="table">
+        <table class="table table-bordered">
 
             <thead class="bluethead">
             <tr>
+                <th>รหัสการสั่งซื้อ</th>
                 <th>วันที่</th>
                 <th>โอนเงินเวลา</th>
                 <th>วิธีส่ง</th>
@@ -34,13 +35,14 @@
                 ?>
 
                 <tr>
-                    <td><?=date("d.m.Y/h:m:s น",$b_val->date)?> </td>
-                    <td><?=$b_val->time?> </td>
-                    <td class="hidden cartid"><?=$b_val->cartID?> </td>
-                    <td class="hidden userid"><?=$b_val->user?> </td>
+                    <td><strong><?=$b_val->cartID?></strong></td>
+                    <td><?=date("d/m/Y เวลา h:m:s น",$b_val->date)?></td>
+                    <td><?=$b_val->time?></td>
+                    <td class="hidden cartid"><?=$b_val->cartID?></td>
+                    <td class="hidden userid"><?=$b_val->user?></td>
                     <td><?=$b_val->sendby=='none' ? 'รับด้วยตัวเอง' : 'ส่ง EMS' ?></td>
                     <td><?=$b_val->price?> บาท</td>
-                    <td><?=$b_val->money?> บาท </td>
+                    <td><?=$b_val->money?> บาท</td>
                     <td>
                     <?php
                     if($b_val->bill_dir !== NULL){
@@ -95,8 +97,9 @@
 
             <thead class="bluethead">
             <tr>
+                <th>รหัสการสั่งซื้อ</th>
                 <th>วันที่</th>
-                <th>เวลา</th>
+                <th>โอนเงินเวลา</th>
                 <th>วิธีส่ง</th>
                 <th>เงินที่ต้องจ่าย</th>
                 <th>เงินที่โอน</th>
@@ -111,7 +114,8 @@
                 ?>
 
                 <tr>
-                    <td><?=date("d.m.Y/h:m:s น",$b_val->date)?> </td>
+                    <td><strong><?=$b_val->cartID?></strong></td>
+                    <td><?=date("d/m/Y เวลา h:m:s น",$b_val->date)?> </td>
                     <td><?=$b_val->time?> </td>
                     <td class="hidden cartid"><?=$b_val->cartID?> </td>
                     <td class="hidden userid"><?=$b_val->user?> </td>
