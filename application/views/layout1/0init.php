@@ -125,7 +125,11 @@ function js($js){
                             if($this->session->userdata('class') == "user"){
                                 ?>
                                 <li><a href="<?=base_url()?>boughtlist">ติดตามรายการสั่งซื้อ</a></li>
-                                <li><a href="<?=base_url()?>message">กล่องข้อความ</a></li>
+                                <li>
+                                    <a href="<?=base_url()?>message">
+                                        ข้อความ <span class="badge badge-alrt">4</span>
+                                    </a>
+                                </li>
                             <?php
                             }
                             ?>

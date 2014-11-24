@@ -116,6 +116,39 @@ li{
 
 
 /*////////////////vvv MY LAYOUT vvv///////////////////*/
+.badge-alrt{
+
+    background-color: red;
+
+}
+
+
+.msgreply{
+    /*border: 1px #8d8d8d solid;*/
+    padding: 5px;
+    position: relative;
+}
+
+.msgreply>.replyheader{
+    color:#c6c6c6;
+    background-color: white;
+    margin: 0 10px;
+    padding: 0 5px;
+    position: absolute;
+    font-size: 14px;
+}
+
+.msgreply>.replymsg{
+    color:#c6c6c6;
+    padding: 15px 10px;
+    margin-top: 10px;
+    border: 1px #c6c6c6 solid;
+}
+
+.msgreply>.content{
+    font-size: 16px;
+    margin: 15px;
+}
 
 .breadcrumb.arrow>li{
     color: #BABABA;

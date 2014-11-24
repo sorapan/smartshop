@@ -25,8 +25,9 @@
                 <td class="user_name"><?=$val->user_name?></td>
                 <td class="msg_id hidden"><?=$val->id?></td>
                 <td class="user_id hidden"><?=$val->user_id?></td>
-                <td>
-                    <button class="btn bluebutton view-msg-button" data-toggle="modal" data-target="#view-msg">ดูข้อความ</button>
+                <td style="padding: 15px 25px">
+<!--                    <button class="btn bluebutton view-msg-button" data-toggle="modal" data-target="#view-msg">ดูข้อความ</button>-->
+                    <?=$val->message?>
                 </td>
                 <td>
                     <button class="btn yellowbutton reply-button" data-toggle="modal" data-target="#reply-msg">ตอบกลับ</button>

@@ -40,7 +40,8 @@ $(function(){
             type:'POST',
             data:{
                 to : replydata.user_id,
-                msg : $(this).parents().eq(1).find('.msgreply').val()
+                msg : $(this).parents().eq(1).find('.msgreply').val(),
+                replyid : replydata.msg_id
             },
             success:function(data){
 
