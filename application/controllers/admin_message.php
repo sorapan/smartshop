@@ -35,7 +35,7 @@ class admin_message extends CI_Controller{
 
         $replydata = $this->MessageModel->fetchmessagebyid($_POST['replyid'])[0];
 
-        $msg = '<div class="msgreply"><div class="replyheader">ข้อความที่ตอบกลับ</div><div class="replymsg">';
+        $msg = '<div class="msgreply"><div class="replyheader">ข้อความที่ส่งไปกลับ</div><div class="replymsg">';
         $msg .= $replydata->message.'</div>';
         $msg .= '<div class="content">'.$_POST['msg'].'</div></div>';
 

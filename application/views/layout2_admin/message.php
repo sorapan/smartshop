@@ -19,7 +19,7 @@
 
         foreach($data as $val){
 
-            if($val->reply == "N"){
+            if($val->reply == 'N'){
         ?>
             <tr>
                 <td><?=date('d/m/Y - h:m:s น.', $val->date)?></td>
@@ -32,15 +32,18 @@
                     <?=$val->message?>
                 </td>
                 <td>
-                    <p style="font-size:12px;color:#9e9e9e"><?=$val->reply=='N'?'* ยังไม่ตอบกลับ':''?></p>
                     <button class="btn yellowbutton reply-button" data-toggle="modal" data-target="#reply-msg">ตอบกลับ</button>
 
                 </td>
             </tr>
         <?php
 
-            }else{
+            }
+        }
 
+        foreach($data as $val){
+
+            if($val->reply == 'Y'){
         ?>
 
             <tr>
@@ -54,8 +57,7 @@
                     <?=$val->message?>
                 </td>
                 <td>
-                    <p style="font-size:12px;color:#9e9e9e"><?=$val->reply=='N'?'* ยังไม่ตอบกลับ':''?></p>
-                    <button class="btn yellowbutton reply-button" data-toggle="modal" data-target="#reply-msg">ตอบกลับ</button>
+                    <button class="btn whitebutton reply-button" data-toggle="modal" data-target="#reply-msg"><?=$val->reply=='Y'?'ตอบแล้ว':'ตอบกลับ'?></button>
 
                 </td>
             </tr>
