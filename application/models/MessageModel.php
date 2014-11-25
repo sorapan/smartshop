@@ -28,6 +28,13 @@ class MessageModel extends CI_Model{
 
     }
 
+    function userFetchItsData($user_id){
+
+        $this->db->select('*')->where('class','non-admin')->where('user_id',$user_id)->Order_by('date','DESC')->limit(5);
+        return $this->db->get('message')->result();
+
+    }
+
     function fetchmessagebyid($id){
 
         $this->db->select('*')->where('id',$id);

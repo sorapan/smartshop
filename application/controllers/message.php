@@ -15,6 +15,7 @@ class message extends CI_Controller{
         $msg =  $this->MessageModel->userFetchData($this->session->userdata('user_id'));
         $data = array(
             'msg' => $msg,
+            'mymsg' => $this->MessageModel->userFetchItsData($this->session->userdata('user_id')),
             'js' => array(
                 base_url().'asset/js/message.js'
             )
