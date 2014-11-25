@@ -14,7 +14,8 @@ $(function(){
 
         display.html('');
 
-        display.append('<table class="table"><thead><tr>' +
+        display.append('<table class="table table-bordered"><thead class="bluethead"><tr>' +
+            '<th></th>' +
             '<th>ชื่อสินค้า</th>' +
             '<th>จำนวน (ชิ้น)</th>' +
             '<th>ราคา (บาท)</th>' +
@@ -32,11 +33,21 @@ $(function(){
             success:function(data){
 
                 for(var qwe in data){
-                    $(".tabledata").append("<tr>"+
-                        "<td>"+data[qwe]['productname']+"</td>"+
-                        "<td>"+data[qwe]['unit']+"</td>"+
-                        "<td>"+data[qwe]['price']+"</td>"+
-                        "</tr>");
+                    if(data[qwe]['img'] != null){
+                        $(".tabledata").append("<tr>"+
+                            "<td><img  style='width:64px' src='productImg/"+data[qwe]['img']+"'></td>"+
+                            "<td style='vertical-align: middle'>"+data[qwe]['productname']+"</td>"+
+                            "<td style='vertical-align: middle'>"+$.addcommas_number(data[qwe]['unit'])+"</td>"+
+                            "<td style='vertical-align: middle'>"+$.addcommas_number(data[qwe]['price'])+"</td>"+
+                            "</tr>");
+                    }else{
+                        $(".tabledata").append("<tr>"+
+                            "<td></td>"+
+                            "<td style='vertical-align: middle'>"+data[qwe]['productname']+"</td>"+
+                            "<td style='vertical-align: middle'>"+$.addcommas_number(data[qwe]['unit'])+"</td>"+
+                            "<td style='vertical-align: middle'>"+$.addcommas_number(data[qwe]['price'])+"</td>"+
+                            "</tr>");
+                    }
                 }
 
             }

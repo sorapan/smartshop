@@ -1,7 +1,18 @@
 <div class="bigheader">
     รายการสั่งซื้อ
 </div>
-<div class="card">
+
+<div class="col-xs-12 card marginbot">
+    <div class="cardbrand">ขั้นตอน</div>
+    <ol class="breadcrumb arrow">
+        <li>หยิบสินค้าใส่ตะกร้า</li>
+        <li class="active">ยืนยันการซื้อ</li>
+        <li>เข้าสู่ระบบ</li>
+        <li>...</li>
+    </ol>
+</div>
+
+<div class="col-xs-12 card">
 
     <div class="cardbrand">
         รายการ

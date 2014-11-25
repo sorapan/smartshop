@@ -41,10 +41,12 @@ class boughtlist extends CI_Controller {
                 $data[$key]['productname'] = $this->ProductModel->fetchproductdataByproductId($val->product)[0]->name;
                 $data[$key]['unit'] = $val->unit;
                 $data[$key]['price'] = $val->price;
+                $data[$key]['img'] = $this->ProductModel->fetchproductdataByproductId($val->product)[0]->img;
             }else{
                 $data[$key]['productname'] = 'โปรโมชั่น : '.$this->PromotionModel->fetchPromotionlistByPromotionId($val->promotion_id)[0]->promotion_name;
-                $data[$key]['unit'] = $val->unit;
+                $data[$key]['unit'] = 1;
                 $data[$key]['price'] = $this->PromotionModel->fetchPromotionlistByPromotionId($val->promotion_id)[0]->price;
+                $data[$key]['img'] = null;
             }
 
         }

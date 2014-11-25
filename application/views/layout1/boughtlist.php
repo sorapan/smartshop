@@ -42,7 +42,7 @@
                     <td class="hidden userid"><?=$b_val->user?></td>
                     <td><?=$b_val->sendby=='none' ? 'รับด้วยตัวเอง' : 'ส่ง EMS' ?></td>
                     <td><?=$b_val->price?> บาท</td>
-                    <td><?=$b_val->money?> บาท</td>
+                    <td><?=is_numeric($b_val->money)?number_format($b_val->money):$b_val->money?> บาท</td>
                     <td>
                     <?php
                     if($b_val->bill_dir !== NULL){
@@ -121,7 +121,7 @@
                     <td class="hidden userid"><?=$b_val->user?> </td>
                     <td><?=$b_val->sendby=='none' ? 'รับด้วยตัวเอง' : 'ส่ง EMS' ?></td>
                     <td><?=$b_val->price?> บาท</td>
-                    <td><?=$b_val->money?> บาท </td>
+                    <td><?=is_numeric($b_val->money)?number_format($b_val->money):$b_val->money?> บาท </td>
                     <td>
                     <?php
 
