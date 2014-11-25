@@ -2,11 +2,11 @@
 -- Host:                         127.0.0.1
 -- Server version:               5.6.16 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
--- HeidiSQL Version:             8.3.0.4835
+-- HeidiSQL Version:             9.1.0.4867
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
@@ -54,15 +54,15 @@ CREATE TABLE IF NOT EXISTS `basket` (
   `promotion_unit` tinytext,
   `promotion_name` tinytext,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=84 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table smartshop.basket: ~-1 rows (approximately)
 DELETE FROM `basket`;
 /*!40000 ALTER TABLE `basket` DISABLE KEYS */;
 INSERT INTO `basket` (`id`, `user`, `product_name`, `product`, `unit`, `price`, `date`, `bought`, `cartID`, `promotion_id`, `promotion_unit`, `promotion_name`) VALUES
-	(78, 2, NULL, '2', '2', '444', '1415519781', 'Y', '1414618171', '16', '1', 'mj triple pack'),
-	(79, 2, NULL, '4', '1', '0', '1414618164', 'Y', '1414618171', '16', '1', 'mj triple pack'),
-	(83, 2, 'ดินสอ', '4', '1', '111', '1414831538', 'Y', '1414831541', NULL, NULL, NULL);
+	(1, 2, 'ดินสอสีเหลือง', '6', '2', '100', '1416825396', 'Y', '1416825486', NULL, NULL, NULL),
+	(2, 2, 'บ้องตะลุยอวกาศ', '5', '1', '2000', '1416825414', 'Y', '1416825486', NULL, NULL, NULL),
+	(3, 2, 'บ้องตะลุยอวกาศ', '5', '1', '2000', '1416826135', 'N', NULL, NULL, NULL, NULL);
 /*!40000 ALTER TABLE `basket` ENABLE KEYS */;
 
 
@@ -74,19 +74,13 @@ CREATE TABLE IF NOT EXISTS `blog` (
   `author` tinytext,
   `date` tinytext,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table smartshop.blog: ~-1 rows (approximately)
 DELETE FROM `blog`;
 /*!40000 ALTER TABLE `blog` DISABLE KEYS */;
 INSERT INTO `blog` (`id`, `header`, `content`, `author`, `date`) VALUES
-	(1, 'ssssssssssssss', '<div style="text-align: center;"><b style="font-size: 0.9em; line-height: 1.42857143;"><font size="5">ssssssssssssssssssssssssssssssssssss</font></b></div><div style="text-align: left;"><span style="line-height: 1.42857143;"><font size="2">ssssssssssssssssssssssssssssssssssssssssssssssssssss</font></span></div><div style="text-align: left;"><span style="line-height: 1.42857143;"><font size="2">ssssssssssssssssssssssssssssssssss</font></span></div><div style="text-align: left;"><span style="line-height: 1.42857143;"><font size="2">sssssssssssssssssssssssssssssssssssss</font></span></div>', '1', '1412588178'),
-	(2, 'สวัสดีครับ', '<div style="text-align: center;"><span style="line-height: 1.42857143;"><font size="5">สวัสดีครับ</font></span></div><div style="text-align: left;"><span style="line-height: 34.2857170104981px;"><font size="2">สวัสดี สวสัดี</font></span></div><div style="text-align: center;"><span style="line-height: 1.42857143;"><font size="5"><br></font></span></div>', '1', '1412592220'),
-	(3, 'สวัสดีครับ', '<div style="text-align: center;"><font size="5"><span style="line-height: 34.2857170104981px;"><b>สวัสดีครับ</b></span></font></div><div style="text-align: left;"><span style="line-height: 34.2857170104981px;"><font size="2">กกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกก</font></span></div><div style="text-align: left;"><span style="line-height: 34.2857170104981px;"><font size="2">กกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกก</font></span></div><div style="text-align: left;"><span style="line-height: 34.2857170104981px;"><font size="2">กกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกก</font></span></div><div style="text-align: left;"><span style="line-height: 34.2857170104981px;"><font size="2">กกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกกก</font></span></div><div style="text-align: left;"><span style="line-height: 34.2857170104981px;"><font size="2">กกกกกกกกกกกกกกกกกกกกกกกกก</font></span></div><div style="text-align: left;"><span style="line-height: 34.2857170104981px;"><font size="2">กกกกกกกกกกกก</font></span></div><div style="text-align: left;"><span style="line-height: 34.2857170104981px;"><font size="2">กกกกกกก</font></span></div><div style="text-align: left;"><span style="line-height: 34.2857170104981px;"><font size="2">กกกก</font></span></div>', '1', '1412670947'),
-	(4, 'สวัสดี ยินดีต้อนรับ', '<span style="line-height: 18.0000019073486px;"><b>เข้าไป</b> กูเกิ้ล&nbsp;</span><a href="http://google.com/" style="line-height: 18.0000019073486px; background-color: rgb(255, 255, 255);">คลิ๊ก</a><br style="line-height: 18.0000019073486px;"><span style="line-height: 18.0000019073486px;"><i>เข้าไป</i> ยูทูป&nbsp;</span><a href="http://youtube.com/" style="line-height: 18.0000019073486px; background-color: rgb(255, 255, 255);">คลิ๊ก</a><div style="line-height: 18.0000019073486px;">เข้าไป เฟซบุก&nbsp;<a href="http://facebook.com/" style="font-size: 0.9em; line-height: 1.42857143; background-color: white;">คลิ๊ก</a></div>\n        ', '1', '1412673702'),
-	(7, 'ยืนดีต้อนครับ', '<a target="_blank" href="http://www.google.com">google</a>', '1', '1412928972'),
-	(8, 'สวัสดีครับ', 'สวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับ<img src="http://localhost/peter/blog_img/2895_4cfc.gif">', '1', '1414483544'),
-	(9, 'สวัสดีครับ', 'สวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับสวัสดีครับ\n        ', '1', '1414663269');
+	(10, 'หกดหกดดดหหหหหกดหกดหหห', '\n            \n            หกหด<div><img src="http://localhost/peter/blog_img/6Dt0hjb.gif"><br><div>หหหหหหห</div><div>กหดกด</div>                </div>', '1', '1416128831');
 /*!40000 ALTER TABLE `blog` ENABLE KEYS */;
 
 
@@ -115,20 +109,24 @@ INSERT INTO `blog_img` (`id`, `name`, `type`, `date`, `user`) VALUES
 CREATE TABLE IF NOT EXISTS `bought_list` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `price` tinytext NOT NULL,
+  `user_realname` tinytext,
+  `province` tinytext,
   `address` tinytext NOT NULL,
+  `zipcode` tinytext,
+  `tel` tinytext,
   `sendby` enum('none','ems') NOT NULL,
   `verified` enum('Y','N') NOT NULL DEFAULT 'N',
   `date` tinytext NOT NULL,
   `user` int(10) NOT NULL,
   `wait_list_id` tinytext,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table smartshop.bought_list: ~-1 rows (approximately)
 DELETE FROM `bought_list`;
 /*!40000 ALTER TABLE `bought_list` DISABLE KEYS */;
-INSERT INTO `bought_list` (`id`, `price`, `address`, `sendby`, `verified`, `date`, `user`, `wait_list_id`) VALUES
-	(16, '200', 'dsfsdf sdfdsf dfds dsfsdf', 'none', 'Y', '1414618171', 2, '1');
+INSERT INTO `bought_list` (`id`, `price`, `user_realname`, `province`, `address`, `zipcode`, `tel`, `sendby`, `verified`, `date`, `user`, `wait_list_id`) VALUES
+	(1, '2,200', 'จอร์จ  ดีนายด์', 'เลย', 'dsfsdf sdfdsf dfds dsfsdf', '90110', '0742223333', 'ems', 'N', '1416825486', 2, '1');
 /*!40000 ALTER TABLE `bought_list` ENABLE KEYS */;
 
 
@@ -158,14 +156,15 @@ CREATE TABLE IF NOT EXISTS `howtobuy_blog` (
   `author` tinytext,
   `date` tinytext,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table smartshop.howtobuy_blog: ~-1 rows (approximately)
 DELETE FROM `howtobuy_blog`;
 /*!40000 ALTER TABLE `howtobuy_blog` DISABLE KEYS */;
 INSERT INTO `howtobuy_blog` (`id`, `header`, `content`, `author`, `date`) VALUES
 	(1, 'วิธีการสั่งซื้อ', '<div style="text-align: center;"><span style="line-height: 1.42857143;"><font size="5">วิธีการสั่งซื้อ</font></span></div><div>วิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อวิธีการสั่งซื้อ<br></div>', '1', '1412676155'),
-	(2, 'วิธีการสั่งซื้อครับ', '-&nbsp;วิธีการสั่งซื้อครับ<div><span style="line-height: 18.0000019073486px;">-&nbsp;วิธีการสั่งซื้อครับ</span><br></div><div><span style="line-height: 18.0000019073486px;">-&nbsp;วิธีการสั่งซื้อครับ</span><span style="line-height: 18.0000019073486px;"><br></span></div><div><span style="line-height: 18.0000019073486px;">-&nbsp;วิธีการสั่งซื้อครับ</span><span style="line-height: 18.0000019073486px;"><br></span></div><div><span style="line-height: 18.0000019073486px;">-&nbsp;วิธีการสั่งซื้อครับ</span><span style="line-height: 18.0000019073486px;"><br></span></div>', '1', '1412928828');
+	(2, 'วิธีการสั่งซื้อครับ', '-&nbsp;วิธีการสั่งซื้อครับ<div><span style="line-height: 18.0000019073486px;">-&nbsp;วิธีการสั่งซื้อครับ</span><br></div><div><span style="line-height: 18.0000019073486px;">-&nbsp;วิธีการสั่งซื้อครับ</span><span style="line-height: 18.0000019073486px;"><br></span></div><div><span style="line-height: 18.0000019073486px;">-&nbsp;วิธีการสั่งซื้อครับ</span><span style="line-height: 18.0000019073486px;"><br></span></div><div><span style="line-height: 18.0000019073486px;">-&nbsp;วิธีการสั่งซื้อครับ</span><span style="line-height: 18.0000019073486px;"><br></span></div>', '1', '1412928828'),
+	(3, 'ไไไไไไไไไไไไไไไไไไไไไไ', '\n            ผผผผผผผผผผผผ', '1', '1416129618');
 /*!40000 ALTER TABLE `howtobuy_blog` ENABLE KEYS */;
 
 
@@ -178,16 +177,24 @@ CREATE TABLE IF NOT EXISTS `message` (
   `date` tinytext,
   `class` enum('non-admin','admin') DEFAULT 'non-admin',
   `to` tinytext,
+  `read` enum('readed','unread') DEFAULT 'unread',
+  `reply` enum('Y','N') DEFAULT 'N',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table smartshop.message: ~-1 rows (approximately)
 DELETE FROM `message`;
 /*!40000 ALTER TABLE `message` DISABLE KEYS */;
-INSERT INTO `message` (`id`, `message`, `user_name`, `user_id`, `date`, `class`, `to`) VALUES
-	(1, 'msg', 'user', '2', '1414215338', 'non-admin', NULL),
-	(2, 'dddddd', 'user', '2', '1414215378', 'non-admin', NULL),
-	(3, '5555555', 'admin', '1', '1414219450', 'admin', '2');
+INSERT INTO `message` (`id`, `message`, `user_name`, `user_id`, `date`, `class`, `to`, `read`, `reply`) VALUES
+	(1, 'สวัสดีครับ', 'user', '2', '1416822850', 'non-admin', NULL, 'unread', 'Y'),
+	(2, '<div class="msgreply"><div class="replyheader">ข้อความที่ตอบกลับ</div><div class="replymsg">สวัสดีครับ</div><div class="content">ครับสวสัดีครับบบ</div></div>', 'admin', '1', '1416822876', 'admin', '2', 'readed', 'N'),
+	(3, '<div class="msgreply"><div class="replyheader">ข้อความที่ตอบกลับ</div><div class="replymsg">สวัสดีครับ</div><div class="content">หวักดหกดหเาืกดา่ืกดทาเ</div></div>', 'admin', '1', '1416822907', 'admin', '2', 'readed', 'N'),
+	(4, '<div class="msgreply"><div class="replyheader">ข้อความที่ตอบกลับ</div><div class="replymsg">สวัสดีครับ</div><div class="content">5555555555</div></div>', 'admin', '1', '1416824155', 'admin', '2', 'readed', 'N'),
+	(5, '<div class="msgreply"><div class="replyheader">ข้อความที่ตอบกลับ</div><div class="replymsg">สวัสดีครับ</div><div class="content">ddd</div></div>', 'admin', '1', '1416905772', 'admin', '2', 'readed', 'N'),
+	(6, 'ครับ', 'user', '2', '1416905971', 'non-admin', NULL, 'unread', 'Y'),
+	(7, 'ถถถถถถถถถถถถถ', 'user', '2', '1416905977', 'non-admin', NULL, 'unread', 'N'),
+	(8, '555555555555', 'user', '2', '1416905983', 'non-admin', NULL, 'unread', 'N'),
+	(9, '<div class="msgreply"><div class="replyheader">ข้อความที่ตอบกลับ</div><div class="replymsg">ครับ</div><div class="content">มีไรครับ</div></div>', 'admin', '1', '1416906113', 'admin', '2', 'unread', 'N');
 /*!40000 ALTER TABLE `message` ENABLE KEYS */;
 
 
@@ -199,7 +206,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   `name` tinytext NOT NULL,
   `maintype` int(10) NOT NULL,
   `subtype` int(10) NOT NULL,
-  `price` tinytext,
+  `price` int(20) DEFAULT NULL,
   `unit` int(10) NOT NULL,
   `unitnot` int(10) NOT NULL,
   `detail` longtext NOT NULL,
@@ -213,10 +220,10 @@ CREATE TABLE IF NOT EXISTS `product` (
 DELETE FROM `product`;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
 INSERT INTO `product` (`id`, `productid`, `img`, `name`, `maintype`, `subtype`, `price`, `unit`, `unitnot`, `detail`, `author`, `date`, `sell`) VALUES
-	(2, '0000000002', '0000000002.gif', 'mj', 2, 9, '222', 40, 3, 'dkfmsdf<div>sdf</div><div>sdf</div><div>sd</div><div>f</div><div>sdfsdfsdfsdfsdf</div>', 'admin', '1415526058', 'true'),
-	(4, '0000000004', '0000000004.jpg', 'ดินสอ', 1, 1, '111', 180, 10, 'ดินสอ สีแดง เทพๆ', 'admin', '1415184766', 'true'),
-	(5, '0000000005', '0000000005.jpg', 'บ้องตะลุยอวกาศ', 1, 1, '2000', 200, 5, 'sadsad<div>asd</div><div>as</div><div>das</div><div>d</div><div>asdsadsad</div><div>sad</div>', 'admin', '1415183185', 'true'),
-	(6, '0000000006', '0000000006.jpg', 'ดินสอสีเหลือง', 3, 7, '50', 1000, 2, 'ดินสอสีเหลืองเมพๆ<div>ดินสอสีเหลืองเมพๆ<br></div><div>ดินสอสีเหลืองเมพๆ<br></div>', 'admin', '1415545385', 'true');
+	(2, '0000000002', '0000000002.gif', 'mj', 2, 9, 222, 2, 3, 'dkfmsdf<div>sdf</div><div>sdf</div><div>sd</div><div>f</div><div>sdfsdfsdfsdfsdf</div>', 'admin', '1415526058', 'true'),
+	(4, '0000000004', '0000000004.jpg', 'ดินสอ', 1, 1, 111, 175, 10, 'ดินสอ สีแดง เทพๆ', 'admin', '1415184766', 'true'),
+	(5, '0000000005', '0000000005.jpg', 'บ้องตะลุยอวกาศ', 1, 1, 2000, 182, 5, 'sadsad<div>asd</div><div>as</div><div>das</div><div>d</div><div>asdsadsad</div><div>sad</div>', 'admin', '1415183185', 'true'),
+	(6, '0000000006', '0000000006.jpg', 'ดินสอสีเหลือง', 3, 7, 50, 982, 2, 'ดินสอสีเหลืองเมพๆ<div>ดินสอสีเหลืองเมพๆ<br></div><div>ดินสอสีเหลืองเมพๆ<br></div>', 'admin', '1415545385', 'true');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 
 
@@ -282,7 +289,7 @@ CREATE TABLE IF NOT EXISTS `type_product` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `name` tinytext NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table smartshop.type_product: ~-1 rows (approximately)
 DELETE FROM `type_product`;
@@ -336,15 +343,13 @@ CREATE TABLE IF NOT EXISTS `wait_list` (
   `verified` enum('Y','N') DEFAULT 'N',
   `bought_list_id` tinytext,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table smartshop.wait_list: ~-1 rows (approximately)
 DELETE FROM `wait_list`;
 /*!40000 ALTER TABLE `wait_list` DISABLE KEYS */;
 INSERT INTO `wait_list` (`id`, `money`, `date`, `time`, `bill_dir`, `user`, `cartID`, `verified`, `bought_list_id`) VALUES
-	(1, ' 200', '1414667062', '2.40 น,', NULL, 2, '1414618171', 'Y', '16'),
-	(2, '250', '1414854389', '14.40 น,', NULL, 2, '1414827703', 'N', '17'),
-	(4, '120', '1414855675', '14.40 14.40 ', NULL, 2, '1414831541', 'N', '19');
+	(1, '2200', '1416849638', '14.40 น', NULL, 2, '1416825486', 'N', '1');
 /*!40000 ALTER TABLE `wait_list` ENABLE KEYS */;
 
 
@@ -358,7 +363,7 @@ CREATE TABLE IF NOT EXISTS `warranty` (
   `date` tinytext NOT NULL,
   `detail` longtext,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table smartshop.warranty: ~-1 rows (approximately)
 DELETE FROM `warranty`;

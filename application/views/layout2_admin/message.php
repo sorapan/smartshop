@@ -19,21 +19,50 @@
 
         foreach($data as $val){
 
+            if($val->reply == "N"){
         ?>
             <tr>
                 <td><?=date('d/m/Y - h:m:s น.', $val->date)?></td>
                 <td class="user_name"><?=$val->user_name?></td>
                 <td class="msg_id hidden"><?=$val->id?></td>
                 <td class="user_id hidden"><?=$val->user_id?></td>
+                <td class="date hidden"><?=$val->date?></td>
                 <td style="padding: 15px 25px">
 <!--                    <button class="btn bluebutton view-msg-button" data-toggle="modal" data-target="#view-msg">ดูข้อความ</button>-->
                     <?=$val->message?>
                 </td>
                 <td>
+                    <p style="font-size:12px;color:#9e9e9e"><?=$val->reply=='N'?'* ยังไม่ตอบกลับ':''?></p>
                     <button class="btn yellowbutton reply-button" data-toggle="modal" data-target="#reply-msg">ตอบกลับ</button>
+
                 </td>
             </tr>
         <?php
+
+            }else{
+
+        ?>
+
+            <tr>
+                <td><?=date('d/m/Y - h:m:s น.', $val->date)?></td>
+                <td class="user_name"><?=$val->user_name?></td>
+                <td class="msg_id hidden"><?=$val->id?></td>
+                <td class="user_id hidden"><?=$val->user_id?></td>
+                <td class="date hidden"><?=$val->date?></td>
+                <td style="padding: 15px 25px">
+                    <!--                    <button class="btn bluebutton view-msg-button" data-toggle="modal" data-target="#view-msg">ดูข้อความ</button>-->
+                    <?=$val->message?>
+                </td>
+                <td>
+                    <p style="font-size:12px;color:#9e9e9e"><?=$val->reply=='N'?'* ยังไม่ตอบกลับ':''?></p>
+                    <button class="btn yellowbutton reply-button" data-toggle="modal" data-target="#reply-msg">ตอบกลับ</button>
+
+                </td>
+            </tr>
+
+        <?php
+
+            }
 
         }
 

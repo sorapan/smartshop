@@ -29,6 +29,7 @@ $(function(){
         replydata.msg_id = $(this).parents().eq(1).find('.msg_id').html();
         replydata.user_name = $(this).parents().eq(1).find('.user_name').html();
         replydata.user_id = $(this).parents().eq(1).find('.user_id').html();
+        replydata.date = $(this).parents().eq(1).find('.date').html();
         $('.sendto').html(replydata.user_name);
 
     });
@@ -41,7 +42,9 @@ $(function(){
             data:{
                 to : replydata.user_id,
                 msg : $(this).parents().eq(1).find('.msgreply').val(),
-                replyid : replydata.msg_id
+                replyid : replydata.msg_id,
+                date: replydata.date
+
             },
             success:function(data){
 

@@ -16,7 +16,7 @@ class MessageModel extends CI_Model{
 
     function adminFetchData(){
 
-        $this->db->select('*')->where('class','non-admin')->Order_by('date','DESC')->limit(15);
+        $this->db->select('*')->where('class','non-admin')->Order_by('date','DESC');
         return $this->db->get('message')->result();
 
     }
@@ -51,6 +51,14 @@ class MessageModel extends CI_Model{
             'read' => 'readed'
         ));
 
+    }
+
+    function updateReply($userid,$date){
+        $this->db->where('to',$userid);
+        $this->db->where('date',$date);
+        $this->db->update('message',array(
+            'reply' => 'Y'
+        ));
     }
 
 } 

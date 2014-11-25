@@ -50,6 +50,8 @@ class admin_message extends CI_Controller{
 
         ));
 
+        $this->MessageModel->updateReply($_POST['user_id'],$_POST['date']);
+
     }
 
 } 
