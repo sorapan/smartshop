@@ -67,7 +67,7 @@
                 <td><?=$bval->price?></td>
                 <td><?=$bval->sendby == 'none'? 'รับด้วยตัวเอง' : 'ส่ง EMS' ?></td>
                 <td><?php
-                    if(floor((time() - $bval->date)/86400) > 7 && $bval->cash == null){ echo '<span style="color:red">';}
+                    if(floor((time()-$bval->date)/86400) > 7 && $bval->cash == null){ echo '<span style="color:red">';}
                     else if($bval->cash != null && $bval->verified != 'Y'){echo '<span style="color:orange">';}
                     else if($bval->cash != null && $bval->verified == 'Y'){echo '<span style="color:green">'; }
                     else{echo '<span style="color:black">'; }

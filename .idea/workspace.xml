@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be7b91bc-05d1-4566-bfcf-12fbe6c918e6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/PromotionModel.php" afterPath="$PROJECT_DIR$/application/models/PromotionModel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asset/js/boughtlist.js" afterPath="$PROJECT_DIR$/asset/js/boughtlist.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/boughtlist.php" afterPath="$PROJECT_DIR$/application/controllers/boughtlist.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asset/js/admin_boughtchecker.js" afterPath="$PROJECT_DIR$/asset/js/admin_boughtchecker.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/layout2_admin/boughtchecker.php" afterPath="$PROJECT_DIR$/application/views/layout2_admin/boughtchecker.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="peter.iws" />
@@ -28,37 +27,60 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="promotion.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/layout1/promotion.php">
+      <file leaf-file-name="admin_boughtchecker.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/admin_boughtchecker.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="12" selection-start="927" selection-end="953" vertical-scroll-proportion="-0.6923077" vertical-offset="324" max-vertical-offset="2970">
+            <state line="73" column="51" selection-start="2952" selection-end="2952" vertical-scroll-proportion="-14.5" vertical-offset="937" max-vertical-offset="1566">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="boughtlist.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/controllers/boughtlist.php">
+      <file leaf-file-name="boughtchecker.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/layout2_admin/boughtchecker.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="2" selection-start="2412" selection-end="2412" vertical-scroll-proportion="2.1459074" vertical-offset="0" max-vertical-offset="1314">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="boughtlist.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asset/js/boughtlist.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="0" selection-start="2515" selection-end="2515" vertical-scroll-proportion="0.0" vertical-offset="594" max-vertical-offset="1458">
+            <state line="75" column="22" selection-start="3353" selection-end="3353" vertical-scroll-proportion="33.076923" vertical-offset="2210" max-vertical-offset="2772">
               <folding>
-                <marker date="1416999957778" expanded="false" signature="1248:1258" placeholder="..." />
-                <marker date="1416999957778" expanded="false" signature="1346:1368" placeholder="..." />
-                <marker date="1416999957778" expanded="false" signature="1446:1468" placeholder="..." />
-                <marker date="1416999957778" expanded="false" signature="1559:1581" placeholder="..." />
-                <marker date="1416999957778" expanded="false" signature="2052:2063" placeholder="..." />
-                <marker date="1416999957778" expanded="false" signature="2827:2849" placeholder="..." />
-                <marker date="1416999957778" expanded="false" signature="2927:2949" placeholder="..." />
-                <marker date="1416999957778" expanded="false" signature="3040:3062" placeholder="..." />
+                <marker date="1417016425926" expanded="true" signature="2759:2768" placeholder="..." />
+                <marker date="1417016425926" expanded="false" signature="2868:2880" placeholder="..." />
+                <marker date="1417016425926" expanded="false" signature="2980:2991" placeholder="..." />
+                <marker date="1417016425926" expanded="false" signature="3042:3053" placeholder="..." />
+                <marker date="1417016425926" expanded="false" signature="3523:3532" placeholder="..." />
+                <marker date="1417016425926" expanded="false" signature="3628:3640" placeholder="..." />
+                <marker date="1417016425926" expanded="false" signature="3736:3747" placeholder="..." />
+                <marker date="1417016425926" expanded="false" signature="3794:3805" placeholder="..." />
+                <marker date="1417016425926" expanded="false" signature="4281:4290" placeholder="..." />
+                <marker date="1417016425926" expanded="false" signature="4390:4402" placeholder="..." />
+                <marker date="1417016425926" expanded="false" signature="4502:4513" placeholder="..." />
+                <marker date="1417016425926" expanded="false" signature="4564:4575" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin_boughtchecker.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/asset/js/admin_boughtchecker.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="106" column="149" selection-start="4271" selection-end="4271" vertical-scroll-proportion="0.40986395" vertical-offset="1667" max-vertical-offset="4320">
+              <folding>
+                <marker date="1417017153412" expanded="false" signature="1812:1842" placeholder="..." />
+                <marker date="1417017153412" expanded="false" signature="2152:2169" placeholder="..." />
+                <marker date="1417017153412" expanded="false" signature="2281:2303" placeholder="..." />
+                <marker date="1417017153412" expanded="false" signature="5598:5604" placeholder="..." />
+                <marker date="1417017153412" expanded="false" signature="5722:5728" placeholder="..." />
+                <marker date="1417017153412" expanded="false" signature="5876:5882" placeholder="..." />
+                <marker date="1417017153412" expanded="false" signature="7239:7250" placeholder="..." />
+                <marker date="1417017153412" expanded="false" signature="7359:7370" placeholder="..." />
+                <marker date="1417017153412" expanded="false" signature="7509:7520" placeholder="..." />
+                <marker date="1417017153412" expanded="false" signature="8929:8941" placeholder="..." />
+                <marker date="1417017153412" expanded="false" signature="9054:9066" placeholder="..." />
+                <marker date="1417017153412" expanded="false" signature="9209:9221" placeholder="..." />
+                <marker date="1417017153412" expanded="false" signature="10650:10661" placeholder="..." />
+                <marker date="1417017153412" expanded="false" signature="10774:10785" placeholder="..." />
+                <marker date="1417017153412" expanded="false" signature="10928:10939" placeholder="..." />
+                <marker date="1417017153412" expanded="false" signature="12290:12299" placeholder="..." />
+                <marker date="1417017153412" expanded="false" signature="12412:12421" placeholder="..." />
+                <marker date="1417017153412" expanded="false" signature="12564:12573" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -119,15 +141,15 @@
         <option value="$PROJECT_DIR$/application/controllers/admin_boughtlist.php" />
         <option value="$PROJECT_DIR$/application/views/layout1/boughtlist.php" />
         <option value="$PROJECT_DIR$/application/views/layout1/takeitem_nonmember.php" />
-        <option value="$PROJECT_DIR$/application/views/layout2_admin/boughtchecker.php" />
         <option value="$PROJECT_DIR$/application/config/routes.php" />
         <option value="$PROJECT_DIR$/application/controllers/admin_boughtchecker.php" />
-        <option value="$PROJECT_DIR$/asset/js/admin_boughtchecker.js" />
         <option value="$PROJECT_DIR$/asset/css/Layout1.css" />
         <option value="$PROJECT_DIR$/application/views/layout1/promotion.php" />
         <option value="$PROJECT_DIR$/asset/js/boughtlist.js" />
         <option value="$PROJECT_DIR$/application/models/PromotionModel.php" />
         <option value="$PROJECT_DIR$/application/controllers/boughtlist.php" />
+        <option value="$PROJECT_DIR$/application/views/layout2_admin/boughtchecker.php" />
+        <option value="$PROJECT_DIR$/asset/js/admin_boughtchecker.js" />
       </list>
     </option>
   </component>
@@ -283,7 +305,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="layout1" />
+              <option name="myItemId" value="layout2_admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -404,7 +426,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2212991" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20619336" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -415,8 +437,8 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -601,39 +623,14 @@
         <state line="67" column="31" selection-start="2078" selection-end="2078" vertical-scroll-proportion="0.68869567" vertical-offset="810" max-vertical-offset="3222" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/layout2_admin/boughtlist.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="40" selection-start="1142" selection-end="1148" vertical-scroll-proportion="1.346087" vertical-offset="0" max-vertical-offset="2322" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/admin_boughtlist.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="29" selection-start="2914" selection-end="2914" vertical-scroll-proportion="0.48754448" vertical-offset="986" max-vertical-offset="1602" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/layout1/takeitem.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="16" selection-start="304" selection-end="304" vertical-scroll-proportion="-2.441739" vertical-offset="1584" max-vertical-offset="4770" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/admin_boughtchecker.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="51" selection-start="2952" selection-end="2952" vertical-scroll-proportion="0.65565217" vertical-offset="937" max-vertical-offset="1566" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/config/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="120" column="31" selection-start="4986" selection-end="5009" vertical-scroll-proportion="0.7634783" vertical-offset="1721" max-vertical-offset="4176" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/layout2_admin/boughtchecker.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="0" selection-start="3421" selection-end="3421" vertical-scroll-proportion="-17.26923" vertical-offset="973" max-vertical-offset="2772" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asset/js/admin_boughtchecker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="28" selection-start="43" selection-end="43" vertical-scroll-proportion="-5.3194675" vertical-offset="3233" max-vertical-offset="4320" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/layout1/home.php">
@@ -643,9 +640,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/asset/css/Layout1.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="22" selection-start="1780" selection-end="1780" vertical-scroll-proportion="0.83304346" vertical-offset="1555" max-vertical-offset="10620">
-          <folding />
-        </state>
+        <state line="113" column="22" selection-start="1780" selection-end="1780" vertical-scroll-proportion="0.83304346" vertical-offset="1555" max-vertical-offset="10620" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/index.php">
@@ -675,38 +670,103 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/asset/js/boughtlist.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="0" selection-start="2515" selection-end="2515" vertical-scroll-proportion="0.0" vertical-offset="594" max-vertical-offset="1458">
+        <state line="57" column="0" selection-start="2515" selection-end="2515" vertical-scroll-proportion="0.718802" vertical-offset="594" max-vertical-offset="1458">
           <folding>
-            <marker date="1416999957778" expanded="false" signature="1248:1258" placeholder="..." />
-            <marker date="1416999957778" expanded="false" signature="1346:1368" placeholder="..." />
-            <marker date="1416999957778" expanded="false" signature="1446:1468" placeholder="..." />
-            <marker date="1416999957778" expanded="false" signature="1559:1581" placeholder="..." />
-            <marker date="1416999957778" expanded="false" signature="2052:2063" placeholder="..." />
-            <marker date="1416999957778" expanded="false" signature="2827:2849" placeholder="..." />
-            <marker date="1416999957778" expanded="false" signature="2927:2949" placeholder="..." />
-            <marker date="1416999957778" expanded="false" signature="3040:3062" placeholder="..." />
+            <marker date="1416999957778" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1416999957778" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1416999957778" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1416999957778" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1416999957778" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1416999957778" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1416999957778" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1416999957778" expanded="false" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/layout1/promotion.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="12" selection-start="927" selection-end="953" vertical-scroll-proportion="-0.6923077" vertical-offset="324" max-vertical-offset="2970">
+        <state line="19" column="12" selection-start="927" selection-end="953" vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="2970">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/models/PromotionModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="43" selection-start="2379" selection-end="2379" vertical-scroll-proportion="0.906087" vertical-offset="1171" max-vertical-offset="2394">
-          <folding />
-        </state>
+        <state line="94" column="43" selection-start="2379" selection-end="2379" vertical-scroll-proportion="0.906087" vertical-offset="1171" max-vertical-offset="2394" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/boughtlist.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="2" selection-start="2412" selection-end="2412" vertical-scroll-proportion="2.1459074" vertical-offset="0" max-vertical-offset="1314">
+        <state line="63" column="32" selection-start="2401" selection-end="2401" vertical-scroll-proportion="0.72347826" vertical-offset="718" max-vertical-offset="1314">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/layout2_admin/boughtlist.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="43" selection-start="1300" selection-end="1300" vertical-scroll-proportion="1.3756522" vertical-offset="19" max-vertical-offset="2322">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/admin_boughtlist.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="70" column="29" selection-start="2914" selection-end="2914" vertical-scroll-proportion="2.1209965" vertical-offset="68" max-vertical-offset="1602">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/admin_boughtchecker.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="51" selection-start="2952" selection-end="2952" vertical-scroll-proportion="-14.5" vertical-offset="937" max-vertical-offset="1566">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/layout2_admin/boughtchecker.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="75" column="22" selection-start="3353" selection-end="3353" vertical-scroll-proportion="33.076923" vertical-offset="2210" max-vertical-offset="2772">
+          <folding>
+            <marker date="1417016425926" expanded="true" signature="2759:2768" placeholder="..." />
+            <marker date="1417016425926" expanded="false" signature="2868:2880" placeholder="..." />
+            <marker date="1417016425926" expanded="false" signature="2980:2991" placeholder="..." />
+            <marker date="1417016425926" expanded="false" signature="3042:3053" placeholder="..." />
+            <marker date="1417016425926" expanded="false" signature="3523:3532" placeholder="..." />
+            <marker date="1417016425926" expanded="false" signature="3628:3640" placeholder="..." />
+            <marker date="1417016425926" expanded="false" signature="3736:3747" placeholder="..." />
+            <marker date="1417016425926" expanded="false" signature="3794:3805" placeholder="..." />
+            <marker date="1417016425926" expanded="false" signature="4281:4290" placeholder="..." />
+            <marker date="1417016425926" expanded="false" signature="4390:4402" placeholder="..." />
+            <marker date="1417016425926" expanded="false" signature="4502:4513" placeholder="..." />
+            <marker date="1417016425926" expanded="false" signature="4564:4575" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/js/admin_boughtchecker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="106" column="149" selection-start="4271" selection-end="4271" vertical-scroll-proportion="0.40986395" vertical-offset="1667" max-vertical-offset="4320">
+          <folding>
+            <marker date="1417017153412" expanded="false" signature="1812:1842" placeholder="..." />
+            <marker date="1417017153412" expanded="false" signature="2152:2169" placeholder="..." />
+            <marker date="1417017153412" expanded="false" signature="2281:2303" placeholder="..." />
+            <marker date="1417017153412" expanded="false" signature="5598:5604" placeholder="..." />
+            <marker date="1417017153412" expanded="false" signature="5722:5728" placeholder="..." />
+            <marker date="1417017153412" expanded="false" signature="5876:5882" placeholder="..." />
+            <marker date="1417017153412" expanded="false" signature="7239:7250" placeholder="..." />
+            <marker date="1417017153412" expanded="false" signature="7359:7370" placeholder="..." />
+            <marker date="1417017153412" expanded="false" signature="7509:7520" placeholder="..." />
+            <marker date="1417017153412" expanded="false" signature="8929:8941" placeholder="..." />
+            <marker date="1417017153412" expanded="false" signature="9054:9066" placeholder="..." />
+            <marker date="1417017153412" expanded="false" signature="9209:9221" placeholder="..." />
+            <marker date="1417017153412" expanded="false" signature="10650:10661" placeholder="..." />
+            <marker date="1417017153412" expanded="false" signature="10774:10785" placeholder="..." />
+            <marker date="1417017153412" expanded="false" signature="10928:10939" placeholder="..." />
+            <marker date="1417017153412" expanded="false" signature="12290:12299" placeholder="..." />
+            <marker date="1417017153412" expanded="false" signature="12412:12421" placeholder="..." />
+            <marker date="1417017153412" expanded="false" signature="12564:12573" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

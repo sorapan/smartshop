@@ -104,7 +104,7 @@ $(function(){
                             var color;
                             var del_button = '<button class="btn yellowbutton col-xs-12 delete_boughtlist">ลบ</button>';
 
-                            if((data[z]['cash'] == null && data[z]['verified'] == 'N')){
+                            if((data[z]['cash'] == null && data[z]['verified'] == 'N' && Math.floor((data[z]['timetime'] - data[z]['date'])/86400) <= 7)){
                                 color = 'black';
                             }else if((data[z]['cash'] != null && data[z]['verified'] == 'N')){
                                 color = 'orange';
@@ -137,7 +137,7 @@ $(function(){
                     case '2':
 
                         for(var z in data){
-                            if((data[z]['cash'] == null && data[z]['verified'] == 'N')){
+                            if((data[z]['cash'] == null && data[z]['verified'] == 'N' && Math.floor((data[z]['timetime'] - data[z]['date'])/86400) <= 7)){
                             $show_data_list.append('<tr>' +
                                 '<td class="boughtlist_id">'+data[z]['id']+'</td>'+
                                 '<td>'+data[z]['username']+'</td>'+
