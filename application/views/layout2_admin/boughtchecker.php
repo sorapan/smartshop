@@ -1,5 +1,45 @@
 <div class="bigheader">ตรวจสอบการซื้อสินค้า</div>
-<div class="card">
+
+<div class="card col-xs-12">
+    <div class="cardbrand">แสดงรายการ</div>
+    <div style="margin-left: 50px;">
+        <div class="radio">
+
+            <label style="margin-right:15px;color:black;font-weight:bolder">
+                <input type="radio" class="show_list" id="optionsRadios1" name="show" value="1" checked>
+                แสดงทั้งหมด
+            </label>
+        </div>
+        <div class="radio">
+            <label style="margin-right:15px;color:black;font-weight:bolder">
+                <input type="radio" class="show_list" id="optionsRadios1" name="show" value="2">
+                แสดงรายการยังไม่โอนเงิน
+            </label>
+        </div>
+        <div class="radio">
+            <label style="margin-right:15px;color:#fda401;font-weight:bolder">
+                <input type="radio" class="show_list" id="optionsRadios1" name="show" value="3">
+                แสดงรายการที่โอนเงินแล้ว
+            </label>
+        </div>
+        <div class="radio">
+            <label style="margin-right:15px;color:#007f01;font-weight:bolder">
+                <input type="radio" class="show_list" id="optionsRadios1" name="show" value="4">
+                แสดงรายการที่ยืนยันแล้ว
+            </label>
+        </div>
+        <div class="radio">
+            <label style="color:red;font-weight:bolder">
+                <input type="radio" class="show_list" id="optionsRadios1" name="show" value="5">
+                แสดงรายการที่เกิน 7 วัน
+            </label>
+
+        </div>
+        </div>
+
+    </div>
+
+<div class="card col-xs-12 margintop">
     <div class="cardbrand">รายการ</div>
     <table class="table table-bordered table-condensed table-striped">
         <thead class="bluethead">
@@ -14,7 +54,7 @@
                 <th>ลบ</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class="show_data_list">
         <?php
         foreach($boughtlist_data as $bval){
         ?>

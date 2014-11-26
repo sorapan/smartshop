@@ -1,6 +1,6 @@
 $(function(){
 
-    $(' .delete_boughtlist').click(function(){
+    $(document).on('click','.delete_boughtlist',function(){
 
         if(confirm('คุณต้องการลบข้อมูลใช่หรือไม่?')){
 
@@ -76,6 +76,156 @@ $(function(){
                 }
 
 
+
+            }
+        });
+
+    });
+
+    $(document).on('click','.show_list',function(e){
+
+        var thisval = $(this).val();
+        var $show_data_list = $('.show_data_list');
+
+        $.ajax({
+            url: $.autoFindDir('admin/boughtcheckerData').url,
+            type:'POST',
+            dataType:'JSON',
+            success:function(data){
+
+                $show_data_list.html('');
+
+                switch(thisval){
+
+                    case '1':
+
+                        for(var z in data){
+
+                            var color;
+                            var del_button = '<button class="btn yellowbutton col-xs-12 delete_boughtlist">ลบ</button>';
+
+                            if((data[z]['cash'] == null && data[z]['verified'] == 'N')){
+                                color = 'black';
+                            }else if((data[z]['cash'] != null && data[z]['verified'] == 'N')){
+                                color = 'orange';
+                            }else if((Math.floor((data[z]['timetime'] - data[z]['date'])/86400) > 7 && data[z]['cash'] == null)){
+                                color = 'red';
+                            }
+                            else if(((data[z]['cash'] != null && data[z]['verified'] == 'Y'))){
+                                color = 'green';
+                                del_button = '';
+                            }
+
+                            $show_data_list.append('<tr>' +
+                                '<td class="boughtlist_id">'+data[z]['id']+'</td>'+
+                                '<td>'+data[z]['username']+'</td>'+
+                                '<td class="hidden user_id">'+data[z]['user']+'</td>'+
+                                '<td class="hidden cart_id">'+data[z]['date']+'</td>'+
+                                '<td class="hidden bill_img">'+data[z]['cash_img']+'</td>'+
+                                '<td>'+data[z]['price']+'</td>'+
+                                '<td>'+(data[z]['sendby']=="none"?"รับด้วยตัวเอง":"ส่ง EMS")+'</td>'+
+                                '<td><span style="color:'+color+'">'+(data[z]['verified']=='Y'?'ใช่':'ไม่')+'</span></td>'+
+                                '<td><span style="color:'+color+'">'+Math.floor((data[z]['timetime'] - data[z]['date'])/86400)+' วันที่แล้ว</span></td>'+
+                                '<td><span style="color:'+color+'">'+(data[z]['cash']==null?'ยังไม่ได้โอน':'โอนแล้ว')+'</span></td>'+
+                                '<td>' +
+                                del_button+
+                                '<button class="btn bluebutton col-xs-12 basket_detail" data-toggle="modal" data-target="#modal_basketdata">ดูรายละเอียด</button></td>'+
+                                '</tr>');
+                        }
+                        break;
+
+                    case '2':
+
+                        for(var z in data){
+                            if((data[z]['cash'] == null && data[z]['verified'] == 'N')){
+                            $show_data_list.append('<tr>' +
+                                '<td class="boughtlist_id">'+data[z]['id']+'</td>'+
+                                '<td>'+data[z]['username']+'</td>'+
+                                '<td class="hidden user_id">'+data[z]['user']+'</td>'+
+                                '<td class="hidden cart_id">'+data[z]['date']+'</td>'+
+                                '<td class="hidden bill_img">'+data[z]['cash_img']+'</td>'+
+                                '<td>'+data[z]['price']+'</td>'+
+                                '<td>'+(data[z]['sendby']=="none"?"รับด้วยตัวเอง":"ส่ง EMS")+'</td>'+
+                                '<td><span style="color:black">'+(data[z]['verified']=='Y'?'ใช่':'ไม่')+'</span></td>'+
+                                '<td><span style="color:black">'+Math.floor((data[z]['timetime'] - data[z]['date'])/86400)+' วันที่แล้ว</span></td>'+
+                                '<td><span style="color:black">'+(data[z]['cash']==null?'ยังไม่ได้โอน':'โอนแล้ว')+'</span></td>'+
+                                '<td>' +
+                                '<button class="btn yellowbutton col-xs-12 delete_boughtlist">ลบ</button>' +
+                                '<button class="btn bluebutton col-xs-12 basket_detail" data-toggle="modal" data-target="#modal_basketdata">ดูรายละเอียด</button></td>'+
+                            '</tr>');
+                            }
+                        }
+                        break;
+
+                    case '3':
+
+                        for(var z in data){
+                            if((data[z]['cash'] != null && data[z]['verified'] == 'N')){
+                                $show_data_list.append('<tr>' +
+                                    '<td class="boughtlist_id">'+data[z]['id']+'</td>'+
+                                    '<td>'+data[z]['username']+'</td>'+
+                                    '<td class="hidden user_id">'+data[z]['user']+'</td>'+
+                                    '<td class="hidden cart_id">'+data[z]['date']+'</td>'+
+                                    '<td class="hidden bill_img">'+data[z]['cash_img']+'</td>'+
+                                    '<td>'+data[z]['price']+'</td>'+
+                                    '<td>'+(data[z]['sendby']=="none"?"รับด้วยตัวเอง":"ส่ง EMS")+'</td>'+
+                                    '<td><span style="color:orange">'+(data[z]['verified']=='Y'?'ใช่':'ไม่')+'</span></td>'+
+                                    '<td><span style="color:orange">'+Math.floor((data[z]['timetime'] - data[z]['date'])/86400)+' วันที่แล้ว</span></td>'+
+                                    '<td><span style="color:orange">'+(data[z]['cash']==null?'ยังไม่ได้โอน':'โอนแล้ว')+'</span></td>'+
+                                    '<td>' +
+                                    '<button class="btn yellowbutton col-xs-12 delete_boughtlist">ลบ</button>' +
+                                    '<button class="btn bluebutton col-xs-12 basket_detail" data-toggle="modal" data-target="#modal_basketdata">ดูรายละเอียด</button></td>'+
+                                    '</tr>');
+                            }
+                        }
+                        break;
+
+                    case '4':
+
+                        for(var z in data){
+                            if((data[z]['cash'] != null && data[z]['verified'] == 'Y')){
+                                $show_data_list.append('<tr>' +
+                                    '<td class="boughtlist_id">'+data[z]['id']+'</td>'+
+                                    '<td>'+data[z]['username']+'</td>'+
+                                    '<td class="hidden user_id">'+data[z]['user']+'</td>'+
+                                    '<td class="hidden cart_id">'+data[z]['date']+'</td>'+
+                                    '<td class="hidden bill_img">'+data[z]['cash_img']+'</td>'+
+                                    '<td>'+data[z]['price']+'</td>'+
+                                    '<td>'+(data[z]['sendby']=="none"?"รับด้วยตัวเอง":"ส่ง EMS")+'</td>'+
+                                    '<td><span style="color:green">'+(data[z]['verified']=='Y'?'ใช่':'ไม่')+'</span></td>'+
+                                    '<td><span style="color:green">'+Math.floor((data[z]['timetime'] - data[z]['date'])/86400)+' วันที่แล้ว</span></td>'+
+                                    '<td><span style="color:green">'+(data[z]['cash']==null?'ยังไม่ได้โอน':'โอนแล้ว')+'</span></td>'+
+                                    '<td>' +
+                                    '<button class="btn bluebutton col-xs-12 basket_detail" data-toggle="modal" data-target="#modal_basketdata">ดูรายละเอียด</button></td>'+
+                                    '</tr>');
+                            }
+                        }
+                        break;
+
+                    case '5':
+
+                        for(var z in data){
+                            if((Math.floor((data[z]['timetime'] - data[z]['date'])/86400) > 7 && data[z]['cash'] == null)){
+                                $show_data_list.append('<tr>' +
+                                    '<td class="boughtlist_id">'+data[z]['id']+'</td>'+
+                                    '<td>'+data[z]['username']+'</td>'+
+                                    '<td class="hidden user_id">'+data[z]['user']+'</td>'+
+                                    '<td class="hidden cart_id">'+data[z]['date']+'</td>'+
+                                    '<td class="hidden bill_img">'+data[z]['cash_img']+'</td>'+
+                                    '<td>'+data[z]['price']+'</td>'+
+                                    '<td>'+(data[z]['sendby']=="none"?"รับด้วยตัวเอง":"ส่ง EMS")+'</td>'+
+                                    '<td><span style="color:red">'+(data[z]['verified']=='Y'?'ใช่':'ไม่')+'</span></td>'+
+                                    '<td><span style="color:red">'+Math.floor((data[z]['timetime'] - data[z]['date'])/86400)+' วันที่แล้ว</span></td>'+
+                                    '<td><span style="color:red">'+(data[z]['cash']==null?'ยังไม่ได้โอน':'โอนแล้ว')+'</span></td>'+
+                                    '<td>' +
+                                    '<button class="btn yellowbutton col-xs-12 delete_boughtlist">ลบ</button>' +
+                                    '<button class="btn bluebutton col-xs-12 basket_detail" data-toggle="modal" data-target="#modal_basketdata">ดูรายละเอียด</button></td>'+
+                                    '</tr>');
+                            }
+                        }
+                        break;
+
+                }
 
             }
         });

@@ -60,4 +60,23 @@ class admin_boughtchecker extends CI_Controller{
         $this->UsersModel->updateBuyStatusToNone($user_id);
     }
 
+    function boughtcheckerfetchData(){
+
+        $boughtlistdata = $this->Bought_listModel->selectAllData();
+
+        foreach($boughtlistdata as $key=>$val){
+
+            @$waitlistidcashchecked = $this->Wait_listModel->selectByWaitlistID($val->wait_list_id)[0]->id;
+            @$waitlistidcashchecked_img = $this->Wait_listModel->selectByWaitlistID($val->wait_list_id)[0]->bill_dir;
+            $boughtlistdata[$key]->cash = isset($waitlistidcashchecked) ? $waitlistidcashchecked : null ;
+            $boughtlistdata[$key]->cash_img = isset($waitlistidcashchecked_img) ? $waitlistidcashchecked_img : null ;
+            $boughtlistdata[$key]->username = $this->UsersModel->fetchUserData($val->user)[0]->username;
+            $boughtlistdata[$key]->timetime = time();
+
+        }
+
+        echo json_encode($boughtlistdata);
+
+    }
+
 } 

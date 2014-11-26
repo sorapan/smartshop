@@ -118,6 +118,7 @@ $route['admin/deleteBlogImg'] = "admin_aboutme/deleteBlogImg";
 
 $route['admin/boughtchecker'] = "admin_boughtchecker/index";
 $route['admin/deleteboughtlist'] = "admin_boughtchecker/deleteboughtlist";
+$route['admin/boughtcheckerData'] = "admin_boughtchecker/boughtcheckerfetchData";
 
 /////////////////////////////////////
 
