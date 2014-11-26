@@ -46,6 +46,17 @@ class boughtlist extends CI_Controller {
                 $data[$key]['productname'] = 'โปรโมชั่น : '.$this->PromotionModel->fetchPromotionlistByPromotionId($val->promotion_id)[0]->promotion_name;
                 $data[$key]['unit'] = 1;
                 $data[$key]['price'] = $this->PromotionModel->fetchPromotionlistByPromotionId($val->promotion_id)[0]->price;
+
+                $promotion_product_data = $this->PromotionModel->fetchPromotionWithProductData2($val->promotion_id);
+                $data[$key]['inpromotion'] = array();
+//                var_dump($promotion_product_data);
+
+                foreach($promotion_product_data as $v){
+
+                    array_push($data[$key]['inpromotion'], $this->PromotionModel->fetchPromotionWithProductData3($v->productid)[0]);
+
+                }
+
                 $data[$key]['img'] = null;
             }
 

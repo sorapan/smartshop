@@ -82,6 +82,26 @@ class PromotionModel extends CI_Model {
 
     }
 
+    function fetchPromotionWithProductData2($promotion_id){
+
+        $this->db->select('promotion_product.unit, product.name, product.img, promotion_product.productid');
+        $this->db->from('promotion_product');
+        $this->db->join('product','promotion_product.productid = product.id');
+        $this->db->where('promotion_product.promotionid',$promotion_id);
+        return $this->db->get()->result();
+
+    }
+
+    function fetchPromotionWithProductData3($product_id){
+
+        $this->db->select('promotion_product.unit, product.name, product.img, promotion_product.productid');
+        $this->db->from('promotion_product');
+        $this->db->join('product','promotion_product.productid = product.id');
+        $this->db->where('promotion_product.productid',$product_id);
+        return $this->db->get()->result();
+
+    }
+
     function deletePromotionByID($id){
 
         $this->db->delete('promotion_list',array(
