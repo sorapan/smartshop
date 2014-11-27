@@ -158,3 +158,24 @@ $(function(){
     });
 
 });
+
+$(document).on('blur','.ubn',function(){
+
+    var basketid = $(this).parents().eq(1).find('.item_id').html();
+    var thisval = $('.unit_basket_'+basketid+'').val();
+
+    $.ajax({
+        url: $.autoFindDir('basket/basketeditunit').url,
+        type:'POST',
+        data:{
+            itemid:basketid,
+            unit:thisval
+        },
+        success:function(data){
+
+            location.reload();
+
+        }
+    })
+
+});

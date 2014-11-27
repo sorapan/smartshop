@@ -97,6 +97,15 @@ class BasketModel extends CI_Model{
 
     }
 
+    function FreeUpdate($productid,$userid,$data){
+
+        $this->db->where('product', $productid);
+        $this->db->where('user', $userid);
+        $this->db->where('bought','N');
+        $this->db->update('basket', $data);
+
+    }
+
     function chkItemByproductId($productId,$userid){
 
         $this->db->select('*');

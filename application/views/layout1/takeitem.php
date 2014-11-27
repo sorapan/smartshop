@@ -35,7 +35,8 @@
 
             ?>
                     <div class="item_id col-xs-4 hidden"><?= $b_v->id?></div>
-                    <div class="col-xs-2"><?= $b_v->unit." ชิ้น"?></div>
+                    <div class="col-xs-2"><input maxlength="3" class="ubn unit_basket_<?= $b_v->id?>" style="width: 40px" value="<?=$b_v->unit?>"> ชิ้น</div>
+<!--                    <div class="col-xs-2"> $b_v->unit." ชิ้น"</div>-->
             <?php
 
                 }else{

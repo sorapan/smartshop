@@ -235,4 +235,15 @@ class basket extends CI_Controller {
 
     }
 
+    function basket_edit_unit(){
+
+//        $productdata = selectProductDataByUserid($_POST['itemid'],$this->session->userdata('user_id'))[0];
+        $productdata = $this->ProductModel->fetchproductdataByproductId($_POST['itemid'])[0];
+        $this->BasketModel->FreeUpdate($_POST['itemid'],$this->session->userdata('user_id'),array(
+            'unit' => $_POST['unit'],
+            'price' => $_POST['unit']*$productdata->price
+        ));
+
+    }
+
 } 
